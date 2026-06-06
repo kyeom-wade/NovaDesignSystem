@@ -1,0 +1,1 @@
+export { ThumbnailLogoItem } from "./ThumbnailLogoItem";

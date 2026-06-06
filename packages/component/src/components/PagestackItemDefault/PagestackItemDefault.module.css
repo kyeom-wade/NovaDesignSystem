@@ -1,0 +1,12 @@
+/* PagestackItemDefault — Pagestack 내 기본 목록 행 아이템 */
+.item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 12px 0;
+	font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+	color: #05001a;
+	letter-spacing: -0.04em;
+}

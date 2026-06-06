@@ -1,0 +1,51 @@
+/* ButtonSection — 홈 2분할 아이콘+레이블 바로가기 */
+.card {
+	display: flex;
+	align-items: stretch;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 16px;
+	border-radius: 20px;
+	background: #f4f5fa;
+	font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+}
+
+.menu {
+	flex: 1 0 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	border: 0;
+	background: none;
+	cursor: pointer;
+	font-family: inherit;
+}
+
+.icon {
+	width: 32px;
+	height: 32px;
+	object-fit: contain;
+}
+
+.iconPh {
+	width: 32px;
+	height: 32px;
+	border-radius: 9999px;
+	background: #e2e6f1;
+}
+
+.label {
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 1.3;
+	color: #05001a;
+	letter-spacing: -0.04em;
+}
+
+.divider {
+	width: 1px;
+	align-self: center;
+	height: 32px;
+	background: #e2e6f1;
+}

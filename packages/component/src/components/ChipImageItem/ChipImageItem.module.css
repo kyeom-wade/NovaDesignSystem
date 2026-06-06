@@ -1,0 +1,4 @@
+/* part component — Figma .접두(부속) */
+.chip{display:inline-flex;align-items:center;gap:4px;padding:7px 12px;border-radius:9999px;border:1px solid #ebeef6;background:#fff;cursor:pointer;font-family:var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);font-size:13px;font-weight:500;letter-spacing:-0.04em;color:#05001a;}
+.on{border-color:#05001a;background:#05001a;color:#fff;}
+.icon{display:inline-flex;width:16px;height:16px;}

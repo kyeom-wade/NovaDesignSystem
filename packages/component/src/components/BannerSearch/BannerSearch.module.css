@@ -1,0 +1,22 @@
+/* BannerSearch — 검색 화면 상단 비주얼 배너 (Figma 9861:48728) */
+.wrap {
+	position: relative;
+	width: 100%;
+	height: 200px;
+	box-sizing: border-box;
+	border-radius: 20px;
+	overflow: hidden;
+	background: linear-gradient(135deg, #e9ecf6, #f4f5fa);
+}
+
+.product {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.ph {
+	display: block;
+	width: 100%;
+	height: 100%;
+}

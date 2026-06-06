@@ -1,0 +1,1 @@
+export { ChipImageItem } from "./ChipImageItem";

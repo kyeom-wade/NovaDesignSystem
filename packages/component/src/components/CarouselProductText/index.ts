@@ -1,0 +1,1 @@
+export { CarouselProductText } from "./CarouselProductText";

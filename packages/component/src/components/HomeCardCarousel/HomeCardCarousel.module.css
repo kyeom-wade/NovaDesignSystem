@@ -1,0 +1,41 @@
+/* HomeCardCarousel — 홈 카드 캐러셀 섹션 래퍼 (Figma 9787:98694) */
+.wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+	color: #05001a;
+	letter-spacing: -0.04em;
+}
+
+.titleMain {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.subtitle {
+	font-size: 13px;
+	font-weight: 500;
+	color: rgba(6, 12, 31, 0.6);
+}
+
+.title {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.track {
+	display: flex;
+	gap: 12px;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+	display: none;
+}

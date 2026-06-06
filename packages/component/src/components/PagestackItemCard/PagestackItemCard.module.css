@@ -1,0 +1,14 @@
+/* PagestackItemCard — Pagestack 내 카드형 단일 아이템 */
+.item {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 16px;
+	border-radius: 16px;
+	background: #ffffff;
+	border: 1px solid #ebeef6;
+	font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+	color: #05001a;
+	letter-spacing: -0.04em;
+}

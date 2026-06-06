@@ -1,0 +1,27 @@
+{
+  "name": "nova-design-system",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Nova Design System — cx 컴포넌트(@cx/components)·토큰(@cx/tokens)의 SSOT. ewoooo/rnd-wireframer 프로토타입에서 이관. 컴포넌트 + 스토리북을 한곳에서 관리한다.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "storybook": "storybook dev -p 6006 --no-open",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "^10.4.2",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.16",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "storybook": "^10.4.2",
+    "vite": "^6.0.0"
+  }
+}

@@ -1,0 +1,6 @@
+/* alias→전용 컴포넌트로 승격 (Figma 9638-78644 기반) */
+.wrap{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;font-family:var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);letter-spacing:-0.04em;color:#05001a;}
+.title{margin:0;font-size:16px;font-weight:700;line-height:1.3;}
+.toggle{flex:0 0 auto;border:0;background:none;padding:0;cursor:pointer;display:inline-flex;}
+.chev{transition:transform .15s ease;}
+.up{transform:rotate(180deg);}

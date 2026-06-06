@@ -1,0 +1,5 @@
+/* part component — Figma .접두(부속) */
+.wrap{display:inline-flex;align-items:center;gap:6px;}
+.ai,.gift{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border:0;border-radius:9999px;background:#f4f5fa;cursor:pointer;}
+.spark{width:14px;height:14px;border-radius:2px;background:linear-gradient(135deg,#7b61ff,#ff01d4);}
+.giftIco{width:14px;height:14px;border-radius:3px;background:#ff7a30;}

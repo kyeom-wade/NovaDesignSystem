@@ -1,0 +1,5 @@
+/* Spacing — 수직 여백 (size=2|4|8|12|16|20|24|28) */
+.spacing {
+	width: 100%;
+	flex: 0 0 auto;
+}

@@ -1,0 +1,38 @@
+/* BannerShop — 쇼핑 최상단 프로모션 배너 (Figma 9343:13644) */
+.wrap {
+	display: flex;
+	width: 100%;
+	min-height: 146px;
+	box-sizing: border-box;
+	padding: 24px;
+	border-radius: 20px;
+	background: linear-gradient(135deg, #1b1b2f, #2a2a45);
+	color: #ffffff;
+	font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+	letter-spacing: -0.04em;
+}
+
+.titleArea {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	align-items: flex-start;
+}
+
+.logo {
+	height: 20px;
+	object-fit: contain;
+}
+
+.subtitle {
+	font-size: 13px;
+	font-weight: 500;
+	opacity: 0.8;
+}
+
+.title {
+	margin: 0;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 1.25;
+}

@@ -1,0 +1,5 @@
+/* part component — Figma .접두(부속) */
+.badge{display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:8px;background:#f4f5fa;font-family:var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);letter-spacing:-0.04em;}
+.icon{display:inline-flex;width:16px;height:16px;}
+.label{font-size:11px;font-weight:600;color:#05001a;}
+.sub{font-size:11px;font-weight:500;color:rgba(6,12,31,0.6);}

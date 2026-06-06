@@ -1,0 +1,24 @@
+/* OptionListItem — 옵션 선택 행 (Module/List) */
+.item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	box-sizing: border-box;
+	border: 1px solid #ebeef6;
+	border-radius: 12px;
+	background: #fff;
+	cursor: pointer;
+	font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+	letter-spacing: -0.04em;
+	color: #05001a;
+}
+.selected { border-color: #05001a; border-width: 1.5px; }
+.module { flex-direction: column; align-items: flex-start; gap: 6px; padding: 14px; width: 160px; }
+.list { justify-content: flex-start; padding: 14px 16px; width: 100%; }
+.chip { width: 20px; height: 20px; border-radius: 9999px; background: #e2e6f1; }
+.label { font-size: 14px; font-weight: 600; }
+.sub { font-size: 12px; font-weight: 500; color: rgba(6, 12, 31, 0.6); }
+.value { font-size: 14px; font-weight: 600; }
+.unit { font-style: normal; font-weight: 500; color: rgba(6, 12, 31, 0.6); margin-left: 2px; }
+.badge { padding: 2px 6px; border-radius: 4px; background: #f4f5fa; font-size: 10px; font-weight: 500; color: rgba(5, 0, 26, 0.6); }
+.price { margin-left: auto; font-size: 14px; font-weight: 700; }

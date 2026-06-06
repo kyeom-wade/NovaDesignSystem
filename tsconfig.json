@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@cx/components": ["packages/component/src/index.ts"],
+      "@cx/components/catalog": ["packages/component/src/catalog.ts"],
+      "@cx/tokens": ["packages/token/src/index.ts"]
+    }
+  },
+  "include": ["packages", "stories", ".storybook"]
+}

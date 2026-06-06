@@ -1,0 +1,2 @@
+/* part component — Figma .접두(부속) */
+.badge{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;padding:0 5px;border-radius:9999px;background:#ff0738;font-family:var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);font-size:10px;font-weight:700;line-height:1;color:#fff;}
