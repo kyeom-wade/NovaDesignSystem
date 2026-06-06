@@ -1,8 +1,5 @@
 # Nova Design System
 
-cx 컴포넌트의 **SSOT(단일 출처)**. `ewoooo/rnd-wireframer` 프로토타입에서 컴포넌트·토큰을 이관해 우리가 소유·확장한다. 컴포넌트와 스토리북을 **한 레포에서** 관리한다.
-
-> `rnd-wireframer`는 이관 시점부터 **동결된 프로토타입**이다. cx 컴포넌트의 살아있는 출처는 이 레포 하나다 — 더 이상 rnd-wireframer를 참조·동기화하지 않는다.
 
 ## 구성
 
