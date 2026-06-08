@@ -956,6 +956,23 @@ export const componentCatalogEntries = {
 			selected: { type: "boolean", role: "state", defaultValue: false },
 		},
 	},
+	Dialog: {
+		type: "Dialog",
+		kind: "dialog",
+		source: "react-component",
+		version: "1.0.0",
+		description: "Modal dialog with title, optional subtext, content slot, and two action buttons (Figma node 50982:21648).",
+		aliases: ["dialog", "modal"],
+		props: {
+			title: { type: "string", role: "title" },
+			subText: { type: "string", role: "description" },
+			showSubText: { type: "boolean", role: "visibility", defaultValue: true },
+			showContents: { type: "boolean", role: "visibility", defaultValue: true },
+			primaryLabel: { type: "string", role: "label", defaultValue: "확인" },
+			secondaryLabel: { type: "string", role: "label", defaultValue: "취소" },
+			children: { type: "node", role: "content" },
+		},
+	},
 	Divider: {
 		type: "Divider",
 		kind: "divider",

@@ -30,6 +30,7 @@ export { CarouselProductText } from "./components/CarouselProductText";
 export { CardSummary } from "./components/CardSummary";
 export { Chip } from "./components/Chip";
 export { Coupon } from "./components/Coupon";
+export { Dialog } from "./components/Dialog";
 export { Divider } from "./components/Divider";
 export { FilterSorting } from "./components/FilterSorting";
 export { Footer } from "./components/Footer";
