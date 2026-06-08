@@ -1,0 +1,106 @@
+/* RadioTextItem — Figma node 50943:27973 */
+/* anatomy: root[ radioWrap[ radioBubble[ innerDot? ] ], label(p) ] */
+/* Variants: selection=Off|On × disabled=Off|On → 4 states */
+
+.root {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--skt-spacing-8, 8px);
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  outline: none;
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--skt-color-fill-brand-primary, #3617ce);
+  outline-offset: 2px;
+  border-radius: var(--skt-radius-4, 4px);
+}
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Radio control wrapper (keeps the bubble vertically aligned) ─── */
+.radioWrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  /* offset to align with the label's first line (line-height 1.3 × 14px ≈ 18.2px) */
+  margin-top: 0;
+}
+
+/* ── Radio bubble (18×18 px, fully circular) ──────────────────── */
+.radio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--skt-radius-full, 9999px);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Unselected default — white bg, gray-alpha-200 border */
+.radioUnselected {
+  background-color: var(--skt-color-bg-layer-default, #ffffff);
+  border: 1.2px solid var(--skt-color-palette-gray-alpha-200, rgba(6, 12, 31, 0.2));
+}
+
+/* Selected default — dark fill (neutral/strong) + dark border */
+.radioSelected {
+  background-color: var(--skt-color-fill-neutral-strong, #060c1f);
+  border: 1.2px solid var(--skt-color-fill-neutral-strong, #060c1f);
+}
+
+/* Unselected disabled — dimmed bg, lighter border */
+.radioUnselectedDisabled {
+  background-color: var(--skt-color-fill-disabled-default, rgba(6, 12, 31, 0.05));
+  border: 1.2px solid var(--skt-color-palette-gray-alpha-100, rgba(6, 12, 31, 0.1));
+}
+
+/* Selected disabled — muted fill, light border */
+.radioSelectedDisabled {
+  background-color: var(--skt-color-palette-gray-alpha-100, rgba(6, 12, 31, 0.1));
+  border: 1.2px solid var(--skt-color-palette-gray-alpha-200, rgba(6, 12, 31, 0.2));
+}
+
+/* ── Inner dot (visible when selected) ───────────────────────── */
+.innerDot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--skt-radius-full, 9999px);
+  background-color: var(--skt-color-text-inverse-primary, #ffffff);
+  flex-shrink: 0;
+}
+
+.radioSelectedDisabled .innerDot {
+  background-color: var(--skt-color-text-disabled-default, rgba(6, 12, 31, 0.2));
+}
+
+/* ── Label text ───────────────────────────────────────────────── */
+.label {
+  flex: 1 0 0;
+  min-width: 1px;
+  margin: 0;
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  font-style: normal;
+}
+
+.disabled .label {
+  color: var(--skt-color-text-disabled-default, rgba(6, 12, 31, 0.2));
+}

@@ -1,6 +1,0 @@
-/* part component — Figma .접두(부속) */
-.tip{position:relative;display:inline-block;max-width:240px;padding:8px 12px;border-radius:8px;background:#05001a;color:#fff;font-family:var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);font-size:12px;font-weight:500;line-height:1.3;letter-spacing:-0.04em;}
-.tip::after{content:"";position:absolute;top:-5px;width:10px;height:10px;background:#05001a;transform:rotate(45deg);border-radius:2px 0 0 0;}
-.tailLeft::after{left:14px;}
-.tailCenter::after{left:50%;margin-left:-5px;}
-.tailRight::after{right:14px;}

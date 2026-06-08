@@ -1,0 +1,10 @@
+/* IconVoice — Figma node 51578:64955 */
+/* anatomy: root(svg) [ voice-bars-path ] */
+/* glyph: audio voice waveform / 음성입력 */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

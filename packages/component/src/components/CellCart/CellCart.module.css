@@ -1,0 +1,317 @@
+/* CellCart — Figma node 51558:29668 */
+/* anatomy: wrap[ titleRow[ titleText, closeBtn ], productRow[ thumbnail, productInfo[ textGroup, adultNotice ] ], summaryBox[ summaryTableRow×n, divider, summaryTotalRow ], changeButtonWrapper[ changeButton ] ] */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-12, 12px);
+  align-items: stretch;
+  padding-top: var(--skt-spacing-8, 8px);
+  padding-bottom: var(--skt-spacing-8, 8px);
+  width: 353px;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+}
+
+/* ── Title row ── */
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--skt-spacing-4, 4px);
+  padding-bottom: var(--skt-spacing-4, 4px);
+  width: 100%;
+}
+
+.titleText {
+  flex: 1 0 0;
+  min-width: 0;
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--skt-radius-full, 9999px);
+  background-color: var(--skt-color-border-neutral-secondary, #ebeef6);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.closeBtnIcon {
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: relative;
+}
+
+/* X icon via pseudo-elements */
+.closeBtnIcon::before,
+.closeBtnIcon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 1.2px;
+  background-color: var(--skt-color-text-neutral-primary, #060c1f);
+  border-radius: 1px;
+}
+
+.closeBtnIcon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.closeBtnIcon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ── Product row ── */
+.productRow {
+  display: flex;
+  gap: var(--skt-spacing-12, 12px);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.thumbnail {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--skt-radius-10, 10px);
+  overflow: hidden;
+  background-color: var(--skt-color-border-neutral-secondary, #ebeef6);
+}
+
+.thumbnailImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbnailPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #c8b4f8 0%, #a78bda 60%, #9370db 100%);
+}
+
+.productInfo {
+  flex: 1 0 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-2, 2px);
+  width: 100%;
+}
+
+.brandName {
+  font-size: var(--skt-typography-font-size-400, 13px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.productName {
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* Adult notice */
+.adultNotice {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-4, 4px);
+  padding-top: var(--skt-spacing-4, 4px);
+  padding-bottom: var(--skt-spacing-4, 4px);
+  width: 100%;
+}
+
+.adultNoticeIcon {
+  display: block;
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--skt-color-text-danger-primary, #e7313d);
+  position: relative;
+}
+
+/* info "i" via pseudo-element */
+.adultNoticeIcon::before {
+  content: "i";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--skt-color-text-danger-primary, #e7313d);
+}
+
+.adultNoticeText {
+  font-size: var(--skt-typography-font-size-200, 11px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-400, 150%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-danger-primary, #e7313d);
+  margin: 0;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+/* ── Summary box ── */
+.summaryBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--skt-color-bg-layer-basement, #f4f5fa);
+  border-radius: var(--skt-radius-16, 16px);
+  padding: var(--skt-spacing-12, 12px) var(--skt-spacing-16, 16px);
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.summaryTableRow {
+  display: flex;
+  gap: var(--skt-spacing-16, 16px);
+  align-items: center;
+  padding-top: var(--skt-spacing-4, 4px);
+  padding-bottom: var(--skt-spacing-4, 4px);
+  width: 100%;
+}
+
+.summaryLabel {
+  flex-shrink: 0;
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  white-space: nowrap;
+}
+
+.summaryValue {
+  flex: 1 0 0;
+  min-width: 0;
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  text-align: right;
+}
+
+/* Divider wrapper adds 8px top + bottom padding */
+.dividerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: var(--skt-spacing-8, 8px);
+  padding-bottom: var(--skt-spacing-8, 8px);
+  width: 100%;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--skt-color-border-neutral-secondary, #ebeef6);
+}
+
+/* Total row — semibold labels */
+.summaryTotalRow {
+  display: flex;
+  gap: var(--skt-spacing-16, 16px);
+  align-items: center;
+  padding-top: var(--skt-spacing-4, 4px);
+  padding-bottom: var(--skt-spacing-4, 4px);
+  width: 100%;
+}
+
+.summaryTotalLabel {
+  flex-shrink: 0;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  white-space: nowrap;
+}
+
+.summaryTotalValue {
+  flex: 1 0 0;
+  min-width: 0;
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  text-align: right;
+}
+
+/* ── Change button ── */
+.changeButtonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.changeButton {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: var(--skt-typography-font-size-400, 13px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  white-space: nowrap;
+}
+
+.changeButton:hover {
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+}

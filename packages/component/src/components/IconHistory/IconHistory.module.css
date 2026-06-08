@@ -1,0 +1,9 @@
+/* IconHistory — Figma node 51578:64956 */
+/* anatomy: root(svg) [ circular-arrow-body + clock-hand ] */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

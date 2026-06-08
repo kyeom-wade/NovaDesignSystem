@@ -1,0 +1,9 @@
+/* IconVip — Figma node 51578:64828 */
+/* anatomy: root(svg) [ g#Shape > path#Union(crown/VIP glyph) ] */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

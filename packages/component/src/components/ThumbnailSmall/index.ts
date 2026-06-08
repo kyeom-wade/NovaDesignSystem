@@ -1,1 +1,0 @@
-export { ThumbnailSmall } from "./ThumbnailSmall";

@@ -1,0 +1,52 @@
+/* TextGroupProductDetail — Figma node 51083:55039
+   anatomy: root[ textProduct[ txtSub[ subText ], titleText ], toogleItem? ] */
+
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 353px;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+}
+
+/* Left column: sub label + title */
+.textProduct {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-4, 4px);
+  align-items: flex-start;
+  flex: 1;
+  min-width: 0;
+  max-width: 269px;
+}
+
+/* Sub-label row */
+.txtSub {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.subText {
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Main product title */
+.titleText {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  margin: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}

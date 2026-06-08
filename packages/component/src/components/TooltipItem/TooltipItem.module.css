@@ -1,0 +1,143 @@
+/* TooltipItem — Figma node 50943:28013 */
+/* anatomy: root[ bubble[ text ], tail[ union ] ] */
+/* 8 direction variants: BottomLeft, BottomCenter, BottomRight, TopLeft, TopCenter, TopRight, Left, Right */
+
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  filter: drop-shadow(0px 8px 10px var(--skt-color-shadow-default, rgba(6, 12, 31, 0.2)));
+}
+
+/* ── Bubble ─────────────────────────────────────────── */
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  background-color: var(--skt-color-bg-layer-floating, #ffffff);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.text {
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+/* ── Tail wrapper ───────────────────────────────────── */
+.tailWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px;
+  flex-shrink: 0;
+}
+
+.tailIcon {
+  width: 11px;
+  height: 5px;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tailIcon svg {
+  display: block;
+  width: 11px;
+  height: 5px;
+}
+
+/* Tail fills: the SVG is white matching the bubble */
+.tailIcon svg path {
+  fill: var(--skt-color-bg-layer-floating, #ffffff);
+}
+
+/* ── Tail horizontal alignment (Bottom / Top variants) ── */
+.tailLeft {
+  align-items: flex-start;
+}
+
+.tailCenter {
+  align-items: center;
+}
+
+.tailRight {
+  align-items: flex-end;
+}
+
+/* ── Bottom variants — tail points down (away from anchor) ── */
+/* Default: tail is below bubble, upward-pointing triangle points up */
+.dirBottom {
+  flex-direction: column;
+}
+
+/* ── Top variants — tail is below bubble but triangle flipped ── */
+.dirTop {
+  flex-direction: column;
+}
+
+.tailFlipped .tailIcon svg {
+  transform: scaleY(-1);
+}
+
+/* ── Right variant ─────────────────────────────────── */
+/* bubble on right, tail on left — tail points left (rotated -90°) */
+.dirRight {
+  flex-direction: row;
+  align-items: center;
+}
+
+.dirRight .bubble {
+  order: 2;
+}
+
+.tailRotatedLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5px;
+  height: 30px;
+  padding: 0;
+  flex-shrink: 0;
+  order: 1;
+}
+
+.tailRotatedLeft .tailIcon svg {
+  transform: rotate(-90deg);
+}
+
+/* ── Left variant ──────────────────────────────────── */
+/* bubble on left, tail on right — tail points right (rotated 90°) */
+.dirLeft {
+  flex-direction: row;
+  align-items: center;
+}
+
+.dirLeft .bubble {
+  order: 1;
+}
+
+.tailRotatedRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5px;
+  height: 30px;
+  padding: 0;
+  flex-shrink: 0;
+  order: 2;
+}
+
+.tailRotatedRight .tailIcon svg {
+  transform: rotate(90deg);
+}

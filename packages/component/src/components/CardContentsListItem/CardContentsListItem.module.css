@@ -1,0 +1,431 @@
+/* CardContentsListItem — Figma node 51084:42807
+   anatomy: root[ Profile | Data | Barcode | Product | Benefit | TaskCard ]
+   Variants: Profile · Data · Barcode · Product · Benefit · TaskCard
+*/
+
+/* ─── shared ─────────────────────────────────────────────────────────────── */
+.root {
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  box-sizing: border-box;
+  position: relative;
+  width: 369px;
+}
+
+/* ─── Profile ────────────────────────────────────────────────────────────── */
+.variant-Profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--skt-spacing-4, 4px);
+  padding: var(--skt-spacing-8, 8px) 0;
+}
+
+.profileLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-4, 4px);
+  flex-shrink: 0;
+}
+
+.profileAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--skt-radius-full, 9999px);
+  overflow: hidden;
+  background-color: var(--skt-color-palette-gray-50, #f4f5fa);
+  flex-shrink: 0;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--skt-color-palette-gray-50, #f4f5fa);
+}
+
+.profileName {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  white-space: nowrap;
+}
+
+.profilePhone {
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  white-space: nowrap;
+}
+
+.actionBtn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--skt-spacing-6, 6px) var(--skt-spacing-12, 12px);
+  background-color: var(--skt-color-palette-gray-200, #e2e6f1);
+  border: none;
+  border-radius: var(--skt-radius-full, 9999px);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  white-space: nowrap;
+}
+
+.actionBtn:hover {
+  background-color: var(--skt-color-palette-gray-300, #d2d9eb);
+}
+
+/* ─── Data ───────────────────────────────────────────────────────────────── */
+.variant-Data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--skt-spacing-8, 8px);
+}
+
+.dataLeft {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-4, 4px);
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.dataTitleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-6, 6px);
+  flex-shrink: 0;
+}
+
+.dataTitle {
+  font-size: var(--skt-typography-font-size-800, 18px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  white-space: nowrap;
+}
+
+.dataBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  padding: 4px var(--skt-spacing-6, 6px);
+  background-color: var(--skt-color-palette-gray-100, #ebeef6);
+  border-radius: var(--skt-radius-6, 6px);
+  font-size: var(--skt-typography-font-size-200, 11px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  white-space: nowrap;
+  mix-blend-mode: multiply;
+  flex-shrink: 0;
+}
+
+.dataSubTitle {
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  white-space: nowrap;
+}
+
+.dataIconArea {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+}
+
+.dataIcon {
+  width: 40px;
+  height: 40px;
+}
+
+/* ─── Barcode ────────────────────────────────────────────────────────────── */
+.variant-Barcode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.barcodeArea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-4, 4px);
+  width: 100%;
+}
+
+.barcodeImg {
+  position: relative;
+  height: 48px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.barcodeSvg {
+  width: 100%;
+  height: 48px;
+  display: block;
+}
+
+.barcodeNumRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--skt-typography-font-size-200, 11px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  white-space: nowrap;
+}
+
+.barcodeNums {
+  display: flex;
+  gap: var(--skt-spacing-8, 8px);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  opacity: 0.5;
+}
+
+.barcodeNum {
+  flex-shrink: 0;
+}
+
+.barcodeTime {
+  color: var(--skt-color-text-brand-primary, #3617ce);
+}
+
+/* ─── Product ────────────────────────────────────────────────────────────── */
+.variant-Product {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-16, 16px);
+  padding: var(--skt-spacing-8, 8px) 0;
+}
+
+.productThumb {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--skt-radius-10, 10px);
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: var(--skt-color-palette-gray-50, #f4f5fa);
+}
+
+.thumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbPlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--skt-color-palette-gray-100, #ebeef6);
+}
+
+.productTextGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-4, 4px);
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.productMainText {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.productPrice {
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+}
+
+/* ─── Benefit ────────────────────────────────────────────────────────────── */
+.variant-Benefit {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-16, 16px);
+  padding: var(--skt-spacing-8, 8px) 0;
+}
+
+.benefitThumbWrap {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.benefitThumb {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--skt-radius-full, 9999px);
+  overflow: hidden;
+  background-color: var(--skt-color-palette-gray-00, #ffffff);
+}
+
+.benefitThumbPlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--skt-color-palette-gray-50, #f4f5fa);
+}
+
+.benefitTextGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-4, 4px);
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.benefitMainText {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.benefitSubTexts {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-4, 4px);
+}
+
+.benefitSubText {
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  white-space: nowrap;
+}
+
+.subTextDivider {
+  display: inline-block;
+  width: 1px;
+  height: 8px;
+  background-color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  flex-shrink: 0;
+}
+
+.benefitBadgeList {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.benefitBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 17px;
+  padding: 2px var(--skt-spacing-6, 6px);
+  background-color: var(--skt-color-palette-gray-100, #ebeef6);
+  border-radius: var(--skt-radius-4, 4px);
+  font-size: var(--skt-typography-font-size-100, 10px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  white-space: nowrap;
+  mix-blend-mode: multiply;
+}
+
+/* ─── TaskCard ───────────────────────────────────────────────────────────── */
+.variant-TaskCard {
+  width: 353px;
+  height: 152px;
+  overflow: hidden;
+  border-radius: var(--skt-radius-16, 16px);
+  background: linear-gradient(
+    135deg,
+    rgba(186, 206, 255, 0.7) 0%,
+    rgba(186, 206, 255, 0) 60%
+  );
+}
+
+.taskCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.taskTextArea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-4, 4px);
+  padding: var(--skt-spacing-20, 20px) var(--skt-spacing-16, 16px);
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.taskTitle {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+}
+
+.taskBody {
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+}
+
+.taskImageArea {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 108px;
+  height: 152px;
+  overflow: hidden;
+}
+
+.taskImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

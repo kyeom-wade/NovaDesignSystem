@@ -1,0 +1,9 @@
+/* IconCategory — Figma node 51578:64794 */
+/* anatomy: root(svg) [ four rounded squares in a 2×2 grid ] */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

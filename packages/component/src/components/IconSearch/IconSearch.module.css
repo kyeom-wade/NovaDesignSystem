@@ -1,0 +1,10 @@
+/* IconSearch — Figma node 51578:64591 */
+/* anatomy: root(svg) [ lens-circle + handle-line ] */
+/* variants: line (outline) | fill (solid) */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

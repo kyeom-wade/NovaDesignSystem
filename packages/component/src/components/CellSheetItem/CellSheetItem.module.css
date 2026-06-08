@@ -1,0 +1,163 @@
+/* CellSheetItem — Figma node 51082:44667
+   anatomy: root[ leftItem[ thumbnail, textBlock[ productLabel, priceRow ] | noticeLabel ], rightItem?[ arrowBtn | noticeBtn ] ]
+*/
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--skt-spacing-4, 4px) 0;
+  width: 100%;
+  overflow: hidden;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  box-sizing: border-box;
+}
+
+/* Left item — thumbnail + text group */
+.leftItem {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-12, 12px);
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+/* Thumbnail */
+.thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.thumbnailImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* Price variant — text block */
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-2, 2px);
+  align-items: flex-start;
+  justify-content: center;
+  line-height: var(--skt-typography-line-height-200, 130%);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.productLabel {
+  font-size: var(--skt-typography-font-size-400, 13px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  opacity: 0.7;
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  margin: 0;
+  line-height: inherit;
+}
+
+.priceRow {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--skt-spacing-4, 4px);
+}
+
+.priceGroup {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+}
+
+.price {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  line-height: var(--skt-typography-line-height-200, 130%);
+}
+
+.perMonth {
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  line-height: var(--skt-typography-line-height-200, 130%);
+}
+
+.feeNote {
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  line-height: var(--skt-typography-line-height-200, 130%);
+}
+
+/* Notice variant — single label */
+.noticeLabel {
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  white-space: nowrap;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Right item container */
+.rightItem {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Price variant — arrow chevron button */
+.arrowBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--skt-color-icon-neutral-tertiary, rgba(6, 12, 31, 0.4));
+}
+
+.arrowBtn:hover {
+  color: var(--skt-color-icon-neutral-secondary, rgba(6, 12, 31, 0.6));
+}
+
+/* Notice variant — pill button */
+.noticeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--skt-spacing-6, 6px) var(--skt-spacing-12, 12px);
+  background-color: var(--skt-color-fill-neutral-tertiary, rgba(6, 12, 31, 0.05));
+  border: none;
+  border-radius: var(--skt-radius-full, 9999px);
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.noticeBtn:hover {
+  background-color: var(--skt-color-fill-neutral-primary, rgba(6, 12, 31, 0.2));
+}

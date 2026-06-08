@@ -1,0 +1,10 @@
+/* IconArrow — Figma node 51578:64737 */
+/* anatomy: root(svg) [ chevron-path ] */
+/* variants: up | down | left | right */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

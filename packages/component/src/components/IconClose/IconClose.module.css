@@ -1,0 +1,9 @@
+/* IconClose — Figma node 51578:64959 */
+/* anatomy: root(svg) [ close-path ] */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

@@ -1,0 +1,1 @@
+export { CardProductVerticalListItem } from "./CardProductVerticalListItem";

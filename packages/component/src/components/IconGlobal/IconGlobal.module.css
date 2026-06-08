@@ -1,0 +1,9 @@
+/* IconGlobal — Figma node 51578:64849 */
+/* anatomy: root(svg) [ globe-shape (Subtract group) ] */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

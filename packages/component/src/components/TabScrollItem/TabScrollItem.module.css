@@ -1,0 +1,55 @@
+/* TabScrollItem — Figma node 50943:28304 */
+/* anatomy: root[ label, indicator? ]                              */
+/* selected variant: SemiBold label + 2px bottom indicator bar    */
+/* unselected variant: Medium label, secondary text color         */
+
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  cursor: pointer;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Selected state ── */
+.selected {
+  gap: var(--skt-spacing-12, 12px);
+}
+
+.selected .label {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+/* ── Unselected state ── */
+.unselected {
+  height: 35px;
+  justify-content: center;
+}
+
+.unselected .label {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+/* ── Active indicator bar (selected only) ── */
+.indicator {
+  height: 2px;
+  width: 100%;
+  background-color: var(--skt-color-fill-neutral-strong, #060c1f);
+  flex-shrink: 0;
+  border-radius: 0;
+}

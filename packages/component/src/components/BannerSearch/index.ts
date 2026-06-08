@@ -1,1 +1,0 @@
-export { BannerSearch } from "./BannerSearch";

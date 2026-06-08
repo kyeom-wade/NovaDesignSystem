@@ -1,1 +1,0 @@
-export { ThumbnailLogoItem } from "./ThumbnailLogoItem";

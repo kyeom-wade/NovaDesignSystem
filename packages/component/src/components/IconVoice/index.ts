@@ -1,0 +1,1 @@
+export { IconVoice } from "./IconVoice";

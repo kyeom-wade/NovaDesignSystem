@@ -1,0 +1,200 @@
+/* InputItem — Figma node 50943:28032
+   anatomy: wrap[ label?, fieldRow[ textField[ text, caret? ], btn? ], helpRow? ]
+   States: Default | Focused | Typing | Typed | Disabled  ×  error: true | false
+*/
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-8, 8px);
+  align-items: flex-start;
+  width: 353px;
+  padding: var(--skt-spacing-8, 8px) 0;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  position: relative;
+  isolation: isolate;
+}
+
+/* ── Label ─────────────────────────────────────────────── */
+.labelRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.label {
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.labelError {
+  composes: label;
+  color: var(--skt-color-text-danger-primary, #e7313d);
+}
+
+/* ── Field row ──────────────────────────────────────────── */
+.fieldRow {
+  display: flex;
+  gap: var(--skt-spacing-8, 8px);
+  align-items: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Text field base */
+.textField {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 1px;
+  height: var(--skt-component-input-height, 48px);
+  align-items: center;
+  padding: 14px var(--skt-spacing-20, 20px);
+  border-radius: var(--skt-radius-16, 16px);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Default / Typed — white with subtle border */
+.textFieldDefault {
+  background-color: var(--skt-color-bg-layer-floating, #ffffff);
+  border: 1px solid var(--skt-color-border-neutral-secondary, #f4f5fa);
+}
+
+/* Focused / Typing — active tint background */
+.textFieldFocused {
+  background-color: var(--skt-color-palette-blue-50, #f3f5fc);
+  border: none;
+}
+
+/* Error state — danger tint */
+.textFieldError {
+  background-color: var(--skt-color-fill-danger-secondary, #fff2f0);
+  border: none;
+}
+
+/* Disabled state */
+.textFieldDisabled {
+  background-color: var(--skt-color-fill-disabled-default, rgba(6, 12, 31, 0.05));
+  border: none;
+}
+
+/* ── Field text ─────────────────────────────────────────── */
+.fieldTextPlaceholder {
+  flex: 1 0 0;
+  min-width: 1px;
+  font-size: var(--skt-typography-font-size-600, 15px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-300, 140%);
+  letter-spacing: -0.05em;
+  color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fieldTextPrimary {
+  composes: fieldTextPlaceholder;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+}
+
+.fieldTextDisabled {
+  composes: fieldTextPlaceholder;
+  color: var(--skt-color-text-disabled-default, rgba(6, 12, 31, 0.2));
+}
+
+/* ── Caret (blinking cursor shown in Typing state) ──────── */
+.caret {
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  background-color: var(--skt-color-fill-neutral-strong, #060c1f);
+  border-radius: var(--skt-radius-full, 9999px);
+  flex-shrink: 0;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── Button ─────────────────────────────────────────────── */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  height: var(--skt-component-input-height, 48px);
+  padding: 10px var(--skt-spacing-16, 16px);
+  border-radius: var(--skt-radius-16, 16px);
+  background-color: var(--skt-color-palette-gray-200, #e2e6f1);
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  background-color: var(--skt-color-palette-gray-300, #d2d9eb);
+}
+
+.btn:active {
+  background-color: var(--skt-color-palette-gray-400, #b4c0de);
+}
+
+.btnDisabled {
+  composes: btn;
+  background-color: var(--skt-color-fill-disabled-default, rgba(6, 12, 31, 0.05));
+  cursor: not-allowed;
+}
+
+.btnText {
+  flex: 1 0 0;
+  min-width: 1px;
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  text-align: center;
+}
+
+.btnTextDisabled {
+  composes: btnText;
+  color: var(--skt-color-text-disabled-default, rgba(6, 12, 31, 0.2));
+}
+
+/* ── Help text ──────────────────────────────────────────── */
+.helpRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.helpText {
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.helpTextError {
+  composes: helpText;
+  color: var(--skt-color-text-danger-secondary, #f36c69);
+}

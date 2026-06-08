@@ -1,0 +1,1 @@
+export { CellRightTableItem } from "./CellRightTableItem";

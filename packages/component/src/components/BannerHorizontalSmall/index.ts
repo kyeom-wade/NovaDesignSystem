@@ -1,1 +1,0 @@
-export { BannerHorizontalSmall } from "./BannerHorizontalSmall";

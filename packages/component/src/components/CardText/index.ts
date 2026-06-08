@@ -1,1 +1,0 @@
-export { CardText } from "./CardText";

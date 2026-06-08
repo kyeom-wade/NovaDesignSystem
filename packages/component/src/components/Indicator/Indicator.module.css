@@ -1,4 +1,0 @@
-/* part component — Figma .접두(부속) */
-.wrap{display:inline-flex;align-items:center;gap:8px;padding:0 2px;}
-.dot{width:4px;height:4px;border-radius:9999px;background:rgba(6,12,31,0.2);}
-.on{background:#05001a;}

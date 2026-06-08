@@ -1,0 +1,10 @@
+/* IconHeart — Figma node 51578:64730 */
+/* anatomy: root(svg) [ path(heart) ] */
+/* variants: line (outline) | fill (solid) */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

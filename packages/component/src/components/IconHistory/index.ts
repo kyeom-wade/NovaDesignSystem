@@ -1,0 +1,1 @@
+export { IconHistory } from "./IconHistory";

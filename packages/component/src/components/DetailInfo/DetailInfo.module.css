@@ -1,0 +1,418 @@
+/* DetailInfo — Figma node 51083:55311
+   anatomy (Product): wrap > textGroupProductDetail, priceGroup[ textPrice, badgeList ], couponButton, usageRow, detailInfoItem
+   anatomy (Brand): wrap > brandTitle[ brandLogo, textBrandName[ brandTextGroupDetail, brandBadgeList ] ]
+*/
+
+/* ─── Root ─────────────────────────────────────────────── */
+.wrap {
+  display: flex;
+  flex-direction: column;
+  width: 393px;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  box-sizing: border-box;
+}
+
+.wrapProduct {
+  background-color: var(--skt-color-bg-layer-default, #ffffff);
+  padding: 24px 20px 20px;
+  gap: var(--skt-spacing-12, 12px);
+  align-items: flex-start;
+}
+
+.wrapBrand {
+  background-color: #005dad;
+  padding: 131px 20px 24px;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/* ─── Product: 상품명 + 하트 토글 ─────────────────────── */
+.textGroupProductDetail {
+  display: flex;
+  gap: var(--skt-spacing-16, 16px);
+  align-items: flex-start;
+  width: 353px;
+  flex-shrink: 0;
+}
+
+.textProduct {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-4, 4px);
+  flex: 1 0 0;
+  min-width: 0;
+  align-items: flex-start;
+}
+
+.txtCategory {
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  white-space: nowrap;
+}
+
+.productName {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+}
+
+.toggleItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--skt-spacing-4, 4px);
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--skt-color-icon-neutral-primary, #060c1f);
+  border-radius: var(--skt-radius-full, 9999px);
+}
+
+.heartIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--skt-color-icon-neutral-tertiary, rgba(6, 12, 31, 0.4));
+}
+
+/* ─── Product: 가격 그룹 ───────────────────────────────── */
+.priceGroup {
+  display: flex;
+  gap: var(--skt-spacing-12, 12px);
+  align-items: flex-end;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.textPrice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-8, 8px);
+  flex: 1 0 0;
+  min-width: 0;
+  align-items: flex-start;
+}
+
+.originalPrice {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
+  text-decoration: line-through;
+  text-decoration-skip-ink: none;
+}
+
+.discountRow {
+  display: flex;
+  gap: var(--skt-spacing-4, 4px);
+  align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.discountRate {
+  font-size: var(--skt-typography-font-size-800, 18px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.05em;
+  color: var(--skt-color-text-brand-primary, #3617ce);
+  flex-shrink: 0;
+}
+
+.salePrice {
+  font-size: var(--skt-typography-font-size-800, 18px);
+  font-weight: var(--skt-typography-font-weight-bold, 700);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.05em;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  flex-shrink: 0;
+}
+
+.period {
+  font-size: var(--skt-typography-font-size-400, 13px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  flex-shrink: 0;
+}
+
+/* ─── Product: 배지 리스트 ─────────────────────────────── */
+.badgeList {
+  display: flex;
+  gap: 3px;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.badge {
+  display: inline-flex;
+  height: 17px;
+  align-items: center;
+  justify-content: center;
+  padding: 2px var(--skt-spacing-6, 6px);
+  border-radius: var(--skt-radius-4, 4px);
+  background-color: var(--skt-color-fill-neutral-secondary, rgba(6, 12, 31, 0.1));
+  mix-blend-mode: multiply;
+  font-size: var(--skt-typography-font-size-100, 10px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* ─── Product: 쿠폰 버튼 ──────────────────────────────── */
+.couponButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 6px var(--skt-spacing-12, 12px);
+  border: 1px solid var(--skt-color-border-neutral-strong, #d2d9eb);
+  border-radius: var(--skt-radius-full, 9999px);
+  background: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.couponLabel {
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.arrowIcon {
+  width: 12px;
+  height: 12px;
+  color: var(--skt-color-icon-neutral-primary, #060c1f);
+  flex-shrink: 0;
+}
+
+/* ─── Product: 사용처 ─────────────────────────────────── */
+.usageRow {
+  display: flex;
+  gap: var(--skt-spacing-6, 6px);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.usageLabel,
+.usageValue {
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
+  white-space: nowrap;
+}
+
+.usageDivider {
+  background-color: var(--skt-color-palette-gray-alpha-200, rgba(6, 12, 31, 0.2));
+  height: 10px;
+  width: 1px;
+  flex-shrink: 0;
+}
+
+/* ─── Product: 상세 정보 링크 아이템 ─────────────────── */
+.detailInfoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--skt-spacing-12, 12px) var(--skt-spacing-16, 16px);
+  background-color: var(--skt-color-bg-layer-default, #ffffff);
+  border: 1.5px solid var(--skt-color-border-neutral-secondary, #ebeef6);
+  border-radius: var(--skt-radius-16, 16px);
+  width: 353px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.detailInfoLeft {
+  display: flex;
+  gap: var(--skt-spacing-10, 10px);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.detailInfoThumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--skt-radius-full, 9999px);
+  background-color: var(--skt-color-fill-neutral-primary, #f4f5fa);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.detailInfoThumbText {
+  font-size: var(--skt-typography-font-size-100, 10px);
+  font-weight: var(--skt-typography-font-weight-bold, 700);
+  color: var(--skt-color-text-brand-primary, #3617ce);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.detailInfoLabel {
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-300, 140%);
+  letter-spacing: -0.05em;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.detailInfoArrow {
+  width: 16px;
+  height: 16px;
+  color: var(--skt-color-icon-neutral-tertiary, rgba(6, 12, 31, 0.4));
+  flex-shrink: 0;
+}
+
+/* ─── Brand variant ───────────────────────────────────── */
+.brandTitle {
+  display: flex;
+  gap: var(--skt-spacing-12, 12px);
+  align-items: center;
+  width: 353px;
+  flex-shrink: 0;
+}
+
+.brandLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--skt-radius-full, 9999px);
+  background-color: var(--skt-color-bg-layer-default, #ffffff);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.brandLogoInner {
+  width: 64px;
+  height: 64px;
+  background-color: var(--skt-color-fill-neutral-secondary, rgba(6, 12, 31, 0.1));
+  border-radius: var(--skt-radius-full, 9999px);
+}
+
+.textBrandName {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-8, 8px);
+  flex: 1 0 0;
+  min-width: 0;
+  align-items: flex-start;
+}
+
+.brandTextGroupDetail {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.brandTextProduct {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-4, 4px);
+  flex: 1 0 0;
+  min-width: 0;
+  align-items: flex-start;
+}
+
+.brandCategory {
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: var(--skt-color-text-inverse-primary, #ffffff);
+  opacity: 0.4;
+  white-space: nowrap;
+}
+
+.brandName {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: var(--skt-color-text-inverse-primary, #ffffff);
+}
+
+.brandToggleItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brandToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.brandHeartIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--skt-color-text-inverse-primary, #ffffff);
+}
+
+.likeCount {
+  font-size: var(--skt-typography-font-size-400, 13px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+}
+
+/* ─── Brand: 배지 리스트 ───────────────────────────────── */
+.brandBadgeList {
+  display: flex;
+  gap: 3px;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.brandBadge {
+  display: inline-flex;
+  height: 17px;
+  align-items: center;
+  justify-content: center;
+  padding: 2px var(--skt-spacing-6, 6px);
+  border-radius: var(--skt-radius-4, 4px);
+  background-color: var(--skt-color-fill-inverse-primary, rgba(255, 255, 255, 0.2));
+  font-size: var(--skt-typography-font-size-100, 10px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+  text-align: center;
+}

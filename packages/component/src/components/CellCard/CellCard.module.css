@@ -1,0 +1,35 @@
+/* CellCard — Figma node 50985:53834 */
+/* anatomy: wrap[ group[ slot[ children ] ] ] */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  border-radius: var(--skt-radius-20, 20px);
+  width: 100%;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  box-sizing: border-box;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--skt-color-bg-layer-basement, #f4f5fa);
+  border-radius: var(--skt-radius-20, 20px);
+  padding: var(--skt-spacing-24, 24px);
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.slot {
+  height: 104px;
+  width: 100%;
+  border-radius: var(--skt-radius-12, 12px);
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}

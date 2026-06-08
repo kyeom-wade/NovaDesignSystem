@@ -1,1 +1,0 @@
-export { BadgeHome } from "./BadgeHome";

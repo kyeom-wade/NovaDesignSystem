@@ -1,0 +1,1 @@
+export { IconMovie } from "./IconMovie";

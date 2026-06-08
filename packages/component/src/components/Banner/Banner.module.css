@@ -1,0 +1,170 @@
+/* Banner — Figma node 50990:58936
+   anatomy: root[ group[ card[ imageArea, textGroup[ title, subText ] ], indicator[ dot×6 ] ] ]
+   variants: Small (h=72px, rounded-20) | Medium (h=112px, rounded-28)
+*/
+
+/* ── root / outer padding ─────────────────────────────────────────────── */
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding: var(--skt-spacing-2, 2px) var(--skt-spacing-20, 20px);
+  width: 100%;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  box-sizing: border-box;
+}
+
+/* ── group wrapper ────────────────────────────────────────────────────── */
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--skt-spacing-12, 12px);
+  width: 100%;
+}
+
+/* ── banner card (button reset) ───────────────────────────────────────── */
+.card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid var(--skt-color-palette-white-alpha-500, rgba(255, 255, 255, 0.5));
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--skt-color-fill-brand-primary, #3617ce);
+  outline-offset: 2px;
+}
+
+/* Small variant — 72 px, radius-20 */
+.cardSmall {
+  height: 72px;
+  border-radius: var(--skt-radius-20, 20px);
+  background-color: transparent;
+}
+
+/* Medium variant — 112 px, radius-28, frosted-glass fill */
+.cardMedium {
+  height: 112px;
+  border-radius: var(--skt-radius-28, 28px);
+  background-color: var(--skt-color-fill-inverse-primary, rgba(255, 255, 255, 0.2));
+}
+
+/* ── image area ───────────────────────────────────────────────────────── */
+.imageArea {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+}
+
+.imageAreaSmall {
+  width: 58px;
+  height: 40px;
+  right: 28px;
+  top: 16px;
+  border-radius: var(--skt-radius-20, 20px);
+}
+
+.imageAreaMedium {
+  width: 80px;
+  height: 80px;
+  right: 28px;
+  top: 16px;
+  border-radius: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imageSmall {
+  object-fit: contain;
+}
+
+.imageMedium {
+  object-fit: contain;
+}
+
+/* ── text group ───────────────────────────────────────────────────────── */
+.textGroup {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.textGroupSmall {
+  top: 15px;
+  left: 27px;
+  gap: var(--skt-spacing-4, 4px);
+}
+
+.textGroupMedium {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 209px;
+  padding: 26px var(--skt-spacing-28, 28px);
+  gap: var(--skt-spacing-2, 2px);
+  white-space: normal;
+}
+
+/* ── title text ───────────────────────────────────────────────────────── */
+.title {
+  margin: 0;
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+}
+
+.titleSmall {
+  font-size: var(--skt-typography-font-size-500, 14px);
+  letter-spacing: -0.56px;
+}
+
+.titleMedium {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  letter-spacing: -0.64px;
+}
+
+/* ── sub-text ─────────────────────────────────────────────────────────── */
+.subText {
+  margin: 0;
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.48px;
+  color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
+}
+
+/* ── dot indicator ────────────────────────────────────────────────────── */
+.indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-8, 8px);
+  padding: 0 var(--skt-spacing-2, 2px);
+}
+
+.dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: var(--skt-radius-full, 9999px);
+  background-color: var(--skt-color-palette-gray-alpha-200, rgba(6, 12, 31, 0.2));
+  flex-shrink: 0;
+}
+
+.dotActive {
+  background-color: var(--skt-color-fill-neutral-strong, #060c1f);
+}

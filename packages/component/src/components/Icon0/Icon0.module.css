@@ -1,0 +1,9 @@
+/* Icon0 — Figma node 51578:64790 */
+/* anatomy: root(svg) [ path(digit-0 glyph) ] */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

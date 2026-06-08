@@ -1,0 +1,9 @@
+/* IconMenu — Figma node 51578:64957 */
+/* anatomy: root(svg) [ three horizontal bars — hamburger/menu glyph ] */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

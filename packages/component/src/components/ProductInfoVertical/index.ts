@@ -1,1 +1,0 @@
-export { ProductInfoVertical } from "./ProductInfoVertical";

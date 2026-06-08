@@ -1,0 +1,1 @@
+export { IconBarcode } from "./IconBarcode";

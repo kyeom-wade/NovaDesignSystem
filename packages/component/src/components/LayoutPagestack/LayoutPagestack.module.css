@@ -1,0 +1,65 @@
+/* LayoutPagestack — Figma node 50943:28865
+   anatomy: root > titleRow?[ titleTextItem[ textItem[ title ] ] ] + contentsSlot[ children ]
+   Width: 393px canvas; horizontal padding 20px → inner width 353px.
+   Gap between title and contents slot: 16px.
+   ContentsSlot has a natural min-height of 69px (design placeholder height).
+*/
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--skt-spacing-16, 16px);
+  padding: var(--skt-spacing-24, 24px) var(--skt-spacing-20, 20px);
+  width: 393px;
+  overflow: hidden;
+  position: relative;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  box-sizing: border-box;
+}
+
+/* ── Title row ─────────────────────────────────────────────── */
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-16, 16px);
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.titleTextItem {
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+  min-width: 0;
+  position: relative;
+}
+
+.textItem {
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+  min-width: 0;
+  position: relative;
+}
+
+.title {
+  flex: 1 0 0;
+  min-width: 0;
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  margin: 0;
+  word-break: break-word;
+}
+
+/* ── Contents slot ─────────────────────────────────────────── */
+.contentsSlot {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  min-height: 69px;
+}

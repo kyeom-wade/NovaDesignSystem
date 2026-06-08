@@ -1,0 +1,111 @@
+/* FilterBar — Figma node 51157:52598
+   anatomy: root[ divider?, filter[ con[ countText, btnGroup?[ buttonItem+, btnDivider ] ] ] ]
+   variants: rightItem = "None" | "1Item" | "2Item"
+   height: 52px; padding: 16px 20px; full-width layout */
+
+.root {
+  position: relative;
+  width: 100%;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  background-color: var(--skt-color-bg-layer-default, #ffffff);
+}
+
+/* Bottom divider line — 1px, rendered at top of the container (matches Figma placement) */
+.divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--skt-color-border-neutral-secondary, #ebeef6);
+}
+
+/* Inner filter row — full width, 52px tall, horizontal padding 20px */
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  padding: var(--skt-spacing-16, 16px) var(--skt-spacing-20, 20px);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Row that holds count text on the left and action buttons on the right */
+.con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Count label: "전체 256 개" — medium 14px, secondary text color */
+.countText {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Right-side button group (2Item variant) */
+.btnGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-10, 10px);
+  flex-shrink: 0;
+}
+
+/* Vertical separator between sort and filter buttons (2Item variant) */
+.btnDivider {
+  width: 1px;
+  height: 12px;
+  background-color: var(--skt-color-border-neutral-secondary, #ebeef6);
+  flex-shrink: 0;
+}
+
+/* Individual action button (sort or filter) */
+.buttonItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--skt-spacing-2, 2px);
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+}
+
+.buttonItem:focus-visible {
+  outline: 2px solid var(--skt-color-border-brand-primary, #3617ce);
+  outline-offset: 2px;
+  border-radius: var(--skt-radius-4, 4px);
+}
+
+/* Button label text — regular 14px */
+.buttonText {
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  white-space: nowrap;
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+}
+
+/* 16×16 icon inside action buttons */
+.buttonIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--skt-color-icon-neutral-secondary, rgba(6, 12, 31, 0.6));
+}

@@ -1,0 +1,82 @@
+/* ChipItemQuicklinkItem — Figma node 50989:64700
+   anatomy: root[ iconWrap[ iconBg[ iconItem ] ], label ]
+   Size: ~92×40 canvas; pill shape; white-alpha-500 bg; 4px left / 12px right padding; 4px top/bottom */
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--skt-spacing-8, 8px);
+  padding: var(--skt-spacing-4, 4px) var(--skt-spacing-12, 12px) var(--skt-spacing-4, 4px) var(--skt-spacing-4, 4px);
+  background-color: var(--skt-color-palette-white-alpha-500, rgba(255, 255, 255, 0.5));
+  border-radius: var(--skt-radius-full, 9999px);
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--skt-color-fill-brand-primary, #3617ce);
+  outline-offset: 2px;
+}
+
+/* 32×32 circular icon container */
+.iconWrap {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--skt-radius-full, 9999px);
+  background-color: var(--skt-color-bg-layer-default, #ffffff);
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Inner background layer matching the icon background */
+.iconBg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--skt-color-bg-layer-default, #ffffff);
+}
+
+/* Centered 20×20 icon item */
+.iconItem {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.iconImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Placeholder shown when no iconSrc is provided */
+.iconPlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--skt-color-palette-gray-alpha-200, rgba(6, 12, 31, 0.2));
+  border-radius: 2px;
+}
+
+/* Label — 14px Medium, neutral-primary color, tight tracking */
+.label {
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-align: center;
+}

@@ -1,1 +1,0 @@
-export { LeftItem } from "./LeftItem";

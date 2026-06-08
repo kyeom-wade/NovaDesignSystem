@@ -1,0 +1,9 @@
+/* IconLocation — Figma node 51578:64788 */
+/* anatomy: root(svg) [ pin-body(teardrop) + center-dot ] */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

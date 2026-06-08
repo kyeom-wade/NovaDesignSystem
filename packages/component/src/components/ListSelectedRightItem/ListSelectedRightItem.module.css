@@ -1,4 +1,0 @@
-/* part component — Figma .접두(부속) */
-.solid{border:0;border-radius:8px;background:#05001a;color:#fff;padding:5px 10px;font-family:var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);font-size:12px;font-weight:600;cursor:pointer;}
-.text{border:0;background:none;color:rgba(6,12,31,0.6);font-family:var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);font-size:13px;font-weight:500;cursor:pointer;padding:0;}
-.icon{display:inline-flex;cursor:pointer;}

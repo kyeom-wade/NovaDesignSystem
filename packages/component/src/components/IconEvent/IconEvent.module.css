@@ -1,0 +1,9 @@
+/* IconEvent — Figma node 51578:64793 */
+/* anatomy: root(svg) [ g > g > path(calendar body+star) + path(left pin) + path(right pin) ] */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

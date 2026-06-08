@@ -1,0 +1,99 @@
+/* BottomGroupUpperItem — Figma node 51363:45164
+   anatomy: root[ listText[ labelCell[ titleBadge[ title ] ] ]
+                | listRightTable[ leftTextItem[ label ], rightTextItem[ value ] ] ]
+*/
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 353px;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+}
+
+/* ── Default variant ── */
+.listText {
+  display: flex;
+  align-items: center;
+  padding-bottom: var(--skt-spacing-16, 16px);
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.labelCell {
+  display: flex;
+  flex: 1 0 0;
+  gap: var(--skt-spacing-4, 4px);
+  align-items: center;
+  min-width: 0;
+}
+
+.titleBadge {
+  display: flex;
+  flex: 1 0 0;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.titleWrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.labelText {
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* ── Table variant ── */
+.listRightTable {
+  display: flex;
+  gap: var(--skt-spacing-16, 16px);
+  align-items: center;
+  padding-bottom: var(--skt-spacing-16, 16px);
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.leftTextItem {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.tableLabel {
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  white-space: nowrap;
+  margin: 0;
+}
+
+.rightTextItem {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.tableValue {
+  flex: 1 0 0;
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  text-align: right;
+  min-width: 0;
+  margin: 0;
+}

@@ -1,0 +1,10 @@
+/* IconDropdown — Figma node 51578:64728 */
+/* anatomy: root(svg) [ caret-triangle ] */
+/* variants: DropdownDown (caret down) | DropdownUp (caret up) */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

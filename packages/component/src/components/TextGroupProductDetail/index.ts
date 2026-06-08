@@ -1,0 +1,1 @@
+export { TextGroupProductDetail } from "./TextGroupProductDetail";

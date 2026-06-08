@@ -1,0 +1,11 @@
+/* IconGraphic — Figma node 51561:34948 */
+/* anatomy: root(svg) [ variant-specific paths ] */
+/* 12 variants: Family, Data, Bill, Device, Content, Point, Subscribe, */
+/*              DataUnlimited, Message, Search, Video, Dummy */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  overflow: visible;
+}

@@ -1,0 +1,10 @@
+/* IconDuoHeart — Figma node 51625:63423 */
+/* anatomy: root(svg) [ path(back-heart, tertiary) | path(front-heart, primary) ] */
+/* variants: line (outline) | fill (solid) */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

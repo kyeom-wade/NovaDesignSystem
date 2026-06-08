@@ -1,0 +1,9 @@
+/* IconDummy — Figma node 51578:64791 */
+/* anatomy: root(svg) [ corner-bracket-path ] */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

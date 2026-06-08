@@ -1,0 +1,212 @@
+/* NavigationBar — Figma node 51287:55934
+   anatomy: root[ aiBtnExpanded|aiBtnCollapsed, menuBtnExpanded|menuBtnCollapsed[ tabItem... ] ]
+   Width: 393px canvas (20px side padding → 353px inner).
+   Heights: all interactive pills are 52px.
+   Gap between AI button and menu button: 8px.
+*/
+
+/* ── Root ── */
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--skt-spacing-8, 8px);
+  padding: 0 var(--skt-spacing-20, 20px);
+  width: 393px;
+  box-sizing: border-box;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+}
+
+/* ── Shared pill surface ── */
+.aiBtnExpanded,
+.aiBtnCollapsed,
+.menuBtnExpanded,
+.menuBtnCollapsed {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* ── AI Button: expanded (full search bar) ── */
+.aiBtnExpanded {
+  flex: 1 0 0;
+  min-width: 0;
+  height: 52px;
+  padding-left: var(--skt-spacing-20, 20px);
+  padding-right: 12px;
+  border-radius: 26px;
+  gap: var(--skt-spacing-8, 8px);
+}
+
+/* ── AI Button: collapsed (icon-only pill) ── */
+.aiBtnCollapsed {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 26px;
+  justify-content: center;
+}
+
+/* AI input row (icon + text area) */
+.aiInput {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 0;
+  gap: var(--skt-spacing-8, 8px);
+  align-items: center;
+}
+
+.aiIconSm {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.aiTextArea {
+  flex: 1 0 0;
+  min-width: 0;
+  height: 22px;
+  overflow: hidden;
+}
+
+.aiPlaceholder {
+  margin: 0;
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: var(--skt-color-text-brand-primary, #3617ce);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Voice button inside expanded AI bar */
+.voiceBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--skt-radius-full, 9999px);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.voiceIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+/* Shared icon wrapper for collapsed AI / collapsed menu */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+/* ── Menu Button: expanded (three tabs) ── */
+.menuBtnExpanded {
+  flex: 1 0 0;
+  min-width: 0;
+  padding: var(--skt-spacing-4, 4px);
+  border-radius: var(--skt-radius-full, 9999px);
+  gap: var(--skt-spacing-2, 2px);
+}
+
+/* ── Menu Button: collapsed (single icon pill) ── */
+.menuBtnCollapsed {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  padding: var(--skt-spacing-4, 4px);
+  border-radius: var(--skt-radius-full, 9999px);
+  justify-content: center;
+}
+
+/* ── Tab Items ── */
+
+/* Shared tab item base */
+.tabItem {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--skt-spacing-2, 2px);
+  height: 52px;
+  overflow: hidden;
+  border-radius: var(--skt-radius-full, 9999px);
+  padding: 5px 35px;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Selected tab pill (highlighted background) */
+.tabSelected {
+  background-color: var(--skt-color-palette-gray-200, #e2e6f1);
+}
+
+/* Unselected tab (transparent) */
+.tabUnselected {
+  background-color: transparent;
+}
+
+/* Icon-only tab (collapsed menu — no label, pill is the circle) */
+.tabItemIconOnly {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--skt-radius-full, 9999px);
+  cursor: pointer;
+  outline: none;
+}
+
+.tabIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.tabLabel {
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  text-align: center;
+  min-width: 100%;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tabLabelActive {
+  color: var(--skt-color-text-brand-primary, #3617ce);
+}
+
+.tabLabelInactive {
+  color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
+}

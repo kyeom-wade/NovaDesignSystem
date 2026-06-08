@@ -1,0 +1,23 @@
+/* CellBoxItem — Figma node 51273:84394 */
+/* anatomy: wrap[ slot[ children ] ] */
+/* Note: When using a Divider inside this box, add 8px padding above and below the Divider component */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--skt-spacing-12, 12px) var(--skt-spacing-16, 16px);
+  border-radius: var(--skt-radius-16, 16px);
+  background-color: var(--skt-color-bg-layer-basement, #f4f5fa);
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.slot {
+  width: 100%;
+  min-height: 100px;
+  position: relative;
+}

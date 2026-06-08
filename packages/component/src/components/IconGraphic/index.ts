@@ -1,0 +1,1 @@
+export { IconGraphic } from "./IconGraphic";

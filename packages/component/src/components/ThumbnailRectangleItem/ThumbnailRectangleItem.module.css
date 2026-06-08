@@ -1,0 +1,44 @@
+/* ThumbnailRectangleItem — Figma node 51157:54958
+   anatomy: root[ imgInner[ imgEl ], dimMultiply? ]
+   variants (width×height): 48*72 | 128*192 | 393*480
+   Portrait rectangle thumbnail; image fills the container via object-fit: cover.
+   Optional multiply-blend dim overlay mirrors ThumbnailSquareItem pattern. */
+
+.root {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ── size variants ── */
+.variant48x72   { width: 48px;  height: 72px;  }
+.variant128x192 { width: 128px; height: 192px; }
+.variant393x480 { width: 393px; height: 480px; }
+
+/* ── image layer ── */
+.imgInner {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.imgEl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* ── dim overlay ── */
+.dimMultiply {
+  position: absolute;
+  inset: 0;
+  background-color: var(--skt-color-palette-gray-alpha-50, rgba(6, 12, 31, 0.05));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}

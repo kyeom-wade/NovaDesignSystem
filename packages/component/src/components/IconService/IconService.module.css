@@ -1,0 +1,10 @@
+/* IconService — Figma node 51578:64906 */
+/* anatomy: root(svg) [ circle-plus-union ] */
+/* variant: single glyph — circle with plus symbol (부가서비스) */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

@@ -1,15 +1,320 @@
-/* ButtonItem — 섹션 우측 보조 텍스트 버튼 (Figma 9861:46125) */
-.btn {
-	display: inline-flex;
-	align-items: center;
-	border: 0;
-	background: none;
-	padding: 0;
-	cursor: pointer;
-	font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
-	font-size: 13px;
-	font-weight: 500;
-	line-height: 1.3;
-	letter-spacing: -0.04em;
-	color: rgba(6, 12, 31, 0.6);
+/* ButtonItem — Figma node 50943:30788 */
+/* anatomy: root(button) [ label(span) | loader(span[dots]) | iconWrap(span>svg) ] */
+/* variants: Primary · Secondary · Outline · Text · TextIcon */
+/* sizes: Small=28px · Medium=36px · Large=48px · XLarge=56px */
+/* states: Default · Loading · Disabled */
+/* danger=on → red palette for Primary/Secondary/Outline */
+
+/* ─────────────────────────────────────────
+   Base root
+───────────────────────────────────────── */
+.root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: none;
+  border-radius: var(--skt-radius-16, 16px);
+  padding: 0 16px;
+  cursor: pointer;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: none;
+  transition: background-color 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────
+   Size variants
+───────────────────────────────────────── */
+.size-Small {
+  height: 28px;
+  padding: 0 12px;
+  border-radius: var(--skt-radius-12, 12px);
+  font-size: var(--skt-typography-font-size-500, 14px);
+}
+
+.size-Medium {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: var(--skt-radius-12, 12px);
+  font-size: var(--skt-typography-font-size-500, 14px);
+}
+
+.size-Large {
+  height: 48px;
+  padding: 0 16px;
+  border-radius: var(--skt-radius-16, 16px);
+  font-size: var(--skt-typography-font-size-500, 14px);
+}
+
+.size-XLarge {
+  height: 56px;
+  padding: 0 32px;
+  border-radius: var(--skt-radius-20, 20px);
+  font-size: var(--skt-typography-font-size-700, 16px);
+  letter-spacing: -0.04em;
+  box-shadow: 0 8px 8px var(--skt-color-shadow-default, rgba(6, 12, 31, 0.2));
+}
+
+/* ─────────────────────────────────────────
+   Variant: Primary
+───────────────────────────────────────── */
+.variant-Primary {
+  background-color: var(--skt-color-fill-brand-primary, #3617ce);
+  color: var(--skt-color-text-inverse-primary, #ffffff);
+  border: none;
+}
+
+.variant-Primary:not(:disabled):not(.loading):hover {
+  background-color: #2e14b8;
+}
+
+.variant-Primary:not(:disabled):not(.loading):active {
+  opacity: 0.85;
+}
+
+/* ─────────────────────────────────────────
+   Variant: Secondary
+───────────────────────────────────────── */
+.variant-Secondary {
+  background-color: var(--skt-color-palette-gray-200, #e2e6f1);
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  border: none;
+}
+
+.variant-Secondary:not(:disabled):not(.loading):hover {
+  background-color: var(--skt-color-palette-gray-300, #d2d9eb);
+}
+
+.variant-Secondary:not(:disabled):not(.loading):active {
+  opacity: 0.8;
+}
+
+/* ─────────────────────────────────────────
+   Variant: Outline
+───────────────────────────────────────── */
+.variant-Outline {
+  background-color: transparent;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  border: 1px solid var(--skt-color-border-neutral-strong, #d2d9eb);
+}
+
+.variant-Outline:not(:disabled):not(.loading):hover {
+  background-color: var(--skt-color-fill-neutral-tertiary, rgba(6, 12, 31, 0.05));
+}
+
+.variant-Outline:not(:disabled):not(.loading):active {
+  opacity: 0.75;
+}
+
+/* ─────────────────────────────────────────
+   Variant: Text
+───────────────────────────────────────── */
+.variant-Text {
+  background-color: transparent;
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  height: auto;
+  box-shadow: none;
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+}
+
+.variant-Text:not(:disabled):hover {
+  opacity: 0.75;
+}
+
+/* ─────────────────────────────────────────
+   Variant: TextIcon
+───────────────────────────────────────── */
+.variant-TextIcon {
+  background-color: transparent;
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  height: auto;
+  box-shadow: none;
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  gap: 2px;
+}
+
+.variant-TextIcon:not(:disabled):hover {
+  opacity: 0.75;
+}
+
+/* ─────────────────────────────────────────
+   Danger modifier (Primary / Secondary / Outline)
+───────────────────────────────────────── */
+.variant-Primary.danger {
+  background-color: var(--skt-color-fill-danger-primary, #e7313d);
+  color: var(--skt-color-text-inverse-primary, #ffffff);
+}
+
+.variant-Primary.danger:not(:disabled):not(.loading):hover {
+  background-color: #cc2935;
+}
+
+.variant-Secondary.danger {
+  background-color: var(--skt-color-fill-danger-secondary, #fff2f0);
+  color: var(--skt-color-text-danger-primary, #e7313d);
+}
+
+.variant-Secondary.danger:not(:disabled):not(.loading):hover {
+  background-color: #ffd4d0;
+}
+
+.variant-Outline.danger {
+  background-color: transparent;
+  color: var(--skt-color-text-danger-primary, #e7313d);
+  border-color: var(--skt-color-fill-danger-primary, #e7313d);
+}
+
+.variant-Outline.danger:not(:disabled):not(.loading):hover {
+  background-color: var(--skt-color-fill-danger-secondary, #fff2f0);
+}
+
+/* ─────────────────────────────────────────
+   Disabled state
+───────────────────────────────────────── */
+.disabled,
+.root:disabled {
+  background-color: var(--skt-color-fill-neutral-tertiary, rgba(6, 12, 31, 0.05));
+  color: var(--skt-color-text-neutral-quaternary, rgba(6, 12, 31, 0.2));
+  border-color: transparent;
+  box-shadow: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.variant-Text.disabled,
+.variant-Text:disabled,
+.variant-TextIcon.disabled,
+.variant-TextIcon:disabled {
+  background-color: transparent;
+  color: var(--skt-color-text-neutral-quaternary, rgba(6, 12, 31, 0.2));
+}
+
+.variant-Outline.disabled,
+.variant-Outline:disabled {
+  background-color: transparent;
+  border-color: var(--skt-color-fill-neutral-tertiary, rgba(6, 12, 31, 0.05));
+}
+
+/* ─────────────────────────────────────────
+   Loading state
+───────────────────────────────────────── */
+.loading {
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────
+   Label text
+───────────────────────────────────────── */
+.label {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.textLabel {
+  display: inline-block;
+  flex-shrink: 0;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+}
+
+/* ─────────────────────────────────────────
+   Icon
+───────────────────────────────────────── */
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconSvg {
+  display: block;
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+/* Icon size by button size */
+.size-Small .iconSvg {
+  width: 12px;
+  height: 12px;
+}
+
+.size-Medium .iconSvg {
+  width: 14px;
+  height: 14px;
+}
+
+.size-Large .iconSvg {
+  width: 16px;
+  height: 16px;
+}
+
+.size-XLarge .iconSvg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Text+Icon variants get a consistent small icon */
+.variant-Text .iconSvg,
+.variant-TextIcon .iconSvg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ─────────────────────────────────────────
+   Loading dots (Loader)
+───────────────────────────────────────── */
+.loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: var(--skt-radius-full, 9999px);
+  background-color: currentColor;
+  opacity: 0.5;
+  animation: buttonItemDotBounce 1.2s ease-in-out infinite;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes buttonItemDotBounce {
+  0%, 80%, 100% {
+    opacity: 0.3;
+    transform: scale(0.85);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

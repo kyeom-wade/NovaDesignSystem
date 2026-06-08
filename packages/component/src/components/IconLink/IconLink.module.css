@@ -1,0 +1,9 @@
+/* IconLink — Figma node 51578:64876 */
+/* anatomy: root(svg) [ link-glyph(g) [ left-ring-path, right-ring-path ] ] */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

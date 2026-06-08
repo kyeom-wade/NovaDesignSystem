@@ -1,0 +1,1 @@
+export { TextGroupProductHorizontal } from "./TextGroupProductHorizontal";

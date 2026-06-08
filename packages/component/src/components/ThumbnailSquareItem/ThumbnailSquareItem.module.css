@@ -1,0 +1,66 @@
+/* ThumbnailSquareItem — Figma node 50943:27813
+   anatomy: root[ img[ imgInner[ imgEl ] ], dimMultiply? ]
+   variants: size 40 | 48 | 64 | 128 | 160 | 172
+   The dim overlay uses mix-blend-mode: multiply with gray-alpha-50 */
+
+.root {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ── size variants ── */
+.size40  { width: 40px;  height: 40px; }
+.size48  { width: 48px;  height: 48px; }
+.size64  { width: 64px;  height: 64px; }
+.size128 { width: 128px; height: 128px; }
+.size160 { width: 160px; height: 160px; }
+.size172 { width: 172px; height: 172px; }
+
+/* ── image layer ── */
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* For size 128 Figma centers and stretches the image at 180×180 inside 128×128 */
+.imgCentered {
+  left: 50%;
+  transform: translateX(-50%);
+  aspect-ratio: 1 / 1;
+  width: 180px;
+  height: 180px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.imgInner {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.imgEl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* ── dim overlay ── */
+.dimMultiply {
+  position: absolute;
+  inset: 0;
+  background-color: var(--skt-color-palette-gray-alpha-50, rgba(6, 12, 31, 0.05));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}

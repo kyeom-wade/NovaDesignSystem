@@ -1,0 +1,1 @@
+export { CellCard } from "./CellCard";

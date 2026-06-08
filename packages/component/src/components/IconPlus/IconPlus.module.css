@@ -1,0 +1,9 @@
+/* IconPlus — Figma node 51578:64866 */
+/* anatomy: root(svg) [ horizontal-bar + vertical-bar ] */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

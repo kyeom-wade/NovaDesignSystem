@@ -1,0 +1,9 @@
+/* IconData — Figma node 51578:64851 */
+/* anatomy: root(svg) [ path(Union — three rising bar-chart columns) ] */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

@@ -1,0 +1,1 @@
+export { IconNavigate } from "./IconNavigate";

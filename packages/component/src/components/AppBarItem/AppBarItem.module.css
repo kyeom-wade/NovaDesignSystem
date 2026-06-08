@@ -1,0 +1,57 @@
+/* AppBarItem — Figma node 51300:90701
+   anatomy: root[ btn[ iconItem[ iconShape ] ] × (1|2|3) ]
+   - root: flex row, items-center, gap 12px
+   - btn: 28×28 tap target (icon 24px + 2px padding)
+   - iconItem: 24×24, overflow hidden
+   - iconShape: dummy placeholder; replaced by real icon in consumption
+*/
+
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--skt-spacing-12, 12px);
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+}
+
+/* Icon button: 2px padding around a 24px icon = 28px touch target */
+.btn {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--skt-spacing-2, 2px);
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--skt-radius-4, 4px);
+  /* touch area */
+  width: 28px;
+  height: 28px;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--skt-color-border-brand-primary, #3617ce);
+  outline-offset: 2px;
+}
+
+/* Inner icon area: 24×24, clips overflow */
+.iconItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+  color: var(--skt-color-icon-neutral-primary, #060c1f);
+}
+
+/* Placeholder shape rendered when no real icon is supplied (dummy variant from Figma) */
+.iconShape {
+  display: block;
+  width: 13px;   /* inset 8.33% of 24px ≈ 2px each side → 20px; Figma shows ~13px inner */
+  height: 13px;
+  border-radius: var(--skt-radius-4, 4px);
+  background-color: var(--skt-color-palette-gray-alpha-200, rgba(6, 12, 31, 0.2));
+}

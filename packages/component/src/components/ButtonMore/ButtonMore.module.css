@@ -1,2 +1,0 @@
-/* alias→전용 컴포넌트로 승격 (Figma 9638-78644 기반) */
-.btn{display:flex;align-items:center;justify-content:center;gap:2px;width:100%;box-sizing:border-box;padding:12px;border:1px solid #ebeef6;border-radius:12px;background:#fff;cursor:pointer;font-family:var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);font-size:14px;font-weight:600;color:#05001a;letter-spacing:-0.04em;}

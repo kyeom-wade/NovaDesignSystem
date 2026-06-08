@@ -1,1 +1,0 @@
-export { ButtonMoreProductItem } from "./ButtonMoreProductItem";

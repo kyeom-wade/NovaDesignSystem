@@ -1,0 +1,10 @@
+/* IconBack — Figma node 51578:64852 */
+/* anatomy: root(svg) [ back-chevron-path ] */
+/* usage: 뒤로가기 (back navigation) */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

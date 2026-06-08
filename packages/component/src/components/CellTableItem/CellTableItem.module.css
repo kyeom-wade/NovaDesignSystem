@@ -1,0 +1,93 @@
+/* CellTableItem — Figma node 50985:75705
+   anatomy: root[ labelCell[ labelText ], valueCell[ valueText ] ]
+   6 variants: ratio 20/30/40 × textSize 13/14
+*/
+
+/* ─── Root row ─────────────────────────────────────────────────────────────── */
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--skt-spacing-8, 8px);
+  padding-top: var(--skt-spacing-4, 4px);
+  padding-bottom: var(--skt-spacing-4, 4px);
+  width: 353px;
+  box-sizing: border-box;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+}
+
+/* ─── Label cell ───────────────────────────────────────────────────────────── */
+.labelCell {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ratio=20 → label shrinks to content, max 120px */
+.ratio--20 .labelCell {
+  max-width: 120px;
+}
+
+/* ratio=30 → label fixed 90px (set via inline style) */
+.ratio--30 .labelCell {
+  flex-shrink: 0;
+}
+
+/* ratio=40 → label fixed 120px (set via inline style) */
+.ratio--40 .labelCell {
+  flex-shrink: 0;
+}
+
+.labelText {
+  margin: 0;
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  font-style: normal;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  word-break: break-word;
+  white-space: nowrap;
+}
+
+/* When ratio is 30 or 40, label text is allowed to wrap / flex-grow */
+.ratio--30 .labelText,
+.ratio--40 .labelText {
+  white-space: normal;
+  flex: 1 0 0;
+  min-width: 1px;
+}
+
+/* ─── Value cell ───────────────────────────────────────────────────────────── */
+.valueCell {
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+  min-width: 1px;
+}
+
+.valueText {
+  margin: 0;
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  font-style: normal;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  word-break: break-word;
+  flex: 1 0 0;
+  min-width: 1px;
+}
+
+/* ─── Text size modifiers ──────────────────────────────────────────────────── */
+.textSize--13 .labelText,
+.textSize--13 .valueText {
+  font-size: var(--skt-typography-font-size-400, 13px);
+  letter-spacing: -0.52px; /* -0.04em × 13 */
+}
+
+.textSize--14 .labelCell {
+  height: 20px;
+}
+
+.textSize--14 .labelText,
+.textSize--14 .valueText {
+  font-size: var(--skt-typography-font-size-500, 14px);
+  letter-spacing: -0.56px; /* -0.04em × 14 */
+}

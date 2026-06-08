@@ -1,0 +1,89 @@
+/* BadgeItem — Figma node 50943:27966 */
+/* anatomy: root[ label ] */
+/* Variants: size(Small|Large) × color(Neutral|Strong|Brand|Inverse) */
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: var(--skt-spacing-6, 6px);
+  padding-right: var(--skt-spacing-6, 6px);
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  box-sizing: border-box;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* ── Size variants ─────────────────────────────────── */
+.size-Small {
+  height: 17px;
+  padding-top: var(--skt-spacing-2, 2px);
+  padding-bottom: var(--skt-spacing-2, 2px);
+  border-radius: var(--skt-radius-4, 4px);
+}
+
+.size-Large {
+  height: 22px;
+  padding-top: var(--skt-spacing-4, 4px);
+  padding-bottom: var(--skt-spacing-4, 4px);
+  border-radius: var(--skt-radius-6, 6px);
+}
+
+/* ── Color variants ────────────────────────────────── */
+
+/* Neutral — light gray bg, secondary text */
+.color-Neutral {
+  background-color: var(--skt-color-fill-neutral-secondary, rgba(6, 12, 31, 0.1));
+  mix-blend-mode: multiply;
+}
+
+/* Strong — near-black bg, inverse (white) text */
+.color-Strong {
+  background-color: var(--skt-color-fill-neutral-strong, #060c1f);
+}
+
+/* Brand — brand purple bg, inverse (white) text */
+.color-Brand {
+  background-color: var(--skt-color-fill-brand-primary, #3617ce);
+}
+
+/* Inverse — white/translucent bg, inverse (white) text */
+.color-Inverse {
+  background-color: var(--skt-color-fill-inverse-primary, rgba(255, 255, 255, 0.2));
+  mix-blend-mode: multiply;
+}
+
+/* ── Label ─────────────────────────────────────────── */
+.label {
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  white-space: nowrap;
+  word-break: break-word;
+  text-align: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Small label — 10px, -0.04em tracking */
+.size-Small .label {
+  font-size: var(--skt-typography-font-size-100, 10px);
+  letter-spacing: -0.04em;
+}
+
+/* Large label — 11px, -0.04em tracking */
+.size-Large .label {
+  font-size: var(--skt-typography-font-size-200, 11px);
+  letter-spacing: -0.04em;
+}
+
+/* Neutral color uses secondary text color */
+.color-Neutral .label {
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+}
+
+/* Strong, Brand, Inverse use inverse (white) text */
+.color-Strong .label,
+.color-Brand .label,
+.color-Inverse .label {
+  color: var(--skt-color-text-inverse-primary, #ffffff);
+}

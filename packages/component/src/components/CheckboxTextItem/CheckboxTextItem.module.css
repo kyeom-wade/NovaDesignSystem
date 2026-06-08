@@ -1,0 +1,57 @@
+/* CheckboxTextItem — Figma node 50943:27986 */
+/* anatomy: root[ checkboxWrap[ checkboxIcon(svg) ], label(p) ] */
+/* Variants: selection=Off|On × disabled=Off|On → 4 states */
+
+.root {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--skt-spacing-8, 8px);
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  outline: none;
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--skt-color-fill-brand-primary, #3617ce);
+  outline-offset: 2px;
+  border-radius: var(--skt-radius-4, 4px);
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.checkboxWrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.checkboxIcon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.label {
+  flex: 1 0 0;
+  min-width: 1px;
+  margin: 0;
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  font-style: normal;
+}
+
+.disabled .label {
+  color: var(--skt-color-text-disabled-default, rgba(6, 12, 31, 0.2));
+}

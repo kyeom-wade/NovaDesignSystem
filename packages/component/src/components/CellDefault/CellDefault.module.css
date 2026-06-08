@@ -1,0 +1,69 @@
+/* CellDefault — Figma node 51819:84096 */
+/* anatomy: root[ titleItem?[ cellText[ titleBadge[ title ] ] ], cellItem[ children ] ] */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--skt-spacing-4, 4px);
+  align-items: stretch;
+  padding-bottom: var(--skt-spacing-8, 8px);
+  width: 100%;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+}
+
+/* Title row — py-4 vertical padding, full width */
+.titleItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--skt-spacing-4, 4px);
+  padding-bottom: var(--skt-spacing-4, 4px);
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* CellTextItem wrapper — flex row, fills available width */
+.cellText {
+  display: flex;
+  flex: 1 0 0;
+  gap: var(--skt-spacing-4, 4px);
+  align-items: center;
+  min-width: 0;
+}
+
+/* title+badge group */
+.titleBadge {
+  display: flex;
+  flex: 1 0 0;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+/* title inner wrap */
+.titleWrap {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  min-width: 0;
+}
+
+/* title text — 14px SemiBold, line-height 1.3, letter-spacing -0.05em */
+.title {
+  flex: 1 0 0;
+  min-width: 0;
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  margin: 0;
+  word-break: break-word;
+}
+
+/* CellItem slot — 100px tall placeholder area */
+.cellItem {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100px;
+}

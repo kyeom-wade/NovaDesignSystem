@@ -1,0 +1,25 @@
+/* CaretItem — Figma node 51715:87224 */
+/* anatomy: root — 1px wide × 20px tall pill with brand fill; used as a tab/navigation caret marker */
+
+.root {
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  border-radius: var(--skt-radius-full, 9999px);
+  flex-shrink: 0;
+}
+
+/* variant: brand (default) */
+.variant-brand {
+  background-color: var(--skt-color-fill-brand-primary, #3617ce);
+}
+
+/* variant: neutral */
+.variant-neutral {
+  background-color: var(--skt-color-fill-neutral-strong, #060c1f);
+}
+
+/* variant: inverse */
+.variant-inverse {
+  background-color: var(--skt-color-text-inverse-primary, #ffffff);
+}

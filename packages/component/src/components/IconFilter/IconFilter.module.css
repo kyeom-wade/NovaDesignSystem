@@ -1,0 +1,10 @@
+/* IconFilter — Figma node 51578:64734 */
+/* anatomy: root(svg) [ top-slider-line + top-circle-toggle + bottom-slider-line + bottom-circle-toggle ] */
+/* variants: line (outline rings) | fill (solid discs) */
+
+.root {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color is inherited from currentColor — do not set color here */
+}

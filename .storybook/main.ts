@@ -18,10 +18,9 @@ const config: StorybookConfig = {
 			: Object.entries(cfg.resolve.alias ?? {}).map(([find, replacement]) => ({ find, replacement: replacement as string }));
 		// @cx/* 를 이 레포 내부 소스로 해소 (workspace 소스 직접 번들)
 		cfg.resolve.alias = [
-			{ find: "@cx/components/catalog", replacement: path.join(CX_SRC, "catalog.ts") },
 			{ find: "@cx/tokens/variables.css", replacement: path.join(TOKEN_SRC, "variables.css") },
 			{ find: "@cx/tokens/tailwind.css", replacement: path.join(TOKEN_SRC, "tailwind.css") },
-			{ find: "@cx/components", replacement: CX_SRC },
+			{ find: "@cx/components", replacement: path.join(CX_SRC, "index.ts") },
 			{ find: "@cx/tokens", replacement: path.join(TOKEN_SRC, "index.ts") },
 			...existing,
 		];

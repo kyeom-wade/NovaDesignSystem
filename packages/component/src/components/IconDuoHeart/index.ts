@@ -1,0 +1,1 @@
+export { IconDuoHeart } from "./IconDuoHeart";

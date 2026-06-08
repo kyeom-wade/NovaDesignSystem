@@ -1,0 +1,185 @@
+/* NavigationButtonItem — Figma node 51087:46531 */
+/* anatomy: root[ (AI collapsed) iconWrapper | (AI expanded) aiInput[ aiIconWrapper, textArea[placeholder] ], voiceBtn | (Menu Default/On) tabItem | (Menu Off) tabItem×2 ] */
+/* variants: AI(collapsed|expanded) | Menu(Default|On|Off) */
+
+/* ── Base root ── */
+.root {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ── AI variant: collapsed (icon-only 52×52 pill) ── */
+.aiCollapsed {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--skt-radius-full, 9999px);
+  justify-content: center;
+  gap: var(--skt-spacing-8, 8px);
+}
+
+/* ── AI variant: expanded bar (309×52, pill-ish corners) ── */
+.aiExpanded {
+  width: 309px;
+  height: 52px;
+  border-radius: 26px;
+  padding-left: var(--skt-spacing-20, 20px);
+  padding-right: var(--skt-spacing-12, 12px);
+  gap: 0;
+}
+
+/* ── Menu variant: Default — single icon-only pill 52×52 ── */
+.menuDefault {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--skt-radius-full, 9999px);
+  justify-content: center;
+  padding: var(--skt-spacing-4, 4px);
+}
+
+/* ── Menu variant: On — single tab pill 52×52 ── */
+.menuOn {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--skt-radius-full, 9999px);
+  justify-content: center;
+  padding: var(--skt-spacing-4, 4px);
+}
+
+/* ── Menu variant: Off — two-tab row 294px ── */
+.menuOff {
+  width: 294px;
+  border-radius: var(--skt-radius-full, 9999px);
+  gap: var(--skt-spacing-2, 2px);
+  padding: var(--skt-spacing-4, 4px);
+}
+
+/* ── AI expanded: input row ── */
+.aiInput {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  gap: var(--skt-spacing-8, 8px);
+  min-width: 0;
+}
+
+.aiIconWrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.textArea {
+  flex: 1 0 0;
+  height: 22px;
+  overflow: hidden;
+  position: relative;
+  min-width: 0;
+}
+
+.placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: -0.04em;
+  color: var(--skt-color-text-brand-primary, #3617ce);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+/* ── Voice button ── */
+.voiceBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--skt-radius-full, 9999px);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.voiceBtn:focus-visible {
+  outline: 2px solid var(--skt-color-text-brand-primary, #3617ce);
+  outline-offset: 2px;
+}
+
+/* ── Shared icon wrapper 24×24 ── */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+
+/* ── Tab item shared ── */
+.tabItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--skt-spacing-2, 2px);
+  overflow: hidden;
+  border-radius: var(--skt-radius-full, 9999px);
+  flex-shrink: 0;
+  /* Default/On: icon-only with tight padding */
+  padding: 5px;
+}
+
+/* Selected pill background (Menu Default & Off selected-tab) */
+.tabItem.menuDefault,
+.menuDefault .tabItem {
+  background-color: var(--skt-color-palette-gray-200, #e2e6f1);
+  width: 44px;
+  height: 44px;
+}
+
+/* Indeterminate: no background, minimal padding */
+.tabIndeterminate {
+  background-color: transparent;
+  padding: 5px;
+}
+
+/* Full-width tab for Menu Off layout */
+.tabFull {
+  flex: 1 0 0;
+  min-width: 0;
+  height: 52px;
+  padding: 5px 35px;
+  background-color: transparent;
+}
+
+/* Tab label text */
+.tabLabel {
+  display: block;
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
+  text-align: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 100%;
+}

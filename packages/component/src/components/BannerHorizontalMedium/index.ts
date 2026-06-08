@@ -1,1 +1,0 @@
-export { BannerHorizontalMedium } from "./BannerHorizontalMedium";

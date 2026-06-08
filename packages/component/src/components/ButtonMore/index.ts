@@ -1,1 +1,0 @@
-export { ButtonMore } from "./ButtonMore";

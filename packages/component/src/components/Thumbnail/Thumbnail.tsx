@@ -1,40 +1,64 @@
+import React from "react";
 import styles from "./Thumbnail.module.css";
+// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .Thumbnail (node 51521:64384)
+// anatomy: root[ imageLayer[ img ], indicatorRow[ dot×count ] ]
 
-interface ThumbnailProps {
-	type?: "Product" | "Brand";
-	imageSrc?: string;
-	brandName?: string;
-	brandDesc?: string;
-	category?: string;
-	likeCount?: string | number;
-	badges?: readonly string[];
-	totalDots?: number;
-	activeDotIndex?: number;
+interface Props {
+  /** Product thumbnail image source URL */
+  src?: string;
+  /** Alt text for the thumbnail image */
+  alt?: string;
+  /** Total number of indicator dots shown at the bottom */
+  dotCount?: number;
+  /** Zero-based index of the active (selected) dot */
+  activeIndex?: number;
+  /** Called when an indicator dot is clicked; receives the clicked index */
+  onDotClick?: (index: number) => void;
 }
 
-export function Thumbnail(props: ThumbnailProps) {
-	const isBrand = String(props.type ?? "").toLowerCase() === "brand";
-	const total = props.totalDots ?? 0;
-	const active = props.activeDotIndex ?? 0;
-	return (
-		<div className={styles.wrap} data-cx-component="Thumbnail" data-type={isBrand ? "Brand" : "Product"}>
-			<div className={styles.image}>
-				{props.imageSrc ? <img className={styles.img} src={props.imageSrc} alt="" /> : null}
-				{total > 1 ? (
-					<div className={styles.indicator}>
-						{Array.from({ length: total }).map((_, i) => (
-							<span key={i} className={`${styles.dot} ${i === active ? styles.dotOn : ""}`} />
-						))}
-					</div>
-				) : null}
-			</div>
-			{isBrand && (props.brandName || props.brandDesc) ? (
-				<div className={styles.brandInfo}>
-					{props.brandName ? <span className={styles.brandName}>{props.brandName}</span> : null}
-					{props.brandDesc ? <span className={styles.brandDesc}>{props.brandDesc}</span> : null}
-					{props.likeCount != null ? <span className={styles.like}>♥ {props.likeCount}</span> : null}
-				</div>
-			) : null}
-		</div>
-	);
+export function Thumbnail({
+  src = "https://www.figma.com/api/mcp/asset/7dd2c32a-c2f4-44ac-b193-e948b7230443",
+  alt = "",
+  dotCount = 6,
+  activeIndex = 0,
+  onDotClick,
+}: Props) {
+  const dots = Array.from({ length: dotCount }, (_, i) => i);
+
+  return (
+    <div className={styles.root} data-cx-component="Thumbnail">
+      {/* Full-bleed product image */}
+      <div className={styles.imageLayer}>
+        <img className={styles.img} src={src} alt={alt} />
+      </div>
+
+      {/* Page indicator dots */}
+      <div
+        className={styles.indicatorRow}
+        role="tablist"
+        aria-label="페이지 인디케이터"
+      >
+        {dots.map((i) => (
+          <span
+            key={i}
+            className={[
+              styles.dot,
+              i === activeIndex ? styles.dotActive : styles.dotInactive,
+            ].join(" ")}
+            role="tab"
+            aria-selected={i === activeIndex}
+            aria-label={`${i + 1} / ${dotCount}`}
+            tabIndex={i === activeIndex ? 0 : -1}
+            onClick={() => onDotClick?.(i)}
+            onKeyDown={(e) => {
+              if (onDotClick && (e.key === " " || e.key === "Enter")) {
+                e.preventDefault();
+                onDotClick(i);
+              }
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
