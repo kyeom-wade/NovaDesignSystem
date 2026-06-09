@@ -1,0 +1,142 @@
+{
+  "axes": {
+    "state": {
+      "label": "State",
+      "labelKo": "상태",
+      "description": "상호작용·검증으로 결정되는 기본 상태 축. 컴포넌트당 1개 값을 가진다."
+    },
+    "selection": {
+      "label": "Selection",
+      "labelKo": "선택",
+      "description": "선택/체크 여부 축. state 축과 독립적으로 공존한다."
+    },
+    "overlay": {
+      "label": "Overlay",
+      "labelKo": "오버레이",
+      "description": "화면 위에 등장/사라지는 오버레이 축. Figma On/Off 표기.",
+      "figmaToggle": true
+    },
+    "disclosure": {
+      "label": "Disclosure",
+      "labelKo": "펼침",
+      "description": "헤더를 유지한 채 콘텐츠가 펼쳐짐/접힘 되는 축. Figma On/Off 표기.",
+      "figmaToggle": true
+    }
+  },
+  "states": {
+    "Default": {
+      "axis": "state",
+      "ko": "기본",
+      "description": "아무런 상호작용이 없는 초기 상태"
+    },
+    "Pressed": {
+      "axis": "state",
+      "ko": "눌림",
+      "description": "클릭하거나 탭하는 순간의 상태",
+      "note": "별도 정의 필요 (원본 비고)"
+    },
+    "Focused": {
+      "axis": "state",
+      "ko": "포커스",
+      "description": "입력 영역에 포커스가 잡힌 상태"
+    },
+    "Disabled": {
+      "axis": "state",
+      "ko": "비활성",
+      "description": "사용할 수 없으며 인터랙션이 차단된 상태 (Read-only 포함)"
+    },
+    "Loading": {
+      "axis": "state",
+      "ko": "로딩 중",
+      "description": "처리 중이거나 데이터를 불러오는 중인 상태"
+    },
+    "Error": {
+      "axis": "state",
+      "ko": "오류",
+      "description": "입력값이 규칙에 맞지 않아 자동 검증된 상태"
+    },
+    "Warning": {
+      "axis": "state",
+      "ko": "경고",
+      "description": "입력값에 주의가 필요하다고 자동 검증된 상태"
+    },
+    "Fallback": {
+      "axis": "state",
+      "ko": "대체 표시",
+      "description": "기본 데이터가 없을 때 대체 콘텐츠로 표시되는 상태"
+    },
+    "Empty": {
+      "axis": "state",
+      "ko": "비어 있음",
+      "description": "표시할 데이터가 없는 상태"
+    },
+    "Unselected": {
+      "axis": "selection",
+      "ko": "미선택",
+      "description": "선택되지 않은 기본 상태 (Unchecked, Off 포함)",
+      "aliases": [
+        "Unchecked",
+        "Off"
+      ],
+      "boolean": false
+    },
+    "Selected": {
+      "axis": "selection",
+      "ko": "선택됨",
+      "description": "사용자가 선택했거나 활성화된 상태 (Checked, On 포함)",
+      "aliases": [
+        "Checked",
+        "On"
+      ],
+      "boolean": true
+    },
+    "Indeterminate": {
+      "axis": "selection",
+      "ko": "부분 선택",
+      "description": "자식 항목이 일부만 선택된 중간 상태"
+    },
+    "Open": {
+      "axis": "overlay",
+      "ko": "열림",
+      "description": "오버레이 컴포넌트가 화면 위에 등장한 상태 (e.g. 모달, 드롭다운 등이 화면에 등장)",
+      "figmaToggle": "On",
+      "aliases": [
+        "On"
+      ],
+      "boolean": true
+    },
+    "Closed": {
+      "axis": "overlay",
+      "ko": "닫힘",
+      "description": "오버레이 컴포넌트가 화면에서 사라진 상태 (e.g. 모달, 드롭다운 등이 화면에서 사라짐)",
+      "figmaToggle": "Off",
+      "aliases": [
+        "Off"
+      ],
+      "boolean": false
+    },
+    "Expanded": {
+      "axis": "disclosure",
+      "ko": "펼쳐짐",
+      "description": "헤더는 유지된 채 콘텐츠가 펼쳐진 상태",
+      "figmaToggle": "On",
+      "aliases": [
+        "Open",
+        "On"
+      ],
+      "boolean": true
+    },
+    "Collapsed": {
+      "axis": "disclosure",
+      "ko": "접힘",
+      "description": "헤더는 유지된 채 콘텐츠가 접혀 있는 상태",
+      "figmaToggle": "Off",
+      "aliases": [
+        "Closed",
+        "Close",
+        "Off"
+      ],
+      "boolean": false
+    }
+  }
+}
