@@ -73,7 +73,7 @@
 }
 
 .variant-Primary:not(:disabled):not(.loading):hover {
-  background-color: #2e14b8;
+  background-color: var(--skt-color-palette-blue-900, #20028b);
 }
 
 .variant-Primary:not(:disabled):not(.loading):active {
@@ -160,7 +160,7 @@
 }
 
 .variant-Primary.danger:not(:disabled):not(.loading):hover {
-  background-color: #cc2935;
+  background-color: var(--skt-color-palette-red-700, #bb0223);
 }
 
 .variant-Secondary.danger {
@@ -169,7 +169,7 @@
 }
 
 .variant-Secondary.danger:not(:disabled):not(.loading):hover {
-  background-color: #ffd4d0;
+  background-color: var(--skt-color-palette-red-200, #ffd4d0);
 }
 
 .variant-Outline.danger {

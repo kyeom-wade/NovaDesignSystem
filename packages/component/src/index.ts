@@ -9,6 +9,7 @@ export { BottomSheetHandleItem } from "./components/BottomSheetHandleItem";
 export { ButtonIconItem } from "./components/ButtonIconItem";
 export { ButtonItem } from "./components/ButtonItem";
 export { CardContentsListItem } from "./components/CardContentsListItem";
+export { CardItem } from "./components/CardItem";
 export { CardProductVerticalListItem } from "./components/CardProductVerticalListItem";
 export { CaretItem } from "./components/CaretItem";
 export { CarouselGroupItem } from "./components/CarouselGroupItem";

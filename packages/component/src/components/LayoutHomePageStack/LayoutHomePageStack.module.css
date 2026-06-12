@@ -41,8 +41,8 @@
   inset: 0;
   background: radial-gradient(
     ellipse at 80% 15%,
-    rgba(186, 206, 255, 0.7) 0%,
-    rgba(186, 206, 255, 0) 55%
+    color-mix(in srgb, var(--skt-color-palette-blue-300, #bfcbff) 70%, transparent) 0%,
+    color-mix(in srgb, var(--skt-color-palette-blue-300, #bfcbff) 0%, transparent) 55%
   );
   pointer-events: none;
 }
@@ -232,7 +232,7 @@
 }
 
 .arrowIcon {
-  font-size: 12px;
+  font-size: var(--skt-typography-font-size-300, 12px);
   line-height: 1;
   color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
   transform: scaleX(-1) rotate(90deg);

@@ -2,8 +2,8 @@
    anatomy: wrap[ ChipItem*[ label ] ]
    wrap: horizontal scroll row with left padding, 6px gap
    item: pill-shaped button, px-12 py-10, radius-full
-   item selected: dark fill (#060c1f), white text semibold 13px
-   item unselected: light fill (#f4f5fa), secondary text medium 13px
+   item selected: dark fill (var(--skt-color-text-neutral-primary, #060c1f)), white text semibold 13px
+   item unselected: light fill (var(--skt-color-bg-layer-basement, #f4f5fa)), secondary text medium 13px
 */
 
 .wrap {

@@ -1,7 +1,7 @@
 /* Divider — Figma node 50943:27999
    anatomy: root[ line ]
    variants: contents (1px) | section (4px)
-   token: border/neutral/secondary → --skt-color-palette-gray-50 (#f4f5fa)
+   token: border/neutral/secondary → --skt-color-palette-gray-50 (var(--skt-color-bg-layer-basement, #f4f5fa))
 */
 
 .root {
