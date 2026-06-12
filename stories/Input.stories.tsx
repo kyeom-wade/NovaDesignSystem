@@ -11,6 +11,7 @@ const meta: Meta<typeof Input> = {
     buttonLabel: { control: "text" },
     helpTextContent: { control: "text" },
     label: { control: "boolean" },
+    helpText: { control: "boolean" },
     className: { control: false },
   },
   args: {
@@ -20,6 +21,7 @@ const meta: Meta<typeof Input> = {
     buttonLabel: "확인",
     helpTextContent: "도움말 텍스트",
     label: true,
+    helpText: true,
   },
 };
 export default meta;
@@ -35,11 +37,11 @@ export const AllVariants: Story = {
         <Input {...args} variants="1Input" />
       </div>
       <div>
-        <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>2Input — 두 행 (첫째 행: 레이블, 둘째 행: 버튼 + 도움말)</p>
+        <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>2Input — 두 행 (버튼 없음 + 도움말)</p>
         <Input {...args} variants="2Input" />
       </div>
       <div>
-        <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>3Input — 세 행 (첫째 행: 레이블, 둘째 행: 버튼, 셋째 행: 도움말)</p>
+        <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>3Input — 세 행 (첫째 행 버튼 + 도움말)</p>
         <Input {...args} variants="3Input" />
       </div>
     </div>

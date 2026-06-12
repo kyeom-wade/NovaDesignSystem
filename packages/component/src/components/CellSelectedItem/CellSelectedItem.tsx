@@ -1,4 +1,5 @@
 import React from "react";
+import { CellRightItem } from "../CellRightItem/CellRightItem";
 import styles from "./CellSelectedItem.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .CellSelectedItem (node 50985:75730)
 // anatomy: root[ selectionItem[ control(radio|checkbox), label ], rightItem?(icon|text) ]
@@ -129,28 +130,12 @@ export function CellSelectedItem({
         </span>
       </div>
 
-      {/* Right item */}
       {rightItem === "Icon" && (
-        <span className={styles.rightIcon} aria-hidden="true">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-          >
-            <path
-              d="M6 4L10 8L6 12"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
+        <CellRightItem variants="Icon" />
       )}
 
       {rightItem === "Text" && (
-        <span className={styles.rightText}>{rightText}</span>
+        <CellRightItem variants="TextInfo" text={rightText} />
       )}
     </div>
   );

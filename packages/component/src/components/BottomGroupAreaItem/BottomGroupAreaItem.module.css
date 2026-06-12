@@ -1,5 +1,5 @@
 /* BottomGroupAreaItem — Figma node 50990:41804
-   anatomy: wrap[ primaryBtn ] | wrap[ secondaryBtn, primaryBtn ]
+   anatomy: wrap[ ButtonItem(primary) ] | wrap[ ButtonItem(secondary), ButtonItem(primary) ]
    variants: "1 Botton" (single full-width primary), "2 Botton" (secondary + primary side-by-side)
 */
 
@@ -17,38 +17,8 @@
   gap: var(--skt-spacing-8, 8px);
 }
 
-.btn {
-  display: flex;
+.button {
   flex: 1 0 0;
   min-width: 1px;
-  height: 56px;
-  align-items: center;
-  justify-content: center;
-  padding: 0 var(--skt-spacing-32, 32px);
-  border-radius: var(--skt-radius-20, 20px);
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: var(--skt-typography-font-size-700, 16px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
-  white-space: nowrap;
-  transition: opacity 0.15s ease;
-}
-
-.btn:active {
-  opacity: 0.85;
-}
-
-.btnPrimary {
-  background-color: var(--skt-color-fill-brand-primary, #3617ce);
-  color: var(--skt-color-text-inverse-primary, #ffffff);
-  box-shadow: 0px 8px 8px var(--skt-color-shadow-default, rgba(6, 12, 31, 0.2));
-}
-
-.btnSecondary {
-  background-color: var(--skt-color-palette-gray-200, #e2e6f1);
-  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
-  box-shadow: none;
+  width: auto;
 }

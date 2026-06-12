@@ -1,4 +1,5 @@
 import React from "react";
+import { CellRightItem, type CellRightItemVariant } from "../CellRightItem/CellRightItem";
 import styles from "./CellTitleItem.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .CellTitleItem (node 51048:38338)
 // anatomy: root[ cellText[ titleBadge[ title ] ], rightSlot?[ icon | buttonIcon | textInfo | textButton | textIcon | buttonSmall ] ]
@@ -41,6 +42,15 @@ export function CellTitleItem({
   className,
 }: Props) {
   const hasRight = rightItem !== "None";
+  const rightItemVariantMap: Partial<Record<CellTitleItemRightItem, CellRightItemVariant>> = {
+    Icon: "Icon",
+    ButtonIcon: "ButtonIcon",
+    TextButton: "TextButton",
+    TextInfo: "TextInfo",
+    TextIcon: "TextIcon",
+    ButtonSmall: "ButtonSmall",
+  };
+  const rightItemVariant = rightItemVariantMap[rightItem];
 
   return (
     <div
@@ -65,105 +75,14 @@ export function CellTitleItem({
         </div>
       </div>
 
-      {/* Right: Icon (chevron dummy) */}
-      {rightItem === "Icon" && (
-        <div className={styles.rightIcon}>
-          <svg
-            className={styles.iconDummy}
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            aria-hidden="true"
-          >
-            <rect
-              x="2"
-              y="2"
-              width="12"
-              height="12"
-              rx="2"
-              fill="currentColor"
-              opacity="0.2"
-            />
-          </svg>
-        </div>
-      )}
-
-      {/* Right: ButtonIcon (close pill) */}
-      {rightItem === "ButtonIcon" && (
-        <button
-          type="button"
-          className={styles.buttonIcon}
-          onClick={onButtonIcon}
-          aria-label="닫기"
-        >
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 10 10"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M2 2L8 8M8 2L2 8"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-          </svg>
-        </button>
-      )}
-
-      {/* Right: TextInfo (read-only text) */}
-      {rightItem === "TextInfo" && (
-        <div className={styles.rightTextInfo}>
-          <span className={styles.rightInfoText}>{rightText}</span>
-        </div>
-      )}
-
-      {/* Right: TextButton (underlined text action) */}
-      {rightItem === "TextButton" && (
-        <button
-          type="button"
-          className={styles.rightTextButton}
-          onClick={onTextButton}
-        >
-          {rightText}
-        </button>
-      )}
-
-      {/* Right: TextIcon (text + chevron arrow) */}
-      {rightItem === "TextIcon" && (
-        <div className={styles.rightTextIcon}>
-          <span className={styles.rightTextIconLabel}>{rightText}</span>
-          <svg
-            className={styles.iconChevron}
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M6 4L10 8L6 12"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-      )}
-
-      {/* Right: ButtonSmall (pill button) */}
-      {rightItem === "ButtonSmall" && (
-        <button
-          type="button"
-          className={styles.buttonSmall}
-          onClick={onButton}
-        >
-          {buttonLabel}
-        </button>
+      {rightItemVariant && (
+        <CellRightItem
+          variants={rightItemVariant}
+          text={rightText}
+          buttonLabel={buttonLabel}
+          onTextButtonClick={rightItem === "ButtonSmall" ? onButton : onTextButton}
+          onButtonIconClick={onButtonIcon}
+        />
       )}
     </div>
   );

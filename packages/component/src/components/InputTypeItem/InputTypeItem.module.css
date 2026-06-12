@@ -1,0 +1,103 @@
+/* InputTypeItem — Figma node 54420:140015 */
+/* anatomy: root[ textField[ contents[ text, InputCaretItem? ], InputClearButtonItem? ] ] */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 353px;
+  height: 48px;
+  position: relative;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+}
+
+.textField {
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+  width: 100%;
+  min-height: 1px;
+  box-sizing: border-box;
+  padding: var(--skt-component-input-padding-y-1, 12px) var(--skt-component-input-padding-x-1, 20px);
+  border-radius: var(--skt-radius-r-6, var(--skt-radius-14, 14px));
+  border: 1px solid transparent;
+}
+
+.default {
+  gap: var(--skt-component-input-gap-2, 0);
+  background-color: var(--skt-color-fill-inverse-primary, var(--fill-inverse-primary, #ffffff));
+  border-color: var(--skt-color-border-neutral-primary, var(--border-neutral-primary, rgba(5, 42, 142, 0.08)));
+}
+
+.focused {
+  gap: var(--skt-component-input-gap-2, 0);
+  background-color: var(--skt-color-fill-inverse-primary, var(--fill-inverse-primary, #ffffff));
+  border-color: var(--skt-color-border-neutral-strong, var(--border-neutral-strong, #060c1f));
+}
+
+.typing {
+  gap: var(--skt-component-input-gap-2, 16px);
+}
+
+.danger {
+  gap: var(--skt-component-input-gap-2, 0);
+  background-color: var(--skt-color-fill-inverse-primary, var(--fill-inverse-primary, #ffffff));
+  border-color: var(--skt-color-border-danger-primary, var(--border-danger-primary, #e7313d));
+}
+
+.danger.typing {
+  gap: var(--skt-component-input-gap-2, 16px);
+}
+
+.disabled {
+  gap: var(--skt-component-input-gap-2, 0);
+  background-color: var(--skt-color-fill-disabled-default, var(--fill-disabled-default, rgba(35, 55, 155, 0.05)));
+  border-color: transparent;
+}
+
+.contents {
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+  min-width: 1px;
+  position: relative;
+}
+
+.text {
+  margin: 0;
+  flex: 0 1 auto;
+  min-width: 1px;
+  max-width: 100%;
+  font-size: var(--skt-typography-font-size-600, 15px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: 160%;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+.textPlaceholder {
+  color: var(--skt-color-text-neutral-tertiary, var(--text-neutral-tertiary, rgba(12, 34, 91, 0.42)));
+}
+
+.textPrimary {
+  color: var(--skt-color-text-neutral-primary, var(--text-neutral-primary, #060c1f));
+}
+
+.textDisabled {
+  color: var(--skt-color-text-disabled-default, var(--text-disabled-default, rgba(11, 44, 127, 0.18)));
+}
+
+.caretLeading {
+  margin-right: 0;
+}
+
+.caretInline {
+  margin-left: 0;
+}
+
+.clearButton {
+  flex-shrink: 0;
+}

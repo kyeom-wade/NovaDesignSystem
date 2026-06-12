@@ -1,9 +1,9 @@
-import React from "react";
+import { ButtonItem } from "../ButtonItem/ButtonItem";
+import { InputTypeItem, type InputTypeItemState } from "../InputTypeItem/InputTypeItem";
 import styles from "./InputItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .InputItem (node 50943:28032)
-// anatomy: wrap[ label?, fieldRow[ textField[ placeholder|value, caret? ], button? ], helpText? ]
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .InputItem (node 50943:28032)
+// anatomy: wrap[ Contents[ InputTypeItem, ButtonItem? ] ]
 // States: Default | Focused | Typing | Typed | Disabled
-// Error variant changes label/helpText color and field background to danger
 
 export type InputItemState = "Default" | "Focused" | "Typing" | "Typed" | "Disabled";
 
@@ -35,42 +35,15 @@ interface Props {
 export function InputItem({
   states = "Default",
   error = false,
-  label = true,
-  labelText = "레이블",
-  helpText = true,
-  helpTextContent = "Help Text",
   button = true,
   buttonLabel = "버튼",
   placeholder = "텍스트를 입력하세요",
   onButtonClick,
   className,
 }: Props) {
-  const isTyping = states === "Typing";
   const isDisabled = states === "Disabled";
-
-  // Field background class
-  const fieldClass = [
-    styles.textField,
-    isDisabled
-      ? styles.textFieldDisabled
-      : error
-      ? styles.textFieldError
-      : states === "Default" || states === "Typed"
-      ? styles.textFieldDefault
-      : styles.textFieldFocused, // Focused | Typing
-  ]
-    .filter(Boolean)
-    .join(" ");
-
-  // Text inside the field: tertiary for placeholder states, primary for typed/typing
-  const fieldTextClass =
-    states === "Typed" || isTyping
-      ? isDisabled
-        ? styles.fieldTextDisabled
-        : styles.fieldTextPrimary
-      : isDisabled
-      ? styles.fieldTextDisabled
-      : styles.fieldTextPlaceholder;
+  const inputState: InputTypeItemState =
+    states === "Typed" ? "Completed" : states;
 
   return (
     <div
@@ -79,46 +52,25 @@ export function InputItem({
       data-state={states}
       data-error={error ? "true" : undefined}
     >
-      {/* Label */}
-      {label && (
-        <div className={styles.labelRow}>
-          <span className={error ? styles.labelError : styles.label}>
-            {labelText}
-          </span>
-        </div>
-      )}
-
-      {/* Field row */}
-      <div className={styles.fieldRow}>
-        <div className={fieldClass}>
-          <span className={fieldTextClass}>{placeholder}</span>
-          {isTyping && !isDisabled && (
-            <span className={styles.caret} aria-hidden="true" />
-          )}
-        </div>
-
+      <div className={styles.contents} data-name="Contents">
+        <InputTypeItem
+          className={styles.inputType}
+          danger={error}
+          state={inputState}
+          text={placeholder}
+        />
         {button && (
-          <button
-            type="button"
-            className={isDisabled ? styles.btnDisabled : styles.btn}
-            disabled={isDisabled}
+          <ButtonItem
+            className={styles.button}
+            variant="Secondary"
+            size="Large"
+            state={isDisabled ? "Disabled" : "Default"}
+            label={buttonLabel}
+            icon={false}
             onClick={onButtonClick}
-          >
-            <span className={isDisabled ? styles.btnTextDisabled : styles.btnText}>
-              {buttonLabel}
-            </span>
-          </button>
+          />
         )}
       </div>
-
-      {/* Help text */}
-      {helpText && (
-        <div className={styles.helpRow}>
-          <span className={error ? styles.helpTextError : styles.helpText}>
-            {helpTextContent}
-          </span>
-        </div>
-      )}
     </div>
   );
 }

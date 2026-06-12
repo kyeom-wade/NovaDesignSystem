@@ -18,7 +18,8 @@ const meta: Meta<typeof ButtonItem> = {
 			options: ["Default", "Loading", "Disabled"],
 		},
 		danger: { control: "boolean" },
-		showIcon: { control: "boolean" },
+		icon: { control: "boolean" },
+		showIcon: { control: false },
 		label: { control: "text" },
 	},
 	args: {
@@ -27,7 +28,7 @@ const meta: Meta<typeof ButtonItem> = {
 		size: "Large",
 		state: "Default",
 		danger: false,
-		showIcon: false,
+		icon: true,
 	},
 };
 export default meta;
@@ -58,7 +59,7 @@ export const AllVariants: Story = {
 								state="Default"
 								danger={false}
 								label={variant === "TextIcon" ? "더보기" : "버튼"}
-								showIcon={variant === "TextIcon"}
+								icon={variant !== "Text"}
 							/>
 						))}
 					</div>
@@ -143,7 +144,7 @@ export const Disabled: Story = {
 								state="Disabled"
 								danger={false}
 								label={variant === "TextIcon" ? "더보기" : "버튼"}
-								showIcon={variant === "TextIcon"}
+								icon={variant !== "Text"}
 							/>
 						))}
 					</div>
@@ -172,10 +173,10 @@ export const WithIcon: Story = {
 								state="Default"
 								danger={false}
 								label="버튼"
-								showIcon={true}
+								icon={true}
 							/>
 						))}
-						<ButtonItem variant="TextIcon" size={size} state="Default" label="더보기" showIcon />
+						<ButtonItem variant="TextIcon" size={size} state="Default" label="더보기" icon />
 					</div>
 				</div>
 			))}

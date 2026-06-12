@@ -1,4 +1,5 @@
 import React from "react";
+import { CellRightItem, type CellRightItemVariant } from "../CellRightItem/CellRightItem";
 import styles from "./CellTextItem.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .CellTextItem (node 50985:75650)
 // anatomy: root[ textGroup[ title ], rightItem?[ icon | textInfo | textButton | textIcon | levelBadge | toggle ] ]
@@ -44,6 +45,14 @@ export function CellTextItem({
 }: Props) {
   const isBullet = variant === "Bullet";
   const isToggle = rightItem === "Toggle";
+  const rightItemVariantMap: Partial<Record<CellTextItemRightItem, CellRightItemVariant>> = {
+    Icon: "Icon",
+    TextInfo: "TextInfo",
+    TextButton: "TextButton",
+    LevelBadge: "LevelBadge",
+    TextIcon: "TextIcon",
+  };
+  const rightItemVariant = rightItemVariantMap[rightItem];
 
   return (
     <div
@@ -65,72 +74,12 @@ export function CellTextItem({
         <p className={styles.label}>{label}</p>
       </div>
 
-      {/* Right slot */}
-      {rightItem === "Icon" && (
-        <div className={styles.rightIcon}>
-          <svg
-            className={styles.iconChevron}
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M6 4L10 8L6 12"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-      )}
-
-      {rightItem === "TextInfo" && (
-        <div className={styles.rightTextInfo}>
-          <span className={styles.rightInfoText}>{rightText}</span>
-        </div>
-      )}
-
-      {rightItem === "TextButton" && (
-        <button
-          type="button"
-          className={styles.rightTextButton}
-          onClick={onRightButton}
-        >
-          {rightText}
-        </button>
-      )}
-
-      {rightItem === "TextIcon" && (
-        <div className={styles.rightTextIcon}>
-          <span className={styles.rightTextIconText}>{rightText}</span>
-          <svg
-            className={styles.iconChevronSmall}
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M6 4L10 8L6 12"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-      )}
-
-      {rightItem === "LevelBadge" && (
-        <div className={styles.rightLevelBadge}>
-          <span className={styles.levelBadge} data-level="1" />
-          <span className={styles.levelBadge} data-level="2" />
-          <span className={styles.levelBadge} data-level="3" />
-        </div>
+      {rightItemVariant && (
+        <CellRightItem
+          variants={rightItemVariant}
+          text={rightText}
+          onTextButtonClick={onRightButton}
+        />
       )}
 
       {rightItem === "Toggle" && (

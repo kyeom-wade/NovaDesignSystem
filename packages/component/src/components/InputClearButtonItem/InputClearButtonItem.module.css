@@ -1,0 +1,51 @@
+/* InputClearButtonItem — Figma node 51081:61398 */
+/* anatomy: root(button) [ iconItem[ IconClose ] ] */
+/* variants: state(Default | Disabled) */
+
+.root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  border-radius: 100px;
+  background-color: var(--skt-color-fill-neutral-tertiary, var(--fill-neutral-tertiary, rgba(13, 47, 138, 0.12)));
+  color: var(--skt-color-icon-neutral-secondary, var(--icon-neutral-secondary, rgba(6, 12, 31, 0.6)));
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--skt-color-border-brand-primary, #3617ce);
+  outline-offset: 2px;
+}
+
+.root:not(:disabled):active {
+  opacity: 0.7;
+}
+
+.disabled {
+  cursor: not-allowed;
+  color: var(--skt-color-icon-disabled-default, var(--icon-disabled-default, rgba(6, 12, 31, 0.25)));
+}
+
+.iconItem {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.iconItem > svg {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+}

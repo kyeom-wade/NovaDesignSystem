@@ -78,6 +78,12 @@
   flex-shrink: 0;
 }
 
+.tabIcon > svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
 /* ── 2depth: title area ────────────────────────────────────────────────── */
 .titleArea {
   display: flex;
@@ -104,48 +110,9 @@
 
 /* ── 2depth: right area ────────────────────────────────────────────────── */
 .rightArea2Depth {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: var(--skt-spacing-12, 12px);
   flex-shrink: 0;
 }
 
-/* Flat icon button (2depth left back + right icons) */
-.iconBtn {
-  display: flex;
-  align-items: flex-start;
-  padding: var(--skt-spacing-2, 2px);
+.leftItem {
   flex-shrink: 0;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  border-radius: var(--skt-radius-4, 4px);
-  width: 28px;
-  height: 28px;
-  color: var(--skt-color-icon-neutral-primary, #060c1f);
-}
-
-.iconBtn:focus-visible {
-  outline: 2px solid var(--skt-color-border-brand-primary, #3617ce);
-  outline-offset: 2px;
-}
-
-.iconBtnInner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-/* Placeholder shape — rendered when no real icon is supplied */
-.iconShape {
-  display: block;
-  width: 14px;
-  height: 14px;
-  border-radius: var(--skt-radius-4, 4px);
-  background-color: var(--skt-color-palette-gray-alpha-200, rgba(6, 12, 31, 0.2));
 }

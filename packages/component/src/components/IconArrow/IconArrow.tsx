@@ -36,20 +36,18 @@ interface Props {
  * Real path data extracted from Figma (node 51561:33421 / Arrow UP).
  * Natural viewBox is "0 0 16 9" — an upward-pointing chevron.
  * The path is placed inside a 24×24 canvas centred on a ~18×18 content area
- * (3 px padding on each side), matching the Figma frame geometry.
+ * and scaled to 12×6.75 so it does not visually overpower adjacent 24px icons.
  *
  * Placement math (up variant):
- *   Figma inset top=29.17 % → 7 px, bottom=33.33 % → 8 px  → content height ≈ 9 px
- *   Figma inset left=16.67 % → 4 px, right=16.67 % → 4 px  → content width  ≈ 16 px
- *   translate(4, 7) places the 16×9 path in the correct region.
+ *   translate(6, 8.625) + scale(0.75) places the chevron in the center of the 24px frame.
  *
  * Other variants are the same path rotated around the icon's center (12,12).
  */
 const CHEVRON_PATH =
   "M15.707 7.29292C16.0975 7.68345 16.0975 8.31647 15.707 8.70699C15.3164 9.09744 14.6834 9.09749 14.2929 8.70699L7.99991 2.414L1.70692 8.70699C1.31639 9.09744 0.683356 9.09749 0.292857 8.70699C-0.097644 8.31649 -0.0975937 7.68346 0.292857 7.29292L7.29287 0.292894C7.6834 -0.0976315 8.31641 -0.0976315 8.70694 0.292895L15.707 7.29292Z";
 
-/** SVG transform: translate(4,7) places the 16×9 chevron inside the 24px frame (3px top-padding). */
-const BASE_TRANSFORM = "translate(4 7)";
+/** SVG transform: place a 12×6.75 chevron inside the 24px frame. */
+const BASE_TRANSFORM = "translate(6 8.625) scale(0.75)";
 
 /** Rotation map — all rotations are around the icon centre (12,12). */
 const ROTATE: Record<IconArrowVariant, string> = {

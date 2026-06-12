@@ -1,0 +1,33 @@
+/* InputHelpTextItem — Figma node 54558:54703 */
+/* anatomy: root[ text ]; variants: danger(false | true) */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.text {
+  margin: 0;
+  position: relative;
+  flex-shrink: 0;
+  max-width: 100%;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+.default {
+  color: var(--skt-color-text-neutral-tertiary, var(--text-neutral-tertiary, rgba(12, 34, 91, 0.42)));
+}
+
+.danger {
+  color: var(--skt-color-text-danger-primary, var(--text-danger-primary, #e7313d));
+}
