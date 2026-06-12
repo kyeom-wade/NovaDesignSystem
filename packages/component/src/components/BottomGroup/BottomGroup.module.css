@@ -23,7 +23,7 @@
 
 /* ── Ai variant ── */
 .wrapAi {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--skt-color-palette-white-alpha-800, rgba(255, 255, 255, 0.8));
   border-radius: var(--skt-radius-28, 28px) var(--skt-radius-28, 28px) 0 0;
   box-shadow: 0px -5px 60px 0px var(--skt-color-palette-gray-alpha-50, rgba(6, 12, 31, 0.05));
 }
@@ -97,8 +97,8 @@
   position: absolute;
   inset: 0;
   border-radius: var(--skt-radius-full, 9999px);
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+  background-color: var(--skt-color-palette-white-alpha-500, rgba(255, 255, 255, 0.5));
+  box-shadow: 0px 0px 20px 0px var(--skt-color-palette-gray-alpha-50, rgba(6, 12, 31, 0.05));
 }
 
 .iconImg {
@@ -131,7 +131,7 @@
   align-items: center;
   background-color: var(--skt-color-fill-brand-primary, #3617ce);
   border-radius: var(--skt-radius-20, 20px);
-  box-shadow: 0px 8px 8px 0px rgba(27, 11, 102, 0.16);
+  box-shadow: 0px 8px 8px 0px var(--skt-color-shadow-default, rgba(6, 12, 31, 0.2));
   overflow: hidden;
   height: 52px;
 }
@@ -155,54 +155,26 @@
 }
 
 .cta:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: var(--skt-color-palette-white-alpha-100, rgba(255, 255, 255, 0.1));
 }
 
 .cta:active {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--skt-color-palette-white-alpha-150, rgba(255, 255, 255, 0.15));
 }
 
 .divider {
   flex-shrink: 0;
   width: 1px;
   height: 12px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--skt-color-palette-white-alpha-200, rgba(255, 255, 255, 0.2));
 }
 
-/* ── Default upper item row ── */
 .upperItem {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: calc(100% - 40px); /* matches Figma 353px on 393px canvas: 20px side padding each */
   box-sizing: border-box;
-}
-
-.listText {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  padding-bottom: var(--skt-spacing-16, 16px);
-  width: 100%;
-}
-
-.labelCell {
-  display: flex;
-  flex: 1 0 0;
-  min-width: 0;
-  align-items: center;
-  gap: var(--skt-spacing-4, 4px);
-}
-
-.upperItemText {
-  flex-shrink: 0;
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-regular, 400);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
-  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
-  white-space: nowrap;
-  margin: 0;
 }
 
 /* ── Default area item row ── */
