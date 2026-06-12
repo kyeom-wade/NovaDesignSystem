@@ -36,7 +36,7 @@ const IconVoice = () => (
 const IconBenefit = ({ active }: { active: boolean }) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <circle cx="12" cy="12" r="9" fill={active ? "var(--skt-color-icon-brand-primary, #3617ce)" : "var(--skt-color-icon-neutral-tertiary, rgba(6,12,31,0.4))"} />
-    <path d="M8.5 12l2.5 2.5L16 9" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M8.5 12l2.5 2.5L16 9" stroke="var(--skt-color-icon-inverse-primary, #ffffff)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 

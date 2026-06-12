@@ -29,24 +29,24 @@ const IconVoice = () => (
 
 const IconShop = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M6 7h12l-1.5 8H7.5L6 7Z" fill="rgba(6,12,31,0.4)" />
-    <path d="M9 7V6a3 3 0 1 1 6 0v1" stroke="rgba(6,12,31,0.4)" strokeWidth="1.6" strokeLinecap="round" />
-    <circle cx="9.5" cy="17.5" r="1" fill="rgba(6,12,31,0.4)" />
-    <circle cx="15.5" cy="17.5" r="1" fill="rgba(6,12,31,0.4)" />
+    <path d="M6 7h12l-1.5 8H7.5L6 7Z" fill="var(--skt-color-icon-neutral-tertiary, rgba(6,12,31,0.4))" />
+    <path d="M9 7V6a3 3 0 1 1 6 0v1" stroke="var(--skt-color-icon-neutral-tertiary, rgba(6,12,31,0.4))" strokeWidth="1.6" strokeLinecap="round" />
+    <circle cx="9.5" cy="17.5" r="1" fill="var(--skt-color-icon-neutral-tertiary, rgba(6,12,31,0.4))" />
+    <circle cx="15.5" cy="17.5" r="1" fill="var(--skt-color-icon-neutral-tertiary, rgba(6,12,31,0.4))" />
   </svg>
 );
 
 const IconMy = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <circle cx="12" cy="8" r="3.5" fill="rgba(6,12,31,0.4)" />
-    <path d="M5 19c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="rgba(6,12,31,0.4)" strokeWidth="1.8" strokeLinecap="round" />
+    <circle cx="12" cy="8" r="3.5" fill="var(--skt-color-icon-neutral-tertiary, rgba(6,12,31,0.4))" />
+    <path d="M5 19c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="var(--skt-color-icon-neutral-tertiary, rgba(6,12,31,0.4))" strokeWidth="1.8" strokeLinecap="round" />
   </svg>
 );
 
 const IconBenefit = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <circle cx="12" cy="12" r="9" fill="#3617ce" />
-    <path d="M8 12l2.5 2.5L16 9" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="12" cy="12" r="9" fill="var(--skt-color-icon-brand-primary, #3617ce)" />
+    <path d="M8 12l2.5 2.5L16 9" stroke="var(--skt-color-icon-inverse-primary, #ffffff)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
