@@ -10,6 +10,7 @@
   align-items: center;
   position: relative;
   width: 353px;
+  height: fit-content;
   background-color: var(--skt-color-bg-layer-default, #ffffff);
   border-radius: var(--skt-radius-20, 20px);
   padding: var(--skt-spacing-24, 24px);

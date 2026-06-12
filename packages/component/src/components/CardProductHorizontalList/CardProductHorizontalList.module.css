@@ -9,6 +9,7 @@
   align-items: flex-start;
   justify-content: center;
   width: 353px;
+  height: fit-content;
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
 }
 

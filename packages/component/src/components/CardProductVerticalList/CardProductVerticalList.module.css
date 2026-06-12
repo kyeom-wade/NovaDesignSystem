@@ -6,6 +6,7 @@
   flex-direction: row;
   gap: var(--skt-spacing-8, 8px);
   align-items: flex-start;
+  height: fit-content;
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
 }
 
@@ -17,6 +18,7 @@
   overflow: hidden;
   padding-bottom: var(--skt-spacing-12, 12px);
   width: 172px;
+  height: fit-content;
   flex-shrink: 0;
   cursor: default;
 }

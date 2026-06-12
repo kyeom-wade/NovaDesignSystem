@@ -150,7 +150,7 @@ export function CardContentsListItem({
                   y="0"
                   width={i % 5 === 0 ? 3 : i % 3 === 0 ? 2 : 1}
                   height="48"
-                  fill="#060c1f"
+                  fill="var(--skt-color-icon-neutral-primary, #060c1f)"
                 />
               ))}
             </svg>

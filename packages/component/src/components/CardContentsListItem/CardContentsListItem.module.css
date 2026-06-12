@@ -9,6 +9,7 @@
   box-sizing: border-box;
   position: relative;
   width: 369px;
+  height: fit-content;
 }
 
 /* ─── Profile ────────────────────────────────────────────────────────────── */
@@ -376,8 +377,8 @@
   border-radius: var(--skt-radius-16, 16px);
   background: linear-gradient(
     135deg,
-    rgba(186, 206, 255, 0.7) 0%,
-    rgba(186, 206, 255, 0) 60%
+    color-mix(in srgb, var(--skt-color-palette-blue-300, #bfcbff) 70%, transparent) 0%,
+    color-mix(in srgb, var(--skt-color-palette-blue-300, #bfcbff) 0%, transparent) 60%
   );
 }
 
