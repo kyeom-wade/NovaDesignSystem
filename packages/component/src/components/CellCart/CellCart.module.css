@@ -177,7 +177,7 @@
   transform: translate(-50%, -50%);
   font-size: 8px;
   font-style: italic;
-  font-weight: 700;
+  font-weight: var(--skt-typography-font-weight-bold, 700);
   line-height: 1;
   color: var(--skt-color-text-danger-primary, #e7313d);
 }

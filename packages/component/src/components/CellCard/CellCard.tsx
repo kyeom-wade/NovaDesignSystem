@@ -6,7 +6,7 @@ import styles from "./CellCard.module.css";
 interface Props {
   /** 슬롯 내부에 삽입될 콘텐츠 */
   children?: React.ReactNode;
-  /** 슬롯 영역의 높이 (기본 104px) */
+  /** Optional fixed slot height. Omit to let the card hug its children. */
   slotHeight?: number;
   /** 추가 클래스명 */
   className?: string;
@@ -14,7 +14,7 @@ interface Props {
 
 export function CellCard({
   children,
-  slotHeight = 104,
+  slotHeight,
   className,
 }: Props) {
   return (
@@ -25,7 +25,7 @@ export function CellCard({
       <div className={styles.group}>
         <div
           className={styles.slot}
-          style={slotHeight !== 104 ? { height: slotHeight } : undefined}
+          style={slotHeight !== undefined ? { height: slotHeight } : undefined}
         >
           {children}
         </div>

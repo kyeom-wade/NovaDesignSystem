@@ -206,7 +206,7 @@
   height: 16px;
   border-radius: var(--skt-radius-full, 9999px);
   background-color: var(--skt-color-palette-gray-00, #ffffff);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px var(--skt-color-shadow-default, rgba(6, 12, 31, 0.2));
   transition: transform 0.2s ease;
 }
 
