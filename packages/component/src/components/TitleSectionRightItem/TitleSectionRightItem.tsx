@@ -125,7 +125,14 @@ export function TitleSectionRightItem({
   // --- Icon ---
   if (variant === "Icon") {
     return (
-      <div className={rootClass} data-cx-component="TitleSectionRightItem" data-variant="Icon">
+      <div
+        className={rootClass}
+        data-cx-component="TitleSectionRightItem"
+        data-variant="Icon"
+        onClick={onClick}
+        role={onClick ? "button" : undefined}
+        tabIndex={onClick ? 0 : undefined}
+      >
         <span className={`${styles.iconItem} ${styles.iconDisabled}`}>
           <IconDummy />
         </span>

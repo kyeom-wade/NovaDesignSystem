@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./TitleTextItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .TitleTextItem (node 51082:49861)
-// anatomy: root[ ?optionText[ optionLabel ], textGroup[ ?textLeft, textItem[ title ] ], ?subTextGroup[ subText ] ]
+import { TextItem } from "../TextItem/TextItem";
+import type { TextItemSize, TextItemWeight } from "../TextItem/TextItem";
+import { TitleTextLeftItem } from "../TitleTextLeftItem/TitleTextLeftItem";
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .TitleTextItem (node 51082:49861)
+// anatomy: root[ ?optionText[ TextItem ], textGroup[ ?textLeft, TextItem[ title ], ?TitleTextLeftItem ], ?subText[ TextItem ] ]
 // Variants: textLeft(bool) × textRight(bool) × optionText(bool) × subText(bool) — 16 combinations
 
 interface Props {
@@ -23,6 +26,12 @@ interface Props {
   textRightValue?: string;
   /** Main title text */
   title?: string;
+  /** Typography size for the main title TextItem */
+  titleSize?: TextItemSize;
+  /** Typography weight for the main title TextItem */
+  titleWeight?: TextItemWeight;
+  /** Let the component fill its parent instead of using the fixed Figma component width */
+  fluid?: boolean;
   className?: string;
 }
 
@@ -36,6 +45,9 @@ export function TitleTextItem({
   textRight = false,
   textRightValue = "2",
   title = "섹션/콘텐츠 타이틀",
+  titleSize = "16Body",
+  titleWeight = "semibold",
+  fluid = false,
   className,
 }: Props) {
   const showTextGroup = textLeft || textRight;
@@ -44,6 +56,7 @@ export function TitleTextItem({
     <div
       className={[
         styles.root,
+        fluid ? styles.rootFluid : "",
         subText || (optionText && !subText) ? styles.rootColumn : "",
         optionText && !subText && textLeft ? styles.rootGap2 : "",
         className,
@@ -55,7 +68,12 @@ export function TitleTextItem({
       {/* OptionText row */}
       {optionText && (
         <div className={styles.optionTextRow}>
-          <span className={styles.optionLabel}>{optionLabel}</span>
+          <TextItem
+            className={styles.optionTextItem}
+            text={optionLabel}
+            size="13Body"
+            weight="medium"
+          />
         </div>
       )}
 
@@ -63,29 +81,45 @@ export function TitleTextItem({
       {showTextGroup ? (
         <div className={styles.textGroup}>
           {textLeft && (
-            <span className={styles.textLeftBadge}>{textLeftValue}</span>
+            <TextItem
+              className={styles.textLeftBadge}
+              text={textLeftValue}
+              size="16Body"
+              weight="semibold"
+            />
           )}
-          <div className={styles.textItem}>
-            <span className={styles.title}>{title}</span>
-          </div>
+          <TextItem
+            className={styles.textItem}
+            text={title}
+            size={titleSize}
+            weight={titleWeight}
+          />
           {textRight && (
-            <div className={styles.textRightBadge}>
-              <span className={styles.textRightValue}>{textRightValue}</span>
-            </div>
+            <TitleTextLeftItem
+              className={styles.textRightBadge}
+              variant="Text"
+              textValue={textRightValue}
+            />
           )}
         </div>
       ) : (
-        <div className={styles.textItem}>
-          <span className={styles.title}>{title}</span>
-        </div>
+        <TextItem
+          className={styles.textItem}
+          text={title}
+          size={titleSize}
+          weight={titleWeight}
+        />
       )}
 
       {/* SubText row */}
       {subText && (
         <div className={styles.subTextGroup}>
-          <div className={styles.subText}>
-            <span className={styles.subTextValue}>{subTextContent}</span>
-          </div>
+          <TextItem
+            className={styles.subTextItem}
+            text={subTextContent}
+            size="14Body"
+            weight="medium"
+          />
         </div>
       )}
     </div>

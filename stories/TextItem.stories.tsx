@@ -18,11 +18,17 @@ const meta: Meta<typeof TextItem> = {
     textRight: { control: "boolean" },
     iconLeft: { control: false },
     iconRight: { control: false },
+    iconLeft12: { control: false },
+    iconLeft16: { control: false },
+    iconLeft20: { control: false },
+    iconRight12: { control: false },
+    iconRight16: { control: false },
+    iconRight20: { control: false },
     className: { control: false },
   },
   args: {
-    text: "텍스트",
-    size: "14Body",
+    text: "Text",
+    size: "11Etc",
     weight: "regular",
     textLeft: false,
     textRight: false,
@@ -91,18 +97,6 @@ export const SizeWeightMatrix: Story = {
           </div>
         </div>
       ))}
-    </div>
-  ),
-};
-
-export const ProductLabels: Story = {
-  render: () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: 12, padding: 24 }}>
-      <TextItem text="갤럭시 S24 Ultra" size="20Title" weight="semibold" />
-      <TextItem text="256GB · 티타늄 블랙" size="16Body" weight="regular" />
-      <TextItem text="₩1,299,000" size="18Title" weight="semibold" />
-      <TextItem text="무료 배송 · 내일 도착" size="13Body" weight="medium" textLeft />
-      <TextItem text="SKT 전용 특가" size="11Etc" weight="regular" />
     </div>
   ),
 };
