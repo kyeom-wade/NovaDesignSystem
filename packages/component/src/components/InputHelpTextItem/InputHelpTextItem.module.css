@@ -14,10 +14,10 @@
   flex-shrink: 0;
   max-width: 100%;
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
-  font-size: var(--skt-typography-font-size-300, 12px);
-  font-weight: var(--skt-typography-font-weight-regular, 400);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-12reg-font-size, var(--skt-typography-font-size-300, 12px));
+  font-weight: var(--skt-typography-style-12reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-12reg-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-12reg-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

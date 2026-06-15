@@ -97,10 +97,10 @@
 }
 
 .quicklinkLabel {
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: -0.04em;
+  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, -0.04em);
   color: var(--skt-color-text-neutral-primary, #060c1f);
   white-space: nowrap;
 }
@@ -131,19 +131,19 @@
 }
 
 .chipLabelSelected {
-  font-size: var(--skt-typography-font-size-400, 13px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: -0.04em;
+  font-size: var(--skt-typography-style-13semi-font-size, var(--skt-typography-font-size-400, 13px));
+  font-weight: var(--skt-typography-style-13semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-13semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-13semi-letter-spacing, -0.04em);
   color: var(--skt-color-text-inverse-primary, #ffffff);
   white-space: nowrap;
 }
 
 .chipLabelUnselected {
-  font-size: var(--skt-typography-font-size-400, 13px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: -0.04em;
+  font-size: var(--skt-typography-style-13med-font-size, var(--skt-typography-font-size-400, 13px));
+  font-weight: var(--skt-typography-style-13med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-13med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-13med-letter-spacing, -0.04em);
   color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
   white-space: nowrap;
 }

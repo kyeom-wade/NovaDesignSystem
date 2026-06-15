@@ -28,61 +28,113 @@
   white-space: nowrap;
   color: var(--skt-color-text-neutral-primary, #060c1f);
   font-style: normal;
-  line-height: 1.3;
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
 }
 
-/* ── Size variants ────────────────────────────────────────────────────────── */
-.size11 .label {
-  font-size: var(--skt-typography-font-size-200, 11px);
-  line-height: 1.5; /* Figma: 11Etc regular uses 1.5 line-height */
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+/* ── Typography variants ─────────────────────────────────────────────────── */
+.size11.weightRegular .label {
+  font-size: var(--skt-typography-style-11reg-font-size, var(--skt-typography-font-size-200, 11px));
+  font-weight: var(--skt-typography-style-11reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-11reg-line-height, var(--skt-typography-line-height-400, 150%));
+  letter-spacing: var(--skt-typography-style-11reg-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
 }
 
-.size13 .label {
-  font-size: var(--skt-typography-font-size-400, 13px);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
-}
-
-.size14 .label {
-  font-size: var(--skt-typography-font-size-500, 14px);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
-}
-
-.size16 .label {
-  font-size: var(--skt-typography-font-size-700, 16px);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
-}
-
-.size18 .label {
-  font-size: var(--skt-typography-font-size-800, 18px);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
-}
-
-.size20 .label {
-  font-size: var(--skt-typography-font-size-900, 20px);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
-}
-
-/* ── Weight variants ─────────────────────────────────────────────────────── */
-.weightRegular .label {
-  font-weight: var(--skt-typography-font-weight-regular, 400);
-}
-
-.weightMedium .label {
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-}
-
-.weightSemibold .label {
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
+.size11.weightMedium .label {
+  font-size: var(--skt-typography-style-11med-font-size, var(--skt-typography-font-size-200, 11px));
+  font-weight: var(--skt-typography-style-11med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-11med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-11med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
 }
 
 .size11.weightSemibold .label {
-  line-height: 1.3;
+  font-size: var(--skt-typography-style-11semi-font-size, var(--skt-typography-font-size-200, 11px));
+  font-weight: var(--skt-typography-style-11semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-11semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-11semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
 }
 
-.size20.weightSemibold .label {
-  font-weight: var(--skt-typography-font-weight-medium, 500);
+.size13.weightRegular .label {
+  font-size: var(--skt-typography-style-13reg-font-size, var(--skt-typography-font-size-400, 13px));
+  font-weight: var(--skt-typography-style-13reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-13reg-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-13reg-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
+.size13.weightMedium .label {
+  font-size: var(--skt-typography-style-13med-font-size, var(--skt-typography-font-size-400, 13px));
+  font-weight: var(--skt-typography-style-13med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-13med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-13med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
+.size13.weightSemibold .label {
+  font-size: var(--skt-typography-style-13semi-font-size, var(--skt-typography-font-size-400, 13px));
+  font-weight: var(--skt-typography-style-13semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-13semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-13semi-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
+}
+
+.size14.weightRegular .label {
+  font-size: var(--skt-typography-style-14reg-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-14reg-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14reg-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
+.size14.weightMedium .label {
+  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
+.size14.weightSemibold .label {
+  font-size: var(--skt-typography-style-14semi-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-14semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14semi-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
+}
+
+.size16.weightRegular .label {
+  font-size: var(--skt-typography-style-16reg-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-16reg-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16reg-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
+.size16.weightMedium .label {
+  font-size: var(--skt-typography-style-16med-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-16med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
+.size16.weightSemibold .label {
+  font-size: var(--skt-typography-style-16semi-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-16semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
+.size18.weightRegular .label,
+.size18.weightMedium .label {
+  font-size: var(--skt-typography-style-18med-font-size, var(--skt-typography-font-size-800, 18px));
+  font-weight: var(--skt-typography-style-18med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-18med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-18med-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
+}
+
+.size18.weightSemibold .label {
+  font-size: var(--skt-typography-style-18semi-font-size, var(--skt-typography-font-size-800, 18px));
+  font-weight: var(--skt-typography-style-18semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-18semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-18semi-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
+}
+
+.size20 .label {
+  font-size: var(--skt-typography-style-20med-font-size, var(--skt-typography-font-size-900, 20px));
+  font-weight: var(--skt-typography-style-20med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-20med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-20med-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
 }
 
 /* ── Icon wrapper ─────────────────────────────────────────────────────────── */

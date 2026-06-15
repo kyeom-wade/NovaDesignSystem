@@ -74,10 +74,10 @@
   cursor: pointer;
   padding: var(--skt-spacing-16, 16px) var(--skt-spacing-32, 32px);
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
-  font-size: var(--skt-typography-font-size-700, 16px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-16semi-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-16semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-inverse-primary, #ffffff);
   text-align: center;
   white-space: nowrap;

@@ -1,6 +1,6 @@
 import { ButtonItem } from "../ButtonItem/ButtonItem";
 import styles from "./BottomGroupAreaItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .BottomGroupAreaItem (node 50990:41804)
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .BottomGroupAreaItem (node 50990:41804)
 // anatomy: wrap[ ButtonItem(primary) ] | wrap[ ButtonItem(secondary), ButtonItem(primary) ]
 
 interface Props {

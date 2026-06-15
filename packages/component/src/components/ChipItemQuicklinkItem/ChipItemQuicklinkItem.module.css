@@ -71,10 +71,10 @@
 
 /* Label — 14px Medium, neutral-primary color, tight tracking */
 .label {
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
   color: var(--skt-color-text-neutral-primary, #060c1f);
   white-space: nowrap;
   flex-shrink: 0;

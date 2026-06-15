@@ -54,10 +54,10 @@
 
 .category {
   margin: 0;
-  font-size: var(--skt-typography-font-size-300, 12px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: -0.48px;
+  font-size: var(--skt-typography-style-12med-font-size, var(--skt-typography-font-size-300, 12px));
+  font-weight: var(--skt-typography-style-12med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-12med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-12med-letter-spacing, -0.48px);
   color: var(--skt-color-text-neutral-primary, #060c1f);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -67,10 +67,10 @@
 
 .name {
   margin: 0;
-  font-size: var(--skt-typography-font-size-700, 16px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: -0.64px;
+  font-size: var(--skt-typography-style-16med-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-16med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16med-letter-spacing, -0.64px);
   color: var(--skt-color-text-neutral-primary, #060c1f);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -80,10 +80,10 @@
 
 .benefit {
   margin: 0;
-  font-size: var(--skt-typography-font-size-300, 12px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: -0.48px;
+  font-size: var(--skt-typography-style-12med-font-size, var(--skt-typography-font-size-300, 12px));
+  font-weight: var(--skt-typography-style-12med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-12med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-12med-letter-spacing, -0.48px);
   color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
   overflow: hidden;
   text-overflow: ellipsis;
@@ -139,10 +139,10 @@
   height: 17px;
   background-color: var(--skt-color-fill-neutral-secondary, rgba(6, 12, 31, 0.1));
   border-radius: var(--skt-radius-4, 4px);
-  font-size: var(--skt-typography-font-size-100, 10px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: -0.4px;
+  font-size: var(--skt-typography-style-10med-font-size, var(--skt-typography-font-size-100, 10px));
+  font-weight: var(--skt-typography-style-10med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-10med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-10med-letter-spacing, -0.4px);
   color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
   white-space: nowrap;
   mix-blend-mode: multiply;
@@ -195,10 +195,10 @@
 }
 
 .iconBadgeText {
-  font-size: var(--skt-typography-font-size-300, 12px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: -0.48px;
+  font-size: var(--skt-typography-style-12med-font-size, var(--skt-typography-font-size-300, 12px));
+  font-weight: var(--skt-typography-style-12med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-12med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-12med-letter-spacing, -0.48px);
   color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
   white-space: nowrap;
   overflow: hidden;

@@ -141,10 +141,10 @@
 /* ── sub-text ─────────────────────────────────────────────────────────── */
 .subText {
   margin: 0;
-  font-size: var(--skt-typography-font-size-300, 12px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: -0.48px;
+  font-size: var(--skt-typography-style-12med-font-size, var(--skt-typography-font-size-300, 12px));
+  font-weight: var(--skt-typography-style-12med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-12med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-12med-letter-spacing, -0.48px);
   color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
 }
 

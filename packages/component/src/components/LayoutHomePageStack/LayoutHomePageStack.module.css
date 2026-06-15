@@ -59,10 +59,10 @@
 }
 
 .taskTitle {
-  font-size: var(--skt-typography-font-size-700, 16px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-16med-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-16med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-neutral-primary, #060c1f);
   margin: 0;
   /* Allow up to 2 lines */
@@ -81,10 +81,10 @@
   border-radius: var(--skt-radius-full, 9999px);
   padding: var(--skt-spacing-8, 8px) var(--skt-spacing-12, 12px);
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-14semi-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-14semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-brand-primary, #3617ce);
   cursor: pointer;
   white-space: nowrap;
@@ -135,10 +135,10 @@
 }
 
 .myTitle {
-  font-size: var(--skt-typography-font-size-800, 18px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  font-size: var(--skt-typography-style-18med-font-size, var(--skt-typography-font-size-800, 18px));
+  font-weight: var(--skt-typography-style-18med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-18med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-18med-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
   color: var(--skt-color-text-neutral-primary, #060c1f);
   white-space: nowrap;
 }
@@ -150,10 +150,10 @@
   background-color: var(--skt-color-fill-neutral-secondary, rgba(6, 12, 31, 0.1));
   border-radius: var(--skt-radius-6, 6px);
   padding: 4px var(--skt-spacing-6, 6px);
-  font-size: var(--skt-typography-font-size-200, 11px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-11med-font-size, var(--skt-typography-font-size-200, 11px));
+  font-weight: var(--skt-typography-style-11med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-11med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-11med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
   white-space: nowrap;
   height: 22px;
@@ -161,10 +161,10 @@
 }
 
 .mySubtitle {
-  font-size: var(--skt-typography-font-size-300, 12px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-12med-font-size, var(--skt-typography-font-size-300, 12px));
+  font-weight: var(--skt-typography-style-12med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-12med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-12med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
   white-space: nowrap;
 }
@@ -200,10 +200,10 @@
 }
 
 .contentTitle {
-  font-size: var(--skt-typography-font-size-800, 18px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  font-size: var(--skt-typography-style-18med-font-size, var(--skt-typography-font-size-800, 18px));
+  font-weight: var(--skt-typography-style-18med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-18med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-18med-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
   color: var(--skt-color-text-neutral-primary, #060c1f);
   /* max 2 lines */
   display: -webkit-box;
@@ -223,10 +223,10 @@
 }
 
 .contentsSubText {
-  font-size: var(--skt-typography-font-size-300, 12px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-12med-font-size, var(--skt-typography-font-size-300, 12px));
+  font-weight: var(--skt-typography-style-12med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-12med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-12med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
   white-space: nowrap;
 }

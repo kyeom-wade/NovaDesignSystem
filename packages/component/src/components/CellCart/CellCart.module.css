@@ -25,10 +25,10 @@
 .titleText {
   flex: 1 0 0;
   min-width: 0;
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-14semi-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-14semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-neutral-primary, #060c1f);
   white-space: nowrap;
   overflow: hidden;
@@ -123,10 +123,10 @@
 }
 
 .brandName {
-  font-size: var(--skt-typography-font-size-400, 13px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  font-size: var(--skt-typography-style-13med-font-size, var(--skt-typography-font-size-400, 13px));
+  font-weight: var(--skt-typography-style-13med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-13med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-13med-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
   color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
   overflow: hidden;
   text-overflow: ellipsis;
@@ -135,10 +135,10 @@
 }
 
 .productName {
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  font-size: var(--skt-typography-style-14semi-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-14semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14semi-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
   color: var(--skt-color-text-neutral-primary, #060c1f);
   overflow: hidden;
   display: -webkit-box;
@@ -183,10 +183,10 @@
 }
 
 .adultNoticeText {
-  font-size: var(--skt-typography-font-size-200, 11px);
-  font-weight: var(--skt-typography-font-weight-regular, 400);
-  line-height: var(--skt-typography-line-height-400, 150%);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  font-size: var(--skt-typography-style-11reg-font-size, var(--skt-typography-font-size-200, 11px));
+  font-weight: var(--skt-typography-style-11reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-11reg-line-height, var(--skt-typography-line-height-400, 150%));
+  letter-spacing: var(--skt-typography-style-11reg-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
   color: var(--skt-color-text-danger-primary, #e7313d);
   margin: 0;
   white-space: nowrap;
@@ -217,10 +217,10 @@
 
 .summaryLabel {
   flex-shrink: 0;
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-regular, 400);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-14reg-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-14reg-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14reg-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
   white-space: nowrap;
 }
@@ -228,10 +228,10 @@
 .summaryValue {
   flex: 1 0 0;
   min-width: 0;
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-regular, 400);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-14reg-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-14reg-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14reg-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
   text-align: right;
 }
@@ -267,10 +267,10 @@
   height: 20px;
   display: flex;
   align-items: center;
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-14semi-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-14semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-neutral-primary, #060c1f);
   white-space: nowrap;
 }
@@ -278,10 +278,10 @@
 .summaryTotalValue {
   flex: 1 0 0;
   min-width: 0;
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-14semi-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-14semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-neutral-primary, #060c1f);
   text-align: right;
 }
@@ -301,10 +301,10 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  font-size: var(--skt-typography-font-size-400, 13px);
-  font-weight: var(--skt-typography-font-weight-regular, 400);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  font-size: var(--skt-typography-style-13reg-font-size, var(--skt-typography-font-size-400, 13px));
+  font-weight: var(--skt-typography-style-13reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-13reg-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-13reg-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
   color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
   text-decoration: underline;
   text-decoration-skip-ink: none;

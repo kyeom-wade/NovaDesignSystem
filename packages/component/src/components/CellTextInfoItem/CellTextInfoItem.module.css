@@ -28,10 +28,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: var(--skt-typography-font-size-700, 16px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-16med-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-16med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-neutral-primary, #060c1f);
   margin: 0;
   word-break: break-word;
@@ -50,10 +50,10 @@
 }
 
 .badgeLabel {
-  font-size: var(--skt-typography-font-size-100, 10px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-10med-font-size, var(--skt-typography-font-size-100, 10px));
+  font-weight: var(--skt-typography-style-10med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-10med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-10med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-inverse-primary, #ffffff);
   white-space: nowrap;
   text-align: center;
@@ -62,10 +62,10 @@
 /* right text adornment (+500P style) */
 .rightText {
   flex-shrink: 0;
-  font-size: var(--skt-typography-font-size-700, 16px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-16semi-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-16semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-brand-primary, #3617ce);
   text-align: right;
   white-space: nowrap;
@@ -81,10 +81,10 @@
 
 .subText,
 .dateText {
-  font-size: var(--skt-typography-font-size-200, 11px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-11med-font-size, var(--skt-typography-font-size-200, 11px));
+  font-weight: var(--skt-typography-style-11med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-11med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-11med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   white-space: nowrap;
   margin: 0;
 }
