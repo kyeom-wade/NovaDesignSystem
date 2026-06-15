@@ -9,7 +9,7 @@
   flex-direction: row;
   align-items: center;
   position: relative;
-  width: 353px;
+  width: 100%;
   height: fit-content;
   background-color: var(--skt-color-bg-layer-default, #ffffff);
   border-radius: var(--skt-radius-20, 20px);

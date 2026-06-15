@@ -7,7 +7,7 @@
   flex-direction: row;
   gap: var(--skt-spacing-12, 12px);
   align-items: flex-start;
-  width: 353px;
+  width: 100%;
   box-sizing: border-box;
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
   position: relative;

@@ -1,4 +1,5 @@
 import React from "react";
+import { TextGroupProductVertical } from "../TextGroupProductVertical/TextGroupProductVertical";
 import styles from "./CarouselItem.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .CarouselItem (node 51093:41213)
 // anatomy: root[ thumbnail[ img, dimOverlay ], textGroup[ textInfoGroup[ textNameGroup[ title, subText? ], textSubGroup? ], textPriceGroup[ textPrice[ discountRate?, price, priceUnit? ], textPriceCondition? ], badgeGroup?[ badge, badge ] ] ]
@@ -83,58 +84,27 @@ export function CarouselItem({
         </div>
       )}
 
-      {/* Text group */}
       <div className={`${styles.textGroup} ${isLarge ? styles.textGroupLarge : ""}`}>
-        {/* Info group */}
-        <div className={styles.textInfoGroup}>
-          <div className={styles.textNameGroup}>
-            <p className={`${styles.title} ${isLarge ? styles.titleLarge : ""}`}>{title}</p>
-            {isLarge && <p className={styles.subText}>{subText}</p>}
-          </div>
-
-          {/* Medium: rating row */}
-          {isMedium && (
-            <div className={styles.textSubGroup}>
-              <span className={styles.metaText}>{rating}</span>
-              <span className={styles.divider} />
-              <span className={styles.metaText}>{bookingRate}</span>
-            </div>
-          )}
-        </div>
-
-        {/* Price group — Small & Large only */}
-        {(isSmall || isLarge) && (
-          <div className={styles.textPriceGroup}>
-            <div className={styles.textPrice}>
-              {isLarge && (
-                <>
-                  <span className={styles.discountRate}>{discountRate}</span>
-                  <span className={styles.price}>{discountedPrice}</span>
-                  <span className={styles.priceUnit}>{priceUnit}</span>
-                </>
-              )}
-              {isSmall && <span className={styles.price}>{price}</span>}
-            </div>
-
-            {isSmall && (
-              <div className={styles.textPriceCondition}>
-                <p className={styles.conditionLabel}>{conditionLabel}</p>
-                <p className={styles.conditionPrice}>{conditionPrice}</p>
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Badge group — Large only */}
-        {isLarge && badges && badges.length > 0 && (
-          <div className={styles.badgeGroup}>
-            {badges.map((badge, i) => (
-              <span key={i} className={styles.badge}>
-                {badge}
-              </span>
-            ))}
-          </div>
-        )}
+        <TextGroupProductVertical
+          className={styles.productTextGroup}
+          title={title}
+          subText={subText}
+          showSubText={isLarge}
+          rating={rating}
+          bookingRate={bookingRate}
+          showSubGroup={isMedium}
+          discount={discountRate}
+          showDiscount={isLarge}
+          price={isLarge ? discountedPrice : price}
+          showPrice={!isMedium}
+          period={priceUnit}
+          showPeriod={isLarge}
+          priceConditionLabel={conditionLabel}
+          priceConditionValue={conditionPrice}
+          showPriceCondition={isSmall}
+          badges={badges}
+          showBadgeGroup={isLarge}
+        />
       </div>
     </div>
   );

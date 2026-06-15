@@ -9,7 +9,7 @@
   align-items: center;
   overflow: hidden;
   padding: var(--skt-spacing-8, 8px) 0;
-  width: 353px;
+  width: 100%;
   cursor: pointer;
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
   box-sizing: border-box;

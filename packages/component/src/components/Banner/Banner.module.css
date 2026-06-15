@@ -34,6 +34,7 @@
   background: transparent;
   padding: 0;
   text-align: left;
+  font-family: inherit;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -123,19 +124,21 @@
 /* ── title text ───────────────────────────────────────────────────────── */
 .title {
   margin: 0;
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
   color: var(--skt-color-text-neutral-primary, #060c1f);
 }
 
 .titleSmall {
-  font-size: var(--skt-typography-font-size-500, 14px);
-  letter-spacing: -0.56px;
+  font-size: var(--skt-typography-style-14semi-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-14semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14semi-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
 }
 
 .titleMedium {
-  font-size: var(--skt-typography-font-size-700, 16px);
-  letter-spacing: -0.64px;
+  font-size: var(--skt-typography-style-16semi-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-16semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
 }
 
 /* ── sub-text ─────────────────────────────────────────────────────────── */

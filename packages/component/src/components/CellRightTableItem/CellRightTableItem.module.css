@@ -11,7 +11,7 @@
   gap: var(--skt-spacing-16, 16px);
   padding-top: var(--skt-spacing-4, 4px);
   padding-bottom: var(--skt-spacing-4, 4px);
-  width: 353px;
+  width: 100%;
   box-sizing: border-box;
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
 }

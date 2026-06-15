@@ -17,6 +17,7 @@ function BadgeItem({ text = "Badge" }: BadgeItemProps) {
 }
 
 interface Props {
+  className?: string;
   /** Main product title — up to 2 lines */
   title?: string;
   /** Sub label below title (e.g. category / tag) */
@@ -54,6 +55,7 @@ interface Props {
 }
 
 export function TextGroupProductVertical({
+  className,
   title = "타이틀 최대 2줄 노출됩니다. 타이틀 최대 2줄 노출됩니다.",
   subText = "Sub Text",
   showSubText = true,
@@ -73,7 +75,7 @@ export function TextGroupProductVertical({
   showBadgeGroup = true,
 }: Props) {
   return (
-    <div className={styles.root} data-cx-component="TextGroupProductVertical">
+    <div className={`${styles.root} ${className ?? ""}`} data-cx-component="TextGroupProductVertical">
       {/* TextInfoGroup */}
       <div className={styles.textInfoGroup}>
         {/* TextNameGroup */}
