@@ -25,8 +25,8 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+  background-color: var(--skt-color-palette-white-alpha-500, rgba(255, 255, 255, 0.5));
+  box-shadow: 0 0 20px 0 var(--skt-color-palette-gray-alpha-50, rgba(6, 12, 31, 0.05));
   cursor: pointer;
   box-sizing: border-box;
 }
@@ -77,10 +77,10 @@
 
 .aiPlaceholder {
   margin: 0;
-  font-size: var(--skt-typography-font-size-700, 16px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: -0.04em;
+  font-size: var(--skt-typography-style-16med-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-16med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16med-letter-spacing, -0.04em);
   color: var(--skt-color-text-brand-primary, #3617ce);
   white-space: nowrap;
   overflow: hidden;
@@ -193,10 +193,10 @@
 }
 
 .tabLabel {
-  font-size: var(--skt-typography-font-size-300, 12px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: -0.04em;
+  font-size: var(--skt-typography-style-12med-font-size, var(--skt-typography-font-size-300, 12px));
+  font-weight: var(--skt-typography-style-12med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-12med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-12med-letter-spacing, -0.04em);
   text-align: center;
   min-width: 100%;
   white-space: nowrap;

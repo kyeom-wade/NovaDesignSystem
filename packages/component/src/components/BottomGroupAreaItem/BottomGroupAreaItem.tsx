@@ -1,7 +1,7 @@
-import React from "react";
+import { ButtonItem } from "../ButtonItem/ButtonItem";
 import styles from "./BottomGroupAreaItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .BottomGroupAreaItem (node 50990:41804)
-// anatomy: wrap[ primaryBtn ] | wrap[ secondaryBtn, primaryBtn ]
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .BottomGroupAreaItem (node 50990:41804)
+// anatomy: wrap[ ButtonItem(primary) ] | wrap[ ButtonItem(secondary), ButtonItem(primary) ]
 
 interface Props {
   /** Layout variant: one full-width button or two equal buttons side-by-side */
@@ -14,6 +14,7 @@ interface Props {
   onPrimary?: () => void;
   /** Click handler for secondary button */
   onSecondary?: () => void;
+  className?: string;
 }
 
 export function BottomGroupAreaItem({
@@ -22,30 +23,35 @@ export function BottomGroupAreaItem({
   secondaryLabel = "버튼",
   onPrimary,
   onSecondary,
+  className,
 }: Props) {
   const is2Button = variants === "2 Botton";
 
   return (
     <div
-      className={`${styles.wrap} ${is2Button ? styles.wrapDual : ""}`}
+      className={[styles.wrap, is2Button ? styles.wrapDual : "", className]
+        .filter(Boolean)
+        .join(" ")}
       data-cx-component="BottomGroupAreaItem"
     >
       {is2Button && (
-        <button
-          type="button"
-          className={`${styles.btn} ${styles.btnSecondary}`}
+        <ButtonItem
+          className={styles.button}
+          variant="Secondary"
+          size="XLarge"
+          label={secondaryLabel}
+          icon={false}
           onClick={onSecondary}
-        >
-          {secondaryLabel}
-        </button>
+        />
       )}
-      <button
-        type="button"
-        className={`${styles.btn} ${styles.btnPrimary}`}
+      <ButtonItem
+        className={styles.button}
+        variant="Primary"
+        size="XLarge"
+        label={primaryLabel}
+        icon={false}
         onClick={onPrimary}
-      >
-        {primaryLabel}
-      </button>
+      />
     </div>
   );
 }

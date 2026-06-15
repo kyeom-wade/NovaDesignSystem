@@ -9,9 +9,6 @@ const meta: Meta<typeof CellCard> = {
     slotHeight: { control: "number" },
     className: { control: "text" },
   },
-  args: {
-    slotHeight: 104,
-  },
 };
 export default meta;
 type Story = StoryObj<typeof CellCard>;
@@ -51,7 +48,7 @@ export const SlotHeights: Story = {
         </CellCard>
       </div>
       <div>
-        <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#999" }}>slotHeight: 104 (기본값)</p>
+        <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#999" }}>slotHeight: 104</p>
         <CellCard slotHeight={104}>
           <div style={{ padding: "12px" }}>
             <p style={{ margin: 0 }}>라벨 텍스트</p>

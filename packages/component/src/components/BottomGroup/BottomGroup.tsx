@@ -1,5 +1,8 @@
 import React from "react";
 import styles from "./BottomGroup.module.css";
+import { BottomGroupAiAreaItem } from "../BottomGroupAiAreaItem/BottomGroupAiAreaItem";
+import { BottomGroupAreaItem } from "../BottomGroupAreaItem/BottomGroupAreaItem";
+import { BottomGroupUpperItem, type BottomGroupUpperItemVariant } from "../BottomGroupUpperItem/BottomGroupUpperItem";
 // Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .BottomGroup (node 51228:76344)
 // anatomy: wrap[
 //   aiLabel?[ aiIcon, aiText ] (Ai variant only),
@@ -23,7 +26,13 @@ interface Props {
   primaryLabel?: string;
   /** (Default) Show the upper list-text row above the primary button */
   showUpperItem?: boolean;
-  /** (Default) Text shown in the upper list-text row */
+  /** (Default) Upper item variant */
+  upperItemVariant?: BottomGroupUpperItemVariant;
+  /** (Default) Upper item label */
+  upperItemLabel?: string;
+  /** (Default) Upper item value, used by Table variant */
+  upperItemValue?: string;
+  /** @deprecated Use upperItemLabel instead. */
   upperItemText?: string;
   /** Click handler for primary CTA */
   onPrimary?: () => void;
@@ -40,6 +49,9 @@ export function BottomGroup({
   secondaryLabel = "선물하기",
   primaryLabel,
   showUpperItem = true,
+  upperItemVariant = "Default",
+  upperItemLabel,
+  upperItemValue,
   upperItemText = "리스트 텍스트",
   onPrimary,
   onSecondary,
@@ -48,6 +60,7 @@ export function BottomGroup({
   const isAi = variant === "Ai";
   const isDefault = variant === "Default";
   const resolvedPrimaryLabel = primaryLabel ?? (isAi ? "구독하기" : "버튼");
+  const resolvedUpperItemLabel = upperItemLabel ?? upperItemText;
 
   return (
     <div
@@ -97,89 +110,32 @@ export function BottomGroup({
       )}
 
       {isAi && (
-        <div className={styles.aiAreaItem}>
-          {/* Frosted icon pill */}
-          <div className={styles.iconMask}>
-            <div className={styles.iconBg} />
-            <span className={styles.iconImg} role="img" aria-label="AI 홈 아이콘">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <text
-                  x="1"
-                  y="14"
-                  fontFamily="'Pretendard Variable', sans-serif"
-                  fontWeight="700"
-                  fontSize="16"
-                  fill="var(--skt-color-fill-brand-primary, #3617ce)"
-                >
-                  T
-                </text>
-              </svg>
-              <span className={styles.starBadge} aria-hidden="true">
-                <svg
-                  width="7"
-                  height="7"
-                  viewBox="0 0 7 7"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3.5 0L4.327 2.673L7 3.5L4.327 4.327L3.5 7L2.673 4.327L0 3.5L2.673 2.673L3.5 0Z"
-                    fill="var(--skt-color-fill-brand-primary, #3617ce)"
-                  />
-                </svg>
-              </span>
-            </span>
-          </div>
-
-          {/* CTA pill */}
-          <div className={styles.buttonRow}>
-            {showSecondaryButton && (
-              <>
-                <button
-                  type="button"
-                  className={styles.cta}
-                  onClick={onSecondary}
-                >
-                  {secondaryLabel}
-                </button>
-                <span className={styles.divider} aria-hidden="true" />
-              </>
-            )}
-            <button type="button" className={styles.cta} onClick={onPrimary}>
-              {resolvedPrimaryLabel}
-            </button>
-          </div>
-        </div>
+        <BottomGroupAiAreaItem
+          variant={showSecondaryButton ? "2 Botton" : "1 Botton"}
+          primaryLabel={resolvedPrimaryLabel}
+          secondaryLabel={secondaryLabel}
+          onPrimary={onPrimary}
+          onSecondary={onSecondary}
+        />
       )}
 
       {/* ── Default variant ── */}
       {isDefault && showUpperItem && (
         <div className={styles.upperItem}>
-          <div className={styles.listText}>
-            <div className={styles.labelCell}>
-              <p className={styles.upperItemText}>{upperItemText}</p>
-            </div>
-          </div>
+          <BottomGroupUpperItem
+            variant={upperItemVariant}
+            label={resolvedUpperItemLabel}
+            value={upperItemValue}
+          />
         </div>
       )}
 
       {isDefault && (
-        <div className={styles.areaItem}>
-          <button
-            type="button"
-            className={styles.primaryBtn}
-            onClick={onPrimary}
-          >
-            {resolvedPrimaryLabel}
-          </button>
-        </div>
+        <BottomGroupAreaItem
+          variants="1 Botton"
+          primaryLabel={resolvedPrimaryLabel}
+          onPrimary={onPrimary}
+        />
       )}
     </div>
   );

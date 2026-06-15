@@ -10,10 +10,6 @@ const meta: Meta<typeof InputItem> = {
       options: ["Default", "Focused", "Typing", "Typed", "Disabled"],
     },
     error: { control: "boolean" },
-    label: { control: "boolean" },
-    labelText: { control: "text" },
-    helpText: { control: "boolean" },
-    helpTextContent: { control: "text" },
     button: { control: "boolean" },
     buttonLabel: { control: "text" },
     placeholder: { control: "text" },
@@ -23,12 +19,8 @@ const meta: Meta<typeof InputItem> = {
   args: {
     states: "Default",
     error: false,
-    label: true,
-    labelText: "이름",
-    helpText: true,
-    helpTextContent: "이름을 입력해 주세요",
     button: true,
-    buttonLabel: "확인",
+    buttonLabel: "버튼",
     placeholder: "텍스트를 입력하세요",
   },
 };
@@ -56,7 +48,7 @@ export const ErrorState: Story = {
       {(["Default", "Focused", "Typing", "Typed"] as const).map((s) => (
         <div key={s}>
           <p style={{ margin: "0 0 6px", fontSize: 12, color: "#888" }}>{s} + Error</p>
-          <InputItem {...args} states={s} error={true} helpTextContent="올바르지 않은 값입니다" />
+          <InputItem {...args} states={s} error={true} />
         </div>
       ))}
     </div>
@@ -66,27 +58,14 @@ export const ErrorState: Story = {
 export const WithoutButton: Story = {
   args: {
     button: false,
-    labelText: "이메일",
     placeholder: "example@email.com",
-    helpTextContent: "이메일 주소를 입력해 주세요",
-  },
-};
-
-export const WithoutLabel: Story = {
-  args: {
-    label: false,
-    helpText: false,
-    placeholder: "검색어를 입력하세요",
-    buttonLabel: "검색",
   },
 };
 
 export const TypingWithCaret: Story = {
   args: {
     states: "Typing",
-    labelText: "상품명",
     placeholder: "갤럭시 S25 울트라",
-    helpTextContent: "입력 중...",
     buttonLabel: "등록",
   },
 };
@@ -94,9 +73,7 @@ export const TypingWithCaret: Story = {
 export const TypedValue: Story = {
   args: {
     states: "Typed",
-    labelText: "배송지",
     placeholder: "서울특별시 중구 을지로 65",
-    helpTextContent: "배송지가 입력되었습니다",
     buttonLabel: "변경",
   },
 };
@@ -104,9 +81,7 @@ export const TypedValue: Story = {
 export const Disabled: Story = {
   args: {
     states: "Disabled",
-    labelText: "휴대폰 번호",
     placeholder: "010-1234-5678",
-    helpTextContent: "수정이 불가능한 항목입니다",
     buttonLabel: "인증",
   },
 };

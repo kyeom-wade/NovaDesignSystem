@@ -5,14 +5,14 @@ const meta: Meta<typeof DialogActionButtonItem> = {
   title: "cx/DialogActionButtonItem",
   component: DialogActionButtonItem as never,
   argTypes: {
-    options: { control: "select", options: ["2Buttons", "1Button"] },
+    options: { control: "select", options: ["2Button", "1Button"] },
     primaryLabel: { control: "text" },
     secondaryLabel: { control: "text" },
     onPrimary: { control: false },
     onSecondary: { control: false },
   },
   args: {
-    options: "2Buttons",
+    options: "2Button",
     primaryLabel: "확인",
     secondaryLabel: "취소",
   },
@@ -31,7 +31,7 @@ export const OneButton: Story = {
 
 export const TwoButtons: Story = {
   args: {
-    options: "2Buttons",
+    options: "2Button",
     primaryLabel: "확인",
     secondaryLabel: "취소",
   },
@@ -42,7 +42,7 @@ export const AllVariants: Story = {
     <div style={{ display: "flex", flexDirection: "column", gap: "24px", padding: "24px" }}>
       <div>
         <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#888" }}>2Buttons</p>
-        <DialogActionButtonItem options="2Buttons" primaryLabel="확인" secondaryLabel="취소" />
+        <DialogActionButtonItem options="2Button" primaryLabel="확인" secondaryLabel="취소" />
       </div>
       <div>
         <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#888" }}>1Button</p>
@@ -57,11 +57,11 @@ export const CustomLabels: Story = {
     <div style={{ display: "flex", flexDirection: "column", gap: "24px", padding: "24px" }}>
       <div>
         <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#888" }}>구매 확인</p>
-        <DialogActionButtonItem options="2Buttons" primaryLabel="구매하기" secondaryLabel="닫기" />
+        <DialogActionButtonItem options="2Button" primaryLabel="구매하기" secondaryLabel="닫기" />
       </div>
       <div>
         <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#888" }}>삭제 확인</p>
-        <DialogActionButtonItem options="2Buttons" primaryLabel="삭제" secondaryLabel="취소" />
+        <DialogActionButtonItem options="2Button" primaryLabel="삭제" secondaryLabel="취소" />
       </div>
       <div>
         <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#888" }}>단독 버튼</p>

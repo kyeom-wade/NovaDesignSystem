@@ -69,10 +69,10 @@
 
 .title {
   margin: 0;
-  font-size: var(--skt-typography-font-size-900, 20px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  font-size: var(--skt-typography-style-20med-font-size, var(--skt-typography-font-size-900, 20px));
+  font-weight: var(--skt-typography-style-20med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-20med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-20med-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
   color: var(--skt-color-text-neutral-primary, #060c1f);
   white-space: nowrap;
   word-break: break-word;
@@ -87,10 +87,10 @@
 
 .subText {
   margin: 0;
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
   white-space: nowrap;
 }
@@ -215,7 +215,7 @@
   padding-bottom: var(--skt-spacing-32, 32px);
   padding-left: var(--skt-spacing-20, 20px);
   padding-right: var(--skt-spacing-20, 20px);
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--skt-color-palette-white-alpha-800, rgba(255, 255, 255, 0.8));
   border-top-left-radius: var(--skt-radius-28, 28px);
   border-top-right-radius: var(--skt-radius-28, 28px);
   box-shadow: 0px -5px 60px 0px var(--skt-color-shadow-default, rgba(6, 12, 31, 0.05));
@@ -244,10 +244,10 @@
 }
 
 .aiHintText {
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-300, 140%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   background: linear-gradient(
     to right,
     var(--skt-color-palette-blue-800, #3617ce),
@@ -282,9 +282,9 @@
 .iconPillBg {
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--skt-color-palette-white-alpha-500, rgba(255, 255, 255, 0.5));
   border-radius: 26px;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 20px 0px var(--skt-color-palette-gray-alpha-50, rgba(6, 12, 31, 0.05));
 }
 
 .iconPillImg {
@@ -308,7 +308,7 @@
   border-radius: var(--skt-radius-20, 20px);
   padding: var(--skt-spacing-16, 16px) var(--skt-spacing-32, 32px);
   gap: var(--skt-spacing-16, 16px);
-  box-shadow: 0px 8px 8px rgba(27, 11, 102, 0.16);
+  box-shadow: 0px 8px 8px var(--skt-color-shadow-default, rgba(6, 12, 31, 0.2));
 }
 
 .splitBtnLeft,
@@ -319,10 +319,10 @@
   border: none;
   cursor: pointer;
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
-  font-size: var(--skt-typography-font-size-700, 16px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-16semi-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-16semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   color: var(--skt-color-text-inverse-primary, #ffffff);
   text-align: center;
   padding: 0;
@@ -336,6 +336,6 @@
 .splitBtnDivider {
   width: 1px;
   height: 12px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--skt-color-palette-white-alpha-200, rgba(255, 255, 255, 0.2));
   flex-shrink: 0;
 }

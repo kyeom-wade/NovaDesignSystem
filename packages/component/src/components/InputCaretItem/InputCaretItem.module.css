@@ -1,0 +1,11 @@
+/* InputCaretItem — Figma node 51715:87224 */
+/* anatomy: root — 1px wide × 20px tall pill with brand fill; used as an input caret marker */
+
+.root {
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  border-radius: var(--skt-radius-full, var(--radius-semantic-full, 999px));
+  background-color: var(--skt-color-fill-brand-primary, var(--fill-brand-default, #3617ce));
+  flex-shrink: 0;
+}

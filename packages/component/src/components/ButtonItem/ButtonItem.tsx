@@ -1,12 +1,19 @@
 import React from "react";
+import { IconArrow } from "../IconArrow/IconArrow";
+import { Loader } from "../Loader/Loader";
 import styles from "./ButtonItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .ButtonItem (node 50943:30788)
-// anatomy: root(button)[ label(span), icon?(span>svg), loader?(span[ dot × 3 ]) ]
-// Variants=Primary|Secondary|Outline|Text|Text+Icon × Size=Small|Medium|Large|XLarge × State=Default|Loading|Disabled × Danger=Off|On
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .ButtonItem (node 50943:30788)
+// anatomy: root(button)[ label, IconArrow? | Loader ]
+// Variants=Primary|Secondary|Ouline|Text|Text+Icon × Size=Small|Medium|Large|XLarge × State=Default|Loading|Disabled × Danger=Off|On
+
+type ButtonVariant = "Primary" | "Secondary" | "Outline" | "Ouline" | "Text" | "TextIcon" | "Text+Icon";
+type NormalizedButtonVariant = "Primary" | "Secondary" | "Outline" | "Text" | "TextIcon";
 
 interface Props {
   /** Visual style variant of the button */
-  variant?: "Primary" | "Secondary" | "Outline" | "Text" | "TextIcon";
+  variant?: ButtonVariant;
+  /** Figma variant prop name alias */
+  variants?: ButtonVariant;
   /** Height tier: Small=28px · Medium=36px · Large=48px · XLarge=56px */
   size?: "Small" | "Medium" | "Large" | "XLarge";
   /** Interaction state */
@@ -15,34 +22,54 @@ interface Props {
   danger?: boolean;
   /** Button label text */
   label?: string;
-  /** Whether to show the trailing arrow icon (only for non-Text variants) */
+  /** Whether to show the trailing arrow icon */
+  icon?: boolean;
+  /** Legacy alias for icon */
   showIcon?: boolean;
   /** Click handler */
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   className?: string;
 }
 
+function normalizeVariant(variant: ButtonVariant): NormalizedButtonVariant {
+  if (variant === "Ouline") return "Outline";
+  if (variant === "Text+Icon") return "TextIcon";
+  return variant;
+}
+
+function iconSize(size: Props["size"], normalizedVariant: NormalizedButtonVariant): number {
+  if (normalizedVariant === "TextIcon") return 12;
+  if (size === "XLarge") return 20;
+  if (size === "Large") return 16;
+  if (size === "Medium") return 16;
+  return 12;
+}
+
 export function ButtonItem({
-  variant = "Primary",
+  variant,
+  variants,
   size = "Large",
   state = "Default",
   danger = false,
   label = "버튼",
-  showIcon = false,
+  icon,
+  showIcon,
   onClick,
   className,
 }: Props) {
+  const normalizedVariant = normalizeVariant(variants ?? variant ?? "Primary");
   const isDisabled = state === "Disabled";
   const isLoading = state === "Loading";
-  const isText = variant === "Text" || variant === "TextIcon";
-  const hasIcon = showIcon && !isText && !isLoading;
-  const hasTextIcon = variant === "TextIcon" && !isLoading;
+  const isText = normalizedVariant === "Text" || normalizedVariant === "TextIcon";
+  const shouldShowIcon = icon ?? showIcon ?? true;
+  const hasIcon = shouldShowIcon && normalizedVariant !== "Text" && !isLoading;
+  const loaderColor = normalizedVariant === "Primary" ? "inverse" : danger ? "brand" : "neutral";
 
   const rootClass = [
     styles.root,
-    styles[`variant-${variant}`],
+    styles[`variant-${normalizedVariant}`],
     styles[`size-${size}`],
-    danger && !isText ? styles.danger : null,
+    danger ? styles.danger : null,
     isDisabled ? styles.disabled : null,
     isLoading ? styles.loading : null,
     className,
@@ -55,7 +82,7 @@ export function ButtonItem({
       type="button"
       className={rootClass}
       data-cx-component="ButtonItem"
-      data-variant={variant}
+      data-variant={normalizedVariant}
       data-size={size}
       data-state={state}
       data-danger={danger ? "on" : "off"}
@@ -63,31 +90,17 @@ export function ButtonItem({
       onClick={isDisabled || isLoading ? undefined : onClick}
     >
       {isLoading ? (
-        <span className={styles.loader} aria-label="로딩 중" role="status">
-          <span className={styles.dot} />
-          <span className={styles.dot} />
-          <span className={styles.dot} />
-        </span>
+        <Loader className={styles.loader} color={loaderColor} size="small" />
       ) : (
         <>
           <span className={isText ? styles.textLabel : styles.label}>{label}</span>
-          {(hasIcon || hasTextIcon) && (
+          {hasIcon && (
             <span className={styles.iconWrap} aria-hidden="true">
-              {/* ArrowRight chevron */}
-              <svg
+              <IconArrow
                 className={styles.iconSvg}
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6 4l4 4-4 4"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+                size={iconSize(size, normalizedVariant)}
+                variant="right"
+              />
             </span>
           )}
         </>

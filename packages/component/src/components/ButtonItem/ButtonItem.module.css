@@ -1,166 +1,109 @@
 /* ButtonItem — Figma node 50943:30788 */
-/* anatomy: root(button) [ label(span) | loader(span[dots]) | iconWrap(span>svg) ] */
-/* variants: Primary · Secondary · Outline · Text · TextIcon */
-/* sizes: Small=28px · Medium=36px · Large=48px · XLarge=56px */
-/* states: Default · Loading · Disabled */
-/* danger=on → red palette for Primary/Secondary/Outline */
+/* anatomy: root(button)[ label, IconArrow? | Loader ] */
 
-/* ─────────────────────────────────────────
-   Base root
-───────────────────────────────────────── */
 .root {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: var(--skt-component-button-gap-default, 4px);
   border: none;
-  border-radius: var(--skt-radius-16, 16px);
-  padding: 0 16px;
+  box-sizing: border-box;
+  padding: 0 var(--skt-component-button-padding-x-2, 16px);
   cursor: pointer;
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  font-size: var(--skt-typography-style-14semi-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-14semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   white-space: nowrap;
   overflow: hidden;
   text-decoration: none;
-  transition: background-color 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
   flex-shrink: 0;
 }
 
-/* ─────────────────────────────────────────
-   Size variants
-───────────────────────────────────────── */
 .size-Small {
-  height: 28px;
-  padding: 0 12px;
-  border-radius: var(--skt-radius-12, 12px);
-  font-size: var(--skt-typography-font-size-500, 14px);
+  min-height: 28px;
+  padding: var(--skt-component-button-padding-y-1, 6px) var(--skt-component-button-padding-x-1, 12px);
+  border-radius: var(--skt-radius-r-full, 9999px);
+  font-size: var(--skt-typography-style-12semi-font-size, var(--skt-typography-font-size-300, 12px));
+  font-weight: var(--skt-typography-style-12semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-12semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-12semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
 }
 
 .size-Medium {
   height: 36px;
-  padding: 0 14px;
-  border-radius: var(--skt-radius-12, 12px);
-  font-size: var(--skt-typography-font-size-500, 14px);
+  padding: var(--skt-component-button-padding-y-1, 6px) var(--skt-component-button-padding-x-1, 12px);
+  border-radius: var(--skt-radius-r-4, var(--skt-radius-12, 12px));
+  font-size: var(--skt-typography-style-14semi-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-14semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
 }
 
 .size-Large {
   height: 48px;
-  padding: 0 16px;
-  border-radius: var(--skt-radius-16, 16px);
-  font-size: var(--skt-typography-font-size-500, 14px);
+  padding: var(--skt-component-button-padding-y-2, 10px) var(--skt-component-button-padding-x-2, 16px);
+  border-radius: var(--skt-radius-r-6, 14px);
+  font-size: var(--skt-typography-style-14semi-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-14semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
 }
 
 .size-XLarge {
   height: 56px;
-  padding: 0 32px;
-  border-radius: var(--skt-radius-20, 20px);
-  font-size: var(--skt-typography-font-size-700, 16px);
-  letter-spacing: -0.04em;
-  box-shadow: 0 8px 8px var(--skt-color-shadow-default, rgba(6, 12, 31, 0.2));
+  padding: 0 var(--skt-component-button-padding-x-3, 32px);
+  border-radius: var(--skt-radius-r-9, 20px);
+  font-size: var(--skt-typography-style-16semi-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-16semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
 }
 
-/* ─────────────────────────────────────────
-   Variant: Primary
-───────────────────────────────────────── */
 .variant-Primary {
-  background-color: var(--skt-color-fill-brand-primary, #3617ce);
+  background-color: var(--skt-color-fill-brand-default, var(--skt-color-fill-brand-primary, #3617ce));
   color: var(--skt-color-text-inverse-primary, #ffffff);
   border: none;
 }
 
-.variant-Primary:not(:disabled):not(.loading):hover {
-  background-color: #2e14b8;
-}
-
-.variant-Primary:not(:disabled):not(.loading):active {
-  opacity: 0.85;
-}
-
-/* ─────────────────────────────────────────
-   Variant: Secondary
-───────────────────────────────────────── */
 .variant-Secondary {
-  background-color: var(--skt-color-palette-gray-200, #e2e6f1);
-  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  background-color: var(--skt-color-fill-neutral-tertiary, var(--fill-neutral-tertiary, rgba(13, 47, 138, 0.12)));
+  color: var(--skt-color-text-neutral-secondary, var(--text-neutral-secondary, rgba(12, 27, 65, 0.67)));
   border: none;
 }
 
-.variant-Secondary:not(:disabled):not(.loading):hover {
-  background-color: var(--skt-color-palette-gray-300, #d2d9eb);
-}
-
-.variant-Secondary:not(:disabled):not(.loading):active {
-  opacity: 0.8;
-}
-
-/* ─────────────────────────────────────────
-   Variant: Outline
-───────────────────────────────────────── */
 .variant-Outline {
   background-color: transparent;
-  color: var(--skt-color-text-neutral-primary, #060c1f);
-  border: 1px solid var(--skt-color-border-neutral-strong, #d2d9eb);
+  color: var(--skt-color-text-neutral-primary, var(--text-neutral-primary, #060c1f));
+  border: 1px solid var(--skt-color-border-neutral-strong, var(--border-neutral-strong, #060c1f));
 }
 
-.variant-Outline:not(:disabled):not(.loading):hover {
-  background-color: var(--skt-color-fill-neutral-tertiary, rgba(6, 12, 31, 0.05));
-}
-
-.variant-Outline:not(:disabled):not(.loading):active {
-  opacity: 0.75;
-}
-
-/* ─────────────────────────────────────────
-   Variant: Text
-───────────────────────────────────────── */
 .variant-Text {
   background-color: transparent;
-  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  color: var(--skt-color-text-neutral-secondary, var(--text-neutral-secondary, rgba(12, 27, 65, 0.67)));
   border: none;
   padding: 0;
   border-radius: 0;
   height: auto;
-  box-shadow: none;
-  font-weight: var(--skt-typography-font-weight-regular, 400);
+  overflow: visible;
 }
 
-.variant-Text:not(:disabled):hover {
-  opacity: 0.75;
-}
-
-/* ─────────────────────────────────────────
-   Variant: TextIcon
-───────────────────────────────────────── */
 .variant-TextIcon {
   background-color: transparent;
-  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  color: var(--skt-color-text-neutral-secondary, var(--text-neutral-secondary, rgba(12, 27, 65, 0.67)));
   border: none;
   padding: 0;
   border-radius: 0;
   height: auto;
-  box-shadow: none;
-  font-weight: var(--skt-typography-font-weight-regular, 400);
   gap: 2px;
+  overflow: visible;
 }
 
-.variant-TextIcon:not(:disabled):hover {
-  opacity: 0.75;
-}
-
-/* ─────────────────────────────────────────
-   Danger modifier (Primary / Secondary / Outline)
-───────────────────────────────────────── */
 .variant-Primary.danger {
   background-color: var(--skt-color-fill-danger-primary, #e7313d);
   color: var(--skt-color-text-inverse-primary, #ffffff);
-}
-
-.variant-Primary.danger:not(:disabled):not(.loading):hover {
-  background-color: #cc2935;
 }
 
 .variant-Secondary.danger {
@@ -168,29 +111,66 @@
   color: var(--skt-color-text-danger-primary, #e7313d);
 }
 
-.variant-Secondary.danger:not(:disabled):not(.loading):hover {
-  background-color: #ffd4d0;
-}
-
 .variant-Outline.danger {
   background-color: transparent;
   color: var(--skt-color-text-danger-primary, #e7313d);
-  border-color: var(--skt-color-fill-danger-primary, #e7313d);
+  border-color: var(--skt-color-border-danger-primary, var(--skt-color-fill-danger-primary, #e7313d));
 }
 
-.variant-Outline.danger:not(:disabled):not(.loading):hover {
-  background-color: var(--skt-color-fill-danger-secondary, #fff2f0);
+.variant-Text.danger,
+.variant-TextIcon.danger {
+  color: var(--skt-color-text-danger-primary, #e7313d);
 }
 
-/* ─────────────────────────────────────────
-   Disabled state
-───────────────────────────────────────── */
+.variant-Text.size-Small {
+  font-size: var(--skt-typography-style-12reg-font-size, var(--skt-typography-font-size-300, 12px));
+  font-weight: var(--skt-typography-style-12reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-12reg-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-12reg-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
+.variant-Text.size-Medium,
+.variant-Text.size-Large {
+  font-size: var(--skt-typography-style-14reg-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-14reg-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14reg-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
+.variant-Text.size-XLarge {
+  font-size: var(--skt-typography-style-16reg-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-16reg-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16reg-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
+.variant-TextIcon.size-Small {
+  font-size: var(--skt-typography-style-12med-font-size, var(--skt-typography-font-size-300, 12px));
+  font-weight: var(--skt-typography-style-12med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-12med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-12med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
+.variant-TextIcon.size-Medium,
+.variant-TextIcon.size-Large {
+  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
+.variant-TextIcon.size-XLarge {
+  font-size: var(--skt-typography-style-16med-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-16med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
 .disabled,
 .root:disabled {
-  background-color: var(--skt-color-fill-neutral-tertiary, rgba(6, 12, 31, 0.05));
-  color: var(--skt-color-text-neutral-quaternary, rgba(6, 12, 31, 0.2));
+  background-color: var(--skt-color-fill-disabled-default, var(--fill-disabled-default, rgba(35, 55, 155, 0.05)));
+  color: var(--skt-color-text-disabled-default, var(--text-disabled-default, rgba(11, 44, 127, 0.18)));
   border-color: transparent;
-  box-shadow: none;
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -200,26 +180,20 @@
 .variant-TextIcon.disabled,
 .variant-TextIcon:disabled {
   background-color: transparent;
-  color: var(--skt-color-text-neutral-quaternary, rgba(6, 12, 31, 0.2));
+  color: var(--skt-color-text-disabled-default, var(--text-disabled-default, rgba(11, 44, 127, 0.18)));
 }
 
 .variant-Outline.disabled,
 .variant-Outline:disabled {
-  background-color: transparent;
-  border-color: var(--skt-color-fill-neutral-tertiary, rgba(6, 12, 31, 0.05));
+  background-color: var(--skt-color-fill-disabled-default, var(--fill-disabled-default, rgba(35, 55, 155, 0.05)));
+  border-color: transparent;
 }
 
-/* ─────────────────────────────────────────
-   Loading state
-───────────────────────────────────────── */
 .loading {
   cursor: default;
   pointer-events: none;
 }
 
-/* ─────────────────────────────────────────
-   Label text
-───────────────────────────────────────── */
 .label {
   display: inline-block;
   flex-shrink: 0;
@@ -233,9 +207,6 @@
   text-underline-position: from-font;
 }
 
-/* ─────────────────────────────────────────
-   Icon
-───────────────────────────────────────── */
 .iconWrap {
   display: inline-flex;
   align-items: center;
@@ -249,72 +220,8 @@
   flex-shrink: 0;
 }
 
-/* Icon size by button size */
-.size-Small .iconSvg {
-  width: 12px;
-  height: 12px;
-}
-
-.size-Medium .iconSvg {
-  width: 14px;
-  height: 14px;
-}
-
-.size-Large .iconSvg {
-  width: 16px;
-  height: 16px;
-}
-
-.size-XLarge .iconSvg {
+.loader {
   width: 20px;
   height: 20px;
-}
-
-/* Text+Icon variants get a consistent small icon */
-.variant-Text .iconSvg,
-.variant-TextIcon .iconSvg {
-  width: 14px;
-  height: 14px;
-}
-
-/* ─────────────────────────────────────────
-   Loading dots (Loader)
-───────────────────────────────────────── */
-.loader {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.dot {
-  display: inline-block;
-  width: 4px;
-  height: 4px;
-  border-radius: var(--skt-radius-full, 9999px);
-  background-color: currentColor;
-  opacity: 0.5;
-  animation: buttonItemDotBounce 1.2s ease-in-out infinite;
-}
-
-.dot:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.dot:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.dot:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-@keyframes buttonItemDotBounce {
-  0%, 80%, 100% {
-    opacity: 0.3;
-    transform: scale(0.85);
-  }
-  40% {
-    opacity: 1;
-    transform: scale(1);
-  }
+  justify-content: center;
 }

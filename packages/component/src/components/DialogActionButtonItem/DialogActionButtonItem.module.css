@@ -1,5 +1,5 @@
 /* DialogActionButtonItem — Figma node 50943:28567 */
-/* anatomy: root[ secondaryBtn?(button), primaryBtn(button) ] */
+/* anatomy: root[ ButtonItem(Secondary)?, ButtonItem(Primary) ] */
 
 .root {
   display: flex;
@@ -16,38 +16,7 @@
   /* single button spans full width; no gap needed */
 }
 
-.btn {
+.button {
   flex: 1 0 0;
   min-width: 1px;
-  height: var(--skt-component-button-height-large, 48px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--skt-spacing-10, 10px) var(--skt-spacing-16, 16px);
-  border-radius: var(--skt-radius-16, 16px);
-  border: none;
-  cursor: pointer;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
-  white-space: nowrap;
-  overflow: hidden;
-  text-align: center;
-  transition: opacity 0.15s ease;
-}
-
-.btn:active {
-  opacity: 0.8;
-}
-
-.btnPrimary {
-  background-color: var(--skt-color-fill-brand-primary, #3617ce);
-  color: var(--skt-color-text-inverse-primary, #ffffff);
-}
-
-.btnSecondary {
-  background-color: var(--skt-color-palette-gray-200, #e2e6f1);
-  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
 }

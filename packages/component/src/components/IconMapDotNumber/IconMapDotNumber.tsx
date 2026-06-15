@@ -9,7 +9,7 @@ export interface IconMapDotNumberProps {
   /** Icon size in px. Defaults to 24 (natural Figma size). */
   size?: number;
   /**
-   * Pin body fill color; defaults to --skt-color-palette-gray-1000 (#060C1F).
+   * Pin body fill color; defaults to --skt-color-palette-gray-1000 (var(--skt-color-text-neutral-primary, #060c1f)).
    * The numeral inside is always white.
    */
   color?: string;
@@ -34,7 +34,7 @@ const NUMERAL: Record<IconMapDotNumberVariant, string> = {
 
 export function IconMapDotNumber({
   size = 24,
-  color = "var(--skt-color-palette-gray-1000, #060C1F)",
+  color = "var(--skt-color-palette-gray-1000, #060c1f)",
   className,
   variant = "1",
 }: IconMapDotNumberProps) {

@@ -52,10 +52,10 @@
 /* Sub-label text: 13px medium, secondary color */
 .subLabel {
   margin: 0;
-  font-size: var(--skt-typography-font-size-400, 13px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: -0.04em;
+  font-size: var(--skt-typography-style-13med-font-size, var(--skt-typography-font-size-400, 13px));
+  font-weight: var(--skt-typography-style-13med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-13med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-13med-letter-spacing, -0.04em);
   color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
   white-space: nowrap;
 }
@@ -63,10 +63,10 @@
 /* Main title: 24px medium, primary color */
 .titleMain {
   margin: 0;
-  font-size: var(--skt-typography-font-size-1000, 24px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-100, 120%);
-  letter-spacing: -0.04em;
+  font-size: var(--skt-typography-style-24med-font-size, var(--skt-typography-font-size-1000, 24px));
+  font-weight: var(--skt-typography-style-24med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-24med-line-height, var(--skt-typography-line-height-100, 120%));
+  letter-spacing: var(--skt-typography-style-24med-letter-spacing, -0.04em);
   color: var(--skt-color-text-neutral-primary, #060c1f);
   white-space: pre-line;
 }
@@ -82,10 +82,10 @@
 /* Description text: 14px medium, tertiary color */
 .description {
   margin: 0;
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: -0.04em;
+  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, -0.04em);
   color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
   white-space: nowrap;
 }

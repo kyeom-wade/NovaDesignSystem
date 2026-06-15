@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { AppBarItem } from "@cx/components";
+import { AppBarItem, IconClose, IconMenu, IconSearch } from "@cx/components";
 
 const meta: Meta<typeof AppBarItem> = {
   title: "cx/AppBarItem",
@@ -22,7 +22,7 @@ export const Default: Story = {};
 export const OneButton: Story = {
   args: {
     count: 1,
-    buttons: [{ "aria-label": "검색" }],
+    buttons: [{ "aria-label": "검색", children: <IconSearch /> }],
   },
 };
 
@@ -30,8 +30,8 @@ export const TwoButtons: Story = {
   args: {
     count: 2,
     buttons: [
-      { "aria-label": "검색" },
-      { "aria-label": "알림" },
+      { "aria-label": "검색", children: <IconSearch /> },
+      { "aria-label": "메뉴", children: <IconMenu /> },
     ],
   },
 };
@@ -40,9 +40,9 @@ export const ThreeButtons: Story = {
   args: {
     count: 3,
     buttons: [
-      { "aria-label": "홈" },
-      { "aria-label": "검색" },
-      { "aria-label": "메뉴" },
+      { "aria-label": "검색", children: <IconSearch /> },
+      { "aria-label": "메뉴", children: <IconMenu /> },
+      { "aria-label": "닫기", children: <IconClose /> },
     ],
   },
 };
@@ -52,35 +52,48 @@ export const AllCounts: Story = {
     <div style={{ display: "flex", flexDirection: "column", gap: 24, padding: 24 }}>
       <div>
         <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>count=1</p>
-        <AppBarItem count={1} buttons={[{ "aria-label": "검색" }]} />
+        <AppBarItem count={1} buttons={[{ "aria-label": "검색", children: <IconSearch /> }]} />
       </div>
       <div>
         <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>count=2</p>
-        <AppBarItem count={2} buttons={[{ "aria-label": "검색" }, { "aria-label": "알림" }]} />
+        <AppBarItem
+          count={2}
+          buttons={[
+            { "aria-label": "검색", children: <IconSearch /> },
+            { "aria-label": "메뉴", children: <IconMenu /> },
+          ]}
+        />
       </div>
       <div>
         <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>count=3</p>
-        <AppBarItem count={3} buttons={[{ "aria-label": "홈" }, { "aria-label": "검색" }, { "aria-label": "메뉴" }]} />
+        <AppBarItem
+          count={3}
+          buttons={[
+            { "aria-label": "검색", children: <IconSearch /> },
+            { "aria-label": "메뉴", children: <IconMenu /> },
+            { "aria-label": "닫기", children: <IconClose /> },
+          ]}
+        />
       </div>
     </div>
   ),
 };
 
-export const WithCustomIcon: Story = {
+export const WithIconGroup: Story = {
   args: {
     count: 3,
     buttons: [
       {
-        "aria-label": "홈으로",
-        children: <span style={{ fontSize: 16 }}>🏠</span>,
-      },
-      {
         "aria-label": "검색",
-        children: <span style={{ fontSize: 16 }}>🔍</span>,
+        children: <IconSearch />,
       },
       {
-        "aria-label": "내 정보",
-        children: <span style={{ fontSize: 16 }}>👤</span>,
+        "aria-label": "메뉴",
+        children: <IconMenu />,
+      },
+      {
+        "aria-label": "닫기",
+        children: <IconClose />,
       },
     ],
   },
@@ -92,11 +105,13 @@ export const WithClickHandlers: Story = {
     buttons: [
       {
         "aria-label": "검색",
+        children: <IconSearch />,
         onClick: () => alert("검색 버튼 클릭"),
       },
       {
-        "aria-label": "알림",
-        onClick: () => alert("알림 버튼 클릭"),
+        "aria-label": "메뉴",
+        children: <IconMenu />,
+        onClick: () => alert("메뉴 버튼 클릭"),
       },
     ],
   },

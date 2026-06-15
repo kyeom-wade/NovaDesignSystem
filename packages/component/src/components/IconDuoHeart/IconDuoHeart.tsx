@@ -15,7 +15,7 @@ const HEART_PATH =
  * out from behind the front heart — matching the Figma duo composition.
  * The two Shape layers share the same inset bounding box (18.03% / 12.5%)
  * on the 24 px canvas; the back heart is rendered at ~40% opacity
- * (icon/neutral/tertiary token: rgba(6,12,31,0.4)) to create depth.
+ * (icon/neutral/tertiary token: var(--skt-color-icon-neutral-tertiary, rgba(6,12,31,0.4))) to create depth.
  */
 const BACK_HEART_OPACITY = 0.4;
 
@@ -62,7 +62,7 @@ export function IconDuoHeart({
         aria-hidden="true"
         focusable="false"
       >
-        {/* Back heart — icon/neutral/tertiary (rgba(6,12,31,0.4)) */}
+        {/* Back heart — icon/neutral/tertiary (var(--skt-color-icon-neutral-tertiary, rgba(6,12,31,0.4))) */}
         <path
           d={HEART_PATH}
           fill={color}
@@ -96,7 +96,7 @@ export function IconDuoHeart({
       aria-hidden="true"
       focusable="false"
     >
-      {/* Back heart — icon/neutral/tertiary (rgba(6,12,31,0.4)) */}
+      {/* Back heart — icon/neutral/tertiary (var(--skt-color-icon-neutral-tertiary, rgba(6,12,31,0.4))) */}
       <path
         d={HEART_PATH}
         stroke={color}

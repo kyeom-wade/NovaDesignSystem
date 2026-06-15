@@ -1,4 +1,5 @@
 import React from "react";
+import { CellTitleItem } from "../CellTitleItem/CellTitleItem";
 import styles from "./CellDefault.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .CellDefault (node 51819:84096)
 // anatomy: root[ titleItem?[ cellText[ titleBadge[ title ] ] ], cellItem[ children ] ]
@@ -25,15 +26,11 @@ export function CellDefault({
       data-cx-component="CellDefault"
     >
       {showTitle && (
-        <div className={styles.titleItem}>
-          <div className={styles.cellText}>
-            <div className={styles.titleBadge}>
-              <div className={styles.titleWrap}>
-                <p className={styles.title}>{title}</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <CellTitleItem
+          className={styles.titleItem}
+          title={title}
+          rightItem="None"
+        />
       )}
       <div className={styles.cellItem}>{children}</div>
     </div>

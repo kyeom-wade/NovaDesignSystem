@@ -1,5 +1,12 @@
 import React from "react";
-import styles from "./Appbar.module.css";
+import { AppBarItem } from "../AppBarItem";
+import { IconBack } from "../IconBack";
+import { IconBarcode } from "../IconBarcode";
+import { IconCart } from "../IconCart";
+import { IconClose } from "../IconClose";
+import { IconMenu } from "../IconMenu";
+import { IconSearch } from "../IconSearch";
+import styles from "./AppBar.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .Appbar (node 51664:73057)
 // anatomy:
 //   1Depth: root[ leftArea, rightArea[ Tab(barcode), Tab(cart), Tab(menu) ] ]
@@ -37,11 +44,6 @@ interface Props {
   className?: string;
 }
 
-/** Inline SVG placeholder icon — rendered when no real icon is supplied */
-function PlaceholderIcon() {
-  return <span className={styles.iconShape} aria-hidden="true" />;
-}
-
 /** Pill-style icon button used in the 1Depth (home) right area */
 function TabButton({
   "aria-label": ariaLabel,
@@ -55,27 +57,7 @@ function TabButton({
       aria-label={ariaLabel}
       onClick={onClick}
     >
-      <span className={styles.tabIcon}>{children ?? <PlaceholderIcon />}</span>
-    </button>
-  );
-}
-
-/** Flat icon button used in the 2depth right area and left back slot */
-function IconBtn({
-  "aria-label": ariaLabel = "메뉴",
-  onClick,
-  children,
-}: IconButtonProps) {
-  return (
-    <button
-      type="button"
-      className={styles.iconBtn}
-      aria-label={ariaLabel}
-      onClick={onClick}
-    >
-      <span className={styles.iconBtnInner}>
-        {children ?? <PlaceholderIcon />}
-      </span>
+      <span className={styles.tabIcon}>{children}</span>
     </button>
   );
 }
@@ -98,8 +80,16 @@ export function Appbar({
 
   const rightSlots = Array.from(
     { length: rightItemCount },
-    (_, i) => rightButtons[i] ?? {}
+    (_, i) => rightButtons[i] ?? [
+      { "aria-label": "검색", children: <IconSearch size={24} /> },
+      { "aria-label": "메뉴", children: <IconMenu size={24} /> },
+      { "aria-label": "닫기", children: <IconClose size={24} /> },
+    ][i] ?? {}
   );
+  const leftSlot = leftButton ?? {
+    "aria-label": "뒤로가기",
+    children: <IconBack size={24} />,
+  };
 
   return (
     <div
@@ -122,14 +112,13 @@ export function Appbar({
           {/* Right icon tabs */}
           <div className={styles.rightArea1Depth}>
             <TabButton aria-label="바코드" onClick={onBarcode}>
-              {/* Barcode icon — consumer passes real SVG via children */}
-              <PlaceholderIcon />
+              <IconBarcode size={24} />
             </TabButton>
             <TabButton aria-label="장바구니" onClick={onCart}>
-              <PlaceholderIcon />
+              <IconCart size={24} />
             </TabButton>
             <TabButton aria-label="메뉴" onClick={onMenu}>
-              <PlaceholderIcon />
+              <IconMenu size={24} />
             </TabButton>
           </div>
         </>
@@ -141,23 +130,22 @@ export function Appbar({
           {/* Title area (left icon + text) */}
           <div className={styles.titleArea}>
             {showLeftItem && (
-              <IconBtn
-                aria-label={leftButton?.["aria-label"] ?? "뒤로가기"}
-                onClick={leftButton?.onClick}
-              >
-                {leftButton?.children ?? <PlaceholderIcon />}
-              </IconBtn>
+              <AppBarItem
+                count={1}
+                buttons={[leftSlot]}
+                className={styles.leftItem}
+              />
             )}
             <p className={styles.titleText}>{title}</p>
           </div>
 
           {/* Right icon button group */}
           {showRightItem && (
-            <div className={styles.rightArea2Depth}>
-              {rightSlots.map((btnProps, i) => (
-                <IconBtn key={i} {...btnProps} />
-              ))}
-            </div>
+            <AppBarItem
+              count={rightItemCount}
+              buttons={rightSlots}
+              className={styles.rightArea2Depth}
+            />
           )}
         </>
       )}

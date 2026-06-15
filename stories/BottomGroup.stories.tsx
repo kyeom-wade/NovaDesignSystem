@@ -12,6 +12,9 @@ const meta: Meta<typeof BottomGroup> = {
     secondaryLabel: { control: "text" },
     primaryLabel: { control: "text" },
     showUpperItem: { control: "boolean" },
+    upperItemVariant: { control: "select", options: ["Default", "Table"] },
+    upperItemLabel: { control: "text" },
+    upperItemValue: { control: "text" },
     upperItemText: { control: "text" },
     onPrimary: { control: false },
     onSecondary: { control: false },
@@ -25,7 +28,9 @@ const meta: Meta<typeof BottomGroup> = {
     secondaryLabel: "선물하기",
     primaryLabel: "구독하기",
     showUpperItem: true,
-    upperItemText: "리스트 텍스트",
+    upperItemVariant: "Default",
+    upperItemLabel: "리스트 텍스트",
+    upperItemValue: "내용 들어가는 부분",
   },
 };
 export default meta;
@@ -57,7 +62,19 @@ export const DefaultVariant: Story = {
   args: {
     variant: "Default",
     showUpperItem: true,
-    upperItemText: "월 11,000원 (VAT 포함)",
+    upperItemVariant: "Default",
+    upperItemLabel: "월 11,000원 (VAT 포함)",
+    primaryLabel: "신청하기",
+  },
+};
+
+export const DefaultTableUpperItem: Story = {
+  args: {
+    variant: "Default",
+    showUpperItem: true,
+    upperItemVariant: "Table",
+    upperItemLabel: "월 이용료",
+    upperItemValue: "11,000원",
     primaryLabel: "신청하기",
   },
 };
@@ -113,7 +130,21 @@ export const AllVariants: Story = {
           {...args}
           variant="Default"
           showUpperItem={true}
-          upperItemText="월 11,000원 (VAT 포함)"
+          upperItemVariant="Default"
+          upperItemLabel="월 11,000원 (VAT 포함)"
+          upperItemValue="내용 들어가는 부분"
+          primaryLabel="신청하기"
+        />
+      </div>
+      <div>
+        <p style={{ marginBottom: "8px", fontSize: "12px", color: "#888" }}>Default — Table 상단 포함</p>
+        <BottomGroup
+          {...args}
+          variant="Default"
+          showUpperItem={true}
+          upperItemVariant="Table"
+          upperItemLabel="월 이용료"
+          upperItemValue="11,000원"
           primaryLabel="신청하기"
         />
       </div>

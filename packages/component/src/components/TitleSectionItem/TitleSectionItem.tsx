@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./TitleSectionItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .TitleSectionItem (node 50985:80329)
-// anatomy: root[ titleTextArea[ ?optionTextRow[ optionLabel ], textGroup[ ?leftBadge, titleItem[ title ], ?rightBadge ], ?subTextRow[ subText ] ], ?rightItem[ iconItem(16×16) ] ]
+import { TitleTextItem } from "../TitleTextItem/TitleTextItem";
+import { TitleSectionRightItem } from "../TitleSectionRightItem/TitleSectionRightItem";
+import type { TextItemSize, TextItemWeight } from "../TextItem/TextItem";
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .TitleSectionItem (node 50985:80329)
+// anatomy: root[ TitleTextItem, ?TitleSectionRightItem ]
 // Variants: textSize("16"|"18"|"20") × titleOption(bool) × rightItem(bool) — 6 display variants
 
 interface Props {
@@ -31,20 +34,6 @@ interface Props {
   className?: string;
 }
 
-function IconDummy() {
-  return (
-    <svg
-      className={styles.iconSvg}
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor" />
-    </svg>
-  );
-}
-
 export function TitleSectionItem({
   title = "섹션/콘텐츠 타이틀",
   textSize = "16",
@@ -58,6 +47,10 @@ export function TitleSectionItem({
   onRightClick,
   className,
 }: Props) {
+  const titleSize: TextItemSize =
+    textSize === "20" ? "20Title" : textSize === "18" ? "18Title" : "16Body";
+  const titleWeight: TextItemWeight = textSize === "16" ? "semibold" : "medium";
+
   const rootClass = [
     styles.root,
     titleOption ? styles.rootAlignStart : styles.rootAlignCenter,
@@ -66,71 +59,41 @@ export function TitleSectionItem({
     .filter(Boolean)
     .join(" ");
 
-  const titleTextAreaClass = [
-    styles.titleTextArea,
-    titleOption ? styles.titleTextAreaColumn : "",
-  ]
-    .filter(Boolean)
-    .join(" ");
-
-  const titleClass = [
-    styles.title,
-    textSize === "16" ? styles.title16 : "",
-    textSize === "18" ? styles.title18 : "",
-    textSize === "20" ? styles.title20 : "",
-  ]
-    .filter(Boolean)
-    .join(" ");
-
   return (
     <div className={rootClass} data-cx-component="TitleSectionItem">
-      {/* Left: title text area */}
-      <div className={titleTextAreaClass}>
-        {/* Option text row (only when titleOption=true) */}
-        {titleOption && (
-          <div className={styles.optionTextRow}>
-            <span className={styles.optionLabel}>{optionLabel}</span>
-          </div>
-        )}
+      <TitleTextItem
+        className={styles.titleTextItem}
+        fluid
+        optionText={titleOption}
+        optionLabel={optionLabel}
+        subText={titleOption}
+        subTextContent={subTextContent}
+        textLeft={titleOption}
+        textLeftValue={leftBadgeValue}
+        textRight={titleOption}
+        textRightValue={rightBadgeValue}
+        title={title}
+        titleSize={titleSize}
+        titleWeight={titleWeight}
+      />
 
-        {/* Title row */}
-        {titleOption ? (
-          <div className={styles.textGroup}>
-            <span className={styles.leftBadge}>{leftBadgeValue}</span>
-            <div className={styles.textItem}>
-              <span className={titleClass}>{title}</span>
-            </div>
-            <div className={styles.rightBadge}>
-              <span className={styles.rightBadgeValue}>{rightBadgeValue}</span>
-            </div>
-          </div>
-        ) : (
-          <div className={styles.textItem}>
-            <span className={titleClass}>{title}</span>
-          </div>
-        )}
-
-        {/* Sub-text row (only when titleOption=true) */}
-        {titleOption && (
-          <div className={styles.subTextRow}>
-            <span className={styles.subText}>{subTextContent}</span>
-          </div>
-        )}
-      </div>
-
-      {/* Right: icon item */}
-      {rightItem && (
-        <div
-          className={styles.rightItemWrap}
-          onClick={onRightClick}
-          role={onRightClick ? "button" : undefined}
-          tabIndex={onRightClick ? 0 : undefined}
-        >
-          <span className={styles.iconItem}>
-            {rightIcon ?? <IconDummy />}
+      {rightItem &&
+        (rightIcon ? (
+          <span
+            className={styles.customRightIcon}
+            onClick={onRightClick}
+            role={onRightClick ? "button" : undefined}
+            tabIndex={onRightClick ? 0 : undefined}
+          >
+            {rightIcon}
           </span>
-        </div>
-      )}
+        ) : (
+          <TitleSectionRightItem
+            className={styles.rightItem}
+            variant="Icon"
+            onClick={onRightClick}
+          />
+        ))}
     </div>
   );
 }

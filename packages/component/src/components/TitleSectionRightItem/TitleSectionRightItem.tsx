@@ -1,4 +1,5 @@
 import React from "react";
+import { IconArrow } from "../IconArrow";
 import styles from "./TitleSectionRightItem.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .TitleSectionRightItem (node 50943:30580)
 // anatomy:
@@ -50,66 +51,6 @@ function IconDummy() {
   );
 }
 
-function IconArrowRight() {
-  return (
-    <svg
-      className={styles.iconSvg}
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M6 4l4 4-4 4"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function IconArrowDown() {
-  return (
-    <svg
-      className={styles.iconSvg}
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M4 6l4 4 4-4"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function IconArrowUp() {
-  return (
-    <svg
-      className={styles.iconSvg}
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M4 10l4-4 4 4"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export function TitleSectionRightItem({
   variant = "Icon",
   text = "텍스트",
@@ -125,7 +66,14 @@ export function TitleSectionRightItem({
   // --- Icon ---
   if (variant === "Icon") {
     return (
-      <div className={rootClass} data-cx-component="TitleSectionRightItem" data-variant="Icon">
+      <div
+        className={rootClass}
+        data-cx-component="TitleSectionRightItem"
+        data-variant="Icon"
+        onClick={onClick}
+        role={onClick ? "button" : undefined}
+        tabIndex={onClick ? 0 : undefined}
+      >
         <span className={`${styles.iconItem} ${styles.iconDisabled}`}>
           <IconDummy />
         </span>
@@ -159,7 +107,7 @@ export function TitleSectionRightItem({
       <div className={rootClass} data-cx-component="TitleSectionRightItem" data-variant="TextIconSecondary">
         <span className={styles.textSecondary}>{text}</span>
         <span className={`${styles.iconItem} ${styles.iconSecondary}`}>
-          <IconArrowRight />
+          <IconArrow variant="right" size={16} />
         </span>
       </div>
     );
@@ -171,7 +119,7 @@ export function TitleSectionRightItem({
       <div className={rootClass} data-cx-component="TitleSectionRightItem" data-variant="TextIconPrimary">
         <span className={styles.textPrimary}>{text}</span>
         <span className={`${styles.iconItem} ${styles.iconPrimary}`}>
-          <IconArrowDown />
+          <IconArrow variant="down" size={16} />
         </span>
       </div>
     );
@@ -184,7 +132,7 @@ export function TitleSectionRightItem({
         <span className={styles.textPrimary}>{text}</span>
         <span className={styles.textBrand}>{count}</span>
         <span className={`${styles.iconItem} ${styles.iconPrimary}`}>
-          <IconArrowUp />
+          <IconArrow variant="up" size={16} />
         </span>
       </div>
     );

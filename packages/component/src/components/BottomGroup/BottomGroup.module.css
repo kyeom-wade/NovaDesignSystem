@@ -23,7 +23,7 @@
 
 /* ── Ai variant ── */
 .wrapAi {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--skt-color-palette-white-alpha-800, rgba(255, 255, 255, 0.8));
   border-radius: var(--skt-radius-28, 28px) var(--skt-radius-28, 28px) 0 0;
   box-shadow: 0px -5px 60px 0px var(--skt-color-palette-gray-alpha-50, rgba(6, 12, 31, 0.05));
 }
@@ -57,10 +57,10 @@
 
 .aiLabelText {
   flex-shrink: 0;
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-400, 150%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
   white-space: nowrap;
   background: linear-gradient(
     to right,
@@ -73,171 +73,10 @@
   color: var(--skt-color-palette-blue-800, #3617ce); /* fallback */
 }
 
-/* ── Ai area item row ── */
-.aiAreaItem {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--skt-spacing-10, 10px);
-  padding: 0 var(--skt-spacing-20, 20px);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Icon pill */
-.iconMask {
-  position: relative;
-  flex-shrink: 0;
-  width: 52px;
-  height: 52px;
-  border-radius: var(--skt-radius-full, 9999px);
-}
-
-.iconBg {
-  position: absolute;
-  inset: 0;
-  border-radius: var(--skt-radius-full, 9999px);
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
-}
-
-.iconImg {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  display: flex;
-  align-items: flex-start;
-  width: 24px;
-  height: 24px;
-}
-
-.starBadge {
-  position: absolute;
-  bottom: -4px;
-  right: -2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 7px;
-  height: 7px;
-}
-
-/* CTA pill */
-.buttonRow {
-  display: flex;
-  flex: 1 0 0;
-  min-width: 0;
-  flex-direction: row;
-  align-items: center;
-  background-color: var(--skt-color-fill-brand-primary, #3617ce);
-  border-radius: var(--skt-radius-20, 20px);
-  box-shadow: 0px 8px 8px 0px rgba(27, 11, 102, 0.16);
-  overflow: hidden;
-  height: 52px;
-}
-
-.cta {
-  flex: 1 0 0;
-  min-width: 0;
-  height: 100%;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: var(--skt-spacing-16, 16px) var(--skt-spacing-32, 32px);
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
-  font-size: var(--skt-typography-font-size-700, 16px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
-  color: var(--skt-color-text-inverse-primary, #ffffff);
-  text-align: center;
-  white-space: nowrap;
-}
-
-.cta:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
-.cta:active {
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.divider {
-  flex-shrink: 0;
-  width: 1px;
-  height: 12px;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* ── Default upper item row ── */
 .upperItem {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: calc(100% - 40px); /* matches Figma 353px on 393px canvas: 20px side padding each */
   box-sizing: border-box;
-}
-
-.listText {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  padding-bottom: var(--skt-spacing-16, 16px);
-  width: 100%;
-}
-
-.labelCell {
-  display: flex;
-  flex: 1 0 0;
-  min-width: 0;
-  align-items: center;
-  gap: var(--skt-spacing-4, 4px);
-}
-
-.upperItemText {
-  flex-shrink: 0;
-  font-size: var(--skt-typography-font-size-500, 14px);
-  font-weight: var(--skt-typography-font-weight-regular, 400);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
-  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
-  white-space: nowrap;
-  margin: 0;
-}
-
-/* ── Default area item row ── */
-.areaItem {
-  display: flex;
-  align-items: center;
-  padding: 0 var(--skt-spacing-20, 20px);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.primaryBtn {
-  display: flex;
-  flex: 1 0 0;
-  min-width: 0;
-  height: 56px;
-  align-items: center;
-  justify-content: center;
-  padding: 0 var(--skt-spacing-32, 32px);
-  border: none;
-  border-radius: var(--skt-radius-20, 20px);
-  cursor: pointer;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
-  font-size: var(--skt-typography-font-size-700, 16px);
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
-  color: var(--skt-color-text-inverse-primary, #ffffff);
-  text-align: center;
-  white-space: nowrap;
-  background-color: var(--skt-color-fill-brand-primary, #3617ce);
-  box-shadow: 0px 8px 8px var(--skt-color-shadow-default, rgba(6, 12, 31, 0.2));
-  transition: opacity 0.15s ease;
-}
-
-.primaryBtn:active {
-  opacity: 0.85;
 }

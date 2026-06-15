@@ -1,7 +1,8 @@
 import React from "react";
+import { DialogActionButtonItem } from "../DialogActionButtonItem/DialogActionButtonItem";
 import styles from "./Dialog.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .Dialog (node 50982:21648)
-// anatomy: wrap[ titleRow[ title ], subText[ subTextContent ], slot[ children ], actionRow[ btnSecondary, btnPrimary ] ]
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .Dialog (node 50982:21648)
+// anatomy: wrap[ titleRow[ title ], subText[ subTextContent ], slot[ children ], DialogActionButtonItem ]
 
 interface Props {
   /** 다이얼로그 타이틀 텍스트 */
@@ -51,22 +52,13 @@ export function Dialog({
         <div className={styles.slot}>{children}</div>
       )}
 
-      <div className={styles.actionRow}>
-        <button
-          type="button"
-          className={styles.btnSecondary}
-          onClick={onSecondary}
-        >
-          {secondaryLabel}
-        </button>
-        <button
-          type="button"
-          className={styles.btnPrimary}
-          onClick={onPrimary}
-        >
-          {primaryLabel}
-        </button>
-      </div>
+      <DialogActionButtonItem
+        options="2Button"
+        primaryLabel={primaryLabel}
+        secondaryLabel={secondaryLabel}
+        onPrimary={onPrimary}
+        onSecondary={onSecondary}
+      />
     </div>
   );
 }

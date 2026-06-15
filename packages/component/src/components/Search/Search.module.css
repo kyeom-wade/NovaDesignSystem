@@ -43,10 +43,10 @@
 
 /* placeholder text (Default / Focused / Disabled) */
 .placeholder {
-  font-size: var(--skt-typography-font-size-600, 15px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-300, 1.4);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  font-size: var(--skt-typography-style-15med-font-size, var(--skt-typography-font-size-600, 15px));
+  font-weight: var(--skt-typography-style-15med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-15med-line-height, var(--skt-typography-line-height-700, 160%));
+  letter-spacing: var(--skt-typography-style-15med-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
   color: var(--skt-color-text-neutral-tertiary, rgba(6, 12, 31, 0.4));
   white-space: nowrap;
   flex-shrink: 0;
@@ -58,10 +58,10 @@
 
 /* typed / completed value text */
 .inputText {
-  font-size: var(--skt-typography-font-size-600, 15px);
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  line-height: var(--skt-typography-line-height-300, 1.4);
-  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
+  font-size: var(--skt-typography-style-15med-font-size, var(--skt-typography-font-size-600, 15px));
+  font-weight: var(--skt-typography-style-15med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-15med-line-height, var(--skt-typography-line-height-700, 160%));
+  letter-spacing: var(--skt-typography-style-15med-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
   color: var(--skt-color-text-neutral-primary, #060c1f);
   white-space: nowrap;
   flex-shrink: 1;

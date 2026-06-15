@@ -8,6 +8,7 @@
   position: relative;
   border-radius: var(--skt-radius-20, 20px);
   width: 100%;
+  height: fit-content;
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
   box-sizing: border-box;
 }
@@ -25,7 +26,6 @@
 }
 
 .slot {
-  height: 104px;
   width: 100%;
   border-radius: var(--skt-radius-12, 12px);
   position: relative;

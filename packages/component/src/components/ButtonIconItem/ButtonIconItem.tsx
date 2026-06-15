@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./ButtonIconItem.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .ButtonIconItem (node 51081:61398)
 // anatomy: root[ iconWrapper[ icon[ shape ] ] ]
-// Variants: size × fill × state → 12 combinations
+// Variants: size x fill x state -> 12 combinations
 // size: Small(18px) | Medium(24px) | Large(32px)
-// fill: true → neutral-secondary background; false → transparent
+// fill: true -> neutral-secondary background; false -> transparent
 // state: Default | Disabled (icon color dims, bg uses disabled token)
 
 interface Props {

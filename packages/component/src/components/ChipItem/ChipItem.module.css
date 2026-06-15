@@ -1,10 +1,10 @@
 /* ChipItem — Figma node 50943:28335
    anatomy: root[ label ]
    variants: size(large|small) × selected(true|false) = 4 combos
-   large selected   → dark fill (#060c1f), white text,  py-10 px-12 radius-full
-   large unselected → neutral fill (#f4f5fa), secondary text, py-10 px-12 radius-full
-   small selected   → dark fill (#060c1f), white text,  py-8  px-12 radius-full
-   small unselected → neutral fill (#f4f5fa), secondary text, py-8  px-12 radius-full
+   large selected   → dark fill (var(--skt-color-text-neutral-primary, #060c1f)), white text,  py-10 px-12 radius-full
+   large unselected → neutral fill (var(--skt-color-bg-layer-basement, #f4f5fa)), secondary text, py-10 px-12 radius-full
+   small selected   → dark fill (var(--skt-color-text-neutral-primary, #060c1f)), white text,  py-8  px-12 radius-full
+   small unselected → neutral fill (var(--skt-color-bg-layer-basement, #f4f5fa)), secondary text, py-8  px-12 radius-full
 */
 
 .chip {

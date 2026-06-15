@@ -135,6 +135,7 @@ export const TypographyFontSize700 = "16px";
 export const TypographyFontSize800 = "18px";
 export const TypographyFontSize900 = "20px";
 export const TypographyFontSize1000 = "24px";
+export const TypographyFontSize1100 = "26px";
 export const TypographyFontWeightRegular = "400";
 export const TypographyFontWeightMedium = "500";
 export const TypographyFontWeightSemibold = "600";
@@ -143,5 +144,210 @@ export const TypographyLineHeight100 = "120%";
 export const TypographyLineHeight200 = "130%";
 export const TypographyLineHeight300 = "140%";
 export const TypographyLineHeight400 = "150%";
+export const TypographyLineHeight500 = "140%";
+export const TypographyLineHeight700 = "160%";
+export const TypographyLineHeight350 = "125%";
+export const TypographyLineHeight14 = "14px";
+export const TypographyLineHeight18 = "18px";
+export const TypographyLineHeight24 = "24px";
 export const TypographyLetterSpacingNormal = "-0.04em";
 export const TypographyLetterSpacingDense = "-0.05em";
+export const TypographyLetterSpacingTight = "-0.06em";
+export const TypographyLetterSpacingNone = "0";
+export const TypographyStyle28reg = {
+  fontSize: TypographyFontSize1100,
+  lineHeight: TypographyLineHeight350,
+  fontWeight: TypographyFontWeightRegular,
+  letterSpacing: TypographyLetterSpacingTight,
+} as const;
+export const TypographyStyle24med = {
+  fontSize: TypographyFontSize1000,
+  lineHeight: TypographyLineHeight100,
+  fontWeight: TypographyFontWeightMedium,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle20med = {
+  fontSize: TypographyFontSize900,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightMedium,
+  letterSpacing: TypographyLetterSpacingDense,
+} as const;
+export const TypographyStyle18bold = {
+  fontSize: TypographyFontSize800,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightBold,
+  letterSpacing: TypographyLetterSpacingDense,
+} as const;
+export const TypographyStyle18semi = {
+  fontSize: TypographyFontSize800,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightSemibold,
+  letterSpacing: TypographyLetterSpacingDense,
+} as const;
+export const TypographyStyle18med = {
+  fontSize: TypographyFontSize800,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightMedium,
+  letterSpacing: TypographyLetterSpacingDense,
+} as const;
+export const TypographyStyle16semi = {
+  fontSize: TypographyFontSize700,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightSemibold,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle16med = {
+  fontSize: TypographyFontSize700,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightMedium,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle16reg = {
+  fontSize: TypographyFontSize700,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightRegular,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle15bold = {
+  fontSize: TypographyFontSize600,
+  lineHeight: TypographyLineHeight300,
+  fontWeight: TypographyFontWeightBold,
+  letterSpacing: TypographyLetterSpacingDense,
+} as const;
+export const TypographyStyle15med = {
+  fontSize: TypographyFontSize600,
+  lineHeight: TypographyLineHeight700,
+  fontWeight: TypographyFontWeightMedium,
+  letterSpacing: TypographyLetterSpacingDense,
+} as const;
+export const TypographyStyle14bold = {
+  fontSize: TypographyFontSize500,
+  lineHeight: TypographyLineHeight700,
+  fontWeight: TypographyFontWeightBold,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle14semi = {
+  fontSize: TypographyFontSize500,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightSemibold,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle14med = {
+  fontSize: TypographyFontSize500,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightMedium,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle14reg = {
+  fontSize: TypographyFontSize500,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightRegular,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle13bold = {
+  fontSize: TypographyFontSize400,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightBold,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle13semi = {
+  fontSize: TypographyFontSize400,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightSemibold,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle13med = {
+  fontSize: TypographyFontSize400,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightMedium,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle13reg = {
+  fontSize: TypographyFontSize400,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightRegular,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle12semi = {
+  fontSize: TypographyFontSize300,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightSemibold,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle12med = {
+  fontSize: TypographyFontSize300,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightMedium,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle12reg = {
+  fontSize: TypographyFontSize300,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightRegular,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle11semi = {
+  fontSize: TypographyFontSize200,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightSemibold,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle11med = {
+  fontSize: TypographyFontSize200,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightMedium,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle11reg = {
+  fontSize: TypographyFontSize200,
+  lineHeight: TypographyLineHeight400,
+  fontWeight: TypographyFontWeightRegular,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle10semi = {
+  fontSize: TypographyFontSize100,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightSemibold,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle10med = {
+  fontSize: TypographyFontSize100,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightMedium,
+  letterSpacing: TypographyLetterSpacingNormal,
+} as const;
+export const TypographyStyle11regUnderlined = {
+  fontSize: TypographyFontSize200,
+  lineHeight: TypographyLineHeight14,
+  fontWeight: TypographyFontWeightRegular,
+  letterSpacing: TypographyLetterSpacingNone,
+  textDecoration: "underline",
+} as const;
+export const TypographyStyle11semiUnderlined = {
+  fontSize: TypographyFontSize200,
+  lineHeight: TypographyLineHeight14,
+  fontWeight: TypographyFontWeightSemibold,
+  letterSpacing: TypographyLetterSpacingNone,
+  textDecoration: "underline",
+} as const;
+export const TypographyStyle13regUnderlined = {
+  fontSize: TypographyFontSize400,
+  lineHeight: TypographyLineHeight18,
+  fontWeight: TypographyFontWeightRegular,
+  letterSpacing: TypographyLetterSpacingNone,
+  textDecoration: "underline",
+} as const;
+export const TypographyStyle13medUnderlined = {
+  fontSize: TypographyFontSize400,
+  lineHeight: TypographyLineHeight18,
+  fontWeight: TypographyFontWeightMedium,
+  letterSpacing: TypographyLetterSpacingNone,
+  textDecoration: "underline",
+} as const;
+export const TypographyStyle18medUnderlined = {
+  fontSize: TypographyFontSize800,
+  lineHeight: TypographyLineHeight24,
+  fontWeight: TypographyFontWeightMedium,
+  letterSpacing: TypographyLetterSpacingNone,
+  textDecoration: "underline",
+} as const;
