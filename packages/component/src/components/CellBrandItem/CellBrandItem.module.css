@@ -7,7 +7,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 353px;
+  width: 100%;
   border-radius: var(--skt-radius-20, 20px);
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
   box-sizing: border-box;

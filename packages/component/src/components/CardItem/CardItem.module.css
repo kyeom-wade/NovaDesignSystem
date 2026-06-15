@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  width: 393px;
+  width: 100%;
   height: fit-content;
   border-radius: var(--skt-radius-20, 20px);
   box-sizing: border-box;

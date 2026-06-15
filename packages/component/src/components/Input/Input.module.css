@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--skt-component-input-gap-1, 8px);
-  width: 353px;
+  width: 100%;
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
 }
 

@@ -4,6 +4,13 @@ import { Banner } from "@cx/components";
 const meta: Meta<typeof Banner> = {
   title: "cx/Banner",
   component: Banner as never,
+  decorators: [
+    (Story) => (
+      <div style={{ width: 393 }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {
     variants: { control: "select", options: ["Small", "Medium"] },
     indicator: { control: "boolean" },
