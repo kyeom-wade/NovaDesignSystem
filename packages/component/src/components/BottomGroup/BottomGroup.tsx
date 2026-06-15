@@ -8,8 +8,10 @@ import { BottomGroupUpperItem, type BottomGroupUpperItemVariant } from "../Botto
 //   aiLabel?[ aiIcon, aiText ] (Ai variant only),
 //   aiAreaItem?[ iconMask, buttonRow[ secondaryBtn?, divider?, primaryBtn ] ] (Ai variant only),
 //   upperItem?[ listText[ labelCell ] ] (Default variant only),
-//   areaItem[ primaryBtn ] (Default variant only)
+//   areaItem[ secondaryBtn?, primaryBtn ] (Default variant only)
 // ]
+
+type BottomGroupAreaItemVariant = "1 Botton" | "2 Botton";
 
 interface Props {
   /** Figma variant: "Ai" shows frosted AI bar; "Default" shows plain bottom sheet */
@@ -32,6 +34,8 @@ interface Props {
   upperItemLabel?: string;
   /** (Default) Upper item value, used by Table variant */
   upperItemValue?: string;
+  /** (Default) Button area variant */
+  areaItemVariants?: BottomGroupAreaItemVariant;
   /** @deprecated Use upperItemLabel instead. */
   upperItemText?: string;
   /** Click handler for primary CTA */
@@ -52,6 +56,7 @@ export function BottomGroup({
   upperItemVariant = "Default",
   upperItemLabel,
   upperItemValue,
+  areaItemVariants = "1 Botton",
   upperItemText = "리스트 텍스트",
   onPrimary,
   onSecondary,
@@ -132,9 +137,11 @@ export function BottomGroup({
 
       {isDefault && (
         <BottomGroupAreaItem
-          variants="1 Botton"
+          variants={areaItemVariants}
           primaryLabel={resolvedPrimaryLabel}
+          secondaryLabel={secondaryLabel}
           onPrimary={onPrimary}
+          onSecondary={onSecondary}
         />
       )}
     </div>

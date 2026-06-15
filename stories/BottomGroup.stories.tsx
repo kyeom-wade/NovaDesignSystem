@@ -15,6 +15,7 @@ const meta: Meta<typeof BottomGroup> = {
     upperItemVariant: { control: "select", options: ["Default", "Table"] },
     upperItemLabel: { control: "text" },
     upperItemValue: { control: "text" },
+    areaItemVariants: { control: "select", options: ["1 Botton", "2 Botton"] },
     upperItemText: { control: "text" },
     onPrimary: { control: false },
     onSecondary: { control: false },
@@ -31,6 +32,7 @@ const meta: Meta<typeof BottomGroup> = {
     upperItemVariant: "Default",
     upperItemLabel: "리스트 텍스트",
     upperItemValue: "내용 들어가는 부분",
+    areaItemVariants: "1 Botton",
   },
 };
 export default meta;
@@ -64,6 +66,7 @@ export const DefaultVariant: Story = {
     showUpperItem: true,
     upperItemVariant: "Default",
     upperItemLabel: "월 11,000원 (VAT 포함)",
+    areaItemVariants: "1 Botton",
     primaryLabel: "신청하기",
   },
 };
@@ -75,7 +78,20 @@ export const DefaultTableUpperItem: Story = {
     upperItemVariant: "Table",
     upperItemLabel: "월 이용료",
     upperItemValue: "11,000원",
+    areaItemVariants: "1 Botton",
     primaryLabel: "신청하기",
+  },
+};
+
+export const DefaultTwoButtons: Story = {
+  args: {
+    variant: "Default",
+    showUpperItem: true,
+    upperItemVariant: "Default",
+    upperItemLabel: "월 11,000원 (VAT 포함)",
+    areaItemVariants: "2 Botton",
+    secondaryLabel: "취소",
+    primaryLabel: "확인",
   },
 };
 
@@ -83,6 +99,7 @@ export const DefaultNoUpperItem: Story = {
   args: {
     variant: "Default",
     showUpperItem: false,
+    areaItemVariants: "1 Botton",
     primaryLabel: "확인",
   },
 };
@@ -133,7 +150,21 @@ export const AllVariants: Story = {
           upperItemVariant="Default"
           upperItemLabel="월 11,000원 (VAT 포함)"
           upperItemValue="내용 들어가는 부분"
+          areaItemVariants="1 Botton"
           primaryLabel="신청하기"
+        />
+      </div>
+      <div>
+        <p style={{ marginBottom: "8px", fontSize: "12px", color: "#888" }}>Default — 상단 텍스트 + 2버튼</p>
+        <BottomGroup
+          {...args}
+          variant="Default"
+          showUpperItem={true}
+          upperItemVariant="Default"
+          upperItemLabel="월 11,000원 (VAT 포함)"
+          areaItemVariants="2 Botton"
+          secondaryLabel="취소"
+          primaryLabel="확인"
         />
       </div>
       <div>
@@ -145,6 +176,7 @@ export const AllVariants: Story = {
           upperItemVariant="Table"
           upperItemLabel="월 이용료"
           upperItemValue="11,000원"
+          areaItemVariants="1 Botton"
           primaryLabel="신청하기"
         />
       </div>
@@ -154,6 +186,7 @@ export const AllVariants: Story = {
           {...args}
           variant="Default"
           showUpperItem={false}
+          areaItemVariants="1 Botton"
           primaryLabel="확인"
         />
       </div>
