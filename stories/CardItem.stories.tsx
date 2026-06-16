@@ -18,7 +18,9 @@ export default meta;
 type Story = StoryObj<typeof CardItem>;
 
 const SlotPreview = () => (
-  <div style={{ width: "100%", height: "100%", background: "rgba(5, 42, 142, 0.03)" }} />
+  <div style={{ width: "100%", padding: "16px", background: "rgba(5, 42, 142, 0.03)", boxSizing: "border-box" }}>
+    콘텐츠 영역
+  </div>
 );
 
 export const Default: Story = {
