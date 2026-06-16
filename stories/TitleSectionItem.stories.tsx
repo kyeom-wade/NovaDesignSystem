@@ -6,7 +6,6 @@ const meta: Meta<typeof TitleSectionItem> = {
   component: TitleSectionItem as never,
   argTypes: {
     title: { control: "text" },
-    textSize: { control: "select", options: ["16", "18", "20"] },
     titleOption: { control: "boolean" },
     optionLabel: { control: "text" },
     leftBadgeValue: { control: "text" },
@@ -19,7 +18,6 @@ const meta: Meta<typeof TitleSectionItem> = {
   },
   args: {
     title: "섹션 타이틀",
-    textSize: "16",
     titleOption: false,
     optionLabel: "옵션 텍스트",
     leftBadgeValue: "01",
@@ -33,25 +31,6 @@ type Story = StoryObj<typeof TitleSectionItem>;
 
 export const Default: Story = {};
 
-export const TextSizes: Story = {
-  render: (args) => (
-    <div style={{ display: "flex", flexDirection: "column", gap: "16px", padding: "16px" }}>
-      <div>
-        <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#888" }}>textSize="16"</p>
-        <TitleSectionItem {...args} textSize="16" title="섹션 타이틀 16" />
-      </div>
-      <div>
-        <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#888" }}>textSize="18"</p>
-        <TitleSectionItem {...args} textSize="18" title="섹션 타이틀 18" />
-      </div>
-      <div>
-        <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#888" }}>textSize="20"</p>
-        <TitleSectionItem {...args} textSize="20" title="섹션 타이틀 20" />
-      </div>
-    </div>
-  ),
-};
-
 export const WithTitleOption: Story = {
   args: {
     titleOption: true,
@@ -60,32 +39,6 @@ export const WithTitleOption: Story = {
     leftBadgeValue: "02",
     rightBadgeValue: "5",
     subTextContent: "상품에 대한 서브 설명입니다",
-  },
-};
-
-export const TitleOptionSizes: Story = {
-  render: (args) => (
-    <div style={{ display: "flex", flexDirection: "column", gap: "24px", padding: "16px" }}>
-      <div>
-        <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#888" }}>titleOption=true / textSize="16"</p>
-        <TitleSectionItem {...args} titleOption={true} textSize="16" title="카테고리 타이틀" />
-      </div>
-      <div>
-        <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#888" }}>titleOption=true / textSize="18"</p>
-        <TitleSectionItem {...args} titleOption={true} textSize="18" title="카테고리 타이틀" />
-      </div>
-      <div>
-        <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#888" }}>titleOption=true / textSize="20"</p>
-        <TitleSectionItem {...args} titleOption={true} textSize="20" title="카테고리 타이틀" />
-      </div>
-    </div>
-  ),
-  args: {
-    optionLabel: "옵션 라벨",
-    leftBadgeValue: "03",
-    rightBadgeValue: "7",
-    subTextContent: "카테고리 서브 텍스트",
-    rightItem: true,
   },
 };
 

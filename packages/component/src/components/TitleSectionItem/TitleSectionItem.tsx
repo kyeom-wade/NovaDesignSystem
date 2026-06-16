@@ -1,17 +1,14 @@
 import React from "react";
 import styles from "./TitleSectionItem.module.css";
 import { TitleTextItem } from "../TitleTextItem/TitleTextItem";
-import { TitleSectionRightItem } from "../TitleSectionRightItem/TitleSectionRightItem";
-import type { TextItemSize, TextItemWeight } from "../TextItem/TextItem";
+import { TitleGroupRightItem } from "../TitleGroupRightItem/TitleGroupRightItem";
 // Figma SSOT: SKT-Next_UI-Draft_3.3 .TitleSectionItem (node 50985:80329)
-// anatomy: root[ TitleTextItem, ?TitleSectionRightItem ]
-// Variants: textSize("16"|"18"|"20") × titleOption(bool) × rightItem(bool) — 6 display variants
+// anatomy: root[ TitleTextItem, ?TitleGroupRightItem ]
+// Variants: titleOption(bool) × rightItem(bool)
 
 interface Props {
   /** Main title text */
   title?: string;
-  /** Font size variant matching Figma textSize property */
-  textSize?: "16" | "18" | "20";
   /**
    * titleOption=true adds an optionText row above the title
    * and a subText row below, plus left brand badge and right tertiary count.
@@ -36,7 +33,6 @@ interface Props {
 
 export function TitleSectionItem({
   title = "섹션/콘텐츠 타이틀",
-  textSize = "16",
   titleOption = false,
   optionLabel = "옵션 텍스트",
   leftBadgeValue = "00",
@@ -47,10 +43,6 @@ export function TitleSectionItem({
   onRightClick,
   className,
 }: Props) {
-  const titleSize: TextItemSize =
-    textSize === "20" ? "20Title" : textSize === "18" ? "18Title" : "16Body";
-  const titleWeight: TextItemWeight = textSize === "16" ? "semibold" : "medium";
-
   const rootClass = [
     styles.root,
     titleOption ? styles.rootAlignStart : styles.rootAlignCenter,
@@ -73,8 +65,8 @@ export function TitleSectionItem({
         textRight={titleOption}
         textRightValue={rightBadgeValue}
         title={title}
-        titleSize={titleSize}
-        titleWeight={titleWeight}
+        titleSize="18Title"
+        titleWeight="semibold"
       />
 
       {rightItem &&
@@ -88,7 +80,7 @@ export function TitleSectionItem({
             {rightIcon}
           </span>
         ) : (
-          <TitleSectionRightItem
+          <TitleGroupRightItem
             className={styles.rightItem}
             variant="Icon"
             onClick={onRightClick}

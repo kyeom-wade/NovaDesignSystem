@@ -53,7 +53,7 @@ export { ThumbnailRectangleItem } from "./components/ThumbnailRectangleItem";
 export { ThumbnailRoundItem } from "./components/ThumbnailRoundItem";
 export { ThumbnailSquareItem } from "./components/ThumbnailSquareItem";
 export { TitleSectionItem } from "./components/TitleSectionItem";
-export { TitleSectionRightItem } from "./components/TitleSectionRightItem";
+export { TitleGroupRightItem } from "./components/TitleGroupRightItem";
 export { TitleTextItem } from "./components/TitleTextItem";
 export { TitleTextLeftItem } from "./components/TitleTextLeftItem";
 export { ToogleItem } from "./components/ToogleItem";

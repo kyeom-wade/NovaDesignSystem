@@ -1,20 +1,41 @@
 import React from "react";
 import styles from "./Accordion.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .Accordion (node 50943:29095)
-// anatomy: root[ titleGroup[ ?thumbnail, titleSectionItem[ titleTextItem[ title, ?subText ], rightItem[ chevronIcon ] ], ?divider ], ?slot[ children ] ]
-// Variants: variants("Info"|"Product"|"Price") × disclosure(bool) — 6 total
+import { BadgeItem } from "../BadgeItem";
+import { Divider } from "../Divider";
+import { IconArrow } from "../IconArrow";
+import { ThumbnailRoundItem } from "../ThumbnailRoundItem";
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .Accordion (node 50943:29095)
+// anatomy:
+//   Info/Price  — root[ TitleGroup[ TitleTextItem, TitleGroupRightItem ], ?slot ]
+//   Product     — root[ TitleGroup[ ThumbnailRoundItem, TitleTextItem, Text+TextButton ], ?Divider, ?slot ]
+//   Notice      — root[ txt[ heading, ?BadgeItem ], ?txt_sub[ captions ], ?slot ]
+// Variants: variants("Info"|"Product"|"Price"|"Notice") × disclosure(bool)
 
 interface Props {
   /** Visual variant of the accordion */
-  variants?: "Info" | "Product" | "Price";
+  variants?: "Info" | "Product" | "Price" | "Notice";
   /** Whether the accordion panel is open (disclosed) */
   disclosure?: boolean;
-  /** Main title text */
-  title?: string;
-  /** Sub-text shown below title (Product variant only) */
+  /** Header title text. Figma property name: heading */
+  heading?: string;
+  /** Product variant sub-text below heading */
   subText?: string;
-  /** Thumbnail image URL (Product variant only) */
+  /** Product variant thumbnail image URL */
   thumbnailSrc?: string;
+  /** Product variant right-side first text */
+  rightText?: string;
+  /** Product variant right-side second text */
+  rightSubText?: string;
+  /** Notice variant badge visibility */
+  badge?: boolean;
+  /** Notice variant caption row visibility */
+  subTextGroup?: boolean;
+  /** Notice variant second caption visibility */
+  caption?: boolean;
+  /** Notice variant first caption */
+  caption01?: string;
+  /** Notice variant second caption */
+  caption02?: string;
   /** Slot content rendered when disclosure=true */
   children?: React.ReactNode;
   /** Click handler for the title row */
@@ -22,112 +43,116 @@ interface Props {
   className?: string;
 }
 
-function ChevronDownIcon() {
-  return (
-    <svg
-      className={styles.chevronIcon}
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M4 6L8 10L12 6"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function ChevronUpIcon() {
-  return (
-    <svg
-      className={styles.chevronIcon}
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M4 10L8 6L12 10"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export function Accordion({
   variants = "Info",
   disclosure = false,
-  title = "섹션/콘텐츠 타이틀",
+  heading = "섹션/콘텐츠 타이틀",
   subText = "서브 텍스트",
   thumbnailSrc,
+  rightText = "Text",
+  rightSubText = "Text",
+  badge = true,
+  subTextGroup = true,
+  caption = true,
+  caption01 = "Caption",
+  caption02 = "Caption",
   children,
   onClick,
   className,
 }: Props) {
+  const isNotice = variants === "Notice";
   const rootClasses = [
     styles.root,
-    variants === "Info" ? styles.rootInfo : "",
-    variants === "Product" ? styles.rootProduct : "",
-    variants === "Price" ? styles.rootPrice : "",
-    disclosure ? styles.rootDisclosed : "",
+    styles[`variant${variants}`],
+    disclosure ? styles.disclosed : "",
     className,
   ]
     .filter(Boolean)
     .join(" ");
 
+  const handleKeyDown = onClick
+    ? (e: React.KeyboardEvent<HTMLDivElement>) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onClick();
+        }
+      }
+    : undefined;
+
   return (
-    <div className={rootClasses} data-cx-component="Accordion">
-      {/* Title group — clickable header row */}
-      <div
-        className={styles.titleGroup}
-        onClick={onClick}
-        role={onClick ? "button" : undefined}
-        tabIndex={onClick ? 0 : undefined}
-        onKeyDown={onClick ? (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); } } : undefined}
-        aria-expanded={disclosure}
-      >
-        {/* Thumbnail (Product variant only) */}
-        {variants === "Product" && (
-          <div className={styles.thumbnail}>
-            {thumbnailSrc ? (
-              <img className={styles.thumbnailImg} src={thumbnailSrc} alt="" />
-            ) : (
-              <div className={styles.thumbnailPlaceholder} />
-            )}
+    <div className={rootClasses} data-cx-component="Accordion" data-variant={variants}>
+      {variants === "Product" ? (
+        <div
+          className={styles.productTitleGroup}
+          onClick={onClick}
+          role={onClick ? "button" : undefined}
+          tabIndex={onClick ? 0 : undefined}
+          onKeyDown={handleKeyDown}
+          aria-expanded={disclosure}
+        >
+          <div className={styles.productContentsGroup}>
+            <ThumbnailRoundItem
+              className={styles.thumbnail}
+              size="40"
+              src={thumbnailSrc}
+              alt=""
+            />
+            <div className={styles.productTextGroup}>
+              <span className={styles.heading}>{heading}</span>
+              <span className={styles.productSubText}>{subText}</span>
+            </div>
           </div>
-        )}
-
-        {/* Title section */}
-        <div className={styles.titleSection}>
-          {/* Text area */}
-          <div className={styles.titleTextItem}>
-            <span className={styles.titleText}>{title}</span>
-            {variants === "Product" && (
-              <span className={styles.subTextContent}>{subText}</span>
-            )}
-          </div>
-
-          {/* Chevron icon */}
-          <div className={styles.iconItem}>
-            {disclosure ? <ChevronUpIcon /> : <ChevronDownIcon />}
+          <div className={styles.productRightGroup}>
+            <span className={styles.productRightText}>
+              {rightText} {rightSubText}
+            </span>
+            <IconArrow
+              className={styles.arrowIcon}
+              size={16}
+              variant={disclosure ? "up" : "down"}
+            />
           </div>
         </div>
-      </div>
-
-      {/* Divider (Product and Price variants when disclosed) */}
-      {disclosure && (variants === "Product" || variants === "Price") && (
-        <div className={styles.divider} />
+      ) : isNotice ? (
+        <div className={styles.noticeContent}>
+          <div className={styles.noticeTitleRow}>
+            <span className={styles.noticeHeading}>{heading}</span>
+            {badge && <BadgeItem color="Brand" size="Small" text="NEW" />}
+          </div>
+          {subTextGroup && (
+            <div className={styles.noticeCaptionRow}>
+              <span className={styles.noticeCaption}>{caption01}</span>
+              {caption && (
+                <>
+                  <span className={styles.verticalDivider} aria-hidden="true" />
+                  <span className={styles.noticeCaption}>{caption02}</span>
+                </>
+              )}
+            </div>
+          )}
+        </div>
+      ) : (
+        <div
+          className={styles.titleGroup}
+          onClick={onClick}
+          role={onClick ? "button" : undefined}
+          tabIndex={onClick ? 0 : undefined}
+          onKeyDown={handleKeyDown}
+          aria-expanded={disclosure}
+        >
+          <span className={styles.heading}>{heading}</span>
+          <IconArrow
+            className={styles.arrowIcon}
+            size={16}
+            variant={disclosure ? "up" : "down"}
+          />
+        </div>
       )}
 
-      {/* Expandable slot */}
+      {disclosure && (variants === "Product" || variants === "Price") && (
+        <Divider className={styles.divider} variant="contents" />
+      )}
+
       {disclosure && (
         <div className={styles.slot}>
           {children}

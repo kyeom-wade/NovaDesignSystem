@@ -5,11 +5,18 @@ const meta: Meta<typeof Accordion> = {
   title: "cx/Accordion",
   component: Accordion as never,
   argTypes: {
-    variants: { control: "select", options: ["Info", "Product", "Price"] },
+    variants: { control: "select", options: ["Info", "Product", "Price", "Notice"] },
     disclosure: { control: "boolean" },
-    title: { control: "text" },
+    heading: { control: "text" },
     subText: { control: "text" },
     thumbnailSrc: { control: "text" },
+    rightText: { control: "text" },
+    rightSubText: { control: "text" },
+    badge: { control: "boolean" },
+    subTextGroup: { control: "boolean" },
+    caption: { control: "boolean" },
+    caption01: { control: "text" },
+    caption02: { control: "text" },
     children: { control: false },
     onClick: { control: false },
     className: { control: false },
@@ -17,65 +24,54 @@ const meta: Meta<typeof Accordion> = {
   args: {
     variants: "Info",
     disclosure: false,
-    title: "섹션 타이틀",
+    heading: "섹션/콘텐츠 타이틀",
     subText: "서브 텍스트",
+    rightText: "Text",
+    rightSubText: "Text",
+    badge: true,
+    subTextGroup: true,
+    caption: true,
+    caption01: "Caption",
+    caption02: "Caption",
   },
 };
 export default meta;
 type Story = StoryObj<typeof Accordion>;
+
+const SlotPreview = ({ label = "아코디언 내용이 이곳에 표시됩니다." }: { label?: string }) => (
+  <div style={{ width: "100%", height: 100, fontSize: 14, color: "#555" }}>
+    {label}
+  </div>
+);
 
 export const Default: Story = {};
 
 export const Disclosed: Story = {
   args: {
     disclosure: true,
-    children: (
-      <div style={{ padding: "12px 0", color: "#555", fontSize: 14 }}>
-        아코디언 내용이 이곳에 표시됩니다. 상세 설명이나 추가 정보를 여기에 작성하세요.
-      </div>
-    ),
+    children: <SlotPreview />,
   },
 };
 
 export const AllVariants: Story = {
   render: (args) => (
     <div style={{ display: "flex", flexDirection: "column", gap: 24, padding: 24 }}>
-      <div>
-        <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>Info (닫힘)</p>
-        <Accordion {...args} variants="Info" disclosure={false} />
-      </div>
-      <div>
-        <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>Info (열림)</p>
-        <Accordion {...args} variants="Info" disclosure={true}>
-          <div style={{ padding: "12px 0", fontSize: 14, color: "#555" }}>
-            정보 내용이 여기에 표시됩니다.
-          </div>
-        </Accordion>
-      </div>
-      <div>
-        <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>Product (닫힘)</p>
-        <Accordion {...args} variants="Product" title="상품명" subText="월 89,000원" disclosure={false} />
-      </div>
-      <div>
-        <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>Product (열림)</p>
-        <Accordion {...args} variants="Product" title="상품명" subText="월 89,000원" disclosure={true}>
-          <div style={{ padding: "12px 0", fontSize: 14, color: "#555" }}>
-            상품 상세 설명이 여기에 표시됩니다.
-          </div>
-        </Accordion>
-      </div>
-      <div>
-        <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>Price (닫힘)</p>
-        <Accordion {...args} variants="Price" title="가격 안내" disclosure={false} />
-      </div>
-      <div>
-        <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>Price (열림)</p>
-        <Accordion {...args} variants="Price" title="가격 안내" disclosure={true}>
-          <div style={{ padding: "12px 0", fontSize: 14, color: "#555" }}>
-            가격 세부 내용이 여기에 표시됩니다.
-          </div>
-        </Accordion>
-      </div>
+      <Accordion {...args} variants="Info" disclosure={false} />
+      <Accordion {...args} variants="Info" disclosure={true}>
+        <SlotPreview label="Info 내용이 여기에 표시됩니다." />
+      </Accordion>
+      <Accordion {...args} variants="Product" heading="섹션/콘텐츠 타이틀" subText="서브 텍스트" disclosure={false} />
+      <Accordion {...args} variants="Product" heading="섹션/콘텐츠 타이틀" subText="서브 텍스트" disclosure={true}>
+        <SlotPreview label="Product 내용이 여기에 표시됩니다." />
+      </Accordion>
+      <Accordion {...args} variants="Price" heading="섹션/콘텐츠 타이틀" disclosure={false} />
+      <Accordion {...args} variants="Price" heading="섹션/콘텐츠 타이틀" disclosure={true}>
+        <SlotPreview label="Price 내용이 여기에 표시됩니다." />
+      </Accordion>
+      <Accordion {...args} variants="Notice" heading="Heading" disclosure={false} />
+      <Accordion {...args} variants="Notice" heading="Heading" disclosure={true}>
+        <SlotPreview label="Notice 내용이 여기에 표시됩니다." />
+      </Accordion>
     </div>
   ),
 };
@@ -83,9 +79,9 @@ export const AllVariants: Story = {
 export const ProductWithThumbnail: Story = {
   args: {
     variants: "Product",
-    title: "갤럭시 S24 울트라",
+    heading: "갤럭시 S24 울트라",
     subText: "월 89,000원",
-    thumbnailSrc: "https://via.placeholder.com/56x56",
+    thumbnailSrc: "https://via.placeholder.com/40x40",
     disclosure: false,
   },
 };
@@ -93,16 +89,48 @@ export const ProductWithThumbnail: Story = {
 export const ProductWithThumbnailDisclosed: Story = {
   args: {
     variants: "Product",
-    title: "갤럭시 S24 울트라",
+    heading: "갤럭시 S24 울트라",
     subText: "월 89,000원",
-    thumbnailSrc: "https://via.placeholder.com/56x56",
+    thumbnailSrc: "https://via.placeholder.com/40x40",
+    rightText: "Text",
+    rightSubText: "Text",
     disclosure: true,
-    children: (
-      <div style={{ padding: "12px 0", fontSize: 14, color: "#555" }}>
-        <p style={{ margin: "0 0 4px" }}>색상: 티타늄 블랙</p>
-        <p style={{ margin: "0 0 4px" }}>저장 용량: 256GB</p>
-        <p style={{ margin: 0 }}>약정 기간: 24개월</p>
-      </div>
-    ),
+    children: <SlotPreview label="상품 상세 설명이 여기에 표시됩니다." />,
+  },
+};
+
+export const PriceDisclosed: Story = {
+  args: {
+    variants: "Price",
+    heading: "섹션/콘텐츠 타이틀",
+    disclosure: true,
+    children: <SlotPreview label="가격 세부 내용이 여기에 표시됩니다." />,
+  },
+};
+
+export const Notice: Story = {
+  args: {
+    variants: "Notice",
+    heading: "Heading",
+    badge: true,
+    subTextGroup: true,
+    caption: true,
+    caption01: "Caption",
+    caption02: "Caption",
+    disclosure: false,
+  },
+};
+
+export const NoticeDisclosed: Story = {
+  args: {
+    variants: "Notice",
+    heading: "Heading",
+    badge: true,
+    subTextGroup: true,
+    caption: true,
+    caption01: "Caption",
+    caption02: "Caption",
+    disclosure: true,
+    children: <SlotPreview label="Notice 확장 내용이 여기에 표시됩니다." />,
   },
 };

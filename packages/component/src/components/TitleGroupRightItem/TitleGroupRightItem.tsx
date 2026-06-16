@@ -1,7 +1,7 @@
 import React from "react";
 import { IconArrow } from "../IconArrow";
-import styles from "./TitleSectionRightItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .TitleSectionRightItem (node 50943:30580)
+import styles from "./TitleGroupRightItem.module.css";
+// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .TitleGroupRightItem (node 50943:30580)
 // anatomy:
 //   Icon       — root[ iconItem(16×16) ]
 //   TextButton — root[ buttonItem(secondary/small) ]
@@ -51,7 +51,7 @@ function IconDummy() {
   );
 }
 
-export function TitleSectionRightItem({
+export function TitleGroupRightItem({
   variant = "Icon",
   text = "텍스트",
   count = "3개",
@@ -68,7 +68,7 @@ export function TitleSectionRightItem({
     return (
       <div
         className={rootClass}
-        data-cx-component="TitleSectionRightItem"
+        data-cx-component="TitleGroupRightItem"
         data-variant="Icon"
         onClick={onClick}
         role={onClick ? "button" : undefined}
@@ -84,7 +84,7 @@ export function TitleSectionRightItem({
   // --- TextButton: text link (underlined) + nothing else (figma shows Text link) ---
   if (variant === "TextButton") {
     return (
-      <div className={rootClass} data-cx-component="TitleSectionRightItem" data-variant="TextButton">
+      <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="TextButton">
         <button type="button" className={styles.textLink} onClick={onClick}>
           {text}
         </button>
@@ -95,7 +95,7 @@ export function TitleSectionRightItem({
   // --- Text: secondary text aligned right ---
   if (variant === "Text") {
     return (
-      <div className={rootClass} data-cx-component="TitleSectionRightItem" data-variant="Text">
+      <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="Text">
         <span className={styles.textSecondary}>{text}</span>
       </div>
     );
@@ -104,7 +104,7 @@ export function TitleSectionRightItem({
   // --- TextIconSecondary: secondary text + ArrowRight icon ---
   if (variant === "TextIconSecondary") {
     return (
-      <div className={rootClass} data-cx-component="TitleSectionRightItem" data-variant="TextIconSecondary">
+      <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="TextIconSecondary">
         <span className={styles.textSecondary}>{text}</span>
         <span className={`${styles.iconItem} ${styles.iconSecondary}`}>
           <IconArrow variant="right" size={16} />
@@ -116,7 +116,7 @@ export function TitleSectionRightItem({
   // --- TextIconPrimary: primary text + ArrowDown icon ---
   if (variant === "TextIconPrimary") {
     return (
-      <div className={rootClass} data-cx-component="TitleSectionRightItem" data-variant="TextIconPrimary">
+      <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="TextIconPrimary">
         <span className={styles.textPrimary}>{text}</span>
         <span className={`${styles.iconItem} ${styles.iconPrimary}`}>
           <IconArrow variant="down" size={16} />
@@ -128,7 +128,7 @@ export function TitleSectionRightItem({
   // --- TextItemButton: selected-label(primary) + count(brand) + ArrowUp icon ---
   if (variant === "TextItemButton") {
     return (
-      <div className={rootClass} data-cx-component="TitleSectionRightItem" data-variant="TextItemButton">
+      <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="TextItemButton">
         <span className={styles.textPrimary}>{text}</span>
         <span className={styles.textBrand}>{count}</span>
         <span className={`${styles.iconItem} ${styles.iconPrimary}`}>
@@ -141,7 +141,7 @@ export function TitleSectionRightItem({
   // --- Button: secondary pill button (no icon) ---
   // variant === "Button"
   return (
-    <div className={rootClass} data-cx-component="TitleSectionRightItem" data-variant="Button">
+    <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="Button">
       <button type="button" className={styles.pillButton} onClick={onClick}>
         {buttonLabel}
       </button>

@@ -542,7 +542,7 @@
       "distinction": "일반 섹션 헤더에는 16/18을 사용한다."
     }
   },
-  "TitleSectionRightItem": {
+  "TitleGroupRightItem": {
     "Icon": {
       "level": 1,
       "description": "섹션 전체보기나 다음 화면으로 단순 이동하는 chevron 아이콘 버튼. 가장 단순한 섹션 이동 CTA에 사용한다.",

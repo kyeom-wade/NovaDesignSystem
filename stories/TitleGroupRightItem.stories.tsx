@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { TitleSectionRightItem } from "@cx/components";
+import { TitleGroupRightItem } from "@cx/components";
 
-const meta: Meta<typeof TitleSectionRightItem> = {
-  title: "cx/TitleSectionRightItem",
-  component: TitleSectionRightItem as never,
+const meta: Meta<typeof TitleGroupRightItem> = {
+  title: "cx/TitleGroupRightItem",
+  component: TitleGroupRightItem as never,
   argTypes: {
     variant: {
       control: "select",
@@ -31,7 +31,7 @@ const meta: Meta<typeof TitleSectionRightItem> = {
   },
 };
 export default meta;
-type Story = StoryObj<typeof TitleSectionRightItem>;
+type Story = StoryObj<typeof TitleGroupRightItem>;
 
 export const Default: Story = {};
 
@@ -40,31 +40,31 @@ export const AllVariants: Story = {
     <div style={{ display: "flex", flexDirection: "column", gap: 24, padding: 24 }}>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>Icon</p>
-        <TitleSectionRightItem {...args} variant="Icon" />
+        <TitleGroupRightItem {...args} variant="Icon" />
       </div>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>TextButton</p>
-        <TitleSectionRightItem {...args} variant="TextButton" text="전체보기" />
+        <TitleGroupRightItem {...args} variant="TextButton" text="전체보기" />
       </div>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>Text</p>
-        <TitleSectionRightItem {...args} variant="Text" text="설명 텍스트" />
+        <TitleGroupRightItem {...args} variant="Text" text="설명 텍스트" />
       </div>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>TextIconSecondary</p>
-        <TitleSectionRightItem {...args} variant="TextIconSecondary" text="더보기" />
+        <TitleGroupRightItem {...args} variant="TextIconSecondary" text="더보기" />
       </div>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>TextIconPrimary</p>
-        <TitleSectionRightItem {...args} variant="TextIconPrimary" text="접기" />
+        <TitleGroupRightItem {...args} variant="TextIconPrimary" text="접기" />
       </div>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>TextItemButton</p>
-        <TitleSectionRightItem {...args} variant="TextItemButton" text="선택됨" count="3개" />
+        <TitleGroupRightItem {...args} variant="TextItemButton" text="선택됨" count="3개" />
       </div>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>Button</p>
-        <TitleSectionRightItem {...args} variant="Button" buttonLabel="편집" />
+        <TitleGroupRightItem {...args} variant="Button" buttonLabel="편집" />
       </div>
     </div>
   ),
