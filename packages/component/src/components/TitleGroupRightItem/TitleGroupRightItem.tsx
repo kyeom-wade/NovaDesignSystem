@@ -1,15 +1,15 @@
 import React from "react";
-import { IconArrow } from "../IconArrow";
+import { ButtonIconItem } from "../ButtonIconItem";
+import { ButtonItem } from "../ButtonItem";
+import { IconDummy } from "../IconDummy";
 import styles from "./TitleGroupRightItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .TitleGroupRightItem (node 50943:30580)
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .TitleGroupRightItem (node 50943:30580)
 // anatomy:
 //   Icon       — root[ iconItem(16×16) ]
-//   TextButton — root[ buttonItem(secondary/small) ]
-//   Text       — root[ textItem(span) ]
-//   TextIconSecondary — root[ text(span), iconItem(ArrowRight/16) ]
-//   TextIconPrimary   — root[ text(span), iconItem(ArrowDown/16) ]
-//   TextItemButton    — root[ label(span), count(span/brand), iconItem(ArrowUp/16) ]
+//   TextButton — root[ ButtonItem(Text/XLarge) ]
+//   TextIconSecondary — root[ ButtonItem(Text+Icon/XLarge) ]
 //   Button     — root[ buttonItem(secondary/small, no-icon) ]
+//   ButtonIcon — root[ ButtonIconItem(close/24) ]
 
 interface Props {
   /**
@@ -19,43 +19,22 @@ interface Props {
   variant?:
     | "Icon"
     | "TextButton"
-    | "Text"
     | "TextIconSecondary"
-    | "TextIconPrimary"
-    | "TextItemButton"
-    | "Button";
-  /** Primary text shown in Text / TextIcon* / TextItemButton variants */
+    | "Button"
+    | "ButtonIcon";
+  /** Primary text shown in TextButton / TextIconSecondary variants */
   text?: string;
-  /** Count badge shown only in the TextItemButton variant */
-  count?: string;
-  /** Label for the inline pill-button (TextButton / Button variants) */
+  /** Label for the secondary small button variant */
   buttonLabel?: string;
   /** Click handler passed to the interactive button element */
-  onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLDivElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   className?: string;
-}
-
-// --- inline SVG icons (no image-URL dependency) ---
-
-function IconDummy() {
-  return (
-    <svg
-      className={styles.iconSvg}
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor" />
-    </svg>
-  );
 }
 
 export function TitleGroupRightItem({
   variant = "Icon",
-  text = "텍스트",
-  count = "3개",
-  buttonLabel = "버튼",
+  text = "Label",
+  buttonLabel = "Label",
   onClick,
   className,
 }: Props) {
@@ -63,88 +42,74 @@ export function TitleGroupRightItem({
     .filter(Boolean)
     .join(" ");
 
-  // --- Icon ---
   if (variant === "Icon") {
     return (
       <div
         className={rootClass}
         data-cx-component="TitleGroupRightItem"
         data-variant="Icon"
-        onClick={onClick}
-        role={onClick ? "button" : undefined}
-        tabIndex={onClick ? 0 : undefined}
       >
-        <span className={`${styles.iconItem} ${styles.iconDisabled}`}>
-          <IconDummy />
+        <span className={styles.iconItem}>
+          <IconDummy className={styles.iconDummy} size={16} />
         </span>
       </div>
     );
   }
 
-  // --- TextButton: text link (underlined) + nothing else (figma shows Text link) ---
   if (variant === "TextButton") {
     return (
       <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="TextButton">
-        <button type="button" className={styles.textLink} onClick={onClick}>
-          {text}
-        </button>
+        <ButtonItem
+          className={styles.textButton}
+          variant="Text"
+          size="XLarge"
+          label={text}
+          icon={false}
+          onClick={onClick}
+        />
       </div>
     );
   }
 
-  // --- Text: secondary text aligned right ---
-  if (variant === "Text") {
-    return (
-      <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="Text">
-        <span className={styles.textSecondary}>{text}</span>
-      </div>
-    );
-  }
-
-  // --- TextIconSecondary: secondary text + ArrowRight icon ---
   if (variant === "TextIconSecondary") {
     return (
       <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="TextIconSecondary">
-        <span className={styles.textSecondary}>{text}</span>
-        <span className={`${styles.iconItem} ${styles.iconSecondary}`}>
-          <IconArrow variant="right" size={16} />
-        </span>
+        <ButtonItem
+          className={styles.textIconButton}
+          variant="TextIcon"
+          size="XLarge"
+          label={text}
+          icon
+          onClick={onClick}
+        />
       </div>
     );
   }
 
-  // --- TextIconPrimary: primary text + ArrowDown icon ---
-  if (variant === "TextIconPrimary") {
+  if (variant === "ButtonIcon") {
     return (
-      <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="TextIconPrimary">
-        <span className={styles.textPrimary}>{text}</span>
-        <span className={`${styles.iconItem} ${styles.iconPrimary}`}>
-          <IconArrow variant="down" size={16} />
-        </span>
+      <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="ButtonIcon">
+        <ButtonIconItem
+          className={styles.buttonIcon}
+          size="Medium"
+          fill={false}
+          aria-label="닫기"
+          onClick={onClick}
+        />
       </div>
     );
   }
 
-  // --- TextItemButton: selected-label(primary) + count(brand) + ArrowUp icon ---
-  if (variant === "TextItemButton") {
-    return (
-      <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="TextItemButton">
-        <span className={styles.textPrimary}>{text}</span>
-        <span className={styles.textBrand}>{count}</span>
-        <span className={`${styles.iconItem} ${styles.iconPrimary}`}>
-          <IconArrow variant="up" size={16} />
-        </span>
-      </div>
-    );
-  }
-
-  // --- Button: secondary pill button (no icon) ---
-  // variant === "Button"
   return (
     <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="Button">
-      <button type="button" className={styles.pillButton} onClick={onClick}>
-        {buttonLabel}
-      </button>
+      <ButtonItem
+        className={styles.button}
+        variant="Secondary"
+        size="Small"
+        label={buttonLabel}
+        icon={false}
+        onClick={onClick}
+      />
     </div>
   );
 }

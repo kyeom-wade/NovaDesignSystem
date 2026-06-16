@@ -10,24 +10,20 @@ const meta: Meta<typeof TitleGroupRightItem> = {
       options: [
         "Icon",
         "TextButton",
-        "Text",
         "TextIconSecondary",
-        "TextIconPrimary",
-        "TextItemButton",
         "Button",
+        "ButtonIcon",
       ],
     },
     text: { control: "text" },
-    count: { control: "text" },
     buttonLabel: { control: "text" },
     onClick: { control: false },
     className: { control: false },
   },
   args: {
     variant: "Icon",
-    text: "전체보기",
-    count: "3개",
-    buttonLabel: "버튼",
+    text: "Label",
+    buttonLabel: "Label",
   },
 };
 export default meta;
@@ -44,27 +40,19 @@ export const AllVariants: Story = {
       </div>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>TextButton</p>
-        <TitleGroupRightItem {...args} variant="TextButton" text="전체보기" />
-      </div>
-      <div>
-        <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>Text</p>
-        <TitleGroupRightItem {...args} variant="Text" text="설명 텍스트" />
+        <TitleGroupRightItem {...args} variant="TextButton" text="Label" />
       </div>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>TextIconSecondary</p>
-        <TitleGroupRightItem {...args} variant="TextIconSecondary" text="더보기" />
-      </div>
-      <div>
-        <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>TextIconPrimary</p>
-        <TitleGroupRightItem {...args} variant="TextIconPrimary" text="접기" />
-      </div>
-      <div>
-        <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>TextItemButton</p>
-        <TitleGroupRightItem {...args} variant="TextItemButton" text="선택됨" count="3개" />
+        <TitleGroupRightItem {...args} variant="TextIconSecondary" text="Label" />
       </div>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>Button</p>
-        <TitleGroupRightItem {...args} variant="Button" buttonLabel="편집" />
+        <TitleGroupRightItem {...args} variant="Button" buttonLabel="Label" />
+      </div>
+      <div>
+        <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>ButtonIcon</p>
+        <TitleGroupRightItem {...args} variant="ButtonIcon" />
       </div>
     </div>
   ),
@@ -79,42 +67,26 @@ export const IconVariant: Story = {
 export const TextButtonVariant: Story = {
   args: {
     variant: "TextButton",
-    text: "전체보기",
-  },
-};
-
-export const TextVariant: Story = {
-  args: {
-    variant: "Text",
-    text: "설명 텍스트",
+    text: "Label",
   },
 };
 
 export const TextIconSecondary: Story = {
   args: {
     variant: "TextIconSecondary",
-    text: "더보기",
-  },
-};
-
-export const TextIconPrimary: Story = {
-  args: {
-    variant: "TextIconPrimary",
-    text: "접기",
-  },
-};
-
-export const TextItemButton: Story = {
-  args: {
-    variant: "TextItemButton",
-    text: "선택됨",
-    count: "5개",
+    text: "Label",
   },
 };
 
 export const ButtonVariant: Story = {
   args: {
     variant: "Button",
-    buttonLabel: "편집",
+    buttonLabel: "Label",
+  },
+};
+
+export const ButtonIconVariant: Story = {
+  args: {
+    variant: "ButtonIcon",
   },
 };

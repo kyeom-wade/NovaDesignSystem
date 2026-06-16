@@ -545,37 +545,28 @@
   "TitleGroupRightItem": {
     "Icon": {
       "level": 1,
-      "description": "섹션 전체보기나 다음 화면으로 단순 이동하는 chevron 아이콘 버튼. 가장 단순한 섹션 이동 CTA에 사용한다.",
+      "description": "타이틀 그룹 우측에 더미 아이콘 슬롯을 배치하는 항목. Figma 기본 표시용 variant이며 실제 화면 사용은 제한한다.",
       "distinction": "텍스트 라벨이 필요하면 TextButton을 사용한다."
     },
     "TextButton": {
       "level": 2,
-      "description": "더보기·편집 등 텍스트 전용 보조 버튼. 섹션 우측 '더보기', '편집', '전체보기' 등 보조 텍스트 행동에 사용한다.",
-      "distinction": "선택 요약 표시가 필요하면 TextItemButton을 사용한다."
-    },
-    "Text": {
-      "description": "날짜·상태·건수 등 클릭 없는 보조 정보를 우측에 표시. 클릭 불가한 읽기 전용 섹션 부가 정보에 사용한다.",
-      "distinction": "클릭 가능한 텍스트에는 TextButton을 사용한다."
+      "description": "타이틀 그룹 우측에 밑줄 텍스트 버튼을 배치하는 항목. 보조 링크나 전체보기처럼 낮은 강조의 텍스트 행동에 사용한다.",
+      "distinction": "아이콘이 함께 필요한 이동 행동에는 TextIconSecondary를 사용한다."
     },
     "TextIconSecondary": {
       "level": 2,
-      "description": "선택 요약 텍스트와 chevron을 조합한 보조 강조 우측 항목. 현재 선택 상태를 요약 표시하면서 변경 진입을 제공하는 낮은 강조 버전에 사용한다.",
-      "distinction": "더 높은 강조가 필요하면 TextIconPrimary를 사용한다."
-    },
-    "TextIconPrimary": {
-      "level": 3,
-      "description": "선택 요약 텍스트와 chevron을 조합한 주요 강조 우측 항목. 현재 선택 상태를 강조색으로 표시하면서 변경 진입을 유도하는 높은 강조 버전에 사용한다.",
-      "distinction": "낮은 강조에는 TextIconSecondary를 사용한다."
-    },
-    "TextItemButton": {
-      "level": 3,
-      "description": "현재 선택 상태 요약과 변경 진입을 함께 제공하는 우측 항목. 회색 서브텍스트+강조색 선택 수+chevron 조합으로 '선택한 번호 3개' 형태에 사용한다.",
-      "distinction": "단순 이동에는 Icon/TextButton, 읽기 전용 요약에는 Text를 사용한다."
+      "description": "타이틀 그룹 우측에 텍스트와 오른쪽 화살표를 함께 배치하는 항목. 다음 화면 진입이나 상세 보기처럼 이동성이 있는 보조 행동에 사용한다.",
+      "distinction": "아이콘 없이 텍스트만 필요하면 TextButton을 사용한다."
     },
     "Button": {
       "level": 2,
-      "description": "섹션 우측에 텍스트 버튼을 배치하는 우측 항목. 변경·선택 등 명시적 버튼 형태의 보조 행동이 필요한 섹션 헤더에 사용한다.",
-      "distinction": "텍스트만 필요하면 TextButton, 아이콘만 필요하면 Icon을 사용한다."
+      "description": "타이틀 그룹 우측에 작은 Secondary 버튼을 배치하는 항목. 명시적인 보조 행동을 버튼 형태로 보여야 할 때 사용한다.",
+      "distinction": "닫기 같은 아이콘 단독 행동에는 ButtonIcon을 사용한다."
+    },
+    "ButtonIcon": {
+      "level": 2,
+      "description": "타이틀 그룹 우측에 24px 아이콘 버튼을 배치하는 항목. 닫기처럼 텍스트 없이 명확한 아이콘 행동에 사용한다.",
+      "distinction": "텍스트 라벨이 필요한 행동에는 Button 또는 TextButton을 사용한다."
     }
   },
   "TitleTextLeftItem": {
