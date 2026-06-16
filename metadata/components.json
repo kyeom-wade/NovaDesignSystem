@@ -12,10 +12,10 @@
     "type": "Alert",
     "standalone": true,
     "description": "중립 또는 위험 상황을 알리는 인라인 알림 배너 컴포넌트로, 선택적 타이틀과 본문 텍스트를 표시합니다.",
-    "anatomy": "wrap[ group[ title?, body ] ]",
+    "anatomy": "wrap[ group[ title?, description ] ]",
     "states": null,
-    "do": "- variant=\"neutral\"은 일반 안내·정보 메시지에, variant=\"danger\"는 오류·경고 등 위험 상황 알림에 사용한다.\n- 타이틀 없이 본문만 표시할 때는 showTitle=false 또는 title을 빈 문자열로 전달한다.\n- 화면 내 인라인 영역에 배치하여 사용자 흐름을 차단하지 않는 정적 알림으로 활용한다.",
-    "rules": "**props 요약**\n- variant: \"neutral\"(기본) | \"danger\"\n- title: string — 타이틀 텍스트 (기본값 \"타이틀\")\n- body: string — 본문 텍스트 (기본값 \"본문\")\n- showTitle: boolean — 타이틀 행 노출 여부 (기본값 true)\n\n[맵핑 트리거] 사용자 액션 없이 화면 내 고정 위치에서 안내·오류·경고 메시지를 표시해야 할 때 사용한다.\n\n[사용 시점] 폼 상단 유효성 안내, 서비스 점검 공지, 제한 조건 설명 등 인라인 고지 영역에 적합하다.\n\n[구분] AlertDialog는 사용자 확인이 필요한 모달 다이얼로그이고, Banner는 전체 너비의 페이지 상단 공지용이다. Alert는 콘텐츠 영역 내 인라인 배치에 사용한다."
+    "do": "- danger=false는 일반 안내·정보 메시지에, danger=true는 오류·경고 등 위험 상황 알림에 사용한다.\n- 타이틀 없이 본문만 표시할 때는 titleText=false 또는 title을 빈 문자열로 전달한다.\n- 화면 내 인라인 영역에 배치하여 사용자 흐름을 차단하지 않는 정적 알림으로 활용한다.",
+    "rules": "**props 요약**\n- danger: boolean — true=위험/오류 알림, false=중립 안내 (기본 false)\n- title: string — 타이틀 텍스트 (기본값 \"Title\")\n- description: string — 본문 텍스트 (기본값 \"Description\")\n- titleText: boolean — 타이틀 행 노출 여부 (기본값 true)\n\n[맵핑 트리거] 사용자 액션 없이 화면 내 고정 위치에서 안내·오류·경고 메시지를 표시해야 할 때 사용한다.\n\n[사용 시점] 폼 상단 유효성 안내, 서비스 점검 공지, 제한 조건 설명 등 인라인 고지 영역에 적합하다.\n\n[구분] AlertDialog는 사용자 확인이 필요한 모달 다이얼로그이고, Banner는 전체 너비의 페이지 상단 공지용이다. Alert는 콘텐츠 영역 내 인라인 배치에 사용한다."
   },
   "Appbar": {
     "type": "Appbar",
