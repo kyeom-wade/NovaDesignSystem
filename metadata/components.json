@@ -40,11 +40,11 @@
   "BadgeIconItem": {
     "type": "Badge",
     "standalone": false,
-    "description": "아이콘과 텍스트 레이블, 선택적 우측 보조 텍스트로 구성된 배지 내부 항목 컴포넌트.",
-    "anatomy": "root[ main[ icon, text ], subText? ]",
-    "states": null,
-    "do": "- 배지 컴포넌트 내부의 아이콘+텍스트 조합 항목으로 사용하며, 단독 렌더링은 금지한다.\n- showSubText=true일 때 root가 full-width로 전환되고 우측에 subText가 표시된다.\n- iconSrc를 지정하지 않으면 16×16 플레이스홀더 아이콘이 자동 삽입된다.",
-    "rules": "**props 요약**\n- text (string): 아이콘 옆 주 레이블 텍스트\n- subText (string): 우측 보조 텍스트 (showSubText=true일 때만 표시)\n- showSubText (boolean): false(기본, compact) / true(subText 노출, full-width)\n- iconSrc (string): 아이콘 이미지 URL; 미지정 시 placeholder\n- iconAlt (string): 아이콘 alt 텍스트\n\n[맵핑 트리거] Badge 컴포넌트의 슬롯 안에 아이콘+텍스트 형태의 항목이 필요할 때 사용.\n\n[사용 시점] 배지 내부에 아이콘과 레이블을 함께 표시해야 하는 경우, 선택적으로 우측 보조 정보가 필요한 경우.\n\n[구분] BadgeItem(텍스트 전용 배지 항목)과 달리 BadgeIconItem은 아이콘을 필수 구성 요소로 포함한다.",
+    "description": "아이콘과 짧은 레이블을 함께 표시하는 배지 내부 항목. subtext=On일 때 우측 caption을 함께 표시한다.",
+    "anatomy": "root[ main[ Ico, label ], ?caption ]",
+    "states": "subtext(Subtext2|On)",
+    "do": "- Badge 컴포넌트 내부의 아이콘+텍스트 조합 항목으로 사용한다.\n- subtext=Subtext2는 compact 형태로 label을 최대 160px에서 말줄임한다.\n- subtext=On은 274px 폭에서 좌측 label과 우측 caption을 함께 배치한다.\n- iconSrc를 지정하지 않으면 기본 16px 로고 아이콘을 사용한다.",
+    "rules": "**props 요약**\n- label (string): 아이콘 옆 주 레이블 텍스트\n- caption (string): 우측 보조 텍스트 (subtext=On일 때 표시)\n- subtext (\"Subtext2\" | \"On\"): compact / caption 노출 variant\n- iconSrc (string): 커스텀 아이콘 이미지 URL\n- iconAlt (string): 커스텀 아이콘 alt 텍스트\n\n[호환 alias]\n- text -> label\n- subText -> caption\n- showSubText=true -> subtext=On\n\n[구분] BadgeItem은 텍스트 전용 배지 항목이고, BadgeIconItem은 아이콘을 필수 구성 요소로 포함한다.",
     "parent": "Badge",
     "slot": "Badge"
   },
