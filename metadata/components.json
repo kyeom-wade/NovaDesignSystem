@@ -154,6 +154,28 @@
     "do": "- variant=\"ButtonClose\"는 타이틀과 X 닫기 버튼이 필요한 콘텐츠 시트에 사용하고, variant=\"Handle\"은 드래그로 닫는 시트에 사용합니다.\n- showTab=true 시 tabs 배열과 activeTab을 함께 전달하여 탭 스트립을 제어합니다.\n- showActionGroup=true 시 primaryLabel·secondaryLabel·aiHintText를 반드시 지정하여 AI 액션 영역을 완성합니다.",
     "rules": "**Props 요약**\n- variant: \"ButtonClose\"(기본) | \"Handle\"\n- title / subText / showSubText: ButtonClose 헤더 텍스트 제어\n- showTab / tabs / activeTab / onTabChange: 탭 스트립 표시 및 선택 상태\n- showActionGroup / primaryLabel / secondaryLabel / aiHintText: AI 액션 그룹\n- children: 본문 자유 슬롯\n\n[맵핑 트리거] 화면 하단에서 오버레이 형태로 추가 정보·액션을 제공할 때 사용합니다.\n\n[사용 시점] 목록 필터, 상세 옵션 선택, 구독/결제 유도 등 전체 페이지 전환 없이 보조 UI가 필요한 경우에 적합합니다.\n\n[구분] Dialog와 달리 화면 하단에 고정 앵커되며 드래그 핸들을 지원합니다. 단순 알림·확인 용도라면 AlertDialog를 사용하고, 풍부한 콘텐츠와 탭·AI 액션이 필요한 경우 Bottomsheet를 사용합니다."
   },
+  "ButtonIcon": {
+    "type": "Button",
+    "standalone": false,
+    "description": "Figma ButtonIconItem 기준의 아이콘 슬롯 컴포넌트. Large·Medium·Small 크기를 제공하고 내부에 커스텀 아이콘을 포함할 수 있다.",
+    "anatomy": "root[ iconSlot[ icon | children | IconDummy ] ]",
+    "states": "Large, Medium, Small",
+    "do": "- 버튼, 타이틀, 셀 등에서 아이콘을 정해진 크기 슬롯 안에 배치해야 할 때 사용한다.\n- 내부 아이콘은 icon prop 또는 children으로 전달할 수 있으며, 지정하지 않으면 기본 Dummy 아이콘을 표시한다.\n- Figma의 varient 오타는 코드에서 variant로 수정해 사용한다.",
+    "rules": "**props 요약**\n- variant: Large(24px, 기본) | Medium(16px) | Small(12px)\n- icon: ReactNode — 내부 아이콘 슬롯\n- children: ReactNode — 내부 아이콘 슬롯\n\n**[맵핑 트리거]** Button 계열 구조 안에 크기 고정 아이콘 슬롯이 필요할 때 사용한다.\n\n**[사용 시점]**\n- 버튼 내부 아이콘, 텍스트 옆 보조 아이콘, 작은 인터랙션 영역의 아이콘 슬롯\n- 아이콘 자체를 컴포넌트 외부에서 주입해야 하는 경우\n\n**[구분]**\n- 클릭 가능한 닫기(X) 아이콘 버튼에는 기존 ButtonIconItem을 사용한다.\n- 단순 범용 아이콘 표시에는 IconItem 또는 해당 Icon* 컴포넌트를 직접 사용할 수 있다.",
+    "parent": "Button",
+    "slot": "Icon"
+  },
+  "ButtonIconAiItem": {
+    "type": "Button",
+    "standalone": false,
+    "description": "AI 진입점에 사용하는 44px 원형 아이콘 버튼 아이템. 내부에 24px ButtonIcon 슬롯을 포함하며 커스텀 아이콘을 받을 수 있다.",
+    "anatomy": "root[ ButtonIcon(Large, icon | children | IconDummy) ]",
+    "states": "Default",
+    "do": "- AI 추천·AI 검색·AI 도우미 등 AI 맥락의 아이콘 진입점에 사용한다.\n- 내부 아이콘은 icon prop 또는 children으로 전달할 수 있으며, 지정하지 않으면 기본 Dummy 아이콘을 표시한다.\n- 일반 아이콘 슬롯이 필요한 경우 ButtonIcon을 사용하고, AI 원형 컨테이너가 필요한 경우에만 ButtonIconAiItem을 사용한다.",
+    "rules": "**props 요약**\n- icon: ReactNode — 내부 24px 아이콘 슬롯\n- children: ReactNode — 내부 24px 아이콘 슬롯\n\n**[맵핑 트리거]** 44px 원형 배경과 그림자를 가진 AI 아이콘 버튼 진입점이 필요할 때 사용한다.\n\n**[사용 시점]**\n- AI 관련 플로팅 액션 또는 AI 섹션 진입점\n- 하단 그룹/AI 영역 내 독립 아이콘 버튼\n\n**[구분]**\n- 크기 고정 아이콘 슬롯만 필요하면 ButtonIcon을 사용한다.\n- 일반 닫기(X) 버튼에는 기존 ButtonIconItem을 사용한다.",
+    "parent": "Button",
+    "slot": "Icon"
+  },
   "ButtonIconItem": {
     "type": "Button",
     "standalone": false,

@@ -7,6 +7,8 @@ export { BottomGroupAiAreaItem } from "./components/BottomGroupAiAreaItem";
 export { BottomGroupAreaItem } from "./components/BottomGroupAreaItem";
 export { BottomGroupUpperItem } from "./components/BottomGroupUpperItem";
 export { BottomSheetHandleItem } from "./components/BottomSheetHandleItem";
+export { ButtonIcon } from "./components/ButtonIcon";
+export { ButtonIconAiItem } from "./components/ButtonIconAiItem";
 export { ButtonIconItem } from "./components/ButtonIconItem";
 export { InputClearButtonItem } from "./components/InputClearButtonItem";
 export { InputHelpTextItem } from "./components/InputHelpTextItem";

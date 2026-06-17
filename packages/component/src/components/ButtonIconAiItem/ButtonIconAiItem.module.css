@@ -1,0 +1,16 @@
+/* ButtonIconAiItem — Figma node 55216:179427 */
+/* anatomy: root[ ButtonIcon(Large) ] */
+
+.root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--skt-radius-r-full, var(--radius-r-full, 9999px));
+  background: var(--skt-color-bg-layer-floating-ai, var(--bg-layer-floating-ai, rgba(255, 255, 255, 0.8)));
+  box-shadow: 0 0 20px 0 var(--skt-color-shadow-secondary, var(--shadow-secondary, rgba(35, 55, 155, 0.05)));
+  color: var(--skt-color-icon-disabled-default, var(--icon-disabled-default, rgba(11, 44, 127, 0.18)));
+  flex-shrink: 0;
+}
