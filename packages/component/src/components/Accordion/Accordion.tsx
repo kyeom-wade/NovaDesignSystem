@@ -4,11 +4,11 @@ import { BadgeItem } from "../BadgeItem";
 import { Divider } from "../Divider";
 import { IconArrow } from "../IconArrow";
 import { ThumbnailRoundItem } from "../ThumbnailRoundItem";
-import { TitleTextItem } from "../TitleTextItem";
+import { TitleGroupItem } from "../TitleGroupItem";
 // Figma SSOT: SKT-Next_UI-Draft_3.3 .Accordion (node 50943:29095)
 // anatomy:
-//   Info/Price  — root[ TitleGroup[ TitleTextItem, TitleGroupRightItem ], ?slot ]
-//   Product     — root[ TitleGroup[ ThumbnailRoundItem, TitleTextItem, Text+TextButton ], ?Divider, ?slot ]
+//   Info/Price  — root[ TitleGroupItem, ?slot ]
+//   Product     — root[ TitleGroup[ ThumbnailRoundItem, TitleGroupItem, Text+TextButton ], ?Divider, ?slot ]
 //   Notice      — root[ txt[ heading, ?BadgeItem ], ?txt_sub[ captions ], ?slot ]
 // Variants: variants("Info"|"Product"|"Price"|"Notice") × disclosure(bool)
 
@@ -98,12 +98,14 @@ export function Accordion({
               src={thumbnailSrc}
               alt=""
             />
-            <TitleTextItem
+            <TitleGroupItem
               className={styles.productTextGroup}
+              fontSize="16"
               title={heading}
-              variants="16"
-              subText
-              subtitle={subText}
+              subtitle
+              subtitle2={subText}
+              textRightItem={false}
+              rightItem={false}
             />
           </div>
           <div className={styles.productRightGroup}>
@@ -144,11 +146,14 @@ export function Accordion({
           onKeyDown={handleKeyDown}
           aria-expanded={disclosure}
         >
-          <TitleTextItem className={styles.titleTextItem} title={heading} variants="16" />
-          <IconArrow
-            className={styles.arrowIcon}
-            size={16}
-            variant={disclosure ? "up" : "down"}
+          <TitleGroupItem
+            className={styles.titleGroupItem}
+            fontSize="16"
+            title={heading}
+            subtitle={false}
+            textRightItem={false}
+            rightItem={true}
+            rightArrowVariant={disclosure ? "up" : "down"}
           />
         </div>
       )}

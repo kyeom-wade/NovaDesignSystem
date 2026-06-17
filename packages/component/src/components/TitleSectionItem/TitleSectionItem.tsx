@@ -1,83 +1,53 @@
 import React from "react";
-import styles from "./TitleSectionItem.module.css";
-import { TitleTextItem } from "../TitleTextItem/TitleTextItem";
-import { TitleGroupRightItem } from "../TitleGroupRightItem/TitleGroupRightItem";
-// Figma SSOT: SKT-Next_UI-Draft_3.3 .TitleSectionItem (node 50985:80329)
-// anatomy: root[ TitleTextItem, ?TitleGroupRightItem ]
-// Variants: titleOption(bool) × rightItem(bool)
+import {
+  TitleGroupItem,
+  type TitleGroupItemProps,
+} from "../TitleGroupItem/TitleGroupItem";
 
-interface Props {
-  /** Main title text */
-  title?: string;
-  /** titleOption=true maps to TitleTextItem subText + textRight in the Figma-aligned structure. */
+// Deprecated compatibility alias.
+// Figma SSOT has renamed TitleSectionItem to TitleGroupItem (node 55177:69321).
+
+export interface TitleSectionItemProps
+  extends Omit<
+    TitleGroupItemProps,
+    "fontSize" | "subtitle" | "subtitle2" | "textRightItem" | "badgeLabel"
+  > {
+  /** Legacy alias. Maps to subtitle + textRightItem visibility. */
   titleOption?: boolean;
-  /** Legacy alias retained for compatibility. Not rendered by the Figma-aligned TitleTextItem. */
-  optionLabel?: string;
-  /** Legacy alias retained for compatibility. Not rendered by the Figma-aligned TitleTextItem. */
-  leftBadgeValue?: string;
-  /** Tertiary count shown to the right of the title (e.g. "2") */
-  rightBadgeValue?: string;
-  /** Sub-text shown below the title row (shown when titleOption=true) */
+  /** Legacy alias for subtitle2. */
   subTextContent?: string;
-  /** Show the right-side icon slot */
-  rightItem?: boolean;
-  /** Optional custom icon to render inside the right item slot */
+  /** Legacy alias for the inline badge label. */
+  rightBadgeValue?: string;
+  /** Legacy aliases retained for old callers. */
+  optionLabel?: string;
+  leftBadgeValue?: string;
+  /** Optional custom icon from the previous implementation. */
   rightIcon?: React.ReactNode;
-  /** Click handler for the right item */
+  /** Legacy right item click handler. */
   onRightClick?: React.MouseEventHandler<HTMLDivElement>;
-  className?: string;
 }
 
 export function TitleSectionItem({
-  title = "섹션/콘텐츠 타이틀",
   titleOption = false,
-  optionLabel: _optionLabel = "옵션 텍스트",
-  leftBadgeValue: _leftBadgeValue = "00",
-  rightBadgeValue = "2",
   subTextContent = "서브 텍스트",
-  rightItem = true,
+  rightBadgeValue = "Label",
+  optionLabel: _optionLabel,
+  leftBadgeValue: _leftBadgeValue,
   rightIcon,
   onRightClick,
-  className,
-}: Props) {
-  const rootClass = [
-    styles.root,
-    titleOption ? styles.rootAlignStart : styles.rootAlignCenter,
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
-
+  rightContent,
+  ...props
+}: TitleSectionItemProps) {
   return (
-    <div className={rootClass} data-cx-component="TitleSectionItem">
-      <TitleTextItem
-        className={styles.titleTextItem}
-        fluid
-        subText={titleOption}
-        subtitle={subTextContent}
-        textRight={titleOption}
-        textRightValue={rightBadgeValue}
-        title={title}
-        variants="18"
-      />
-
-      {rightItem &&
-        (rightIcon ? (
-          <span
-            className={styles.customRightIcon}
-            onClick={onRightClick}
-            role={onRightClick ? "button" : undefined}
-            tabIndex={onRightClick ? 0 : undefined}
-          >
-            {rightIcon}
-          </span>
-        ) : (
-          <TitleGroupRightItem
-            className={styles.rightItem}
-            variant="Icon"
-            onClick={onRightClick}
-          />
-        ))}
-    </div>
+    <TitleGroupItem
+      {...props}
+      badgeLabel={rightBadgeValue}
+      fontSize="18"
+      rightContent={rightIcon ?? rightContent}
+      subtitle={titleOption}
+      subtitle2={subTextContent}
+      textRightItem={titleOption}
+      onClick={props.onClick ?? onRightClick}
+    />
   );
 }

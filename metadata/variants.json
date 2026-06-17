@@ -529,17 +529,9 @@
     }
   },
   "TitleSectionItem": {
-    "16": {
-      "description": "16px 섹션 타이틀 텍스트. 본문 내 일반 섹션 헤더 크기로 콘텐츠 밀도가 높은 화면의 섹션 구분에 사용한다.",
-      "distinction": "더 강조되는 섹션 헤더에는 18/20을 사용한다."
-    },
-    "18": {
-      "description": "18px 섹션 타이틀 텍스트. 화면 내 주요 섹션 헤더로 일반 콘텐츠 섹션의 기본 강조 크기에 사용한다.",
-      "distinction": "낮은 강조에는 16, 최상위 섹션 헤더에는 20을 사용한다."
-    },
-    "20": {
-      "description": "20px 섹션 타이틀 텍스트. 화면 내 최상위 섹션 또는 주요 진입 섹션의 강조 헤더에 사용한다.",
-      "distinction": "일반 섹션 헤더에는 16/18을 사용한다."
+    "DeprecatedAlias": {
+      "description": "TitleSectionItem은 TitleGroupItem으로 이름이 변경되었다. 신규 사용은 TitleGroupItem을 사용한다.",
+      "distinction": "기존 코드 호환을 위한 alias로만 유지한다."
     }
   },
   "TitleGroupRightItem": {
@@ -652,6 +644,18 @@
     "Right": {
       "description": "꼬리가 오른쪽에 위치하는 말풍선 툴팁. 화면 좌측에 위치한 요소의 오른편에 툴팁을 표시할 때 사용한다.",
       "distinction": "수평 배치가 아닌 위아래로 표시해야 하면 Top*/Bottom* variant를 사용한다."
+    }
+  },
+  "TitleGroupItem": {
+    "16": {
+      "level": 1,
+      "description": "16px 타이틀 그룹. Accordion 컴포넌트의 타이틀로 사용하며, 우측 아이템은 화살표 아이콘을 사용한다.",
+      "distinction": "일반 Section 타이틀에는 18을 사용한다."
+    },
+    "18": {
+      "level": 2,
+      "description": "18px 타이틀 그룹. Section 컴포넌트의 타이틀로 사용하며, 우측 아이템은 밑줄 텍스트 버튼을 사용한다.",
+      "distinction": "Accordion 타이틀에는 16을 사용한다."
     }
   }
 }

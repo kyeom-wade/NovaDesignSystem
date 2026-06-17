@@ -126,7 +126,7 @@
   white-space: nowrap;
 }
 
-.titleTextItem {
+.titleGroupItem {
   flex: 1 0 0;
   min-width: 0;
 }

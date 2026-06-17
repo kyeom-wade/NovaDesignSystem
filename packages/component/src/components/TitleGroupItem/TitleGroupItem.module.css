@@ -1,0 +1,121 @@
+/* TitleGroupItem — Figma node 55177:69321 */
+
+.root {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--skt-component-titlegroup-gap-4, var(--skt-spacing-16, 16px));
+  width: 100%;
+  height: fit-content;
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  box-sizing: border-box;
+}
+
+.interactive {
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+
+.interactive:focus-visible {
+  outline: 2px solid var(--skt-color-border-brand-primary, #3617ce);
+  outline-offset: 2px;
+  border-radius: var(--skt-radius-4, 4px);
+}
+
+.titleText {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--skt-component-titlegroup-gap-1, var(--skt-spacing-2, 2px));
+  min-width: 1px;
+}
+
+.textGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-component-titlegroup-gap-1, var(--skt-spacing-2, 2px));
+  max-width: 100%;
+  min-width: 0;
+}
+
+.title,
+.subtitle {
+  margin: 0;
+  word-break: break-word;
+}
+
+.title {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fontSize16 .title {
+  font-size: var(--skt-typography-style-16semi-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-16semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16semi-letter-spacing, -0.04em);
+}
+
+.fontSize18 .title {
+  font-size: var(--skt-typography-style-18semi-font-size, var(--skt-typography-font-size-800, 18px));
+  font-weight: var(--skt-typography-style-18semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
+  line-height: var(--skt-typography-style-18semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-18semi-letter-spacing, -0.05em);
+}
+
+.textRightItem {
+  flex-shrink: 0;
+}
+
+.subtitle {
+  max-width: 100%;
+  overflow: hidden;
+  color: var(--skt-color-text-neutral-secondary, rgba(12, 27, 65, 0.67));
+  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, -0.04em);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rightItem {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.arrowIcon {
+  flex-shrink: 0;
+  color: var(--skt-color-icon-neutral-primary, var(--skt-color-text-neutral-primary, #060c1f));
+}
+
+.textButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  color: var(--skt-color-text-neutral-secondary, rgba(12, 27, 65, 0.67));
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--skt-typography-style-16reg-underlined-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16reg-underlined-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-16reg-underlined-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16reg-underlined-letter-spacing, -0.04em);
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-underline-position: from-font;
+  white-space: nowrap;
+}
