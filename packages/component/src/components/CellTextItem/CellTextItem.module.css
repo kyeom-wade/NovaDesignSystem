@@ -24,12 +24,6 @@
   gap: var(--skt-spacing-4, 4px);
 }
 
-.toggleBg {
-  background-color: var(--skt-color-fill-brand-primary, #3617ce);
-  overflow: hidden;
-  gap: var(--skt-spacing-12, 12px);
-}
-
 /* ── left text group ───────────────────────────────────── */
 .textGroup {
   display: flex;
@@ -61,11 +55,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/* When Toggle is active the label should render in white */
-.toggleBg .label {
-  color: var(--skt-color-text-inverse-primary, #ffffff);
 }
 
 /* ── right: Icon (chevron) ─────────────────────────────── */

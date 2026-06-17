@@ -44,7 +44,6 @@ export function CellTextItem({
   className,
 }: Props) {
   const isBullet = variant === "Bullet";
-  const isToggle = rightItem === "Toggle";
   const rightItemVariantMap: Partial<Record<CellTextItemRightItem, CellRightItemVariant>> = {
     Icon: "Icon",
     TextInfo: "TextInfo",
@@ -59,7 +58,6 @@ export function CellTextItem({
       className={[
         styles.root,
         isBullet ? styles.bullet : styles.default,
-        isToggle ? styles.toggleBg : "",
         className ?? "",
       ]
         .filter(Boolean)

@@ -62,20 +62,20 @@
   "Banner": {
     "type": "Banner",
     "standalone": true,
-    "description": "이미지·타이틀·서브텍스트와 점 인디케이터로 구성된 프로모션·광고 배너 카드 컴포넌트",
-    "anatomy": "root[ group[ bannerCard[ imageArea, textGroup[ title, subText ] ], indicator[ dot× 6 ] ] ]",
-    "states": "Default, Pressed",
-    "do": "- 프로모션·이벤트·광고성 메시지를 카드 형태로 노출할 때 사용한다\n- Small(72px)은 단일 라인 타이틀, Medium(112px)은 최대 2줄 타이틀이 필요할 때 선택한다\n- 여러 배너를 캐러셀로 묶을 때는 indicator=true로 설정해 점 인디케이터를 노출한다",
-    "rules": "**props 요약**\n- `variants`: \"Small\"(기본, 72px) | \"Medium\"(112px) — 카드 높이 및 텍스트 줄수 결정\n- `indicator`: boolean(기본 true) — 하단 점 인디케이터 표시 여부\n- `title`: 배너 주 타이틀 (Small: 1줄, Medium: 최대 2줄 개행 가능)\n- `subText`: 타이틀 아래 보조 문구\n- `imageUrl` / `imageAlt`: 우측 이미지 영역 URL 및 alt 텍스트\n- `onClick`: 배너 카드 클릭 핸들러\n\n[맵핑 트리거] 프로모션·혜택·광고 성격의 배너를 화면에 삽입해야 할 때\n\n[사용 시점] 단독 배너 또는 캐러셀 내 슬라이드 단위로 사용. 이미지 없이 텍스트만으로도 표시 가능\n\n[구분] Alert는 시스템·경고 메시지용, Banner는 마케팅·프로모션 콘텐츠 노출용으로 구분"
+    "description": "BannerImageItem과 TextGroup, 선택적 IndicatorItem으로 구성된 배너 컴포넌트. Small/Medium 크기 variant를 지원한다.",
+    "anatomy": "root[ BannerGroup[ BannerImageItem, TextGroup[ title, subtitle ] ], ?IndicatorItem ]",
+    "states": "variants(Small|Medium), indicator(on|off)",
+    "do": "- variants=Small은 72px 높이와 radius 20px를 사용한다.\n- variants=Medium은 112px 높이와 radius 28px를 사용한다.\n- 이미지는 내부 BannerImageItem에 위임한다.\n- indicator=true일 때 IndicatorItem 6-dot 페이지 인디케이터를 하단에 표시한다.",
+    "rules": "**props 요약**\n- variants: \"Small\" | \"Medium\"\n- indicator: boolean\n- title: string\n- subtitle: string\n- imageSrc / imageAlt: 배너 이미지 URL 및 대체 텍스트\n- activeIndex: indicator active index\n\n[호환 alias]\n- subText -> subtitle\n- imageUrl -> imageSrc\n\n[구분] 이미지 영역만 필요한 경우 BannerImageItem을 직접 사용하고, 텍스트와 인디케이터가 포함된 완성형 배너에는 Banner를 사용한다."
   },
   "BannerImageItem": {
     "type": "Banner",
     "standalone": false,
-    "description": "배너 영역 내에 이미지와 텍스트 콘텐츠를 함께 표시하는 배너 이미지 슬롯 컴포넌트.",
-    "anatomy": "root[ background?(overlay), contentSlot[ children ], imageArea[ imageWrap[ img | imagePlaceholder ] ] ]",
-    "states": null,
-    "do": "- 배너 컴포넌트의 자식 슬롯으로만 사용하며, 단독으로 화면에 배치하지 않는다.\n- variant를 Medium(기본, 112px) 또는 Small(72px)로 지정하여 배너 높이와 이미지 크기를 제어한다.\n- showBackground를 true로 설정하면 반투명 배경 오버레이가 추가되어 콘텐츠 가독성을 높인다.",
-    "rules": "variant: Medium(기본) | Small. showBackground: boolean(반투명 오버레이 노출 여부). imageSrc/imageAlt: 우측 장식 이미지 URL 및 대체 텍스트. children: 좌측 텍스트·버튼 등 자유 콘텐츠 슬롯.\n[맵핑 트리거] 배너 영역에 이미지와 텍스트가 나란히 배치되어야 할 때 사용.\n[사용 시점] 프로모션·상품 배너 등에서 이미지와 설명 텍스트를 함께 노출할 때.\n[구분] 이미지 없이 텍스트만 필요한 경우에는 일반 Banner 컴포넌트를 사용하고, 이미지가 필수인 배너 레이아웃에만 BannerImageItem을 선택한다.",
+    "description": "프로모션/상품 배너에서 우측 이미지 영역을 제공하는 이미지 전용 배너 아이템. Medium과 Small 크기 variant를 지원한다.",
+    "anatomy": "root[ ?background, ImageArea[ imageWrap[ image | placeholder ] ], ?contentSlot ]",
+    "states": "variants(Medium|Small), background(on|off), imageSrc",
+    "do": "- variants=Medium은 112px 높이와 80x80 이미지 영역을 사용한다.\n- variants=Small은 72px 높이와 58x40 이미지 영역을 사용한다.\n- background=true가 Figma 기본값이며, 반투명 배경 레이어를 표시한다.\n- 기본 사용은 이미지 전용이며 children은 기존 사용처 호환용 슬롯으로만 유지한다.",
+    "rules": "**props 요약**\n- variants: \"Medium\" | \"Small\"\n- background: boolean\n- imageSrc / imageAlt: 우측 이미지 URL 및 대체 텍스트\n- ariaLabel: 배너 region 접근성 라벨\n\n[호환 alias]\n- variant -> variants\n- showBackground -> background\n\n[구분] 텍스트와 CTA까지 포함한 완성형 배너는 Banner를 사용하고, BannerImageItem은 배너 내부 이미지 영역이 필요한 경우 사용한다.",
     "parent": "Banner",
     "slot": "Image"
   },
