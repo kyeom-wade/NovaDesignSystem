@@ -1227,11 +1227,11 @@
   "TitleTextItem": {
     "type": "Title",
     "standalone": false,
-    "description": "제목과 본문 텍스트를 수직으로 배치하는 텍스트 블록 컴포넌트.",
-    "anatomy": "root[ title, body ]",
-    "states": "Default",
-    "do": "안내 텍스트 블록(제목 + 본문) 형태로 내용을 제시할 때 사용한다.",
-    "rules": "props: title, body."
+    "description": "섹션/콘텐츠 타이틀과 선택적 우측 숫자, 서브 텍스트를 표시하는 타이틀 텍스트 컴포넌트.",
+    "anatomy": "root[ TextGroup[ title, ?TitleTextRightItem/Text ], ?subtitle ]",
+    "states": "16, 18, subText, textRight",
+    "do": "섹션 또는 콘텐츠 그룹의 제목을 표시하고, 필요 시 보조 설명이나 우측 숫자 정보를 함께 보여줄 때 사용한다.",
+    "rules": "props: variants(16|18), title, subText, subtitle, textRight, textRightValue. 배경 컬러는 컴포넌트에서 지정하지 않는다."
   },
   "TitleTextLeftItem": {
     "type": "Title",

@@ -1,6 +1,5 @@
-/* TitleTextItem — Figma node 51082:49861
-   anatomy: root[ ?optionTextRow[ TextItem ], textGroup[ ?TextItem, TextItem, ?TitleTextLeftItem ], ?subTextGroup[ TextItem ] ]
-*/
+/* TitleTextItem — Figma node 51082:49861 */
+/* anatomy: root[ TextGroup[ title, ?TitleTextRightItem/Text ], ?subtitle ] */
 
 .root {
   display: flex;
@@ -8,81 +7,77 @@
   position: relative;
   width: 100%;
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  box-sizing: border-box;
 }
 
 .rootFluid {
   width: 100%;
 }
 
-/* When subText or optionText is shown the root stacks vertically */
 .rootColumn {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: var(--skt-spacing-2, 2px);
+  gap: var(--skt-component-titlegroup-gap-1, var(--skt-spacing-2, 2px));
 }
 
-/* Special case: optionText + textLeft without subText uses tighter gap */
-.rootGap2 {
-  gap: var(--skt-spacing-2, 2px);
-}
-
-/* ─── Option text row ─────────────────────────────────── */
-.optionTextRow {
-  display: flex;
-  align-items: center;
-  padding-bottom: 2px;
-  flex-shrink: 0;
-  width: 100%;
-}
-
-.optionTextItem {
-  flex: 1 0 0;
-  min-width: 1px;
-}
-
-.optionTextItem p {
-  color: var(--skt-color-text-neutral-secondary, rgba(12, 27, 65, 0.67));
-}
-
-/* ─── Text group (title row with optional badges) ─────── */
 .textGroup {
   display: flex;
   align-items: center;
-  gap: var(--skt-spacing-2, 2px);
+  gap: var(--skt-component-titlegroup-gap-1, var(--skt-spacing-2, 2px));
+  position: relative;
   flex-shrink: 0;
+  min-width: 0;
 }
 
-.textItem {
+.title {
+  position: relative;
   flex-shrink: 0;
+  margin: 0;
+  color: var(--skt-color-text-neutral-primary);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  word-break: break-word;
+  white-space: nowrap;
 }
 
-/* ─── Left badge (brand blue number) ─────────────────── */
-.textLeftBadge {
-  flex-shrink: 0;
+.title16 {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  letter-spacing: var(--skt-typography-style-16semi-letter-spacing, -0.04em);
 }
 
-.textLeftBadge p {
-  color: var(--skt-color-text-brand-primary, #3617ce);
+.title18 {
+  font-size: var(--skt-typography-font-size-800, 18px);
+  letter-spacing: var(--skt-typography-style-18semi-letter-spacing, -0.05em);
 }
 
-/* ─── Sub-text row ────────────────────────────────────── */
-.subTextGroup {
+.rightText {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  position: relative;
   flex-shrink: 0;
-  width: 100%;
+  width: 20px;
+  color: var(--skt-color-text-neutral-tertiary);
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-style-16semi-letter-spacing, -0.04em);
+  word-break: break-word;
 }
 
-.subTextItem {
+.subtitle {
+  position: relative;
   flex-shrink: 0;
-}
-
-.subTextItem p {
-  color: var(--skt-color-text-neutral-secondary, rgba(12, 27, 65, 0.67));
-}
-
-/* ─── Right badge (tertiary small number) ─────────────── */
-.textRightBadge {
-  flex-shrink: 0;
+  max-width: 100%;
+  margin: 0;
+  overflow: hidden;
+  color: var(--skt-color-text-neutral-secondary);
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, -0.04em);
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

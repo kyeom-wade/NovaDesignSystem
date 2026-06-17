@@ -1,127 +1,78 @@
-import React from "react";
 import styles from "./TitleTextItem.module.css";
-import { TextItem } from "../TextItem/TextItem";
-import type { TextItemSize, TextItemWeight } from "../TextItem/TextItem";
-import { TitleTextLeftItem } from "../TitleTextLeftItem/TitleTextLeftItem";
-// Figma SSOT: SKT-Next_UI-Draft_3.3 .TitleTextItem (node 51082:49861)
-// anatomy: root[ ?optionText[ TextItem ], textGroup[ ?textLeft, TextItem[ title ], ?TitleTextLeftItem ], ?subText[ TextItem ] ]
-// Variants: textLeft(bool) × textRight(bool) × optionText(bool) × subText(bool) — 16 combinations
 
-interface Props {
-  /** Show the small option/label text above the title row */
-  optionText?: boolean;
-  /** Content of the option label row */
-  optionLabel?: string;
-  /** Show sub-text below the title row */
-  subText?: boolean;
-  /** Content of the sub-text */
-  subTextContent?: string;
-  /** Show a numbered badge to the left of the title (blue accent, e.g. "00") */
-  textLeft?: boolean;
-  /** Value shown in the left badge */
-  textLeftValue?: string;
-  /** Show the right-side tertiary number badge after the title */
-  textRight?: boolean;
-  /** Value shown in the right badge */
-  textRightValue?: string;
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .TitleTextItem (node 51082:49861)
+// anatomy: root[ TextGroup[ title, ?TitleTextRightItem/Text ], ?subtitle ]
+// Variants: variants("16" | "18") x textRight(bool) x subText(bool)
+
+export interface TitleTextItemProps {
+  /** Figma title size variant */
+  variants?: "16" | "18";
   /** Main title text */
   title?: string;
-  /** Typography size for the main title TextItem */
-  titleSize?: TextItemSize;
-  /** Typography weight for the main title TextItem */
-  titleWeight?: TextItemWeight;
-  /** Let the component fill its parent instead of using the fixed Figma component width */
+  /** Show sub-text below the title row */
+  subText?: boolean;
+  /** Figma subtitle text */
+  subtitle?: string;
+  /** Legacy alias for subtitle */
+  subTextContent?: string;
+  /** Show the right-side tertiary number after the title */
+  textRight?: boolean;
+  /** Value shown in the right-side number */
+  textRightValue?: string;
+  /** Legacy aliases kept for compatibility with older callers */
+  optionText?: boolean | "Off";
+  optionLabel?: string;
+  textLeft?: boolean;
+  textLeftValue?: string;
+  titleSize?: "16Body" | "18Title";
+  titleWeight?: "regular" | "medium" | "semibold";
   fluid?: boolean;
   className?: string;
 }
 
 export function TitleTextItem({
-  optionText = false,
-  optionLabel = "옵션 텍스트",
-  subText = false,
-  subTextContent = "서브 텍스트",
-  textLeft = false,
-  textLeftValue = "00",
-  textRight = false,
-  textRightValue = "2",
+  variants,
   title = "섹션/콘텐츠 타이틀",
-  titleSize = "16Body",
-  titleWeight = "semibold",
+  subText = false,
+  subtitle,
+  subTextContent,
+  textRight = false,
+  textRightValue = "00",
+  titleSize,
   fluid = false,
   className,
-}: Props) {
-  const showTextGroup = textLeft || textRight;
+}: TitleTextItemProps) {
+  const resolvedVariant = variants ?? (titleSize === "18Title" ? "18" : "16");
+  const resolvedSubtitle = subtitle ?? subTextContent ?? "서브 텍스트";
+  const is18 = resolvedVariant === "18";
 
   return (
     <div
       className={[
         styles.root,
         fluid ? styles.rootFluid : "",
-        subText || (optionText && !subText) ? styles.rootColumn : "",
-        optionText && !subText && textLeft ? styles.rootGap2 : "",
+        subText ? styles.rootColumn : "",
         className,
       ]
         .filter(Boolean)
         .join(" ")}
       data-cx-component="TitleTextItem"
+      data-variant={resolvedVariant}
+      data-sub-text={subText ? "true" : "false"}
+      data-text-right={textRight ? "true" : "false"}
     >
-      {/* OptionText row */}
-      {optionText && (
-        <div className={styles.optionTextRow}>
-          <TextItem
-            className={styles.optionTextItem}
-            text={optionLabel}
-            size="13Body"
-            weight="medium"
-          />
-        </div>
-      )}
+      <div className={styles.textGroup}>
+        <p className={[styles.title, is18 ? styles.title18 : styles.title16].join(" ")}>
+          {title}
+        </p>
+        {textRight && (
+          <span className={styles.rightText} data-cx-component="TitleTextRightItemText">
+            {textRightValue}
+          </span>
+        )}
+      </div>
 
-      {/* Title row — with textLeft/textRight badges, or plain */}
-      {showTextGroup ? (
-        <div className={styles.textGroup}>
-          {textLeft && (
-            <TextItem
-              className={styles.textLeftBadge}
-              text={textLeftValue}
-              size="16Body"
-              weight="semibold"
-            />
-          )}
-          <TextItem
-            className={styles.textItem}
-            text={title}
-            size={titleSize}
-            weight={titleWeight}
-          />
-          {textRight && (
-            <TitleTextLeftItem
-              className={styles.textRightBadge}
-              variant="Text"
-              textValue={textRightValue}
-            />
-          )}
-        </div>
-      ) : (
-        <TextItem
-          className={styles.textItem}
-          text={title}
-          size={titleSize}
-          weight={titleWeight}
-        />
-      )}
-
-      {/* SubText row */}
-      {subText && (
-        <div className={styles.subTextGroup}>
-          <TextItem
-            className={styles.subTextItem}
-            text={subTextContent}
-            size="14Body"
-            weight="medium"
-          />
-        </div>
-      )}
+      {subText && <p className={styles.subtitle}>{resolvedSubtitle}</p>}
     </div>
   );
 }

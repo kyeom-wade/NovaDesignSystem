@@ -126,6 +126,11 @@
   white-space: nowrap;
 }
 
+.titleTextItem {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
 .productSubText {
   display: block;
   font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));

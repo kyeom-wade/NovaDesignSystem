@@ -7,11 +7,11 @@ const meta: Meta<typeof TitleSectionItem> = {
   argTypes: {
     title: { control: "text" },
     titleOption: { control: "boolean" },
-    optionLabel: { control: "text" },
-    leftBadgeValue: { control: "text" },
     rightBadgeValue: { control: "text" },
     subTextContent: { control: "text" },
     rightItem: { control: "boolean" },
+    optionLabel: { table: { disable: true } },
+    leftBadgeValue: { table: { disable: true } },
     rightIcon: { control: false },
     onRightClick: { control: false },
     className: { control: false },
@@ -19,8 +19,6 @@ const meta: Meta<typeof TitleSectionItem> = {
   args: {
     title: "섹션 타이틀",
     titleOption: false,
-    optionLabel: "옵션 텍스트",
-    leftBadgeValue: "01",
     rightBadgeValue: "3",
     subTextContent: "서브 설명 텍스트",
     rightItem: true,
@@ -35,8 +33,6 @@ export const WithTitleOption: Story = {
   args: {
     titleOption: true,
     title: "상품 카테고리 타이틀",
-    optionLabel: "카테고리 옵션",
-    leftBadgeValue: "02",
     rightBadgeValue: "5",
     subTextContent: "상품에 대한 서브 설명입니다",
   },
@@ -67,7 +63,6 @@ export const States: Story = {
           titleOption={true}
           rightItem={true}
           title="옵션 + 아이콘"
-          optionLabel="옵션 라벨"
           subTextContent="서브 텍스트"
         />
       </div>
@@ -78,7 +73,6 @@ export const States: Story = {
           titleOption={true}
           rightItem={false}
           title="옵션만 표시"
-          optionLabel="옵션 라벨"
           subTextContent="서브 텍스트"
         />
       </div>

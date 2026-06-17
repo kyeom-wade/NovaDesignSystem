@@ -9,14 +9,11 @@ import { TitleGroupRightItem } from "../TitleGroupRightItem/TitleGroupRightItem"
 interface Props {
   /** Main title text */
   title?: string;
-  /**
-   * titleOption=true adds an optionText row above the title
-   * and a subText row below, plus left brand badge and right tertiary count.
-   */
+  /** titleOption=true maps to TitleTextItem subText + textRight in the Figma-aligned structure. */
   titleOption?: boolean;
-  /** Content of the option label row (shown when titleOption=true) */
+  /** Legacy alias retained for compatibility. Not rendered by the Figma-aligned TitleTextItem. */
   optionLabel?: string;
-  /** Numbered brand badge shown to the left of the title (e.g. "00") */
+  /** Legacy alias retained for compatibility. Not rendered by the Figma-aligned TitleTextItem. */
   leftBadgeValue?: string;
   /** Tertiary count shown to the right of the title (e.g. "2") */
   rightBadgeValue?: string;
@@ -34,8 +31,8 @@ interface Props {
 export function TitleSectionItem({
   title = "섹션/콘텐츠 타이틀",
   titleOption = false,
-  optionLabel = "옵션 텍스트",
-  leftBadgeValue = "00",
+  optionLabel: _optionLabel = "옵션 텍스트",
+  leftBadgeValue: _leftBadgeValue = "00",
   rightBadgeValue = "2",
   subTextContent = "서브 텍스트",
   rightItem = true,
@@ -56,17 +53,12 @@ export function TitleSectionItem({
       <TitleTextItem
         className={styles.titleTextItem}
         fluid
-        optionText={titleOption}
-        optionLabel={optionLabel}
         subText={titleOption}
-        subTextContent={subTextContent}
-        textLeft={titleOption}
-        textLeftValue={leftBadgeValue}
+        subtitle={subTextContent}
         textRight={titleOption}
         textRightValue={rightBadgeValue}
         title={title}
-        titleSize="18Title"
-        titleWeight="semibold"
+        variants="18"
       />
 
       {rightItem &&

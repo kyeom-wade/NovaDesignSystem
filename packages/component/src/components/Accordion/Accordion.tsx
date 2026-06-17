@@ -4,6 +4,7 @@ import { BadgeItem } from "../BadgeItem";
 import { Divider } from "../Divider";
 import { IconArrow } from "../IconArrow";
 import { ThumbnailRoundItem } from "../ThumbnailRoundItem";
+import { TitleTextItem } from "../TitleTextItem";
 // Figma SSOT: SKT-Next_UI-Draft_3.3 .Accordion (node 50943:29095)
 // anatomy:
 //   Info/Price  — root[ TitleGroup[ TitleTextItem, TitleGroupRightItem ], ?slot ]
@@ -97,10 +98,13 @@ export function Accordion({
               src={thumbnailSrc}
               alt=""
             />
-            <div className={styles.productTextGroup}>
-              <span className={styles.heading}>{heading}</span>
-              <span className={styles.productSubText}>{subText}</span>
-            </div>
+            <TitleTextItem
+              className={styles.productTextGroup}
+              title={heading}
+              variants="16"
+              subText
+              subtitle={subText}
+            />
           </div>
           <div className={styles.productRightGroup}>
             <span className={styles.productRightText}>
@@ -140,7 +144,7 @@ export function Accordion({
           onKeyDown={handleKeyDown}
           aria-expanded={disclosure}
         >
-          <span className={styles.heading}>{heading}</span>
+          <TitleTextItem className={styles.titleTextItem} title={heading} variants="16" />
           <IconArrow
             className={styles.arrowIcon}
             size={16}
