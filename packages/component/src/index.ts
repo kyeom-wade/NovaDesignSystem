@@ -56,6 +56,7 @@ export { TitleSectionItem } from "./components/TitleSectionItem";
 export { TitleGroupRightItem } from "./components/TitleGroupRightItem";
 export { TitleTextItem } from "./components/TitleTextItem";
 export { TitleTextLeftItem } from "./components/TitleTextLeftItem";
+export { TitleTextRightItem } from "./components/TitleTextRightItem";
 export { ToogleItem } from "./components/ToogleItem";
 export { TooltipItem } from "./components/TooltipItem";
 export { Accordion } from "./components/Accordion";
