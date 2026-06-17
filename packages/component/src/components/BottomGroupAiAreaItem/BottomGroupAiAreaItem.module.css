@@ -1,112 +1,82 @@
-/* BottomGroupAiAreaItem — Figma node 51308:127243 */
-/* anatomy: root[ iconMask[ iconBg, iconImg, starBadge ], buttonRow[ cta×1-or-2, divider? ] ] */
+/* BottomGroupAiAreaItem — Figma node 51308:127243
+   anatomy: root[ buttonGroup[ NavigationButtonItem(AI collapsed), ButtonItem | splitButton[ secondary, divider, primary ] ] ]
+   variants: "1 Botton" | "2 Botton"
+*/
 
 .root {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: var(--skt-spacing-10, 10px);
-  padding: 0 var(--skt-spacing-20, 20px);
-  width: 100%;
+  gap: var(--skt-component-bottomgroup-gap-2, 0);
+  width: 393px;
+  max-width: 100%;
   box-sizing: border-box;
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
 }
 
-/* ── Icon pill ── */
-.iconMask {
-  position: relative;
+.buttonGroup {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  gap: var(--skt-component-bottomgroup-gap-3, 10px);
+  min-width: 1px;
+  border-radius: var(--radius-8, 20px);
+}
+
+.iconButton {
   flex-shrink: 0;
-  width: 52px;
-  height: 52px;
-  border-radius: var(--skt-radius-full, 9999px);
-  overflow: visible;
 }
 
-.iconBg {
-  position: absolute;
-  inset: 0;
-  border-radius: var(--skt-radius-full, 9999px);
-  background-color: var(--skt-color-palette-white-alpha-500, rgba(255, 255, 255, 0.5));
-  box-shadow: 0px 0px 20px 0px var(--skt-color-palette-gray-alpha-50, rgba(6, 12, 31, 0.05));
+.primaryButton {
+  flex: 1 0 0;
+  min-width: 1px;
+  width: auto;
 }
 
-.iconImg {
-  position: absolute;
-  top: 14px;
-  left: 14px;
+.splitButton {
   display: flex;
-  align-items: flex-start;
-  width: 24px;
-  height: 24px;
+  flex: 1 0 0;
+  align-items: center;
+  gap: var(--skt-component-bottomgroup-gap-4, 16px);
+  min-width: 1px;
+  height: 56px;
+  padding: var(--skt-component-bottomgroup-padding-y-1, 16px)
+    var(--skt-component-bottomgroup-padding-x-3, 32px);
+  border-radius: var(--radius-8, 20px);
+  background-color: var(--skt-color-fill-brand-default, var(--skt-color-fill-brand-primary, #3617ce));
+  box-sizing: border-box;
 }
 
-.starBadge {
-  position: absolute;
-  bottom: -4px;
-  right: -2px;
+.splitCta {
   display: flex;
+  flex: 1 0 0;
   align-items: center;
   justify-content: center;
-  width: 7px;
-  height: 7px;
-}
-
-/* ── Button row ── */
-.buttonRow {
-  display: flex;
-  flex: 1 0 0;
-  min-width: 0;
-  flex-direction: row;
-  align-items: center;
-  background-color: var(--skt-color-fill-brand-primary, #3617ce);
-  border-radius: var(--skt-radius-20, 20px);
-  box-shadow: 0px 8px 8px 0px var(--skt-color-shadow-default, rgba(6, 12, 31, 0.2));
-  overflow: hidden;
-  height: 52px;
-}
-
-.cta {
-  flex: 1 0 0;
-  min-width: 0;
+  min-width: 1px;
   height: 100%;
-  background: none;
+  padding: 0;
   border: none;
+  background: transparent;
+  color: var(--skt-color-text-inverse-primary, #ffffff);
   cursor: pointer;
-  padding: var(--skt-spacing-16, 16px) var(--skt-spacing-32, 32px);
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: inherit;
   font-size: var(--skt-typography-style-16semi-font-size, var(--skt-typography-font-size-700, 16px));
   font-weight: var(--skt-typography-style-16semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
   line-height: var(--skt-typography-style-16semi-line-height, var(--skt-typography-line-height-200, 130%));
   letter-spacing: var(--skt-typography-style-16semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
-  color: var(--skt-color-text-inverse-primary, #ffffff);
   text-align: center;
   white-space: nowrap;
 }
 
-.cta:hover {
-  background-color: var(--skt-color-palette-white-alpha-100, rgba(255, 255, 255, 0.1));
+.splitCta:focus-visible {
+  outline: 2px solid var(--skt-color-border-inverse-default, #ffffff);
+  outline-offset: 2px;
+  border-radius: var(--skt-radius-4, 8px);
 }
 
-.cta:active {
-  background-color: var(--skt-color-palette-white-alpha-150, rgba(255, 255, 255, 0.15));
-}
-
-.ctaFull {
-  /* single button — fills the entire pill */
-}
-
-.ctaLeft {
-  /* left half in 2-button layout */
-}
-
-.ctaRight {
-  /* right half in 2-button layout */
-}
-
-/* Vertical divider between the two CTAs */
 .divider {
   flex-shrink: 0;
   width: 1px;
   height: 12px;
-  background-color: var(--skt-color-palette-white-alpha-200, rgba(255, 255, 255, 0.2));
+  background-color: var(--skt-color-palette-white-alpha-200, var(--white-alpha-white-alpha-200, rgba(255, 255, 255, 0.2)));
 }

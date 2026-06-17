@@ -8,8 +8,8 @@
   flex-direction: row;
   align-items: center;
   gap: var(--skt-component-bottomgroup-gap-2, 0);
-  padding: 0 var(--skt-component-bottomgroup-padding-x-1, 20px);
-  width: 100%;
+  width: 393px;
+  max-width: 100%;
   box-sizing: border-box;
   font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
 }

@@ -33,6 +33,7 @@ export function BottomGroupAreaItem({
         .filter(Boolean)
         .join(" ")}
       data-cx-component="BottomGroupAreaItem"
+      data-variant={variants}
     >
       {is2Button && (
         <ButtonItem

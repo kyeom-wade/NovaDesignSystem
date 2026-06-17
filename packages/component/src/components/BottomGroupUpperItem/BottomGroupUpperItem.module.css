@@ -15,7 +15,8 @@
 .listText {
   display: flex;
   align-items: center;
-  padding-bottom: var(--skt-spacing-16, 16px);
+  gap: var(--skt-component-bottomgroup-gap-4, 0);
+  padding-bottom: var(--skt-component-bottomgroup-padding-y-1, 16px);
   width: 100%;
   overflow: hidden;
   flex-shrink: 0;
@@ -55,9 +56,9 @@
 /* ── Table variant ── */
 .listRightTable {
   display: flex;
-  gap: var(--skt-spacing-16, 16px);
+  gap: var(--skt-component-bottomgroup-gap-4, 16px);
   align-items: center;
-  padding-bottom: var(--skt-spacing-16, 16px);
+  padding-bottom: var(--skt-component-bottomgroup-padding-y-1, 16px);
   width: 100%;
   flex-shrink: 0;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./BottomGroupUpperItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .BottomGroupUpperItem (node 51363:45164)
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .BottomGroupUpperItem (node 51363:45164)
 // anatomy: root[ listText[ labelCell[ titleBadge[ title ] ] ] | listRightTable[ leftTextItem[ label ], rightTextItem[ value ] ] ]
 
 export type BottomGroupUpperItemVariant = "Default" | "Table";
@@ -17,7 +17,7 @@ interface Props {
 
 export function BottomGroupUpperItem({
   variant = "Table",
-  label = "타이틀",
+  label = variant === "Default" ? "텍스트" : "타이틀",
   value = "내용 들어가는 부분",
   className,
 }: Props) {

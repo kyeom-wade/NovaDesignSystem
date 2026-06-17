@@ -2,6 +2,7 @@ export { AppBarItem } from "./components/AppBarItem";
 export { BadgeIconItem } from "./components/BadgeIconItem";
 export { BadgeItem } from "./components/BadgeItem";
 export { BannerImageItem } from "./components/BannerImageItem";
+export { BottomGroupAi } from "./components/BottomGroupAi";
 export { BottomGroupAiAreaItem } from "./components/BottomGroupAiAreaItem";
 export { BottomGroupAreaItem } from "./components/BottomGroupAreaItem";
 export { BottomGroupUpperItem } from "./components/BottomGroupUpperItem";

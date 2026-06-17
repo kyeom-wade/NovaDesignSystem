@@ -34,13 +34,15 @@
     }
   },
   "BottomGroup": {
+    "Normal": {
+      "description": "상단 정보 영역과 단일 또는 이중 CTA 버튼을 하단에 고정하는 일반 하단 그룹. 화면 최하단 주요 행동 유도에 사용한다.",
+      "distinction": "AI 라벨과 AI 전용 액션이 포함된 경우 BottomGroupAi를 사용한다."
+    }
+  },
+  "BottomGroupAi": {
     "Ai": {
-      "description": "AI 스파클 아이콘과 frosted glass 배경 바를 갖춘 하단 고정 영역. AI 추천 기능과 분할 pill CTA를 함께 제공한다.",
-      "distinction": "단순 CTA 버튼만 필요한 경우 Default를 사용한다."
-    },
-    "Default": {
-      "description": "단일 또는 이중 CTA 버튼을 하단에 고정하는 기본 하단 그룹. 화면 최하단 주요 행동 유도에 사용한다.",
-      "distinction": "AI 추천 기능이 포함된 경우 Ai를 사용한다."
+      "description": "AI 상단 라벨과 AI 전용 2분할 CTA를 포함한 하단 그룹. AI 추천·구독 맥락의 고정 하단 액션에 사용한다.",
+      "distinction": "일반 하단 CTA에는 BottomGroup Normal 또는 BottomGroupAreaItem을 사용한다."
     }
   },
   "BottomGroupAiAreaItem": {
