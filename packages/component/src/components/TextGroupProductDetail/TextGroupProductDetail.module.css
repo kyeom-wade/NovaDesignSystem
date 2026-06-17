@@ -7,7 +7,7 @@
   align-items: flex-start;
   justify-content: space-between;
   width: 353px;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
 }
 
 /* Left column: sub label + title */

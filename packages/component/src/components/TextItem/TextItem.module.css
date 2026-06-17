@@ -6,7 +6,7 @@
   align-items: center;
   position: relative;
   width: max-content;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
 }
 
 /* Gap applied only when at least one icon slot is active */

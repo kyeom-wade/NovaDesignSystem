@@ -17,7 +17,7 @@
   background-color: var(--skt-color-bg-layer-floating-ai, var(--bg-layer-floating-ai, rgba(255, 255, 255, 0.8)));
   box-shadow: 0 -5px 60px 0 var(--skt-color-shadow-secondary, var(--shadow-secondary, rgba(35, 55, 155, 0.05)));
   box-sizing: border-box;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
 }
 
 .aiUpperItem {

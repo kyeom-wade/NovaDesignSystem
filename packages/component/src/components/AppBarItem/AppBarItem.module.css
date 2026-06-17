@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: var(--skt-spacing-12, 12px);
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
 }
 
 /* Icon button: 2px padding around a 24px icon = 28px touch target */

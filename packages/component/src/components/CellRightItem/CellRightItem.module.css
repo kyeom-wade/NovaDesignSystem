@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: flex-end;
   flex-shrink: 0;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
 }
 
 .rootLevelBadge {
@@ -79,7 +79,7 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   font-size: var(--skt-typography-style-13reg-font-size, var(--skt-typography-font-size-400, 13px));
   font-weight: var(--skt-typography-style-13reg-font-weight, var(--skt-typography-font-weight-regular, 400));
   line-height: var(--skt-typography-style-13reg-line-height, var(--skt-typography-line-height-200, 130%));
@@ -137,7 +137,7 @@
   border-radius: var(--skt-radius-full, 9999px);
   padding: var(--skt-spacing-6, 6px) var(--skt-spacing-12, 12px);
   cursor: pointer;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   font-size: var(--skt-typography-style-12semi-font-size, var(--skt-typography-font-size-300, 12px));
   font-weight: var(--skt-typography-style-12semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
   line-height: var(--skt-typography-style-12semi-line-height, var(--skt-typography-line-height-200, 130%));

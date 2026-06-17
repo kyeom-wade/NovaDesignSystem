@@ -14,7 +14,7 @@
   padding: 0 var(--skt-spacing-20, 20px);
   width: 393px;
   box-sizing: border-box;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
 }
 
 /* ── Shared pill surface ── */

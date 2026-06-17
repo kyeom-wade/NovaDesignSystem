@@ -8,7 +8,7 @@
   gap: var(--skt-spacing-8, 8px);
   cursor: pointer;
   user-select: none;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   position: relative;
   box-sizing: border-box;
 }

@@ -9,7 +9,7 @@
   height: 480px;
   overflow: hidden;
   background-color: var(--skt-color-bg-layer-basement, #f4f5fa);
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
 }
 
 /* ── full-bleed image layer ── */

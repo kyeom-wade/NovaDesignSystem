@@ -11,7 +11,7 @@
   width: 393px;
   max-width: 100%;
   box-sizing: border-box;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
 }
 
 .wrapDual {

@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
 }
 
 /* ── Text variant ────────────────────────────────────────────── */

@@ -12,7 +12,7 @@
   padding-right: var(--skt-component-badge-padding-x-3, var(--padding-5, 10px));
   border-radius: var(--skt-radius-8, 8px);
   background-color: var(--skt-color-fill-inverse-primary, #ffffff);
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   box-sizing: border-box;
 }
 

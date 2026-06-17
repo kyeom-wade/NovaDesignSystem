@@ -10,7 +10,7 @@
   width: 100%;
   border-radius: var(--skt-radius-20, 20px);
   box-sizing: border-box;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
 }
 
 .rootLine {

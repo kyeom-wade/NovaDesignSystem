@@ -17,7 +17,7 @@
   border-top: 1px solid var(--skt-color-border-neutral-secondary, var(--border-neutral-secondary, rgba(35, 55, 155, 0.05)));
   background-color: var(--skt-color-bg-layer-floating, var(--bg-layer-floating, #ffffff));
   box-sizing: border-box;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
 }
 
 .upperItem {

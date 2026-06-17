@@ -157,7 +157,7 @@
 	--padding-12: var(--space-12);
 	--padding-13: var(--space-13);
 	--padding-14: var(--space-14);
-	--skt-typography-font-family-base: "Pretendard Variable", -apple-system, sans-serif;
+	--skt-typography-font-family-base: "Pretendard", -apple-system, sans-serif;
 	--skt-typography-font-size-100: 10px;
 	--skt-typography-font-size-200: 11px;
 	--skt-typography-font-size-300: 12px;

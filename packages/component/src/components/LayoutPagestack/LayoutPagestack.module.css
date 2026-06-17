@@ -14,7 +14,7 @@
   width: 393px;
   overflow: hidden;
   position: relative;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   box-sizing: border-box;
 }
 

@@ -14,7 +14,7 @@
   background-color: var(--skt-color-bg-layer-default, #ffffff);
   border-radius: var(--skt-radius-20, 20px);
   padding: var(--skt-spacing-24, 24px);
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   box-sizing: border-box;
 }
 

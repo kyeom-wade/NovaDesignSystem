@@ -9,7 +9,7 @@
   justify-content: center;
   padding: var(--skt-spacing-16, 16px) 0;
   width: 100%;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   box-sizing: border-box;
 }
 

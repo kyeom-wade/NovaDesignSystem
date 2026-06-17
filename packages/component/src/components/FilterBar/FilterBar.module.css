@@ -6,7 +6,7 @@
 .root {
   position: relative;
   width: 100%;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   background-color: var(--skt-color-bg-layer-default, #ffffff);
 }
 

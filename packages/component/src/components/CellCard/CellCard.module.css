@@ -9,7 +9,7 @@
   border-radius: var(--skt-radius-20, 20px);
   width: 100%;
   height: fit-content;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
   box-sizing: border-box;
 }
 

@@ -5,7 +5,7 @@
 
 /* ─── shared ─────────────────────────────────────────────────────────────── */
 .root {
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
   box-sizing: border-box;
   position: relative;
   width: 100%;
