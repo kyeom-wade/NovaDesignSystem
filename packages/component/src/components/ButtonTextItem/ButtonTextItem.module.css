@@ -1,0 +1,84 @@
+/* ButtonTextItem — Figma node 55298:57668 */
+/* anatomy: root(button)[ label, IconArrow? ] */
+
+.root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-1, 2px);
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--skt-color-text-neutral-secondary, var(--text-neutral-secondary, rgba(12, 27, 65, 0.67)));
+  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  line-height: 1.3;
+  letter-spacing: var(--skt-typography-letter-spacing-normal, -0.04em);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.variant-Text {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+}
+
+.variant-TextIcon {
+  text-decoration: none;
+}
+
+.size-XLarge {
+  font-size: var(--skt-typography-style-16reg-font-size, var(--skt-typography-font-size-700, 16px));
+  font-weight: var(--skt-typography-style-16reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+}
+
+.size-Large {
+  font-size: var(--skt-typography-style-14reg-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+}
+
+.size-Medium {
+  font-size: var(--skt-typography-style-13med-font-size, 13px);
+  font-weight: var(--skt-typography-style-13med-font-weight, var(--skt-typography-font-weight-medium, 500));
+}
+
+.size-Small {
+  font-size: var(--skt-typography-style-11med-font-size, 11px);
+  font-weight: var(--skt-typography-style-11med-font-weight, var(--skt-typography-font-weight-medium, 500));
+}
+
+.variant-Text.size-Small {
+  line-height: 1.5;
+}
+
+.danger {
+  color: var(--skt-color-text-danger-primary, var(--text-danger-primary, #e7313d));
+}
+
+.disabled,
+.root:disabled {
+  color: var(--skt-color-text-disabled-default, var(--text-disabled-default, rgba(11, 44, 127, 0.18)));
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.label {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon {
+  display: block;
+  color: currentColor;
+  flex-shrink: 0;
+}

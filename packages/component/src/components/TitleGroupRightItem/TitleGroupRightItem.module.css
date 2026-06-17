@@ -1,8 +1,8 @@
 /* TitleGroupRightItem — Figma node 50943:30580 */
 /* anatomy:
    Icon              → root[ IconDummy ]
-   TextButton        → root[ ButtonItem(Text, XLarge) ]
-   TextIconSecondary → root[ ButtonItem(Text+Icon, XLarge) ]
+   TextButton        → root[ ButtonTextItem(Text, XLarge) ]
+   TextIconSecondary → root[ ButtonTextItem(Text+Icon, XLarge) ]
    Button            → root[ ButtonItem(Secondary, Small) ]
    ButtonIcon        → root[ ButtonIconItem(Close, Medium) ]
 */

@@ -1,18 +1,19 @@
 import React from "react";
+import { ButtonTextItem } from "../ButtonTextItem/ButtonTextItem";
 import { IconArrow } from "../IconArrow/IconArrow";
 import { Loader } from "../Loader/Loader";
 import styles from "./ButtonItem.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.3 .ButtonItem (node 50943:30788)
 // anatomy: root(button)[ label, IconArrow? | Loader ]
-// Variants=Primary|Secondary|Ouline|Text|Text+Icon × Size=Small|Medium|Large|XLarge × State=Default|Loading|Disabled × Danger=Off|On
+// Variants=Primary|Secondary|Ouline × Size=Small|Medium|Large|XLarge × State=Default|Loading|Disabled × Danger=Off|On
 
-type ButtonVariant = "Primary" | "Secondary" | "Outline" | "Ouline" | "Text" | "TextIcon" | "Text+Icon";
+type ButtonVariant = "Primary" | "Secondary" | "Ouline" | "Outline" | "Text" | "TextIcon" | "Text+Icon";
 type NormalizedButtonVariant = "Primary" | "Secondary" | "Outline" | "Text" | "TextIcon";
 
 interface Props {
   /** Visual style variant of the button */
   variant?: ButtonVariant;
-  /** Figma variant prop name alias */
+  /** Figma variant prop name */
   variants?: ButtonVariant;
   /** Height tier: Small=28px · Medium=36px · Large=48px · XLarge=56px */
   size?: "Small" | "Medium" | "Large" | "XLarge";
@@ -48,19 +49,34 @@ function iconSize(size: Props["size"], normalizedVariant: NormalizedButtonVarian
 export function ButtonItem({
   variant,
   variants,
-  size = "Large",
+  size = "XLarge",
   state = "Default",
   danger = false,
-  label = "버튼",
+  label = "Label",
   icon,
   showIcon,
   onClick,
   className,
 }: Props) {
-  const normalizedVariant = normalizeVariant(variants ?? variant ?? "Primary");
+  const resolvedVariant = variants ?? variant ?? "Primary";
+  const normalizedVariant = normalizeVariant(resolvedVariant);
+  if (normalizedVariant === "Text" || normalizedVariant === "TextIcon") {
+    return (
+      <ButtonTextItem
+        className={className}
+        variants={normalizedVariant === "TextIcon" ? "Text+Icon" : "Text"}
+        size={size}
+        state={state === "Disabled" ? "Disabled" : "Default"}
+        danger={danger}
+        label={label}
+        onClick={onClick}
+      />
+    );
+  }
+
+  const figmaVariant = normalizedVariant === "Outline" ? "Ouline" : normalizedVariant;
   const isDisabled = state === "Disabled";
   const isLoading = state === "Loading";
-  const isText = normalizedVariant === "Text" || normalizedVariant === "TextIcon";
   const shouldShowIcon = icon ?? showIcon ?? true;
   const hasIcon = shouldShowIcon && normalizedVariant !== "Text" && !isLoading;
   const loaderColor = normalizedVariant === "Primary" ? "inverse" : danger ? "brand" : "neutral";
@@ -82,7 +98,7 @@ export function ButtonItem({
       type="button"
       className={rootClass}
       data-cx-component="ButtonItem"
-      data-variant={normalizedVariant}
+      data-variant={figmaVariant}
       data-size={size}
       data-state={state}
       data-danger={danger ? "on" : "off"}
@@ -93,7 +109,7 @@ export function ButtonItem({
         <Loader className={styles.loader} color={loaderColor} size="small" />
       ) : (
         <>
-          <span className={isText ? styles.textLabel : styles.label}>{label}</span>
+          <span className={styles.label}>{label}</span>
           {hasIcon && (
             <span className={styles.iconWrap} aria-hidden="true">
               <IconArrow

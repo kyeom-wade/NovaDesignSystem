@@ -1,13 +1,14 @@
 import React from "react";
 import { ButtonIconItem } from "../ButtonIconItem";
 import { ButtonItem } from "../ButtonItem";
+import { ButtonTextItem } from "../ButtonTextItem";
 import { IconDummy } from "../IconDummy";
 import styles from "./TitleGroupRightItem.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.3 .TitleGroupRightItem (node 50943:30580)
 // anatomy:
 //   Icon       — root[ iconItem(16×16) ]
-//   TextButton — root[ ButtonItem(Text/XLarge) ]
-//   TextIconSecondary — root[ ButtonItem(Text+Icon/XLarge) ]
+//   TextButton — root[ ButtonTextItem(Text/XLarge) ]
+//   TextIconSecondary — root[ ButtonTextItem(Text+Icon/XLarge) ]
 //   Button     — root[ buttonItem(secondary/small, no-icon) ]
 //   ButtonIcon — root[ ButtonIconItem(close/24) ]
 
@@ -59,12 +60,11 @@ export function TitleGroupRightItem({
   if (variant === "TextButton") {
     return (
       <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="TextButton">
-        <ButtonItem
+        <ButtonTextItem
           className={styles.textButton}
-          variant="Text"
+          variants="Text"
           size="XLarge"
           label={text}
-          icon={false}
           onClick={onClick}
         />
       </div>
@@ -74,12 +74,11 @@ export function TitleGroupRightItem({
   if (variant === "TextIconSecondary") {
     return (
       <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="TextIconSecondary">
-        <ButtonItem
+        <ButtonTextItem
           className={styles.textIconButton}
-          variant="TextIcon"
+          variants="Text+Icon"
           size="XLarge"
           label={text}
-          icon
           onClick={onClick}
         />
       </div>

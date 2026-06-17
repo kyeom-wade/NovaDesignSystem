@@ -96,20 +96,20 @@
       "description": "주요 행동의 보조 CTA. Primary 옆 outlined 스타일로 취소·돌아가기·나중에 등 이탈·보조 행동에 사용한다.",
       "distinction": "Primary와 동등한 강조로 나란히 배치하지 않는다. 단독 메인 CTA에 사용하지 않는다."
     },
-    "Outline": {
+    "Ouline": {
       "level": 2,
       "description": "테두리선만 있는 중간 강조 인라인 CTA. 카드·리스트 내 보조 행동이나 Selected 상태 시각화에 사용한다.",
       "distinction": "화면 하단 주요 CTA에는 Primary/Secondary를 사용한다."
-    },
+    }
+  },
+  "ButtonTextItem": {
     "Text": {
-      "level": 1,
-      "description": "배경·테두리 없이 텍스트만으로 표현되는 보조 행동 버튼. 화면 내 부가 링크나 보조 동작에 사용한다.",
-      "distinction": "아이콘이 함께 필요하면 TextIcon을 사용한다."
+      "description": "밑줄이 있는 텍스트형 버튼. 페이지 전환보다 약한 보조 텍스트 액션이나 약관·상세 보기처럼 링크 성격의 행동에 사용한다.",
+      "distinction": "주요 CTA에는 ButtonItem Primary/Secondary/Ouline을 사용하고, 아이콘이 필요한 텍스트 액션에는 Text+Icon을 사용한다."
     },
-    "TextIcon": {
-      "level": 1,
-      "description": "텍스트와 아이콘을 함께 표시하는 보조 버튼. 더보기·새창열기 등 보조 행동에 방향 또는 의미 아이콘을 결합할 때 사용한다.",
-      "distinction": "아이콘 없이 텍스트만 필요하면 Text를 사용한다."
+    "Text+Icon": {
+      "description": "텍스트와 우측 Chevron 아이콘을 함께 표시하는 텍스트형 버튼. 더보기·상세 이동처럼 방향성이 있는 보조 액션에 사용한다.",
+      "distinction": "밑줄 텍스트만 필요한 경우 Text를 사용하고, 하단 고정 CTA에는 ButtonItem을 사용한다."
     }
   },
   "ButtonIconItem": {

@@ -12,6 +12,7 @@ export { InputClearButtonItem } from "./components/InputClearButtonItem";
 export { InputHelpTextItem } from "./components/InputHelpTextItem";
 export { InputTypeItem } from "./components/InputTypeItem";
 export { ButtonItem } from "./components/ButtonItem";
+export { ButtonTextItem } from "./components/ButtonTextItem";
 export { CardContentsListItem } from "./components/CardContentsListItem";
 export { CardItem } from "./components/CardItem";
 export { CardProductVerticalListItem } from "./components/CardProductVerticalListItem";
