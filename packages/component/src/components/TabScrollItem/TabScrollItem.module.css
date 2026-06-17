@@ -9,7 +9,7 @@
   align-items: flex-start;
   position: relative;
   cursor: pointer;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }

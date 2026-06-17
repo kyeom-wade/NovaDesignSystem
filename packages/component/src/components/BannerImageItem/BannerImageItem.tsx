@@ -1,14 +1,18 @@
 import React from "react";
 import styles from "./BannerImageItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .BannerImageItem (node 51243:74524)
-// anatomy: root[ background?, imageArea[ imageWrap[ img ] ], contentSlot[ children ] ]
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .BannerImageItem (node 51243:74524)
+// anatomy: root[ background?, imageArea[ imageWrap[ img ] ], contentSlot? ]
 
 export type BannerImageItemVariant = "Medium" | "Small";
 
-interface Props {
-  /** Size variant — Medium (112px tall, 80×80 image) or Small (72px tall, 58×40 rounded image) */
+export interface BannerImageItemProps {
+  /** Figma property name. Medium (112px tall, 80×80 image) or Small (72px tall, 58×40 image) */
+  variants?: BannerImageItemVariant;
+  /** Figma property name. Whether to render the semi-transparent background layer */
+  background?: boolean;
+  /** Legacy alias for variants */
   variant?: BannerImageItemVariant;
-  /** Whether to render the semi-transparent background overlay */
+  /** Legacy alias for background */
   showBackground?: boolean;
   /** Image source URL for the decorative product image */
   imageSrc?: string;
@@ -18,33 +22,46 @@ interface Props {
   children?: React.ReactNode;
   /** Accessible label for the banner region */
   ariaLabel?: string;
+  className?: string;
 }
 
 export function BannerImageItem({
-  variant = "Medium",
-  showBackground = false,
+  variants,
+  background,
+  variant,
+  showBackground,
   imageSrc,
   imageAlt = "",
   children,
   ariaLabel,
-}: Props) {
-  const isSmall = variant === "Small";
+  className,
+}: BannerImageItemProps) {
+  const resolvedVariant = variants ?? variant ?? "Medium";
+  const resolvedBackground = background ?? showBackground ?? true;
+  const isSmall = resolvedVariant === "Small";
 
   return (
     <div
-      className={[styles.root, isSmall ? styles.variantSmall : styles.variantMedium].join(" ")}
+      className={[
+        styles.root,
+        isSmall ? styles.variantSmall : styles.variantMedium,
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
       data-cx-component="BannerImageItem"
-      data-variant={variant}
+      data-variant={resolvedVariant}
+      data-background={resolvedBackground ? "true" : "false"}
       aria-label={ariaLabel}
     >
-      {showBackground && (
+      {resolvedBackground && (
         <div
           className={[styles.background, isSmall ? styles.backgroundSmall : styles.backgroundMedium].join(" ")}
           aria-hidden="true"
         />
       )}
 
-      <div className={styles.contentSlot}>{children}</div>
+      {children && <div className={styles.contentSlot}>{children}</div>}
 
       <div className={[styles.imageArea, isSmall ? styles.imageAreaSmall : styles.imageAreaMedium].join(" ")}>
         <div className={[styles.imageWrap, isSmall ? styles.imageWrapSmall : styles.imageWrapMedium].join(" ")}>

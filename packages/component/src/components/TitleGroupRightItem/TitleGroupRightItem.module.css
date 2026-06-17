@@ -1,0 +1,78 @@
+/* TitleGroupRightItem — Figma node 50943:30580 */
+/* anatomy:
+   Icon              → root[ IconDummy ]
+   TextButton        → root[ ButtonTextItem(Text, XLarge) ]
+   TextIconSecondary → root[ ButtonTextItem(Text+Icon, XLarge) ]
+   Button            → root[ ButtonItem(Secondary, Small) ]
+   ButtonIcon        → root[ ButtonIconItem(Close, Medium) ]
+*/
+
+.root {
+  display: flex;
+  position: relative;
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
+  box-sizing: border-box;
+}
+
+.variant-Icon {
+  align-items: flex-start;
+}
+
+.variant-TextButton {
+  align-items: center;
+}
+
+.variant-TextIconSecondary {
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--skt-component-titlegroup-gap-1, 0);
+}
+
+.variant-Button {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.variant-ButtonIcon {
+  align-items: flex-start;
+}
+
+.iconItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  color: var(--skt-color-icon-disabled-default, var(--icon-disabled-default, rgba(11, 44, 127, 0.18)));
+}
+
+.iconDummy {
+  width: 16px;
+  height: 16px;
+}
+
+.textButton {
+  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px)) !important;
+  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500)) !important;
+  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%)) !important;
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em)) !important;
+  color: var(--skt-color-text-neutral-secondary, var(--text-neutral-secondary, rgba(12, 27, 65, 0.67))) !important;
+}
+
+.textIconButton {
+  font-size: var(--skt-typography-style-16reg-font-size, var(--skt-typography-font-size-700, 16px)) !important;
+  font-weight: var(--skt-typography-style-16reg-font-weight, var(--skt-typography-font-weight-regular, 400)) !important;
+  line-height: var(--skt-typography-style-16reg-line-height, var(--skt-typography-line-height-200, 130%)) !important;
+  letter-spacing: var(--skt-typography-style-16reg-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em)) !important;
+  color: var(--skt-color-text-neutral-secondary, var(--text-neutral-secondary, rgba(12, 27, 65, 0.67))) !important;
+}
+
+.button {
+  flex-shrink: 0;
+}
+
+.buttonIcon {
+  flex-shrink: 0;
+}

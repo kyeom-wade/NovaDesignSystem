@@ -10,7 +10,7 @@
   position: relative;
   background-color: var(--skt-color-palette-white-alpha-500, rgba(255, 255, 255, 0.5));
   box-shadow: 0px 0px 20px 0px var(--skt-color-palette-gray-alpha-50, rgba(6, 12, 31, 0.05));
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   cursor: pointer;
   user-select: none;
 }

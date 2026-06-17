@@ -1,4 +1,5 @@
 import React from "react";
+import { BottomGroup } from "../BottomGroup/BottomGroup";
 import styles from "./Bottomsheet.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .Bottomsheet (node 51333:109243)
 // anatomy: root[ handle?(HandleItem) | titleSection?(titleRow[title, subText], closeBtn) , tabScroll?(tabs[TabScrollItem*]), slot[children], actionGroup?(aiArea) ]
@@ -152,83 +153,17 @@ export function Bottomsheet({
       {/* ── Slot / Body ── */}
       <div className={styles.slot}>{children}</div>
 
-      {/* ── Action Group (AI area) ── */}
       {showActionGroup && (
-        <div className={styles.actionGroup}>
-          {/* AI hint row */}
-          <div className={styles.aiHintRow}>
-            <span className={styles.aiIconItem} aria-hidden="true">
-              {/* AI sparkle icon — inline SVG */}
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8 1L9.5 6.5L15 8L9.5 9.5L8 15L6.5 9.5L1 8L6.5 6.5L8 1Z"
-                  fill="url(#aiGrad)"
-                />
-                <defs>
-                  <linearGradient id="aiGrad" x1="1" y1="8" x2="15" y2="8" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="var(--skt-color-palette-blue-800, #3617ce)" />
-                    <stop offset="1" stopColor="var(--skt-color-palette-blue-600, #5f6afd)" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </span>
-            <span className={styles.aiHintText}>{aiHintText}</span>
-          </div>
-
-          {/* CTA row: icon pill + split button */}
-          <div className={styles.ctaRow}>
-            {/* T icon pill */}
-            <div className={styles.iconPill}>
-              <div className={styles.iconPillBg} />
-              <span className={styles.iconPillImg} aria-label="T AI 아이콘">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <text
-                    x="1"
-                    y="14"
-                    fontFamily="'Pretendard Variable', sans-serif"
-                    fontWeight="700"
-                    fontSize="16"
-                    fill="var(--skt-color-fill-brand-primary, #3617ce)"
-                  >
-                    T
-                  </text>
-                </svg>
-              </span>
-            </div>
-
-            {/* Split CTA button */}
-            <div className={styles.splitBtn}>
-              <button
-                type="button"
-                className={styles.splitBtnLeft}
-                onClick={onSecondary}
-              >
-                {secondaryLabel}
-              </button>
-              <div className={styles.splitBtnDivider} aria-hidden="true" />
-              <button
-                type="button"
-                className={styles.splitBtnRight}
-                onClick={onPrimary}
-              >
-                {primaryLabel}
-              </button>
-            </div>
-          </div>
-        </div>
+        <BottomGroup
+          variant="Ai"
+          showAiLabel
+          aiLabelText={aiHintText}
+          showSecondaryButton
+          primaryLabel={primaryLabel}
+          secondaryLabel={secondaryLabel}
+          onPrimary={onPrimary}
+          onSecondary={onSecondary}
+        />
       )}
     </div>
   );

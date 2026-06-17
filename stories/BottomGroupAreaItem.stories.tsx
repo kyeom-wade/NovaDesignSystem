@@ -39,7 +39,7 @@ export const TwoButtons: Story = {
 
 export const AllVariants: Story = {
   render: () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: "24px", padding: "16px" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "24px", padding: "16px", width: "393px" }}>
       <div>
         <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#666" }}>1 Botton</p>
         <BottomGroupAreaItem variants="1 Botton" primaryLabel="확인" />

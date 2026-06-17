@@ -1,5 +1,5 @@
 import styles from "./Alert.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .Alert (node 51243:75943)
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .Alert (node 54127:95029)
 // anatomy: wrap[ group[ title?, body ] ]
 
 import React from "react";
@@ -7,33 +7,61 @@ import React from "react";
 type AlertVariant = "neutral" | "danger";
 
 interface Props {
-  /** Visual variant — "neutral" (default) or "danger" */
-  variant?: AlertVariant;
-  /** Optional bold title line; pass undefined or empty string to hide */
+  /** Figma prop: danger=true renders danger colors */
+  danger?: boolean;
+  /** Figma prop: body text */
+  description?: string;
+  /** Figma prop: optional bold title line */
   title?: string;
-  /** Main body text */
+  /** Figma prop: title row visibility */
+  titleText?: boolean;
+  /** Legacy alias — "neutral" maps to danger=false, "danger" maps to danger=true */
+  variant?: AlertVariant;
+  /** Legacy alias for description */
   body?: string;
-  /** Show or hide the title row */
+  /** Legacy alias for titleText */
   showTitle?: boolean;
+  className?: string;
 }
 
 export function Alert({
-  variant = "neutral",
-  title = "타이틀",
-  body = "본문",
-  showTitle = true,
+  danger,
+  description,
+  title = "Title",
+  titleText,
+  variant,
+  body,
+  showTitle,
+  className,
 }: Props) {
+  const isDanger = danger ?? variant === "danger";
+  const shouldShowTitle = titleText ?? showTitle ?? true;
+  const descriptionText = description ?? body ?? "Description";
+  const wrapClass = [
+    styles.wrap,
+    isDanger ? styles.wrapDanger : styles.wrapNeutral,
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const groupClass = [
+    styles.group,
+    isDanger ? styles.danger : styles.neutral,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <div
-      className={styles.wrap}
+      className={wrapClass}
       data-cx-component="Alert"
-      data-variant={variant}
+      data-danger={isDanger ? "true" : "false"}
     >
-      <div className={`${styles.group} ${styles[variant]}`}>
-        {showTitle && title && (
+      <div className={groupClass}>
+        {shouldShowTitle && title && (
           <p className={styles.title}>{title}</p>
         )}
-        <p className={styles.body}>{body}</p>
+        <p className={styles.description}>{descriptionText}</p>
       </div>
     </div>
   );

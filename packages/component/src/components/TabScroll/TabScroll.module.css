@@ -10,7 +10,7 @@
   align-items: flex-start;
   position: relative;
   width: 100%;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
   background-color: var(--skt-color-bg-layer-default, #ffffff);
 }
 

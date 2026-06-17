@@ -12,8 +12,8 @@ const meta: Meta<typeof BottomGroupUpperItem> = {
   },
   args: {
     variant: "Table",
-    label: "상품명",
-    value: "갤럭시 S24 Ultra",
+    label: "타이틀",
+    value: "내용 들어가는 부분",
   },
 };
 export default meta;
@@ -24,7 +24,7 @@ export const Default: Story = {};
 export const VariantDefault: Story = {
   args: {
     variant: "Default",
-    label: "배송 안내",
+    label: "텍스트",
   },
 };
 
@@ -33,11 +33,11 @@ export const AllVariants: Story = {
     <div style={{ display: "flex", flexDirection: "column", gap: 16, padding: 24 }}>
       <div>
         <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>Default</p>
-        <BottomGroupUpperItem {...args} variant="Default" label="배송 안내" />
+        <BottomGroupUpperItem {...args} variant="Default" label="텍스트" />
       </div>
       <div>
         <p style={{ margin: "0 0 8px", fontSize: 12, color: "#888" }}>Table</p>
-        <BottomGroupUpperItem {...args} variant="Table" label="가격" value="99,000원" />
+        <BottomGroupUpperItem {...args} variant="Table" label="타이틀" value="내용 들어가는 부분" />
       </div>
     </div>
   ),

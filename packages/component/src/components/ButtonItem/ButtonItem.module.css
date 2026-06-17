@@ -11,7 +11,7 @@
   box-sizing: border-box;
   padding: 0 var(--skt-component-button-padding-x-2, 16px);
   cursor: pointer;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   font-size: var(--skt-typography-style-14semi-font-size, var(--skt-typography-font-size-500, 14px));
   font-weight: var(--skt-typography-style-14semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
   line-height: var(--skt-typography-style-14semi-line-height, var(--skt-typography-line-height-200, 130%));

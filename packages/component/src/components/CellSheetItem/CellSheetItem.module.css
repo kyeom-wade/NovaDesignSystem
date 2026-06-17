@@ -9,7 +9,7 @@
   padding: var(--skt-spacing-4, 4px) 0;
   width: 100%;
   overflow: hidden;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
   box-sizing: border-box;
 }
 
@@ -147,7 +147,7 @@
   background-color: var(--skt-color-fill-neutral-tertiary, rgba(6, 12, 31, 0.05));
   border: none;
   border-radius: var(--skt-radius-full, 9999px);
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
   font-size: var(--skt-typography-style-12semi-font-size, var(--skt-typography-font-size-300, 12px));
   font-weight: var(--skt-typography-style-12semi-font-weight, var(--skt-typography-font-weight-semibold, 600));
   color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));

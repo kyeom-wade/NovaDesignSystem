@@ -1,0 +1,40 @@
+/* TitleTextRightItem — Figma node 50943:28006 */
+/* anatomy: root[ IconItem | BadgeItem ] */
+
+.root {
+  display: inline-flex;
+  position: relative;
+  flex-shrink: 0;
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
+}
+
+.rootIcon {
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--skt-color-icon-neutral-secondary);
+}
+
+.rootBadge {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.iconAccessible {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.badge {
+  flex-shrink: 0;
+}

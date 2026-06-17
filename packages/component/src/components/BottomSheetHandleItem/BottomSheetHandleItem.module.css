@@ -13,7 +13,7 @@
   padding-left: var(--skt-spacing-32, 32px);
   padding-right: var(--skt-spacing-32, 32px);
   box-sizing: border-box;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
 }
 
 .handle {

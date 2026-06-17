@@ -11,7 +11,7 @@
   padding-bottom: var(--skt-spacing-4, 4px);
   width: 100%;
   box-sizing: border-box;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   position: relative;
 }
 
@@ -22,12 +22,6 @@
 
 .bullet {
   gap: var(--skt-spacing-4, 4px);
-}
-
-.toggleBg {
-  background-color: var(--skt-color-fill-brand-primary, #3617ce);
-  overflow: hidden;
-  gap: var(--skt-spacing-12, 12px);
 }
 
 /* ── left text group ───────────────────────────────────── */
@@ -61,11 +55,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/* When Toggle is active the label should render in white */
-.toggleBg .label {
-  color: var(--skt-color-text-inverse-primary, #ffffff);
 }
 
 /* ── right: Icon (chevron) ─────────────────────────────── */
@@ -111,7 +100,7 @@
   border: none;
   background: none;
   cursor: pointer;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   font-size: var(--skt-typography-style-13reg-font-size, var(--skt-typography-font-size-400, 13px));
   font-weight: var(--skt-typography-style-13reg-font-weight, var(--skt-typography-font-weight-regular, 400));
   line-height: var(--skt-typography-style-13reg-line-height, var(--skt-typography-line-height-200, 130%));

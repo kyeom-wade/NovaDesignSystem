@@ -9,7 +9,7 @@
   padding-top: var(--skt-spacing-8, 8px);
   padding-bottom: var(--skt-spacing-8, 8px);
   width: 100%;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
 }
 
 /* ── Title row ── */

@@ -7,7 +7,7 @@
   gap: var(--skt-spacing-12, 12px);
   align-items: flex-start;
   padding: var(--skt-spacing-12, 12px) var(--skt-spacing-20, 20px);
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
   width: 100%;
   box-sizing: border-box;
 }

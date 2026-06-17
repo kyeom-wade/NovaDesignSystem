@@ -3,48 +3,49 @@
    Variants: Medium (112px tall, 80×80 square image) · Small (72px tall, 58×40 rounded image)
 */
 
-/* ─── shared ─────────────────────────────────────────────────────────────── */
 .root {
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
   box-sizing: border-box;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
   width: 100%;
+  max-width: 353px;
   overflow: hidden;
 }
 
-/* ─── variant: Medium ────────────────────────────────────────────────────── */
 .variantMedium {
   height: 112px;
 }
 
-/* ─── variant: Small ─────────────────────────────────────────────────────── */
 .variantSmall {
   height: 72px;
 }
 
-/* ─── background overlay ─────────────────────────────────────────────────── */
 .background {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
   pointer-events: none;
+  opacity: 0.05;
 }
 
 .backgroundMedium {
-  background-color: var(--skt-color-palette-gray-00, #ffffff);
-  opacity: 0.05;
+  height: 112px;
+  background-color: var(--skt-color-bg-layer-floating, #ffffff);
 }
 
 .backgroundSmall {
-  background-color: #c10f00;
-  opacity: 0.05;
+  height: 72px;
+  background-color: var(--skt-color-bg-layer-floating, #ffffff);
 }
 
-/* ─── content slot (left side) ───────────────────────────────────────────── */
 .contentSlot {
   position: absolute;
   top: 0;
   left: 0;
-  /* leave room for the image area on the right (28px gap + image width) */
   right: calc(28px + 80px);
   bottom: 0;
   display: flex;
@@ -52,11 +53,11 @@
   justify-content: center;
 }
 
-/* ─── image area (top-right) ─────────────────────────────────────────────── */
 .imageArea {
   position: absolute;
   right: 28px;
-  top: 16px;
+  top: 50%;
+  transform: translateY(-50%);
   overflow: hidden;
 }
 
@@ -68,10 +69,8 @@
 .imageAreaSmall {
   width: 58px;
   height: 40px;
-  border-radius: var(--skt-radius-20, 20px);
 }
 
-/* ─── image wrap (centered within imageArea) ─────────────────────────────── */
 .imageWrap {
   position: absolute;
   top: 50%;
@@ -92,7 +91,6 @@
   height: 40px;
 }
 
-/* ─── image ──────────────────────────────────────────────────────────────── */
 .img {
   width: 100%;
   height: 100%;
@@ -100,10 +98,8 @@
   display: block;
 }
 
-/* ─── placeholder (when no imageSrc provided) ────────────────────────────── */
 .imagePlaceholder {
   width: 100%;
   height: 100%;
   background-color: var(--skt-color-fill-neutral-tertiary, rgba(6, 12, 31, 0.05));
-  border-radius: inherit;
 }

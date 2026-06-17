@@ -7,7 +7,7 @@
   flex-direction: column;
   gap: var(--skt-spacing-16, 16px);
   width: 353px;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", -apple-system, sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
 }
 
 /* ── Header ── */

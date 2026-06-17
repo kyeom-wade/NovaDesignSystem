@@ -16,7 +16,7 @@
   border-radius: var(--skt-radius-full, 9999px);
   cursor: pointer;
   user-select: none;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   white-space: nowrap;
   transition: background-color 0.15s ease;
   box-sizing: border-box;

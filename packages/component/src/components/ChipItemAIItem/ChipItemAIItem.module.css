@@ -13,7 +13,7 @@
   background-color: var(--skt-color-palette-white-alpha-400, rgba(255, 255, 255, 0.4));
   border-radius: var(--skt-radius-full, 9999px);
   overflow: hidden;
-  font-family: var(--skt-typography-font-family-base, "Pretendard Variable", sans-serif);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   cursor: pointer;
   user-select: none;
   outline: none;

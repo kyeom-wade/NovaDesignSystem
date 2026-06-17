@@ -1,16 +1,24 @@
 import styles from "./BadgeIconItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .BadgeIconItem (node 50943:30627)
-// anatomy: root[ main[ icon, text ], subText? ]
-// Variants: subtext(false|true) — when true, a right-aligned subText label is shown and the root stretches to full width
+import { IconLogo } from "../IconLogo/IconLogo";
 
-interface Props {
-  /** Main label text shown next to the icon */
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .BadgeIconItem (node 54182:34717)
+// anatomy: root[ main[ Ico, label ], caption? ]
+// Variants: subtext("Subtext2"|"On")
+
+export interface BadgeIconItemProps {
+  /** Main label text shown next to the icon. Figma property name: label */
+  label?: string;
+  /** Right-side caption shown when subtext="On". Figma property name: caption */
+  caption?: string;
+  /** Figma variant property. "Subtext2" is compact, "On" shows caption. */
+  subtext?: "Subtext2" | "On";
+  /** Legacy alias for label */
   text?: string;
-  /** Optional subtext shown on the right side (visible only when showSubText is true) */
+  /** Legacy alias for caption */
   subText?: string;
-  /** Whether to show the right-aligned subText — switches between the two Figma variants */
+  /** Legacy alias for subtext="On" */
   showSubText?: boolean;
-  /** Icon src URL — defaults to a 16×16 placeholder icon */
+  /** Optional custom icon src URL */
   iconSrc?: string;
   /** Alt text for the icon image */
   iconAlt?: string;
@@ -18,34 +26,46 @@ interface Props {
 }
 
 export function BadgeIconItem({
-  text = "{Text}",
-  subText = "{SubText}",
-  showSubText = false,
+  label,
+  caption,
+  subtext,
+  text,
+  subText,
+  showSubText,
   iconSrc,
   iconAlt = "",
   className,
-}: Props) {
+}: BadgeIconItemProps) {
+  const resolvedLabel = label ?? text ?? "Label";
+  const resolvedCaption = caption ?? subText ?? "Caption";
+  const resolvedSubtext = subtext ?? (showSubText ? "On" : "Subtext2");
+  const isOn = resolvedSubtext === "On";
+
   const rootClass = [
     styles.root,
-    showSubText ? styles.withSubText : styles.compact,
+    isOn ? styles.withCaption : styles.compact,
     className,
   ]
     .filter(Boolean)
     .join(" ");
 
   return (
-    <div className={rootClass} data-cx-component="BadgeIconItem">
+    <div
+      className={rootClass}
+      data-cx-component="BadgeIconItem"
+      data-subtext={resolvedSubtext}
+    >
       <div className={styles.main}>
         <div className={styles.iconWrap}>
           {iconSrc ? (
             <img className={styles.icon} src={iconSrc} alt={iconAlt} />
           ) : (
-            <div className={styles.iconPlaceholder} aria-hidden="true" />
+            <IconLogo className={styles.defaultIcon} variant="TW" size={16} />
           )}
         </div>
-        <p className={styles.text}>{text}</p>
+        <p className={styles.label}>{resolvedLabel}</p>
       </div>
-      {showSubText && <p className={styles.subText}>{subText}</p>}
+      {isOn && <p className={styles.caption}>{resolvedCaption}</p>}
     </div>
   );
 }
