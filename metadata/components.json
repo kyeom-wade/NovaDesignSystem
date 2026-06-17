@@ -54,8 +54,8 @@
     "description": "텍스트 레이블을 표시하는 배지 서브 컴포넌트로, 색상과 크기 조합으로 상태나 카테고리를 시각적으로 나타낸다.",
     "anatomy": "root[ label ]",
     "states": null,
-    "do": "- size는 Small(17px) 또는 Large(22px) 중 맥락에 맞게 선택한다.\n- color는 Neutral·Strong·Brand·Inverse 중 배경 및 콘텐츠 강조 수준에 따라 선택한다.\n- text에는 짧고 명확한 레이블 텍스트만 사용한다.",
-    "rules": "props: size(Small|Large), color(Neutral|Strong|Brand|Inverse), text(string). [맵핑 트리거] 상품·콘텐츠·상태 등에 짧은 레이블 배지가 필요할 때 부모 컴포넌트의 Badge 슬롯에 배치한다. [사용 시점] 카드·셀·아이템 등 부모 컴포넌트 내부 배지 슬롯에서만 사용한다. [구분] 단독 노출이 필요한 경우 Badge(standalone) 컴포넌트를 사용하고, BadgeItem은 반드시 부모 슬롯을 통해서만 참조한다.",
+    "do": "- size는 Small 또는 Large 중 맥락에 맞게 선택한다.\n- color는 Neutral·Strong·Brand·Inverse 중 배경 및 콘텐츠 강조 수준에 따라 선택한다.\n- label에는 짧고 명확한 레이블 텍스트만 사용한다.",
+    "rules": "props: size(Small|Large), color(Neutral|Strong|Brand|Inverse), label(string). [호환 alias] text -> label. [맵핑 트리거] 상품·콘텐츠·상태 등에 짧은 레이블 배지가 필요할 때 부모 컴포넌트의 Badge 슬롯에 배치한다. [사용 시점] 카드·셀·아이템 등 부모 컴포넌트 내부 배지 슬롯에서만 사용한다. [구분] 단독 노출이 필요한 경우 Badge(standalone) 컴포넌트를 사용하고, BadgeItem은 반드시 부모 슬롯을 통해서만 참조한다.",
     "parent": "Badge",
     "slot": "Badge"
   },

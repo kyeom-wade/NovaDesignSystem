@@ -6,8 +6,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding-left: var(--skt-spacing-6, 6px);
-  padding-right: var(--skt-spacing-6, 6px);
+  padding-left: var(--skt-component-badge-padding-x-1, var(--padding-3, 6px));
+  padding-right: var(--skt-component-badge-padding-x-1, var(--padding-3, 6px));
   font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   box-sizing: border-box;
   position: relative;
@@ -16,41 +16,38 @@
 
 /* ── Size variants ─────────────────────────────────── */
 .size-Small {
-  height: 17px;
-  padding-top: var(--skt-spacing-2, 2px);
-  padding-bottom: var(--skt-spacing-2, 2px);
-  border-radius: var(--skt-radius-4, 4px);
+  padding-top: var(--skt-component-badge-padding-y-1, var(--padding-1, 2px));
+  padding-bottom: var(--skt-component-badge-padding-y-1, var(--padding-1, 2px));
+  border-radius: var(--skt-radius-1, var(--radius-1, 4px));
 }
 
 .size-Large {
-  height: 22px;
-  padding-top: var(--skt-spacing-4, 4px);
-  padding-bottom: var(--skt-spacing-4, 4px);
-  border-radius: var(--skt-radius-6, 6px);
+  padding-top: var(--skt-component-badge-padding-y-2, var(--padding-2, 4px));
+  padding-bottom: var(--skt-component-badge-padding-y-2, var(--padding-2, 4px));
+  border-radius: var(--skt-radius-2, var(--radius-2, 6px));
 }
 
 /* ── Color variants ────────────────────────────────── */
 
 /* Neutral — light gray bg, secondary text */
 .color-Neutral {
-  background-color: var(--skt-color-fill-neutral-secondary, rgba(6, 12, 31, 0.1));
+  background-color: var(--skt-color-fill-neutral-secondary, var(--fill-neutral-secondary, rgba(5, 42, 142, 0.08)));
   mix-blend-mode: multiply;
 }
 
 /* Strong — near-black bg, inverse (white) text */
 .color-Strong {
-  background-color: var(--skt-color-fill-neutral-strong, #060c1f);
+  background-color: var(--skt-color-fill-neutral-strong, var(--fill-neutral-strong, #060c1f));
 }
 
 /* Brand — brand purple bg, inverse (white) text */
 .color-Brand {
-  background-color: var(--skt-color-fill-brand-primary, #3617ce);
+  background-color: var(--skt-color-fill-brand-default, var(--fill-brand-default, #3617ce));
 }
 
 /* Inverse — white/translucent bg, inverse (white) text */
 .color-Inverse {
-  background-color: var(--skt-color-fill-inverse-primary, rgba(255, 255, 255, 0.2));
-  mix-blend-mode: multiply;
+  background-color: var(--skt-color-fill-inverse-secondary, var(--fill-inverse-secondary, rgba(255, 255, 255, 0.1)));
 }
 
 /* ── Label ─────────────────────────────────────────── */
@@ -66,24 +63,24 @@
 
 /* Small label — 10px, -0.04em tracking */
 .size-Small .label {
-  font-size: var(--skt-typography-font-size-100, 10px);
-  letter-spacing: -0.04em;
+  font-size: var(--skt-typography-style-10med-font-size, var(--skt-typography-font-size-100, 10px));
+  letter-spacing: var(--skt-typography-style-10med-letter-spacing, -0.04em);
 }
 
 /* Large label — 11px, -0.04em tracking */
 .size-Large .label {
-  font-size: var(--skt-typography-font-size-200, 11px);
-  letter-spacing: -0.04em;
+  font-size: var(--skt-typography-style-11med-font-size, var(--skt-typography-font-size-200, 11px));
+  letter-spacing: var(--skt-typography-style-11med-letter-spacing, -0.04em);
 }
 
 /* Neutral color uses secondary text color */
 .color-Neutral .label {
-  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  color: var(--skt-color-text-neutral-secondary, var(--text-neutral-secondary, rgba(12, 27, 65, 0.67)));
 }
 
 /* Strong, Brand, Inverse use inverse (white) text */
 .color-Strong .label,
 .color-Brand .label,
 .color-Inverse .label {
-  color: var(--skt-color-text-inverse-primary, #ffffff);
+  color: var(--skt-color-text-inverse-primary, var(--text-inverse-primary, #ffffff));
 }

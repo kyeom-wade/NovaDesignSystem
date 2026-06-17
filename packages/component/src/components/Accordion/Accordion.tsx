@@ -123,7 +123,7 @@ export function Accordion({
         <div className={styles.noticeContent}>
           <div className={styles.noticeTitleRow}>
             <span className={styles.noticeHeading}>{heading}</span>
-            {badge && <BadgeItem color="Brand" size="Small" text="NEW" />}
+            {badge && <BadgeItem color="Brand" size="Small" label="NEW" />}
           </div>
           {subTextGroup && (
             <div className={styles.noticeCaptionRow}>

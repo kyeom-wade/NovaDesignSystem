@@ -7,13 +7,14 @@ const meta: Meta<typeof BadgeItem> = {
   argTypes: {
     color: { control: "select", options: ["Neutral", "Strong", "Brand", "Inverse"] },
     size: { control: "select", options: ["Small", "Large"] },
-    text: { control: "text" },
+    label: { control: "text" },
+    text: { control: false },
     className: { control: false },
   },
   args: {
     color: "Neutral",
     size: "Small",
-    text: "라벨",
+    label: "Label",
   },
 };
 export default meta;
@@ -55,7 +56,7 @@ export const AllVariants: Story = {
           <p style={{ margin: "0 0 8px", fontSize: "13px", fontWeight: 600, color: "#333" }}>{size}</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", alignItems: "center" }}>
             {(["Neutral", "Strong", "Brand", "Inverse"] as const).map((color) => (
-              <BadgeItem key={color} size={size} color={color} text={color} />
+              <BadgeItem key={color} size={size} color={color} label="Label" />
             ))}
           </div>
         </div>

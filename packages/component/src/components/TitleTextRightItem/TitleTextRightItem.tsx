@@ -37,7 +37,7 @@ export function TitleTextRightItem({
       data-variant={variants}
     >
       {isBadge ? (
-        <BadgeItem className={styles.badge} size="Small" color="Neutral" text={badgeLabel} />
+        <BadgeItem className={styles.badge} size="Small" color="Neutral" label={badgeLabel} />
       ) : (
         <span className={styles.iconAccessible} role="img" aria-label={iconLabel}>
           <IconInfo className={styles.icon} size={16} variant="line" />
