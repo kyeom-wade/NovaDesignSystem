@@ -1,6 +1,7 @@
 import React from "react";
+import { TabFixedItem } from "../TabFixedItem";
 import styles from "./TabFixed.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .TabFixed (node 50943:27881)
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .TabFixed (node 50943:27881)
 // anatomy: root[ TabFixedItem×N ] — fixed-width tab bar; 1–4 equal-width tab items; first tab is selected by default
 
 interface Props {
@@ -12,6 +13,8 @@ interface Props {
   labels?: string[];
   /** Called with the tab index when a tab is clicked */
   onTabChange?: (index: number) => void;
+  /** Additional class for layout overrides from the consumer */
+  className?: string;
 }
 
 const TAB_COUNTS: Record<NonNullable<Props["variants"]>, number> = {
@@ -22,42 +25,32 @@ const TAB_COUNTS: Record<NonNullable<Props["variants"]>, number> = {
 };
 
 export function TabFixed({
-  variants = "2Tab",
+  variants = "1Tab",
   selectedIndex = 0,
   labels = [],
   onTabChange,
+  className,
 }: Props) {
   const count = TAB_COUNTS[variants];
 
   return (
     <div
-      className={styles.root}
+      className={[styles.root, className].filter(Boolean).join(" ")}
       data-cx-component="TabFixed"
       data-variants={variants}
       role="tablist"
     >
       {Array.from({ length: count }, (_, i) => {
-        const label = labels[i] ?? "탭명";
+        const label = labels[i] ?? "Label";
         const selected = i === selectedIndex;
         return (
-          <div
+          <TabFixedItem
             key={i}
             className={styles.item}
-            role="tab"
-            aria-selected={selected}
-            tabIndex={selected ? 0 : -1}
-            data-selected={selected ? "true" : "false"}
+            label={label}
+            selection={selected}
             onClick={() => onTabChange?.(i)}
-          >
-            <div className={styles.inner}>
-              <span className={selected ? styles.labelSelected : styles.labelDefault}>
-                {label}
-              </span>
-              <div className={styles.bar}>
-                {selected && <div className={styles.indicator} />}
-              </div>
-            </div>
-          </div>
+          />
         );
       })}
     </div>

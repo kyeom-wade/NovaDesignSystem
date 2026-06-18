@@ -1,7 +1,9 @@
 import React from "react";
+import { Divider } from "../Divider";
+import { TabScrollItem } from "../TabScrollItem";
 import styles from "./TabScroll.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .TabScroll (node 50964:27233)
-// anatomy: root[ tab[ divider, btnTab[ TabScrollItem×N ] ] ]
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .TabScroll (node 50964:27233)
+// anatomy: root[ tab[ btnTab[ TabScrollItem×N ], Divider ] ]
 // - Horizontally scrollable tab bar (393×47 canvas)
 // - First tab is selected by default; bottom divider line spans full width
 // - Tab items: gap 28px, left padding 20px, top padding 12px
@@ -13,52 +15,46 @@ interface Props {
   selectedIndex?: number;
   /** Called with the new tab index when a tab is clicked */
   onTabChange?: (index: number) => void;
+  /** Additional class for layout overrides from the consumer */
+  className?: string;
 }
 
 const DEFAULT_LABELS = [
-  "탭명",
-  "탭명",
-  "탭명",
-  "탭명",
-  "탭명",
-  "탭명",
-  "탭명",
-  "탭명",
-  "탭명",
-  "탭명",
+  "Label",
+  "Label",
+  "Label",
+  "Label",
+  "Label",
+  "Label",
+  "Label",
+  "Label",
+  "Label",
+  "Label",
 ];
 
 export function TabScroll({
   labels = DEFAULT_LABELS,
   selectedIndex = 0,
   onTabChange,
+  className,
 }: Props) {
   return (
-    <div className={styles.root} data-cx-component="TabScroll">
+    <div
+      className={[styles.root, className].filter(Boolean).join(" ")}
+      data-cx-component="TabScroll"
+    >
       <div className={styles.tab} role="tablist">
-        {/* Full-width bottom divider */}
-        <div className={styles.divider} aria-hidden="true" />
-        {/* Scrollable row of tab items */}
         <div className={styles.btnTab}>
-          {labels.map((label, i) => {
-            const selected = i === selectedIndex;
-            return (
-              <div
-                key={i}
-                className={`${styles.tabItem} ${selected ? styles.tabItemSelected : styles.tabItemDefault}`}
-                role="tab"
-                aria-selected={selected}
-                tabIndex={selected ? 0 : -1}
-                onClick={() => onTabChange?.(i)}
-              >
-                <span className={selected ? styles.labelSelected : styles.labelDefault}>
-                  {label}
-                </span>
-                {selected && <div className={styles.indicator} />}
-              </div>
-            );
-          })}
+          {labels.map((label, i) => (
+            <TabScrollItem
+              key={`${label}-${i}`}
+              label={label}
+              selection={i === selectedIndex}
+              onClick={() => onTabChange?.(i)}
+            />
+          ))}
         </div>
+        <Divider className={styles.divider} variant="contents" />
       </div>
     </div>
   );

@@ -1,38 +1,47 @@
 import React from "react";
 import styles from "./TabFixedItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .TabFixedItem (node 51157:56812)
-// anatomy: root[ inner[ label, bar[ indicator? ] ] ]
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .TabFixedItem (node 55521:150823)
+// anatomy: root[ text[ label, bar[ indicator? ] ] ]
 
 interface Props {
   /** 탭 라벨 텍스트 */
   label?: string;
   /** 현재 선택(활성) 상태 여부 */
   selected?: boolean;
+  /** Figma variant prop name */
+  selection?: boolean;
   /** 클릭 핸들러 */
   onClick?: () => void;
+  /** 추가 클래스명 */
+  className?: string;
 }
 
 export function TabFixedItem({
-  label = "탭명",
-  selected = false,
+  label = "Label",
+  selected,
+  selection,
   onClick,
+  className,
 }: Props) {
+  const isSelected = selection ?? selected ?? true;
+
   return (
     <div
-      className={styles.root}
+      className={[styles.root, className].filter(Boolean).join(" ")}
       data-cx-component="TabFixedItem"
-      data-selected={selected ? "true" : "false"}
+      data-selection={isSelected ? "selected" : "unselected"}
+      data-selected={isSelected ? "true" : "false"}
       role="tab"
-      aria-selected={selected}
-      tabIndex={selected ? 0 : -1}
+      aria-selected={isSelected}
+      tabIndex={isSelected ? 0 : -1}
       onClick={onClick}
     >
       <div className={styles.inner}>
-        <span className={selected ? styles.labelSelected : styles.labelDefault}>
+        <span className={isSelected ? styles.labelSelected : styles.labelDefault}>
           {label}
         </span>
         <div className={styles.bar}>
-          {selected && <div className={styles.indicator} />}
+          {isSelected && <div className={styles.indicator} />}
         </div>
       </div>
     </div>

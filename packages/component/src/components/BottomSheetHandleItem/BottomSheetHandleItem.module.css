@@ -1,7 +1,7 @@
-/* BottomSheetHandleItem — Figma node 50946:57023 */
+/* BottomSheetHandleItem — Figma node 55521:156018 */
 /* anatomy: root[ handle ]                        */
-/* root: 393×32, flex column, items centered, pt-12, px-32 */
-/* handle: 44×3, bg gray-100, radius 2px          */
+/* root: 393×32, flex column, items centered, pt-12 */
+/* handle: 44×3, bg gray/gray-100, radius 2px     */
 
 .root {
   display: flex;
@@ -9,9 +9,7 @@
   align-items: center;
   width: 393px;
   height: 32px;
-  padding-top: var(--skt-spacing-12, 12px);
-  padding-left: var(--skt-spacing-32, 32px);
-  padding-right: var(--skt-spacing-32, 32px);
+  padding-top: var(--skt-component-bottomsheet-padding-y-1, var(--skt-spacing-12, 12px));
   box-sizing: border-box;
   font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
 }
@@ -20,6 +18,6 @@
   width: 44px;
   height: 3px;
   border-radius: 2px;
-  background-color: var(--skt-color-border-neutral-secondary, #ebeef6);
+  background-color: var(--skt-color-palette-gray-100, #ebeef6);
   flex-shrink: 0;
 }
