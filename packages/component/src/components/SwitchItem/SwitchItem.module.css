@@ -1,0 +1,57 @@
+/* SwitchItem — Figma node 53886:56816 */
+/* anatomy: root[ track[ thumb ] ] */
+/* variants: selection(on|off) × state(Default|Disabled) */
+
+.root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 40px;
+  height: 24px;
+  padding: 2px;
+  border: 0;
+  border-radius: var(--skt-radius-r-full, 9999px);
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: var(--skt-color-fill-neutral-secondary, rgba(5, 42, 142, 0.1));
+  transition: background-color 120ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--skt-color-border-brand-primary, #3617ce);
+  outline-offset: 2px;
+}
+
+.thumb {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--skt-radius-r-full, 9999px);
+  background-color: var(--skt-color-bg-layer-default, #ffffff);
+  box-shadow: 0 1px 2px var(--skt-color-shadow-primary, rgba(13, 47, 138, 0.2));
+  transform: translateX(0);
+  transition: transform 120ms ease, background-color 120ms ease;
+}
+
+.selected {
+  background-color: var(--skt-color-fill-neutral-strong, var(--skt-color-palette-gray-1000, #060c1f));
+}
+
+.selected .thumb {
+  transform: translateX(16px);
+}
+
+.disabled {
+  cursor: not-allowed;
+  background-color: var(--skt-color-fill-disabled-default, rgba(35, 55, 155, 0.05));
+}
+
+.disabled .thumb {
+  background-color: var(--skt-color-fill-neutral-alpha-secondary, rgba(6, 42, 143, 0.08));
+  box-shadow: none;
+}
+
+.selected.disabled {
+  background-color: var(--skt-color-fill-disabled-default, rgba(35, 55, 155, 0.05));
+}

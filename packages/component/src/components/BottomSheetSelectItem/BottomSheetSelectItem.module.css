@@ -1,0 +1,81 @@
+/* BottomSheetSelectItem — Figma node 54678:32922 */
+/* anatomy: root[ header[ title, chevron ], ?Divider, ?slot ] */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 353px;
+  box-sizing: border-box;
+  border: 1.5px solid var(--skt-color-border-neutral-primary, rgba(6, 42, 143, 0.08));
+  border-radius: var(--skt-radius-5, 14px);
+  background: var(--skt-color-bg-layer-primary, #fff);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
+  overflow: hidden;
+}
+
+.collapsed {
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 var(--skt-spacing-20, 20px);
+  gap: 0;
+}
+
+.disclosure {
+  padding: var(--skt-spacing-16, 16px) var(--skt-spacing-20, 20px);
+  gap: var(--skt-component-bottomsheetselectitem-gap-1, var(--skt-spacing-16, 16px));
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-component-titlegroup-gap-4, var(--skt-spacing-16, 16px));
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.title {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-style-16med-letter-spacing, -0.04em);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.unselected .title {
+  color: var(--skt-color-text-neutral-secondary, rgba(12, 27, 65, 0.67));
+}
+
+.selected .title {
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  color: var(--skt-color-icon-neutral-primary, #060c1f);
+}
+
+.divider {
+  flex-shrink: 0;
+}
+
+.slot {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100px;
+}
