@@ -6,12 +6,14 @@ const meta: Meta<typeof TabScrollItem> = {
   component: TabScrollItem as never,
   argTypes: {
     label: { control: "text" },
-    selected: { control: "boolean" },
+    selection: { control: "boolean" },
+    selected: { control: false },
+    className: { control: false },
     onClick: { control: false },
   },
   args: {
-    label: "탭명",
-    selected: false,
+    label: "Label",
+    selection: true,
   },
 };
 export default meta;
@@ -21,8 +23,15 @@ export const Default: Story = {};
 
 export const Selected: Story = {
   args: {
-    label: "선택됨",
-    selected: true,
+    label: "Label",
+    selection: true,
+  },
+};
+
+export const Unselected: Story = {
+  args: {
+    label: "Label",
+    selection: false,
   },
 };
 
@@ -31,11 +40,11 @@ export const States: Story = {
     <div style={{ display: "flex", gap: "8px", alignItems: "center", padding: "16px" }}>
       <div>
         <p style={{ fontSize: "12px", color: "#888", marginBottom: "4px" }}>기본</p>
-        <TabScrollItem label="전체" selected={false} />
+        <TabScrollItem label="Label" selection={false} />
       </div>
       <div>
         <p style={{ fontSize: "12px", color: "#888", marginBottom: "4px" }}>선택됨</p>
-        <TabScrollItem label="인기" selected={true} />
+        <TabScrollItem label="Label" selection={true} />
       </div>
     </div>
   ),
@@ -44,11 +53,11 @@ export const States: Story = {
 export const TabGroup: Story = {
   render: () => (
     <div style={{ display: "flex", gap: "0px", alignItems: "center", padding: "16px", borderBottom: "1px solid #eee" }}>
-      <TabScrollItem label="전체" selected={true} />
-      <TabScrollItem label="인기" selected={false} />
-      <TabScrollItem label="신상품" selected={false} />
-      <TabScrollItem label="혜택" selected={false} />
-      <TabScrollItem label="이벤트" selected={false} />
+      <TabScrollItem label="Label" selection={true} />
+      <TabScrollItem label="Label" selection={false} />
+      <TabScrollItem label="Label" selection={false} />
+      <TabScrollItem label="Label" selection={false} />
+      <TabScrollItem label="Label" selection={false} />
     </div>
   ),
 };

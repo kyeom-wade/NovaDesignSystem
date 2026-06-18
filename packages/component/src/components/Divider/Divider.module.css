@@ -1,7 +1,7 @@
 /* Divider — Figma node 50943:27999
    anatomy: root[ line ]
    variants: contents (1px) | section (4px)
-   token: border/neutral/secondary → --skt-color-palette-gray-50 (var(--skt-color-bg-layer-basement, #f4f5fa))
+   token: border/neutral/secondary
 */
 
 .root {
@@ -13,7 +13,7 @@
 
 .line {
   width: 100%;
-  background-color: var(--skt-color-palette-gray-50, #f4f5fa);
+  background-color: var(--skt-color-border-neutral-secondary, var(--border-neutral-secondary, rgba(35, 55, 155, 0.05)));
   flex-shrink: 0;
 }
 

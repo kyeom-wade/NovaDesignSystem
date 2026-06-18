@@ -1154,10 +1154,10 @@
     "type": "Tab",
     "standalone": false,
     "description": "가로 스크롤 탭(TabScroll) 내의 개별 탭 아이템 서브 컴포넌트.",
-    "anatomy": "root[ label, badge? ]",
+    "anatomy": "root[ label, bar ]",
     "states": "Selected, Unselected",
     "do": "TabScroll 컨테이너 내부에서만 사용한다.",
-    "rules": "props: label, selected, badge, onClick.",
+    "rules": "props: label, selection, onClick. [호환 alias] selected -> selection. selection=true는 16 semi 텍스트와 2px 하단 bar를 표시하고, selection=false는 16 med 텍스트와 빈 bar 영역을 유지한다.",
     "parent": "TabScroll",
     "slot": "Content"
   },
