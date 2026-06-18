@@ -1,73 +1,88 @@
 {
   "Accordion": {
+    "name_ko": "아코디언",
     "standalone": true,
     "description": "콘텐츠를 확장하거나 축소하여 제공하여, 제한된 영역 안에서 필요한 정보를 놓치지 않고 제공하기 위해 사용됩니다. 서비스 이용 간 필수적인 정보/기능이지만, 자주 활용되지 않거나 한번에 제공되는 정보가 많을 경우 활용합니다.",
     "distinction": "접었다 펴는 고지·상세 블록(약관·유의사항·FAQ·상세정보). 항상 보이는 정적 고지 문구는 Alert, 펼친 내부의 정보 나열은 Cell."
   },
   "Alert": {
+    "name_ko": "알림",
     "standalone": true,
     "description": "주로 안내 메세지, 주의사항, 오류 상태, 약관 설명처럼 사용자가 반드시 인지해야 할 정보를 전달할 때 사용합니다.",
     "distinction": "안내·주의·오류·약관 등 '인지해야 할 고지성 문구' 전용. 접었다 펴는 고지·상세는 Accordion, 정보를 행으로 나열하는 것은 Cell."
   },
   "Appbar": {
+    "name_ko": "상단바",
     "standalone": true,
     "description": "화면 최상단에 고정되어, 사용자가 현재 화면의 위치와 행할 수 있는 주요 액션을 제공합니다. 사용자가 진입한 depth의 단계에 따라, 이전 단계로 돌아갈 수 있는 루트와 중도 다른 주요 페이지로의 이동이 가능한 루트를 함께 구성합니다.",
     "distinction": "AppBar: 화면 상단 고정 헤더(뒤로가기·타이틀·우측 아이콘). NavigationBar: 화면 하단 고정 탭바(섹션 간 전환). Tab: 화면 내 콘텐츠 DB 전환 탭 스트립."
   },
   "Badge": {
+    "name_ko": "뱃지",
     "standalone": false,
     "description": "콘텐츠의 상태나 속성을 구분하는 시각 요소로, 해당하는 콘텐츠의 부가적 강조가 필요한 경우 활용합니다. 해당 요소는 별도의 onclick 기능을 제공하지 않습니다.",
     "distinction": "Badge: 클릭 불가 — 상태·속성·카테고리를 표시하는 정적 레이블. Chip: 클릭 가능 — 필터·선택 조작 요소(사용자가 직접 선택/해제). Indicator: 현재 위치(몇 번째)를 점·막대로 표시."
   },
   "Banner": {
+    "name_ko": "배너",
     "standalone": true,
     "description": "이미지나 메시지를 넓은 영역에 노출해 정보나 프로모션을 전달하는 컴포넌트입니다. 주로 화면 상단이나 콘텐츠 사이에 배치되며, 클릭하면 관련 페이지로 이동합니다. 여러 장을 가로로 넘겨보는 경우 인디케이터와 함께 사용하고, 이벤트나 광고처럼 사용자의 시선을 끌어야 하는 콘텐츠를 노출할 때 활용합니다.",
     "distinction": "프로모/광고성 노출 전용 — 완결된 정보 묶음은 Card, 가로 스크롤 탐색 일반은 Carousel, 항목 행 나열은 Item. 단순 대표 이미지는 Thumbnail."
   },
   "BottomGroup": {
+    "name_ko": "하단 버튼 그룹",
     "standalone": true,
     "description": "연관된 버튼들을 하나의 그룹으로 묶는 컨테이너입니다. 화면 하단에 고정되어 주요 액션을 제공하는 CTA 영역으로도 활용되며, 싱글 버튼 또는 듀얼 버튼 구성을 지원합니다.",
     "distinction": "BottomGroup: 화면 하단 고정 CTA 버튼 영역(오버레이 없음). BottomSheet: 하단 슬라이드 오버레이(보조 콘텐츠·필터). Footer: 법적 고지·사업자 정보(정적 텍스트, 인터랙션 없음)."
   },
   "BottomSheet": {
+    "name_ko": "바텀시트",
     "standalone": true,
     "description": "모바일 화면 좌우상하에서 오버레이되어 올라오는 보조 콘텐츠 영역입니다. 옵션 선택, 상세 필터처럼 현재 화면을 벗어나지 않고 보조 작업을 처리할 때 사용합니다.",
     "distinction": "BottomSheet: 하단에서 슬라이드 업되는 보조 콘텐츠 오버레이(필터·옵션 선택). Dialog: 화면 중앙 모달(확인·경고). BottomGroup: 오버레이 없이 화면 하단에 고정된 CTA 버튼 영역."
   },
   "Button": {
+    "name_ko": "버튼",
     "standalone": false,
     "description": "작업을 수행하는데 사용되는 클릭 가능한 요소입니다. 주로 콘텐츠 혹은 화면의 하단 영역에 배치되며, 확인/취소/삭제처럼 의도가 명확한 단일 액션에 사용합니다.",
     "distinction": "Button: 텍스트 레이블이 있는 일반 버튼. ButtonIcon: 아이콘만으로 구성된 닫기·삭제 전용 버튼. BottomGroup: 화면 하단 고정 CTA 버튼 영역(버튼 그룹 컨테이너)."
   },
   "ButtonIcon": {
+    "name_ko": "아이콘 버튼",
     "standalone": false,
     "description": "아이콘만으로 구성된 버튼 컴포넌트입니다. 텍스트 없이 아이콘 단독으로 액션을 수행하며, 닫기, 삭제 등 직관적으로 인지 가능한 동작에 사용합니다.",
     "distinction": "ButtonIcon: 텍스트 없이 아이콘 단독(닫기·삭제 등 직관적 동작). Button: 텍스트 레이블이 있는 일반 버튼."
   },
   "Calendar": {
+    "name_ko": "캘린더",
     "standalone": true,
     "description": "날짜 또는 날짜 범위를 선택할 수 있는 달력 UI 요소입니다. DatePicker의 내부 구성 요소로 사용되며, 단독으로도 화면에 고정 노출할 수 있습니다."
   },
   "Card": {
+    "name_ko": "카드",
     "standalone": true,
     "description": "관련된 정보와 액션을 하나의 단위로 묶어 표시하는 컨테이너입니다. 콘텐츠 유형과 레이아웃에 따라 정보형(InfoList), 가로형 상품(ProductHorizontalList), 세로형 상품(ProductVerticalList) 등으로 구분되며, 리스트나 그리드 내에서 반복 배치됩니다.",
     "distinction": "Cell과 혼동 금지 — '여러 정보·항목을 행으로 나열'하는 것은 Card가 아니라 Cell이다. Card는 '완결된 독립 단위'(브랜드/상품 카드)에만 쓴다. 안내·주의 문구는 Alert, 접이식 고지는 Accordion. '정보를 보여준다'의 디폴트 타입은 Cell이다."
   },
   "Carousel": {
+    "name_ko": "캐러셀",
     "standalone": true,
     "description": "*ShadCN에 정의된 Carousel은 현재 저희가 사용하는 개념과 인터랙션, 구조에 차이가 있어, Thumbnail과 Carousel 두 가지 타입으로 새롭게 정의했습니다. (성념) 여러 콘텐츠 아이템을 가로 스크롤로 탐색할 수 있는 컨테이너입니다. 이미지나 카드처럼 시각적 콘텐츠를 한 화면 안에서 연속으로 훑어볼 때 사용합니다."
   },
   "Cell": {
+    "name_ko": "목록 셀",
     "standalone": true,
     "description": "리스트 내에서 반복되는 하나의 항목 단위를 구성하는 컴포넌트입니다. 슬롯 기반으로 텍스트, 아이콘, 뱃지, 버튼 등 내부 요소를 자유롭게 조합할 수 있으며, 정보 목록, 장바구니, 결제 내역, 설정 항목 등 다양한 맥락에서 사용합니다.",
     "distinction": "'정보를 행으로 표시'하거나 '동일 구조 항목을 반복 나열'하는 기본형 — 설정 행·납부 내역·회선 목록 등. 선택(라디오/체크박스)이 포함된 행은 CellSelectedItem(Cell 타입)을 쓰고, 순수 선택 컨트롤 부품이 필요할 때만 Radio/Checkbox 타입을 쓴다. 완결된 독립 요약 단위는 Card, 고지성 문구는 Alert."
   },
   "Chart": {
+    "name_ko": "차트",
     "standalone": true,
     "description": "수치 데이터를 막대, 선, 원형 등의 그래프로 시각화하는 컴포넌트입니다. 추세, 비율, 비교처럼 숫자만으로 파악하기 어려운 패턴을 전달할 때 사용합니다.",
     "distinction": "Chart: 데이터의 패턴과 추세를 파악할 때 Table: 항목 간 수치를 정확하게 비교할 때"
   },
   "Checkbox": {
+    "name_ko": "체크박스",
     "standalone": false,
     "description": "하나 이상의 항목을 선택하거나 해제할 수 있는 입력 요소로, 복수 선택이 가능합니다. 약관 동의, 관심 분야처럼 여러 항목을 동시에 선택해야 하는 상황에 사용합니다.",
     "distinction": "Checkbox/Radio는 순수 선택 컨트롤 부품 — 단독으로 SB 행에 등장하지 않고 반드시 Cell(CellSelectedItem) 슬롯 안에 내장된다. SB에서 선택 목록 행이 필요하면 Cell 타입의 CellSelectedItem을 써야 한다. Checkbox: 복수 선택(여럿 동시). Radio: 단일 선택(하나만).",
@@ -75,85 +90,103 @@
     "redirect_reason": "선택 행이 필요할 때는 Cell > CellSelectedItem(variant=checkbox)을 사용한다. Checkbox 타입 컴포넌트는 CellSelectedItem 내부 부품으로만 존재하며 SB 컴포넌트 상세에 단독 등장 불가."
   },
   "Chip": {
+    "name_ko": "칩",
     "standalone": true,
     "description": "현재 화면 내에서 콘텐츠 DB의 조회 기준을 사용자가 직접 선택하여 조회할 수 있을 경우 활용하는 요소입니다. 태그, 필터와 같은 조작 요소에서 주로 활용되며, 정의된 단계의 화면에 따라 중복/단일 선택이 결정됩니다.",
     "distinction": "Chip: 현재 섹션 내 세부 필터/선택(중복 선택 가능). Tab: 콘텐츠 DB 전체를 전환하는 탭(하위 전체 영향). FilterBar: 정렬+필터를 한 줄에 묶은 바(Chip·버튼 포함 컨테이너)."
   },
   "DatePicker": {
+    "name_ko": "날짜 선택기",
     "standalone": false,
     "description": "사용자가 날짜 또는 날짜 범위를 선택할 수 있는 입력 요소입니다. 캘린더 UI 또는 텍스트 직접 입력 방식을 제공하며, 예약·일정·기간 설정처럼 날짜를 지정해야 하는 상황에서 사용합니다."
   },
   "DetailInfo": {
+    "name_ko": "상품 상세 정보",
     "standalone": true,
     "description": "상품 상세 페이지에서 핵심 정보를 표시하는 영역 컴포넌트입니다. 카테고리, 상품명, 가격, 할인율, 뱃지, 쿠폰 버튼, 브랜드 배너 등을 조합하여 구성되며, 혜택 브랜드·구독 상품 등 상세 유형에 따라 내부 요소가 유동적으로 변경됩니다.",
     "distinction": "DetailInfo: 상품 상세 페이지 전용 핵심 정보 영역(카테고리·가격·할인율·뱃지 조합). Card: 일반 정보를 담는 독립 컨테이너. Cell: 목록 행 단위."
   },
   "Dialog": {
+    "name_ko": "팝업",
     "standalone": true,
     "description": "사용자의 확인이나 결정이 필요한 경우 화면 위에 표시되는 오버레이 컴포넌트입니다. 타이틀, 본문 텍스트, 액션 버튼으로 구성되며, 작업 확인·경고·안내 등 사용자가 반드시 응답해야 하는 상황에서 사용합니다. 다이얼로그가 열린 동안 배경과의 상호작용은 차단됩니다.",
     "distinction": "Dialog: 화면 중앙 모달 — 배경 차단, 사용자 응답 필수(확인·경고). BottomSheet: 하단 슬라이드 오버레이 — 보조 작업 처리, 드래그로 닫기 가능. Snackbar: 자동 소멸 결과 알림."
   },
   "Divider": {
+    "name_ko": "구분선",
     "standalone": true,
     "description": "콘텐츠 영역을 시각적으로 구분하는 얇은 선입니다. 리스트 항목 사이나 섹션 간 경계를 명확히 할 때 사용하며 BG가 있는 컴포넌트 다음에는 사용하지 않으며 목록의 마지막 항목에는 사용하지 않습니다."
   },
   "Dropdown": {
+    "name_ko": "드롭다운",
     "standalone": true,
     "description": "여러 옵션 중 하나를 선택할 수 있도록 항목 목록을 펼쳐 보여주는 컴포넌트입니다. 접힌 상태에서는 카테고리명만 노출되고, 펼치면 선택 가능한 항목이 리스트로 표시됩니다. 색상, 용량, 배송 방법 등 상품 옵션 선택이나 필터 조건 설정에 사용합니다.",
     "distinction": "Dropdown: 상품 옵션·필터처럼 화면 안에서 펼쳐 선택하는 목록 컴포넌트. SelectBox: 폼 내 정형 선택(국가·카테고리). Chip: 필터 조건 선택(단일 행 내 여러 항목)."
   },
   "Empty": {
+    "name_ko": "빈 상태",
     "standalone": false,
     "description": "표시할 데이터나 콘텐츠가 없을 때 현재 상태를 안내하는 컴포넌트입니다. 목록, 검색 결과, 표 등이 비어 있는 경우 사용하며, 비어 있는 이유와 다음에 할 수 있는 행동을 함께 안내합니다.",
     "distinction": "Empty: 데이터가 없는 상태 — 다음 행동 안내. Skeleton: 데이터를 불러오는 중인 상태(로딩). Alert: 데이터가 있지만 사용자에게 전달할 고지 메시지."
   },
   "FilterBar": {
+    "name_ko": "필터바",
     "standalone": true,
     "description": "목록 상단에서 항목 개수를 표시하고 정렬, 필터 기능을 제공하는 컴포넌트입니다. 전체 개수 텍스트와 함께 정렬 기준 변경, 필터 적용 버튼을 한 줄에 배치합니다. 정렬이나 필터를 누르면 옵션을 선택할 수 있는 화면이 별도로 열리며, 목록이나 검색 결과 위에 놓여 사용자가 원하는 조건으로 콘텐츠를 좁혀볼 수 있도록 합니다."
   },
   "Footer": {
+    "name_ko": "푸터",
     "standalone": true,
     "description": "화면 최하단에 위치해 약관, 사업자 정보, 고지사항 등을 제공하는 컴포넌트입니다. 이용약관과 개인정보처리방침 링크, 사업자 등록 정보, 저작권 표시, 통신판매 중개업 안내 같은 법적 고지 정보를 담습니다. 주로 페이지 가장 아래에 배치되어 서비스 운영에 필요한 안내와 정책 정보를 전달하는 역할을 합니다",
     "distinction": "Footer: 법적 고지·사업자 정보·저작권 등 정적 텍스트(인터랙션 없음). BottomGroup: CTA 버튼 영역(인터랙션). NavigationBar: 섹션 전환 탭바."
   },
   "Icon": {
+    "name_ko": "아이콘",
     "standalone": false,
     "description": "기능이나 의미를 시각적으로 압축해 전달하는 작은 그래픽 요소입니다. 텍스트 없이도 동작이나 대상을 직관적으로 인지할 수 있게 하며, 버튼이나 메뉴, 네비게이션 등 다양한 컴포넌트 안에 함께 배치됩니다. 단독으로 쓰이기보다 다른 요소와 조합되어 의미를 보조하는 역할을 합니다.",
     "distinction": "Icon: 기능·의미를 전달하는 픽토그램 — 단독 SB 행 불가, 반드시 다른 컴포넌트 슬롯 안에 배치. Thumbnail: 콘텐츠 대표 이미지(비율 고정). Avatar: 사람/조직 대표 이미지."
   },
   "Indicator": {
+    "name_ko": "인디케이터",
     "standalone": false,
     "description": "여러 콘텐츠 중 현재 보고 있는 위치를 점이나 막대 형태로 표시하는 컴포넌트입니다. 주로 썸네일이나 배너처럼 여러 항목을 가로로 넘겨보는 영역에서, 전체 중 몇 번째를 보고 있는지 알려주는 역할을 합니다. 단독으로는 쓰이지 않고 캐러셀이나 슬라이드 영역 안에 함께 배치합니다.",
     "distinction": "Indicator: 여러 항목 중 현재 위치를 점·막대로 표시(몇 번째인지). Progress: 작업 진행률(%). Spinner: 완료 시점 불명 로딩 상태."
   },
   "Input": {
+    "name_ko": "입력 필드",
     "standalone": true,
     "description": "레이블, 입력 필드, 도움말 텍스트, 액션 버튼을 하나의 단위로 묶은 입력 컴포넌트입니다. 사용자로부터 텍스트를 입력받아 즉시 액션을 실행할 수 있으며, 인증번호 발송, 쿠폰 적용 등 입력과 동시에 버튼 동작이 필요한 경우에 사용합니다.",
     "distinction": "Input: 레이블+필드+버튼을 묶은 입력 그룹(인증번호 발송·쿠폰 적용 등). Search: 탐색 전용 입력(자동완성·클리어 포함). TextArea: 두 줄 이상 자유 텍스트 입력."
   },
   "Layout": {
+    "name_ko": "레이아웃",
     "standalone": true,
     "description": "콘텐츠 자체가 아니라 콘텐츠를 어떻게 배치할지를 정의하는 컴포넌트 그룹입니다. 여백과 정렬, 간격을 일관되게 관리해 화면 구조를 잡는 역할을 하며, 단독으로 쓰이기보다 다른 컴포넌트와 조합해 사용합니다.",
     "distinction": "Layout: 콘텐츠 없이 배치 구조만 정의하는 컨테이너. Card: 콘텐츠를 담은 독립 단위 컨테이너. Divider: 시각적 구분선."
   },
   "NavigationBar": {
+    "name_ko": "하단 탭바",
     "standalone": true,
     "description": "모바일 앱 하단에 고정되어 주요 섹션 간 전환을 제공하는 네비게이션 요소입니다. 홈, 탐색, 마이페이지처럼 엄지로 쉽게 접근할 수 있는 위치에 3~5개 핵심 기능을 배치합니다.",
     "distinction": "NavigationBar: 앱 하단 고정 섹션 전환 탭바(홈·탐색·마이). AppBar: 화면 상단 고정 헤더(타이틀·뒤로가기). Tab: 화면 내 콘텐츠 DB 전환 탭 스트립."
   },
   "Pagination": {
+    "name_ko": "페이지네이션",
     "standalone": false,
     "description": "대량의 콘텐츠를 페이지 단위로 나누어 탐색할 수 있는 네비게이션 요소입니다. 검색 결과, 게시판처럼 많은 항목을 일정 단위로 끊어서 보여줄 때 사용합니다."
   },
   "Popover": {
+    "name_ko": "팝오버",
     "standalone": false,
     "description": "특정 요소에 종속된 가벼운 정보나 미니 액션을 임시로 표시하는 컴포넌트입니다. 현재 화면에서 벗어나지 않고 간단한 설정이나 선택 작업을 처리할 때 사용합니다."
   },
   "Progress": {
+    "name_ko": "진행률 바",
     "standalone": false,
     "description": "진행 중인 작업의 상태를 실시간으로 알려주는 인디케이터입니다. 로딩, 업로드, 다운로드 등 처리 시간이 소요되는 작업에서 사용자가 기다려야 한다는 것을 인지할 수 있도록 돕습니다."
   },
   "Radio": {
+    "name_ko": "라디오 버튼",
     "standalone": false,
     "description": "2개 이상의 선택지 중, 단일 선택이 필요한 경우 활용되는 입력 요소입니다. 미선택 상태의 항목이 선택될 경우, 기존 선택항목은 자동 선택 해제되며, 반드시 하나만 골라야 하는 상황에 사용됩니다.",
     "distinction": "Radio/Checkbox는 순수 선택 컨트롤 부품 — 단독으로 SB 행에 등장하지 않고 반드시 Cell(CellSelectedItem) 슬롯 안에 내장된다. SB에서 선택 목록 행이 필요하면 Cell 타입의 CellSelectedItem을 써야 한다. Radio: 단일 선택(하나만). Checkbox: 복수 선택(여럿 동시 가능).",
@@ -161,79 +194,95 @@
     "redirect_reason": "선택 행이 필요할 때는 Cell > CellSelectedItem(variant=radioButton)을 사용한다. Radio 타입 컴포넌트는 CellSelectedItem 내부 부품으로만 존재하며 SB 컴포넌트 상세에 단독 등장 불가."
   },
   "Search": {
+    "name_ko": "검색창",
     "standalone": true,
     "description": "사용자가 키워드를 입력하여 원하는 콘텐츠를 찾을 수 있는 입력 컴포넌트입니다. 플레이스홀더, 검색 아이콘, 클리어 버튼으로 구성되며, 텍스트 입력 시 클리어 버튼이 활성화됩니다.",
     "distinction": "Search: 탐색 전용 — 자동완성·추천 검색어·클리어 버튼 포함. Input: 일반 폼 입력 — 인증번호·쿠폰처럼 버튼 동작이 함께 필요한 경우."
   },
   "SelectBox": {
+    "name_ko": "선택 박스",
     "standalone": false,
     "description": "유저에게 정해진 명확한 몇 가지 선택지 중 하나를 고르게 할 때 사용합니다. 국가, 카테고리처럼 선택지가 명확한 경우에 사용합니다.",
     "distinction": "SelectBox: 국가·카테고리처럼 제공된 목록에서만 선택. Dropdown: 상품 옵션·필터처럼 펼침 선택이 필요한 경우."
   },
   "Skeleton": {
+    "name_ko": "스켈레톤",
     "standalone": false,
     "description": "콘텐츠를 불러오는 동안 레이아웃 형태를 임시로 보여주는 요소입니다. 카드, 리스트처럼 반복 구조를 로딩할 때 사용하며, 카테고리·아이콘처럼 정적인 콘텐츠에는 적용하지 않습니다.",
     "distinction": "Empty: 표시할 데이터가 없는 상태 Skeleton: 데이터를 불러오는 중인 상태"
   },
   "Slider": {
+    "name_ko": "슬라이더",
     "standalone": false,
     "description": "특정 범위 내에서 값을 드래그로 선택할 수 있는 입력 요소입니다. 볼륨, 가격 범위처럼 연속적인 값을 조정할 때 사용하며, 단일 값과 범위 선택을 모두 지원합니다."
   },
   "Snackbar": {
+    "name_ko": "스낵바",
     "standalone": false,
     "description": "사용자의 행동에 대한 간결한 피드백을 제공하는 일시적인 알림입니다. 주로 화면 하단에 나타나 사용자의 작업 흐름을 방해하지 않으며, 실행 취소 같은 단순 상호작용 버튼을 포함할 수 있습니다.",
     "distinction": "Snackbar: 사용자 확인 없이 자동으로 사라지는 결과 알림. Dialog: 사용자의 확인이 필요한 모달 알림."
   },
   "Spinner": {
+    "name_ko": "스피너",
     "standalone": false,
     "description": "데이터 로딩이나 시스템 처리 중임을 시각적으로 알리는 인디케이터입니다. 소요 시간을 예측하기 어려운 작업에서 진행 중임을 표시하며, 처리 완료 전 추가 입력을 방지합니다.",
     "distinction": "Progress: 진행률을 수치로 표시할 수 있을 때 Spinner: 완료 시점을 예측할 수 없을 때"
   },
   "Switch": {
+    "name_ko": "스위치",
     "standalone": false,
     "description": "같은 콘텐츠 영역 내에서 보기 방식이나 필터를 변경하는 이진 상태 컨트롤입니다. 알림 수신, 다크 모드처럼 단일 설정을 켜거나 끄는 상황에 사용합니다.",
     "distinction": "Switch: 알림 수신·다크 모드 등 단일 설정 ON/OFF 즉시 전환. Toogle: 좋아요·북마크처럼 특정 기능의 활성화 여부 전환."
   },
   "Tab": {
+    "name_ko": "탭",
     "standalone": true,
     "description": "현재 화면 내 호출된 콘텐츠 DB의 기준을 제공하고, 사용자가 DB를 변경하여 조회할 수 있게 활용하는 요소입니다. 단일 선택만 가능하며, 선택된 값에 따라 하위 호출되는 Chip, Item등과 같은 요소 모두 영향을 받습니다.",
     "distinction": "Tab: 선택된 값에 따라 하위 Chip·Cell 등 콘텐츠 전체가 변경되는 DB 전환 탭. Chip: 현재 섹션 내 세부 필터·다중 선택. FilterBar: 정렬+필터 옵션을 한 줄에 묶은 바 컨테이너. NavigationBar: 앱 전체 섹션 전환용 하단 탭바."
   },
   "Table": {
+    "name_ko": "표",
     "standalone": false,
     "description": "대량의 데이터를 행과 열로 구조화하여 보여주는 요소입니다. 데이터 비교나 패턴 파악이 필요한 경우에 사용하며, 데스크톱 환경에서만 사용합니다."
   },
   "Text": {
+    "name_ko": "텍스트",
     "standalone": false,
     "description": "다양한 크기와 굵기 조합으로 텍스트를 표시하는 기본 단위 컴포넌트입니다. 11~20px 크기와 Regular, Medium, SemiBold 굵기를 지원하며, 앞뒤로 아이콘 슬롯을 포함할 수 있습니다. 다른 컴포넌트 내부에서 텍스트 요소로 반복 사용됩니다.",
     "distinction": "Text: 단독 SB 행에 등장하지 않는 텍스트 부품. Title: 섹션·화면 제목 영역(standalone). TextGroup: 상품 정보 텍스트 묶음(standalone)."
   },
   "TextArea": {
+    "name_ko": "입력 영역",
     "standalone": false,
     "description": "2줄 이상의 텍스트를 입력할 수 있는 입력 요소입니다. 리뷰, 메모, 문의처럼 자유로운 형식의 긴 텍스트를 입력받을 때 사용합니다.",
     "distinction": "TextField: 한 줄 이하의 단순 값 입력 TextArea: 두 줄 이상의 자유로운 텍스트 입력"
   },
   "TextGroup": {
+    "name_ko": "텍스트 그룹",
     "standalone": false,
     "description": "제목, 설명, 가격, 뱃지 등 여러 텍스트를 정해진 위계로 묶어 보여주는 컴포넌트입니다. 상품명이나 가격, 할인율, 평점처럼 함께 노출되는 텍스트 정보를 하나의 단위로 구성할 때 사용합니다",
     "distinction": "TextGroup: 상품명·가격·할인율·평점 등 정보성 텍스트를 위계 있게 묶은 것. Title: 섹션·화면 맥락을 안내하는 제목 영역. Text: 단독으로 쓰이지 않는 텍스트 부품."
   },
   "Thumbnail": {
+    "name_ko": "썸네일",
     "standalone": true,
     "description": "이미지를 일정한 비율과 형태로 고정해 보여주는 컴포넌트입니다. 정사각형, 직사각형, 원형 등 정해진 틀 안에 이미지를 담으며, 내부 이미지는 상황에 따라 교체됩니다. 콘텐츠의 비율과 모서리 형태를 일관되게 유지해야 할 때 사용하며, 단독으로 쓰이거나 배너나 리스트, 카드 등의 내부에 배치됩니다.",
     "distinction": "이미지가 본체인 시각 요소. 텍스트 정보를 행으로 나열하면 Cell, 완결된 독립 묶음은 Card, 프로모성 배너는 Banner, 사람/조직 대표 이미지는 Avatar."
   },
   "Title": {
+    "name_ko": "제목",
     "standalone": true,
     "description": "화면 또는 섹션의 맥락을 전달하는 텍스트 영역 컴포넌트입니다. 제목, 부제목, 설명 텍스트 등을 조합하여 콘텐츠의 계층 구조와 목적을 사용자에게 안내하는 역할로 사용합니다.",
     "distinction": "Title: 화면·섹션의 제목 영역(제목+부제목+설명 계층). TextGroup: 상품명·가격·뱃지 등 정보성 텍스트 묶음. Text: 다른 컴포넌트 내부 텍스트 단위 부품(단독 SB 행 불가)."
   },
   "Toogle": {
+    "name_ko": "토글",
     "standalone": false,
     "description": "눌린 상태(On)와 기본 상태(Off)를 전환하는 버튼 컴포넌트입니다. 좋아요, 북마크 처리처럼 특정 기능의 활성화 여부를 전환할 때 사용합니다.",
     "distinction": "Toogle: 좋아요·북마크처럼 기능 활성화 여부 전환(아이콘 버튼 형태). Switch: 알림 수신·설정처럼 ON/OFF 이진 토글(슬라이더 형태)."
   },
   "Tooltip": {
+    "name_ko": "툴팁",
     "standalone": false,
     "description": "특정 UI 요소 위에서 해당 요소에 대한 간략한 레이블이나 추가적인 정보를 말풍선으로 제공합니다.",
     "distinction": "Tooltip: hover 시 짧은 설명만 제공 Popover: 클릭으로 열리며 추가 액션 포함 가능"
