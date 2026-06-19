@@ -352,6 +352,15 @@
     "do": "리스트 또는 카드 레이아웃 내에서 타이틀과 하위 콘텐츠를 묶어 표시할 때 사용한다.",
     "rules": "props: title(string), showTitle(boolean), children(ReactNode)."
   },
+  "CellLeftSelect": {
+    "type": "Cell",
+    "standalone": true,
+    "description": "왼쪽 선택 컨트롤과 선택적 우측 이동 아이콘으로 구성된 셀 아이템.",
+    "anatomy": "root[ RadioItem|CheckboxLeftTextItem, CellRightItem? ]",
+    "states": "variants(Radio|Check), cellRightItem(on|off)",
+    "do": "왼쪽 radio 또는 checkbox 선택 컨트롤과 오른쪽 이동 아이콘을 한 행에 배치해야 할 때 사용한다.",
+    "rules": "props: cellRightItem(boolean), variants(\"Radio\"|\"Check\"). 내부 라벨은 Figma 기본값 Label을 사용한다."
+  },
   "CellLeftTable": {
     "type": "Cell",
     "standalone": true,
@@ -486,15 +495,6 @@
     "states": "variants(Circle|Line), size(Small|Medium), state(on|off), checked(on|off)",
     "do": "텍스트 라벨 오른쪽에 체크박스를 배치해야 하는 선택 항목에 사용한다.",
     "rules": "props: checked(boolean), label(string), size(\"Small\"|\"Medium\"), state(boolean), variants(\"Circle\"|\"Line\")."
-  },
-  "CheckboxTextItem": {
-    "type": "Checkbox",
-    "standalone": false,
-    "description": "텍스트 레이블이 함께 표시되는 체크박스 아이템 컴포넌트로, 선택/해제 상태와 비활성화 상태를 지원한다.",
-    "anatomy": "root[ checkboxWrap, label(p) ]",
-    "states": "Unselected, Selected, Disabled",
-    "do": "단일 항목 선택/해제가 필요한 목록 행에 사용한다.",
-    "rules": "props: selection(boolean), disabled(boolean), label(string), onChange."
   },
   "Chip": {
     "type": "Chip",
