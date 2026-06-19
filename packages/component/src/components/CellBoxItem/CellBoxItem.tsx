@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CellBoxItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .CellBoxItem (node 51273:84394)
-// anatomy: wrap[ slot[ children ] ]
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .CellBoxItem (node 51273:84394)
+// anatomy: root[ CellBoxItemSlot[ children ] ]
 
 interface Props {
   /** Slot content rendered inside the box */
@@ -16,7 +16,9 @@ export function CellBoxItem({ children, className }: Props) {
       className={[styles.wrap, className].filter(Boolean).join(" ")}
       data-cx-component="CellBoxItem"
     >
-      <div className={styles.slot}>{children}</div>
+      <div className={styles.slot} data-name="CellBoxItemSlot">
+        {children}
+      </div>
     </div>
   );
 }
