@@ -1,7 +1,10 @@
 import React from "react";
 import { BottomGroup } from "../BottomGroup/BottomGroup";
+import { BottomSheetHandleItem } from "../BottomSheetHandleItem/BottomSheetHandleItem";
+import { IconClose } from "../IconClose/IconClose";
+import { TabScroll } from "../TabScroll/TabScroll";
 import styles from "./Bottomsheet.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .Bottomsheet (node 51333:109243)
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .Bottomsheet (node 51333:109243)
 // anatomy: root[ handle?(HandleItem) | titleSection?(titleRow[title, subText], closeBtn) , tabScroll?(tabs[TabScrollItem*]), slot[children], actionGroup?(aiArea) ]
 
 interface TabItem {
@@ -12,14 +15,26 @@ interface TabItem {
 interface Props {
   /** Header variant: "ButtonClose" shows title + X close button; "Handle" shows the drag handle bar */
   variant?: "ButtonClose" | "Handle";
+  /** Figma property alias. false maps to Handle, true maps to ButtonClose. */
+  buttonClose?: boolean;
   /** Main section/content title shown in ButtonClose variant */
   title?: string;
+  /** Figma heading text alias */
+  heading?: string;
+  /** Whether to render the heading block */
+  showTitle?: boolean;
   /** Sub text shown below the title in ButtonClose variant */
   subText?: string;
+  /** Figma description text alias */
+  description?: string;
   /** Whether to show the sub text line */
   showSubText?: boolean;
+  /** Figma description visibility alias */
+  description2?: boolean;
   /** Whether to render the tab strip */
   showTab?: boolean;
+  /** Figma tab visibility alias */
+  tab?: boolean;
   /** Tab items to render in the strip */
   tabs?: TabItem[];
   /** Currently selected tab index */
@@ -30,6 +45,8 @@ interface Props {
   onClose?: () => void;
   /** Whether to show the bottom action group (AI area with CTA buttons) */
   showActionGroup?: boolean;
+  /** Figma action button visibility alias */
+  actionButton?: boolean;
   /** Primary CTA label in the action group */
   primaryLabel?: string;
   /** Secondary CTA label in the action group (shown alongside primary) */
@@ -38,131 +55,122 @@ interface Props {
   onPrimary?: () => void;
   /** Click handler for the secondary action button */
   onSecondary?: () => void;
-  /** AI hint text displayed above the action group */
-  aiHintText?: string;
+  /** Upper table left label in the action group */
+  upperItemLabel?: string;
+  /** Upper table right value in the action group */
+  upperItemValue?: string;
   /** Slot content rendered in the main body area */
   children?: React.ReactNode;
+  className?: string;
 }
 
 const DEFAULT_TABS: TabItem[] = [
-  { label: "탭명", selected: true },
-  { label: "탭명" },
-  { label: "탭명" },
-  { label: "탭명" },
-  { label: "탭명" },
-  { label: "탭명" },
+  { label: "Label", selected: true },
+  { label: "Label" },
+  { label: "Label" },
+  { label: "Label" },
 ];
 
 export function Bottomsheet({
   variant = "ButtonClose",
-  title = "섹션/콘텐츠 타이틀",
-  subText = "서브 텍스트",
+  buttonClose,
+  title,
+  heading,
+  showTitle = true,
+  subText,
+  description,
   showSubText = true,
+  description2,
   showTab = true,
+  tab,
   tabs = DEFAULT_TABS,
   activeTab = 0,
   onTabChange,
   onClose,
   showActionGroup = true,
+  actionButton,
   primaryLabel = "구독하기",
-  secondaryLabel = "선물하기",
   onPrimary,
-  onSecondary,
-  aiHintText = "텍스트",
+  upperItemLabel = "타이틀",
+  upperItemValue = "내용 들어가는 부분",
   children,
+  className,
 }: Props) {
+  const resolvedVariant = buttonClose === undefined ? variant : buttonClose ? "ButtonClose" : "Handle";
+  const resolvedShowActionGroup = actionButton ?? showActionGroup;
+  const resolvedShowTab = tab ?? showTab;
+  const resolvedShowSubText = description2 ?? showSubText;
+  const resolvedHeading = heading ?? title ?? "Heading";
+  const resolvedDescription = description ?? subText ?? "Description";
+  const tabLabels = tabs.map((item) => item.label);
+
   return (
     <div
-      className={styles.root}
+      className={[
+        styles.root,
+        resolvedVariant === "ButtonClose" ? styles.rootButtonClose : styles.rootHandle,
+        !resolvedShowActionGroup ? styles.rootWithoutAction : "",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
       data-cx-component="Bottomsheet"
-      data-variant={variant}
+      data-variant={resolvedVariant}
+      data-action-button={resolvedShowActionGroup ? "true" : "false"}
+      data-title={showTitle ? "true" : "false"}
     >
-      {/* ── Header ── */}
-      {variant === "Handle" && (
-        <div className={styles.handleBar} aria-hidden="true">
-          <div className={styles.handle} />
-        </div>
-      )}
+      {resolvedVariant === "Handle" && <BottomSheetHandleItem className={styles.handleItem} />}
 
-      {variant === "ButtonClose" && (
-        <div className={styles.titleSection}>
-          <div className={styles.titleTextItem}>
-            <div className={styles.textItem}>
-              <p className={styles.title}>{title}</p>
+      {resolvedVariant === "ButtonClose" && (
+        <div className={[styles.header, showTitle ? "" : styles.headerCloseOnly].filter(Boolean).join(" ")}>
+          {showTitle && (
+            <div className={styles.titleTextGroup}>
+              <p className={styles.heading}>{resolvedHeading}</p>
+              {resolvedShowSubText && <p className={styles.description}>{resolvedDescription}</p>}
             </div>
-            {showSubText && (
-              <div className={styles.subTextGroup}>
-                <p className={styles.subText}>{subText}</p>
-              </div>
-            )}
-          </div>
+          )}
           <button
             type="button"
-            className={styles.closeBtn}
+            className={styles.closeButton}
             onClick={onClose}
             aria-label="닫기"
           >
-            {/* Close X icon — inline SVG matching Figma IconItem/Nomal/Close */}
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M3 3L13 13M13 3L3 13"
-                stroke="var(--skt-color-icon-neutral-primary, #060c1f)"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            </svg>
+            <IconClose size={24} />
           </button>
         </div>
       )}
 
-      {/* ── Tab Strip ── */}
-      {showTab && (
-        <div className={styles.tabScroll} role="tablist">
-          <div className={styles.tabTrack}>
-            {tabs.map((tab, i) => {
-              const isSelected = i === activeTab;
-              return (
-                <button
-                  key={i}
-                  type="button"
-                  role="tab"
-                  aria-selected={isSelected}
-                  className={[
-                    styles.tabItem,
-                    isSelected ? styles.tabItemSelected : styles.tabItemDefault,
-                  ].join(" ")}
-                  onClick={() => onTabChange?.(i)}
-                >
-                  <span className={styles.tabLabel}>{tab.label}</span>
-                  {isSelected && <div className={styles.tabUnderline} />}
-                </button>
-              );
-            })}
+      {resolvedVariant === "Handle" && showTitle && (
+        <div className={styles.header}>
+          <div className={styles.titleTextGroup}>
+            <p className={styles.heading}>{resolvedHeading}</p>
+            {resolvedShowSubText && <p className={styles.description}>{resolvedDescription}</p>}
           </div>
-          <div className={styles.tabBorder} />
         </div>
       )}
 
-      {/* ── Slot / Body ── */}
+      {resolvedShowTab && (
+        <TabScroll
+          className={styles.tabScroll}
+          labels={tabLabels}
+          selectedIndex={activeTab}
+          onTabChange={onTabChange}
+        />
+      )}
+
       <div className={styles.slot}>{children}</div>
 
-      {showActionGroup && (
+      {resolvedShowActionGroup && (
         <BottomGroup
-          variant="Ai"
-          showAiLabel
-          aiLabelText={aiHintText}
-          showSecondaryButton
+          className={styles.bottomGroup}
+          variants="Normal"
+          upperItem
+          upperItemVariants="Table"
+          upperItemLabel={upperItemLabel}
+          upperItemValue={upperItemValue}
+          areaItemVariants="1 Botton"
           primaryLabel={primaryLabel}
-          secondaryLabel={secondaryLabel}
           onPrimary={onPrimary}
-          onSecondary={onSecondary}
         />
       )}
     </div>
