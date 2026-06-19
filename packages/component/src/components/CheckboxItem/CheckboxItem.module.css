@@ -1,79 +1,97 @@
-/* CheckboxItem — Figma node 50943:30840 */
-/* anatomy: root[ checkbox[ checkIcon? ], label? ] */
-/* Variants: checked(true|false) × disabled(true|false) = 4 combinations */
+/* CheckboxItem - Figma node 50943:30840
+   properties: selection, state, variant
+*/
 
 .root {
   display: inline-flex;
   align-items: center;
   gap: var(--skt-spacing-8, 8px);
-  cursor: pointer;
-  user-select: none;
-  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   position: relative;
   box-sizing: border-box;
+  cursor: pointer;
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
+  user-select: none;
 }
 
-.rootDisabled {
+.root[aria-disabled="true"] {
   cursor: not-allowed;
   pointer-events: none;
 }
 
-/* ── Checkbox control (18×18 px) ───────────────────────── */
 .checkbox {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
-  border-radius: var(--skt-radius-4, 4px);
   flex-shrink: 0;
-  position: relative;
+  width: 20px;
+  height: 20px;
   box-sizing: border-box;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  color: var(--skt-color-icon-inverse-primary, #fff);
 }
 
-/* Unchecked — outlined with neutral border */
-.checkboxUnchecked {
-  background-color: var(--skt-color-bg-layer-default, #ffffff);
-  border: 1.5px solid var(--skt-color-border-neutral-strong, #d2d9eb);
+.circle {
+  border-radius: var(--skt-radius-full, 9999px);
 }
 
-/* Checked — brand-filled, no border */
-.checkboxChecked {
-  background-color: var(--skt-color-fill-brand-primary, #3617ce);
-  border: 1.5px solid var(--skt-color-fill-brand-primary, #3617ce);
-  color: var(--skt-color-text-inverse-primary, #ffffff);
+.circle.unselected.enabled {
+  border: 1.5px solid var(--skt-color-border-neutral-secondary, #d9deec);
+  background-color: var(--skt-color-fill-neutral-transparent, transparent);
+  color: var(--skt-color-icon-neutral-tertiary, #d9deec);
 }
 
-/* Disabled unchecked — dimmed border, no bg */
-.checkboxUnchecked.checkboxDisabled {
-  background-color: var(--skt-color-bg-layer-default, #ffffff);
-  border-color: var(--skt-color-fill-disabled-default, rgba(6, 12, 31, 0.1));
+.circle.selected.enabled {
+  border: 0;
+  background-color: var(--skt-color-fill-neutral-inverse, #060c1f);
+  color: var(--skt-color-icon-inverse-primary, #fff);
 }
 
-/* Disabled checked — muted fill */
-.checkboxChecked.checkboxDisabled {
-  background-color: var(--skt-color-fill-disabled-default, rgba(6, 12, 31, 0.1));
-  border-color: var(--skt-color-fill-disabled-default, rgba(6, 12, 31, 0.1));
-  color: var(--skt-color-text-neutral-quaternary, rgba(6, 12, 31, 0.2));
+.circle.unselected.disabled {
+  border: 1.5px solid var(--skt-color-gray-alpha-50, rgba(35, 55, 155, 0.05));
+  background-color: var(--skt-color-fill-disabled-default, rgba(35, 55, 155, 0.05));
+  color: var(--skt-color-icon-disabled-default, rgba(12, 27, 65, 0.18));
 }
 
-/* ── Check icon ────────────────────────────────────────── */
+.circle.selected.disabled {
+  border: 0;
+  background-color: var(--skt-color-fill-disabled-default, #e9edf7);
+  color: var(--skt-color-icon-inverse-primary, #fff);
+}
+
+.line {
+  border: 0;
+  background-color: transparent;
+}
+
+.line.unselected.enabled {
+  color: var(--skt-color-icon-neutral-quaternary, #d9deec);
+}
+
+.line.selected.enabled {
+  color: var(--skt-color-icon-neutral-primary, #060c1f);
+}
+
+.line.unselected.disabled {
+  color: var(--skt-color-icon-disabled-default, rgba(12, 27, 65, 0.18));
+}
+
+.line.selected.disabled {
+  color: var(--skt-color-icon-disabled-default, rgba(12, 27, 65, 0.18));
+}
+
 .checkIcon {
   display: block;
   flex-shrink: 0;
 }
 
-/* ── Label text ────────────────────────────────────────── */
-.label {
-  font-size: var(--skt-typography-style-14reg-font-size, var(--skt-typography-font-size-500, 14px));
-  font-weight: var(--skt-typography-style-14reg-font-weight, var(--skt-typography-font-weight-regular, 400));
-  line-height: var(--skt-typography-style-14reg-line-height, var(--skt-typography-line-height-200, 130%));
-  letter-spacing: var(--skt-typography-style-14reg-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
-  color: var(--skt-color-text-neutral-primary, #060c1f);
-  word-break: break-word;
+.circle.unselected .checkIcon {
+  opacity: 0;
 }
 
-.labelDisabled {
-  color: var(--skt-color-text-disabled-default, rgba(6, 12, 31, 0.2));
+.label {
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+  word-break: break-word;
 }

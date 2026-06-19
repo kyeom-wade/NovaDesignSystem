@@ -1,0 +1,60 @@
+/* CheckboxRightTextItem - Figma node 55765:134708
+   anatomy: root[ label, CheckboxItem ]
+   properties: checked, label, size, state, variants
+*/
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-component-checkbox-gap-1, var(--skt-spacing-8, 8px));
+  position: relative;
+  width: 94px;
+  box-sizing: border-box;
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
+}
+
+.sizeMedium {
+  height: 21px;
+}
+
+.sizeSmall {
+  height: 20px;
+}
+
+.label {
+  flex: 1 0 0;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.sizeMedium .label {
+  font-size: var(--skt-typography-font-size-700, 16px);
+}
+
+.sizeSmall .label {
+  font-size: var(--skt-typography-font-size-600, 15px);
+}
+
+.checked .label {
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+}
+
+.disabled.unchecked .label {
+  color: var(--skt-color-text-disabled-default, rgba(11, 44, 127, 0.18));
+}
+
+.disabled.checked .label {
+  color: var(--skt-color-text-neutral-tertiary, rgba(12, 34, 91, 0.42));
+}
+
+.enabled.checked .label {
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+}

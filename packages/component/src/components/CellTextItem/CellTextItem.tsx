@@ -1,10 +1,16 @@
 import React from "react";
-import { CellRightItem, type CellRightItemVariant } from "../CellRightItem/CellRightItem";
+import { CellRightItem } from "../CellRightItem";
 import styles from "./CellTextItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .CellTextItem (node 50985:75650)
-// anatomy: root[ textGroup[ title ], rightItem?[ icon | textInfo | textButton | textIcon | levelBadge | toggle ] ]
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .CellText (node 55181:49770)
+// anatomy: root[ text, rightItem?[ CellRightItem(Icon) ] ]
+// Properties: rightItem(boolean), size(15 | 16), variants(Text | Title)
 
-export type CellTextItemRightItem =
+export type CellTextSize = "15" | "16";
+export type CellTextVariant = "Text" | "Title";
+export type CellTextItemSize = CellTextSize;
+export type CellTextItemVariant = CellTextVariant;
+
+type LegacyRightItem =
   | "None"
   | "Icon"
   | "Toggle"
@@ -13,84 +19,69 @@ export type CellTextItemRightItem =
   | "LevelBadge"
   | "TextIcon";
 
-export type CellTextItemVariant = "Default" | "Bullet";
-
 interface Props {
-  /** Main label text */
+  /** Figma property: show trailing arrow item */
+  rightItem?: boolean | LegacyRightItem;
+  /** Figma property: text size */
+  size?: CellTextSize;
+  /** Figma property: text style variant */
+  variants?: CellTextVariant;
+  /** Legacy alias retained for existing callers. */
+  variant?: "Default" | "Bullet" | CellTextItemVariant;
+  /** Optional content override; hidden from primary Storybook controls. */
   label?: string;
-  /** Right-side slot content type */
-  rightItem?: CellTextItemRightItem;
-  /** Layout variant — Default or Bullet list style */
-  variant?: CellTextItemVariant;
-  /** Secondary text shown in the right slot (TextInfo / TextButton / TextIcon variants) */
+  /** Legacy props retained for existing callers. */
   rightText?: string;
-  /** Callback for TextButton right item */
   onRightButton?: () => void;
-  /** Callback for Toggle right item — current toggle value */
   toggleChecked?: boolean;
-  /** Callback fired when toggle changes */
   onToggleChange?: (checked: boolean) => void;
   className?: string;
 }
 
-export function CellTextItem({
-  label = "리스트 텍스트",
-  rightItem = "None",
-  variant = "Default",
-  rightText = "텍스트",
-  onRightButton,
-  toggleChecked = false,
-  onToggleChange,
+function resolveVariant(variants?: CellTextVariant, variant?: Props["variant"]) {
+  if (variants) return variants;
+  if (variant === "Text" || variant === "Title") return variant;
+  return "Title";
+}
+
+function resolveRightItem(rightItem?: Props["rightItem"]) {
+  if (typeof rightItem === "boolean") return rightItem;
+  if (rightItem === "None") return false;
+  if (typeof rightItem === "string") return true;
+  return true;
+}
+
+export function CellText({
+  rightItem = true,
+  size = "16",
+  variants,
+  variant,
+  label,
   className,
 }: Props) {
-  const isBullet = variant === "Bullet";
-  const rightItemVariantMap: Partial<Record<CellTextItemRightItem, CellRightItemVariant>> = {
-    Icon: "Icon",
-    TextInfo: "TextInfo",
-    TextButton: "TextButton",
-    LevelBadge: "LevelBadge",
-    TextIcon: "TextIcon",
-  };
-  const rightItemVariant = rightItemVariantMap[rightItem];
+  const resolvedVariant = resolveVariant(variants, variant);
+  const resolvedRightItem = resolveRightItem(rightItem);
+  const text = label ?? (resolvedVariant === "Text" ? "텍스트" : "타이틀");
 
   return (
     <div
       className={[
         styles.root,
-        isBullet ? styles.bullet : styles.default,
-        className ?? "",
+        styles[`size${size}`],
+        resolvedVariant === "Text" ? styles.text : styles.title,
+        className,
       ]
         .filter(Boolean)
         .join(" ")}
-      data-cx-component="CellTextItem"
-      data-variant={variant}
-      data-right-item={rightItem}
+      data-cx-component="CellText"
+      data-variants={resolvedVariant}
+      data-size={size}
+      data-right-item={resolvedRightItem}
     >
-      {/* Left text group */}
-      <div className={styles.textGroup}>
-        {isBullet && <span className={styles.bulletDot} aria-hidden="true">•</span>}
-        <p className={styles.label}>{label}</p>
-      </div>
-
-      {rightItemVariant && (
-        <CellRightItem
-          variants={rightItemVariant}
-          text={rightText}
-          onTextButtonClick={onRightButton}
-        />
-      )}
-
-      {rightItem === "Toggle" && (
-        <button
-          type="button"
-          role="switch"
-          aria-checked={toggleChecked}
-          className={[styles.toggle, toggleChecked ? styles.toggleOn : styles.toggleOff].join(" ")}
-          onClick={() => onToggleChange?.(!toggleChecked)}
-        >
-          <span className={styles.toggleHandle} />
-        </button>
-      )}
+      <p className={styles.label}>{text}</p>
+      {resolvedRightItem && <CellRightItem variants="Icon" className={styles.rightItem} />}
     </div>
   );
 }
+
+export const CellTextItem = CellText;

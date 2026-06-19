@@ -1,0 +1,42 @@
+/* CellLeftTable - Figma node 55320:38718
+   anatomy: root[ title, content ]
+   variants: Small | Medium
+*/
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-16, 16px);
+  position: relative;
+  width: 353px;
+  box-sizing: border-box;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+}
+
+.title,
+.content {
+  margin: 0;
+  word-break: break-word;
+}
+
+.title {
+  flex-shrink: 0;
+  width: 70px;
+}
+
+.content {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.variantSmall {
+  font-size: var(--skt-typography-font-size-600, 15px);
+}
+
+.variantMedium {
+  font-size: var(--skt-typography-font-size-700, 16px);
+}

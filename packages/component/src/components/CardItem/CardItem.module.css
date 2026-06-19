@@ -48,7 +48,5 @@
   position: relative;
   width: 100%;
   min-height: 0;
-  border-radius: var(--skt-radius-12, 12px);
-  overflow: hidden;
   box-sizing: border-box;
 }

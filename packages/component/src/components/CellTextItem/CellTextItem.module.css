@@ -1,204 +1,48 @@
-/* CellTextItem — Figma node 50985:75650
-   anatomy: root[ textGroup[ bulletDot?, label ], rightItem? ]
-   variants: Default | Bullet  ×  rightItem: None | Icon | Toggle | TextInfo | TextButton | LevelBadge | TextIcon
+/* CellText - Figma node 55181:49770
+   anatomy: root[ label, rightItem? ]
+   properties: rightItem, size, variants
 */
 
 .root {
   display: flex;
   align-items: center;
-  gap: var(--skt-spacing-20, 20px);
-  padding-top: var(--skt-spacing-4, 4px);
-  padding-bottom: var(--skt-spacing-4, 4px);
-  width: 100%;
+  gap: var(--skt-spacing-16, 16px);
+  position: relative;
+  width: 353px;
   box-sizing: border-box;
   font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
-  position: relative;
-}
-
-/* ── variant modifiers ─────────────────────────────────── */
-.default {
-  /* no extra styles needed beyond .root */
-}
-
-.bullet {
-  gap: var(--skt-spacing-4, 4px);
-}
-
-/* ── left text group ───────────────────────────────────── */
-.textGroup {
-  display: flex;
-  align-items: center;
-  gap: var(--skt-spacing-4, 4px);
-  flex: 1 0 0;
-  min-width: 0;
-}
-
-.bulletDot {
-  flex-shrink: 0;
-  font-size: var(--skt-typography-style-14reg-font-size, var(--skt-typography-font-size-500, 14px));
-  font-weight: var(--skt-typography-style-14reg-font-weight, var(--skt-typography-font-weight-regular, 400));
-  color: var(--skt-color-text-neutral-primary, #060c1f);
-  line-height: var(--skt-typography-style-14reg-line-height, var(--skt-typography-line-height-200, 130%));
-  letter-spacing: var(--skt-typography-style-14reg-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
-  user-select: none;
 }
 
 .label {
   flex: 1 0 0;
   min-width: 0;
   margin: 0;
-  font-size: var(--skt-typography-style-14reg-font-size, var(--skt-typography-font-size-500, 14px));
-  font-weight: var(--skt-typography-style-14reg-font-weight, var(--skt-typography-font-weight-regular, 400));
-  line-height: var(--skt-typography-style-14reg-line-height, var(--skt-typography-line-height-200, 130%));
-  letter-spacing: var(--skt-typography-style-14reg-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
   color: var(--skt-color-text-neutral-primary, #060c1f);
-  white-space: nowrap;
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+  word-break: break-word;
+}
+
+.title .label {
   overflow: hidden;
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
   text-overflow: ellipsis;
-}
-
-/* ── right: Icon (chevron) ─────────────────────────────── */
-.rightIcon {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-shrink: 0;
-  color: var(--skt-color-icon-neutral-tertiary, rgba(6, 12, 31, 0.2));
-}
-
-.iconChevron {
-  width: 16px;
-  height: 16px;
-  color: var(--skt-color-icon-neutral-tertiary, rgba(6, 12, 31, 0.2));
-}
-
-/* ── right: TextInfo ───────────────────────────────────── */
-.rightTextInfo {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-shrink: 0;
-}
-
-.rightInfoText {
-  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));
-  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500));
-  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%));
-  letter-spacing: var(--skt-typography-style-14med-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
-  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
-  text-align: right;
   white-space: nowrap;
 }
 
-/* ── right: TextButton ─────────────────────────────────── */
-.rightTextButton {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
-  font-size: var(--skt-typography-style-13reg-font-size, var(--skt-typography-font-size-400, 13px));
-  font-weight: var(--skt-typography-style-13reg-font-weight, var(--skt-typography-font-weight-regular, 400));
-  line-height: var(--skt-typography-style-13reg-line-height, var(--skt-typography-line-height-200, 130%));
-  letter-spacing: var(--skt-typography-style-13reg-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
-  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
-  text-decoration: underline;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  white-space: nowrap;
+.text .label {
+  font-weight: var(--skt-typography-font-weight-regular, 400);
 }
 
-/* ── right: TextIcon ───────────────────────────────────── */
-.rightTextIcon {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-shrink: 0;
-  height: 21px;
+.size16 .label {
+  font-size: var(--skt-typography-font-size-700, 16px);
 }
 
-.rightTextIconText {
-  font-size: var(--skt-typography-style-16reg-font-size, var(--skt-typography-font-size-700, 16px));
-  font-weight: var(--skt-typography-style-16reg-font-weight, var(--skt-typography-font-weight-regular, 400));
-  line-height: var(--skt-typography-style-16reg-line-height, var(--skt-typography-line-height-200, 130%));
-  letter-spacing: var(--skt-typography-style-16reg-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
-  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
-  white-space: nowrap;
+.size15 .label {
+  font-size: var(--skt-typography-font-size-600, 15px);
 }
 
-.iconChevronSmall {
-  width: 16px;
-  height: 16px;
-  color: var(--skt-color-icon-neutral-secondary, rgba(6, 12, 31, 0.6));
-}
-
-/* ── right: LevelBadge ─────────────────────────────────── */
-.rightLevelBadge {
-  display: flex;
-  align-items: center;
-  gap: var(--skt-spacing-4, 4px);
-  flex-shrink: 0;
-  height: 16px;
-}
-
-.levelBadge {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border-radius: var(--skt-radius-full, 9999px);
-}
-
-.levelBadge[data-level="1"] {
-  background-color: var(--skt-color-fill-brand-primary, #3617ce);
-}
-
-.levelBadge[data-level="2"] {
-  background-color: var(--skt-color-palette-gray-400, #b4c0de);
-}
-
-.levelBadge[data-level="3"] {
-  background-color: var(--skt-color-palette-gray-300, #d2d9eb);
-}
-
-/* ── right: Toggle ─────────────────────────────────────── */
-.toggle {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
-  width: 32px;
-  height: 20px;
-  border: none;
-  border-radius: var(--skt-radius-10, 10px);
-  cursor: pointer;
-  padding: 0;
-  transition: background-color 0.2s ease;
-}
-
-.toggleOff {
-  background-color: var(--skt-color-palette-gray-400, #cccccc);
-}
-
-.toggleOn {
-  background-color: var(--skt-color-fill-brand-primary, #3617ce);
-}
-
-.toggleHandle {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 16px;
-  height: 16px;
-  border-radius: var(--skt-radius-full, 9999px);
-  background-color: var(--skt-color-palette-gray-00, #ffffff);
-  box-shadow: 0 1px 3px var(--skt-color-shadow-default, rgba(6, 12, 31, 0.2));
-  transition: transform 0.2s ease;
-}
-
-.toggleOn .toggleHandle {
-  transform: translateX(12px);
+.rightItem {
+  height: 18px;
+  color: var(--skt-color-icon-neutral-primary, #060c1f);
 }

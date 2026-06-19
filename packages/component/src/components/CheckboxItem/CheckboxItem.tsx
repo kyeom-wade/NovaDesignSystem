@@ -1,61 +1,64 @@
 import styles from "./CheckboxItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .CheckboxItem (node 50943:30840)
-// anatomy: root[ checkbox[ checkIcon? ], label? ]
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .CheckboxItem (node 50943:30840)
+// anatomy: root[ checkbox[ checkIcon? ] ]
+// Properties: selection(boolean), state(Default | Disabled), variant(Circle | Line)
+// Note: variant=Line + state=Disabled + selection=true is not used.
+
+export type CheckboxItemVariant = "Circle" | "Line";
+export type CheckboxItemState = "Default" | "Disabled";
 
 interface Props {
-  /** Whether the checkbox is in a checked/selected state */
+  /** Figma property: selected/on state */
+  selection?: boolean;
+  /** Figma property: interaction state */
+  state?: CheckboxItemState;
+  /** Figma property: visual variant */
+  variant?: CheckboxItemVariant;
+  /** Legacy alias for selection */
   checked?: boolean;
-  /** Whether the checkbox is disabled */
+  /** Legacy alias for state=Disabled */
   disabled?: boolean;
-  /** Optional label text rendered to the right of the checkbox */
+  /** Legacy label props retained for compatibility, hidden from primary Storybook controls. */
   label?: string;
-  /** Whether to show the label */
   showLabel?: boolean;
-  /** Change handler — receives the next checked value */
   onChange?: (checked: boolean) => void;
   className?: string;
 }
 
 export function CheckboxItem({
-  checked = false,
-  disabled = false,
+  selection,
+  state,
+  variant = "Circle",
+  checked,
+  disabled,
   label = "항목",
   showLabel = false,
   onChange,
   className,
 }: Props) {
+  const resolvedSelection = selection ?? checked ?? false;
+  const resolvedState = state ?? (disabled ? "Disabled" : "Default");
+  const isDisabled = resolvedState === "Disabled";
+  const isLine = variant === "Line";
+  const visualSelection = resolvedSelection;
+
   function handleClick() {
-    if (!disabled && onChange) {
-      onChange(!checked);
+    if (!isDisabled && onChange) {
+      onChange(!resolvedSelection);
     }
   }
 
-  const rootClass = [
-    styles.root,
-    disabled ? styles.rootDisabled : "",
-    className ?? "",
-  ]
-    .filter(Boolean)
-    .join(" ");
-
-  const checkboxClass = [
-    styles.checkbox,
-    checked ? styles.checkboxChecked : styles.checkboxUnchecked,
-    disabled ? styles.checkboxDisabled : "",
-  ]
-    .filter(Boolean)
-    .join(" ");
-
   return (
     <div
-      className={rootClass}
+      className={[styles.root, className].filter(Boolean).join(" ")}
       data-cx-component="CheckboxItem"
-      data-checked={checked}
-      data-disabled={disabled}
+      data-variant={variant}
+      data-selection={visualSelection ? "on" : "off"}
+      data-state={resolvedState}
       role="checkbox"
-      aria-checked={checked}
-      aria-disabled={disabled}
-      tabIndex={disabled ? -1 : 0}
+      aria-checked={visualSelection}
+      aria-disabled={isDisabled}
+      tabIndex={isDisabled ? -1 : 0}
       onClick={handleClick}
       onKeyDown={(e) => {
         if (e.key === " " || e.key === "Enter") {
@@ -64,8 +67,18 @@ export function CheckboxItem({
         }
       }}
     >
-      <span className={checkboxClass} aria-hidden="true">
-        {checked && (
+      <span
+        className={[
+          styles.checkbox,
+          isLine ? styles.line : styles.circle,
+          visualSelection ? styles.selected : styles.unselected,
+          isDisabled ? styles.disabled : styles.enabled,
+        ]
+          .filter(Boolean)
+          .join(" ")}
+        aria-hidden="true"
+      >
+        {(visualSelection || isLine) && (
           <svg
             className={styles.checkIcon}
             width="12"
@@ -83,18 +96,7 @@ export function CheckboxItem({
           </svg>
         )}
       </span>
-      {showLabel && (
-        <span
-          className={[
-            styles.label,
-            disabled ? styles.labelDisabled : "",
-          ]
-            .filter(Boolean)
-            .join(" ")}
-        >
-          {label}
-        </span>
-      )}
+      {showLabel && <span className={styles.label}>{label}</span>}
     </div>
   );
 }
