@@ -40,12 +40,12 @@ export function CellRightTableItem({
       data-variant={variant}
     >
       {/* label cell */}
-      <div className={styles.labelCell} data-name="TextItem">
+      <div className={styles.labelCell} data-name="Text">
         <p className={styles.labelText}>{label}</p>
       </div>
 
       {/* value cell */}
-      <div className={styles.valueCell} data-name="TextItem">
+      <div className={styles.valueCell} data-name="Text">
         <p className={styles.valueText}>{value}</p>
       </div>
     </div>

@@ -1,5 +1,5 @@
 /* Input — Figma node 51521:25412 */
-/* anatomy: wrap[ TextItem?, InputItem*, InputHelpTextItem? ] */
+/* anatomy: wrap[ label?, InputItem*, InputHelpTextItem? ] */
 
 .wrap {
   position: relative;
@@ -13,6 +13,17 @@
 
 .label {
   flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  word-break: break-word;
+  white-space: nowrap;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
+  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));
+  font-style: normal;
+  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
 }
 
 .inputItem {

@@ -1,0 +1,116 @@
+/* CellPayment - Figma node 55320:116556
+   anatomy: root[ RadioItem, Text[ LogoText[ ThumbnailRoundItem?, label, BadgeItem? ], Card? ] ]
+   properties: badge, card, label, thumbnail
+*/
+
+.root {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--skt-spacing-8, 8px);
+  position: relative;
+  width: 333px;
+  min-height: 98px;
+  box-sizing: border-box;
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
+}
+
+.text {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--skt-spacing-8, 8px);
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--skt-spacing-8, 8px);
+}
+
+.labelGroup {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--skt-spacing-4, 4px);
+}
+
+.label {
+  flex-shrink: 0;
+  max-width: 190px;
+  margin: 0;
+  overflow: hidden;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+  gap: var(--skt-spacing-16, 16px);
+  padding: 18px 18px 18px 24px;
+  overflow: hidden;
+  border: 1.5px solid var(--skt-color-border-neutral-primary, #ebeef6);
+  border-radius: var(--skt-radius-20, 20px);
+  background-color: var(--skt-color-fill-inverse-default, #fff);
+  color: var(--skt-color-icon-neutral-secondary, rgba(12, 27, 65, 0.67));
+  box-sizing: border-box;
+}
+
+.cardText {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--skt-spacing-2, 2px);
+  font-size: var(--skt-typography-font-size-300, 12px);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+}
+
+.cardTitle {
+  display: flex;
+  width: 100%;
+  gap: var(--skt-spacing-2, 2px);
+  overflow: hidden;
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  white-space: nowrap;
+}
+
+.brand {
+  flex-shrink: 0;
+  background: linear-gradient(151deg, #ff0e37 43.68%, #ff01d4 87.78%);
+  background-clip: text;
+  color: transparent;
+}
+
+.cardTitleText {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  text-overflow: ellipsis;
+}
+
+.cardBody {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

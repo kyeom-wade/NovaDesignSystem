@@ -163,7 +163,7 @@
     "anatomy": "root[ BottomSheetHandleItem? | header?(titleTextGroup, closeButton), TabScroll?, slot[children], BottomGroup? ]",
     "states": "buttonClose(On|Off), actionButton(On|Off), showTitle(On|Off)",
     "do": "- buttonClose=true 또는 variant=\"ButtonClose\"는 타이틀과 X 닫기 버튼이 필요한 콘텐츠 시트에 사용합니다.\n- buttonClose=false 또는 variant=\"Handle\"은 드래그 핸들이 필요한 보조 탐색/열람 시트에 사용합니다.\n- actionButton=true 시 BottomGroup(Table upper item + 1 Botton)을 하단 액션 영역으로 표시합니다.\n- DimItem은 디자인 확인용 배경 레이어이므로 실제 컴포넌트에 포함하지 않습니다.",
-    "rules": "**Props 요약**\n- variant: \"ButtonClose\"(기본) | \"Handle\"\n- buttonClose: boolean — Figma alias, true=ButtonClose, false=Handle\n- actionButton / showActionGroup: 하단 BottomGroup 표시 여부\n- showTitle / heading / description / description2: 제목 영역 표시 및 텍스트 제어\n- tab / showTab / tabs / activeTab / onTabChange: 탭 스트립 표시 및 선택 상태\n- primaryLabel / upperItemLabel / upperItemValue: 하단 액션 그룹 텍스트\n- children: 본문 자유 슬롯\n\n[맵핑 트리거] 화면 하단에서 오버레이 형태로 추가 정보·액션을 제공할 때 사용합니다.\n\n[사용 시점] 목록 필터, 상세 옵션 선택, 구독/결제 유도 등 전체 페이지 전환 없이 보조 UI가 필요한 경우에 적합합니다.\n\n[구분] Dialog와 달리 화면 하단에 고정 앵커되며 드래그 핸들을 지원합니다. 단순 알림·확인 용도라면 AlertDialog를 사용하고, 시트 내부 액션이 필요한 경우 BottomGroup을 함께 사용합니다."
+    "rules": "**Props 요약**\n- variant: \"ButtonClose\"(기본) | \"Handle\"\n- buttonClose: boolean — Figma alias, true=ButtonClose, false=Handle\n- actionButton / showActionGroup: 하단 BottomGroup 표시 여부\n- showTitle / heading / description / description2: 제목 영역 표시 및 텍스트 제어\n- tab / showTab / tabs / activeTab / onTabChange: 탭 스트립 표시 및 선택 상태\n- primaryLabel / upperItemLabel / upperItemValue: 하단 액션 그룹 텍스트\n- children: 본문 자유 슬롯. 슬롯 높이는 콘텐츠 기준으로 hug되며, 빈 슬롯에 고정 높이를 두지 않습니다.\n\n[맵핑 트리거] 화면 하단에서 오버레이 형태로 추가 정보·액션을 제공할 때 사용합니다.\n\n[사용 시점] 목록 필터, 상세 옵션 선택, 구독/결제 유도 등 전체 페이지 전환 없이 보조 UI가 필요한 경우에 적합합니다.\n\n[구분] Dialog와 달리 화면 하단에 고정 앵커되며 드래그 핸들을 지원합니다. 단순 알림·확인 용도라면 AlertDialog를 사용하고, 시트 내부 액션이 필요한 경우 BottomGroup을 함께 사용합니다."
   },
   "ButtonIcon": {
     "type": "Button",
@@ -370,6 +370,15 @@
     "do": "간단한 레이블-내용 쌍을 좌측 타이틀 기준으로 정렬해야 할 때 사용한다.",
     "rules": "props: variants(\"Small\"|\"Medium\"). title/content은 구현 편의용 override이며 Figma primary property에는 노출하지 않는다."
   },
+  "CellPayment": {
+    "type": "Cell",
+    "standalone": true,
+    "description": "결제 수단 선택 목록의 단일 행 컴포넌트로, 라디오와 결제명, 선택적 썸네일·뱃지·하단 카드 영역을 포함한다.",
+    "anatomy": "root[ RadioItem, Text[ LogoText[ ThumbnailRoundItem?, label, BadgeItem? ], Card? ] ]",
+    "states": "badge(on|off), card(on|off), thumbnail(on|off)",
+    "do": "결제 수단 선택 목록에서 하나의 결제 방법과 약관 동의 카드 정보를 함께 표시할 때 사용한다.",
+    "rules": "props: badge(boolean), card(boolean), label(string), thumbnail(boolean). 내부 선택 컨트롤은 RadioItem, 로고는 ThumbnailRoundItem, 뱃지는 BadgeItem을 사용한다."
+  },
   "CellPaymentItem": {
     "type": "Cell",
     "standalone": true,
@@ -378,6 +387,15 @@
     "states": "Unselected, Selected",
     "do": "결제 수단 목록에서 각 결제 방법을 나타내는 행 단위로 사용한다.",
     "rules": "props: logoImage, badge, bottomButton, selected, label, badgeLabel, logoSrc, cardBrand, cardHeadlineSuffix, cardBody."
+  },
+  "CellPointInfo": {
+    "type": "Cell",
+    "standalone": true,
+    "description": "포인트 적립 또는 할인 정보를 원형 썸네일과 함께 표시하는 셀 컴포넌트.",
+    "anatomy": "root[ ThumbnailRoundItem, textInfo[ txt[ title, value ], txtSub[ caption01, caption02 ] ] ]",
+    "states": "variants(Add|Discount)",
+    "do": "포인트 적립/할인 내역처럼 타이틀, 금액성 값, 날짜·캡션을 한 행에 표시할 때 사용한다.",
+    "rules": "props: caption01(string), caption02(string), title(string), value(string), variants(\"Add\"|\"Discount\"). 내부 썸네일은 ThumbnailRoundItem을 사용한다."
   },
   "CellProductItem": {
     "type": "Cell",
@@ -396,6 +414,15 @@
     "states": "variants(Icon|ButtonIcon|Text|TextButton|TextIcon|ButtonSmall|LevelBadge|Switch)",
     "do": "리스트 셀의 트레일링 영역에 단독으로 배치하여 우측 액션·정보를 표현한다.",
     "rules": "props: variants(\"Icon\"|\"ButtonIcon\"|\"Text\"|\"TextButton\"|\"TextIcon\"|\"ButtonSmall\"|\"LevelBadge\"|\"Switch\"). TextInfo는 기존 사용처 호환 alias로만 유지한다."
+  },
+  "CellRightSelect": {
+    "type": "Cell",
+    "standalone": true,
+    "description": "왼쪽 라벨과 오른쪽 선택 컨트롤로 구성된 셀 아이템.",
+    "anatomy": "root[ label, RadioItem|CheckboxItem ]",
+    "states": "variants(Radio|Circle)",
+    "do": "텍스트 오른쪽에 radio 또는 checkbox 선택 컨트롤을 배치해야 할 때 사용한다.",
+    "rules": "props: variants(\"Radio\"|\"Circle\"). 내부 라벨은 Figma 기본값 Label을 사용한다."
   },
   "CellRightTable": {
     "type": "Cell",
@@ -423,6 +450,15 @@
     "states": "Default, Selected, Disabled",
     "do": "단일 선택이 필요한 목록 항목에는 variant=\"radioButton\", 다중 선택에는 variant=\"checkbox\"를 사용한다.",
     "rules": "props: variant, rightItem, selected, disabled, label, rightText."
+  },
+  "CellSheet": {
+    "type": "Cell",
+    "standalone": true,
+    "description": "바텀시트 내부에서 가격 정보 또는 안내 문구를 썸네일과 함께 표시하는 셀 컴포넌트.",
+    "anatomy": "root[ leftItem[ thumbnail, priceText|title ], cellRightItem? ]",
+    "states": "variants(Price|Notice), cellRightItem(on|off)",
+    "do": "바텀시트 내부에서 상품 가격 정보 또는 안내성 셀을 40px 높이로 표시할 때 사용한다.",
+    "rules": "props: caption(string), cellRightItem(boolean), subtitle(string), title(string), value01(string), value02(string), variants(\"Price\"|\"Notice\")."
   },
   "CellSheetItem": {
     "type": "Cell",
@@ -1278,15 +1314,6 @@
     "states": "Default",
     "do": "세로형 상품 카드(CardProductVertical) 내 텍스트 영역에 배치한다.",
     "rules": "props: brand, name, originalPrice, discountRate, salePrice."
-  },
-  "TextItem": {
-    "type": "Text",
-    "standalone": false,
-    "description": "단락 텍스트를 표시하는 기본 텍스트 컴포넌트로, 다양한 타이포그래피 변형과 색상 옵션을 지원한다.",
-    "anatomy": "root<p>[ text ]",
-    "states": null,
-    "do": "본문 설명 텍스트·안내 문구 등 단락 단위 텍스트를 표시할 때 사용한다.",
-    "rules": "props: text, variant, color, align, className."
   },
   "Thumbnail": {
     "type": "Thumbnail",
