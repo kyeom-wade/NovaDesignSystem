@@ -1,5 +1,5 @@
 /* CellLeftTable - Figma node 55320:38718
-   anatomy: root[ title, content ]
+   anatomy: root[ title, description ]
    variants: Small | Medium
 */
 
@@ -12,15 +12,14 @@
   box-sizing: border-box;
   color: var(--skt-color-text-neutral-primary, #060c1f);
   font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
-  font-weight: var(--skt-typography-font-weight-regular, 400);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: 0;
 }
 
 .title,
-.content {
+.description {
   margin: 0;
   word-break: break-word;
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
 }
 
 .title {
@@ -28,15 +27,17 @@
   width: 70px;
 }
 
-.content {
+.description {
   flex: 1 0 0;
   min-width: 0;
 }
 
 .variantSmall {
-  font-size: var(--skt-typography-font-size-600, 15px);
+  font-size: var(--skt-typography-style-15reg-font-size, var(--skt-typography-font-size-600, 15px));
+  letter-spacing: var(--skt-typography-style-15reg-letter-spacing, -0.05em);
 }
 
 .variantMedium {
-  font-size: var(--skt-typography-font-size-700, 16px);
+  font-size: var(--skt-typography-style-16reg-font-size, var(--skt-typography-font-size-700, 16px));
+  letter-spacing: var(--skt-typography-style-16reg-letter-spacing, -0.04em);
 }

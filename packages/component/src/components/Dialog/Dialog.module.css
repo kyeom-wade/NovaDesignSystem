@@ -58,7 +58,6 @@
 
 /* Slot (content area) */
 .slot {
-  height: 100px;
+  height: auto;
   width: 100%;
-  flex-shrink: 0;
 }

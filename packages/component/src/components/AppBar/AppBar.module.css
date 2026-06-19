@@ -8,7 +8,7 @@
   align-items: center;
   gap: var(--skt-component-appbar-gap-2, var(--skt-spacing-16, 16px));
   position: relative;
-  width: 393px;
+  width: 100%;
   height: 48px;
   padding:
     var(--skt-component-appbar-padding-y-2, var(--skt-spacing-10, 10px))

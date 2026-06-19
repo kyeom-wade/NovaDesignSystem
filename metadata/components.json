@@ -24,7 +24,7 @@
     "anatomy": "root[ titleArea[ backButton?, pageTitle? ] + rightArea[ iconButton × 1..3 ]? ]",
     "states": "variants(Default|Inverse), leftItem(on|off), rightItem(on|off), title(on|off)",
     "do": "- 일반 밝은 배경에서는 variants=\"Default\"를 사용하고, 어두운 배경이나 이미지 위에서는 variants=\"Inverse\"를 사용한다.\n- 뒤로가기 아이콘은 leftItem으로, 우측 아이콘 그룹은 rightItem으로 노출 여부를 제어한다.\n- 페이지 타이틀 문구는 pageTitle로 전달하고, 타이틀 영역 노출 여부는 title로 제어한다.",
-    "rules": "props: leftItem(boolean), pageTitle(string), rightItem(boolean), title(boolean), variants(\"Default\"|\"Inverse\").\n[맵핑 트리거] 화면 상단 고정 헤더가 필요한 모든 화면.\n[사용 시점] 뒤로가기, 페이지 타이틀, 우측 컨텍스트 액션을 상단 48px 영역에 배치해야 할 때 사용한다.\n[구분] NavigationBar(하단 탭 바)와 달리 Appbar는 상단 헤더에만 사용되며 페이지 타이틀과 컨텍스트 액션을 제공한다."
+    "rules": "props: leftItem(boolean), pageTitle(string), rightItem(boolean), title(boolean), variants(\"Default\"|\"Inverse\"). 루트 너비는 화면/부모 너비를 fill하는 100%를 사용하며 고정폭으로 제한하지 않는다.\n[맵핑 트리거] 화면 상단 고정 헤더가 필요한 모든 화면.\n[사용 시점] 뒤로가기, 페이지 타이틀, 우측 컨텍스트 액션을 상단 48px 영역에 배치해야 할 때 사용한다.\n[구분] NavigationBar(하단 탭 바)와 달리 Appbar는 상단 헤더에만 사용되며 페이지 타이틀과 컨텍스트 액션을 제공한다."
   },
   "AppBarItem": {
     "type": "Appbar",
@@ -130,7 +130,7 @@
     "anatomy": "root[ listText[ labelCell[ titleBadge[ title ] ] ] | listRightTable[ leftTextItem[ label ], rightTextItem[ value ] ] ]",
     "states": null,
     "do": "- Default variant는 단일 레이블 텍스트만 표시할 때 사용한다.\n- Table variant는 레이블과 값을 좌우로 나란히 표시할 때 사용한다.\n- BottomGroup 컴포넌트의 상단 콘텐츠 영역 내에서만 사용한다.",
-    "rules": "**variant**: \"Default\" | \"Table\" (기본값: \"Table\") — Default는 레이블만, Table은 레이블+값 쌍 표시.\n**props**: label(표시 텍스트, Default 기본값 \"텍스트\", Table 기본값 \"타이틀\"), value(Table variant에서 우측 값 텍스트, 기본값 \"내용 들어가는 부분\").\n[맵핑 트리거] BottomSheet/BottomGroup의 상단 정보 행에 텍스트 또는 레이블-값 쌍이 필요할 때.\n[사용 시점] 바텀시트 상단부에 요약 정보·속성·키-값 데이터를 나열할 때.\n[구분] BottomGroupAreaItem은 본문 콘텐츠 영역에 사용하고, BottomGroupUpperItem은 상단 정보 행에만 사용한다.",
+    "rules": "**variant**: \"Default\" | \"Table\" (기본값: \"Table\") — Default는 레이블만, Table은 레이블+값 쌍 표시.\n**props**: label(표시 텍스트, Default 기본값 \"텍스트\", Table 기본값 \"타이틀\"), value(Table variant에서 우측 값 텍스트, 기본값 \"내용 들어가는 부분\"). 루트 너비는 부모 영역을 채우는 100%를 사용한다.\n[맵핑 트리거] BottomSheet/BottomGroup의 상단 정보 행에 텍스트 또는 레이블-값 쌍이 필요할 때.\n[사용 시점] 바텀시트 상단부에 요약 정보·속성·키-값 데이터를 나열할 때.\n[구분] BottomGroupAreaItem은 본문 콘텐츠 영역에 사용하고, BottomGroupUpperItem은 상단 정보 행에만 사용한다.",
     "parent": "BottomGroup",
     "slot": "Content"
   },
@@ -314,7 +314,7 @@
     "anatomy": "root[ CellBoxItemSlot[ children ] ]",
     "states": null,
     "do": "박스 단위로 구분된 셀 영역 안에 임의 콘텐츠를 배치할 때 사용한다. Box 내부에서 Divider 컴포넌트를 사용하는 경우 Divider 상하에 8px 패딩을 추가한다.",
-    "rules": "props: children(ReactNode), className(string). 루트는 width 353px 기준, padding 16px 20px, radius 16px, fill/neutral/primary 배경을 사용한다. CellBoxItemSlot은 100px 높이의 내부 슬롯이다."
+    "rules": "props: children(ReactNode), className(string). 루트는 width 353px 기준, padding 16px 20px, radius 16px, fill/neutral/primary 배경을 사용한다. CellBoxItemSlot 높이는 콘텐츠 기준으로 hug되며, 빈 슬롯에 고정 높이를 두지 않는다."
   },
   "CellBrandItem": {
     "type": "Cell",
@@ -365,10 +365,10 @@
     "type": "Cell",
     "standalone": true,
     "description": "좌측 70px 타이틀과 우측 내용 텍스트로 구성된 왼쪽 기준 테이블 셀 컴포넌트.",
-    "anatomy": "root[ title(70px), content ]",
+    "anatomy": "root[ title(70px), description ]",
     "states": "variants(Small|Medium)",
     "do": "간단한 레이블-내용 쌍을 좌측 타이틀 기준으로 정렬해야 할 때 사용한다.",
-    "rules": "props: variants(\"Small\"|\"Medium\"). title/content은 구현 편의용 override이며 Figma primary property에는 노출하지 않는다."
+    "rules": "props: description(string), title(string), variants(\"Small\"|\"Medium\"). Figma property 이름과 동일하게 Storybook controls에 노출한다."
   },
   "CellPayment": {
     "type": "Cell",
@@ -491,10 +491,10 @@
     "type": "Cell",
     "standalone": true,
     "description": "텍스트 한 줄과 선택적 우측 Arrow 아이콘으로 구성된 CellText 컴포넌트.",
-    "anatomy": "root[ label, rightItem?[ CellRightItem(Icon) ] ]",
+    "anatomy": "root[ title|description, rightItem?[ CellRightItem(Icon) ] ]",
     "states": "variants(Text|Title), size(15|16), rightItem(on|off)",
     "do": "리스트 항목 한 행에 타이틀 또는 일반 텍스트를 표시하고, 필요 시 우측 이동 Arrow를 함께 배치한다.",
-    "rules": "props: rightItem(boolean), size(\"15\"|\"16\"), variants(\"Text\"|\"Title\"). 기존 CellTextItem export는 호환 alias로만 유지한다."
+    "rules": "props: description(string), rightItem(boolean), size(\"15\"|\"16\"), title(string), variants(\"Text\"|\"Title\"). variants=Title은 title, variants=Text는 description을 렌더링한다. 기존 CellTextItem export는 호환 alias로만 유지한다."
   },
   "CellTitleItem": {
     "type": "Cell",
@@ -599,7 +599,7 @@
     "anatomy": "wrap[ titleRow, subText, slot[ children ], actionRow ]",
     "states": null,
     "do": "사용자의 명시적 응답(확인/취소)이 필요한 중요한 작업에 사용한다.",
-    "rules": "props: title, subText, showSubText, showContents, children, secondaryLabel, primaryLabel, onSecondary, onPrimary."
+    "rules": "props: title, subText, showSubText, showContents, children, secondaryLabel, primaryLabel, onSecondary, onPrimary. slot[children] 높이는 콘텐츠 기준으로 hug되며, 빈 슬롯에 고정 높이를 두지 않는다."
   },
   "DialogActionButtonItem": {
     "type": "Dialog",

@@ -6,13 +6,17 @@ const meta: Meta<typeof CellLeftTable> = {
   component: CellLeftTable as never,
   parameters: {
     controls: {
-      include: ["variants"],
+      include: ["description", "title", "variants"],
     },
   },
   argTypes: {
+    description: { control: "text" },
+    title: { control: "text" },
     variants: { control: "select", options: ["Small", "Medium"] },
   },
   args: {
+    description: "내용 들어가는 부분",
+    title: "타이틀",
     variants: "Small",
   },
 };

@@ -2,8 +2,8 @@ import React from "react";
 import { CellRightItem } from "../CellRightItem";
 import styles from "./CellTextItem.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.3 .CellText (node 55181:49770)
-// anatomy: root[ text, rightItem?[ CellRightItem(Icon) ] ]
-// Properties: rightItem(boolean), size(15 | 16), variants(Text | Title)
+// anatomy: root[ title|description, rightItem?[ CellRightItem(Icon) ] ]
+// Properties: description(string), rightItem(boolean), size(15 | 16), title(string), variants(Text | Title)
 
 export type CellTextSize = "15" | "16";
 export type CellTextVariant = "Text" | "Title";
@@ -26,6 +26,10 @@ interface Props {
   size?: CellTextSize;
   /** Figma property: text style variant */
   variants?: CellTextVariant;
+  /** Figma property: text shown for Text variant */
+  description?: string;
+  /** Figma property: text shown for Title variant */
+  title?: string;
   /** Legacy alias retained for existing callers. */
   variant?: "Default" | "Bullet" | CellTextItemVariant;
   /** Optional content override; hidden from primary Storybook controls. */
@@ -55,13 +59,15 @@ export function CellText({
   rightItem = true,
   size = "16",
   variants,
+  description = "내용 들어가는 부분",
+  title = "타이틀",
   variant,
   label,
   className,
 }: Props) {
   const resolvedVariant = resolveVariant(variants, variant);
   const resolvedRightItem = resolveRightItem(rightItem);
-  const text = label ?? (resolvedVariant === "Text" ? "텍스트" : "타이틀");
+  const text = label ?? (resolvedVariant === "Text" ? description : title);
 
   return (
     <div

@@ -18,8 +18,6 @@
   min-width: 0;
   margin: 0;
   color: var(--skt-color-text-neutral-primary, #060c1f);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  letter-spacing: 0;
   word-break: break-word;
 }
 
@@ -35,11 +33,27 @@
 }
 
 .size16 .label {
-  font-size: var(--skt-typography-font-size-700, 16px);
+  font-size: var(--skt-typography-style-16reg-font-size, var(--skt-typography-font-size-700, 16px));
+  line-height: var(--skt-typography-style-16reg-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16reg-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+}
+
+.size16.title .label {
+  font-size: var(--skt-typography-style-16semi-font-size, var(--skt-typography-font-size-700, 16px));
+  line-height: var(--skt-typography-style-16semi-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-16semi-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
 }
 
 .size15 .label {
+  font-size: var(--skt-typography-style-15reg-font-size, var(--skt-typography-font-size-600, 15px));
+  line-height: var(--skt-typography-style-15reg-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-15reg-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
+}
+
+.size15.title .label {
   font-size: var(--skt-typography-font-size-600, 15px);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-letter-spacing-dense, -0.05em);
 }
 
 .rightItem {
