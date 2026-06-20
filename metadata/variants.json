@@ -519,23 +519,6 @@
       "distinction": "텍스트 라벨이 필요한 행동에는 Button 또는 TextButton을 사용한다."
     }
   },
-  "TitleTextLeftItem": {
-    "Text": {
-      "level": 2,
-      "description": "섹션 타이틀 좌측에 숫자 카운트를 표시하는 항목. 현재 선택 수·항목 수 등 숫자 정보를 타이틀 좌측에 배치할 때 사용한다.",
-      "distinction": "정보 설명이 필요하면 Icon, 카테고리 라벨에는 Badge를 사용한다."
-    },
-    "Icon": {
-      "level": 1,
-      "description": "섹션 타이틀 좌측에 info 아이콘을 배치해 추가 설명 진입점을 제공하는 항목. 클릭 시 툴팁·팝업 연동이 필요한 섹션 헤더에 사용한다.",
-      "distinction": "숫자 카운트에는 Text, 카테고리 라벨에는 Badge를 사용한다."
-    },
-    "Badge": {
-      "level": 3,
-      "description": "섹션 타이틀 좌측에 카테고리·상태 배지 라벨을 배치하는 항목. 섹션의 분류나 상태를 강조 라벨로 표시할 때 사용한다.",
-      "distinction": "단순 카운트에는 Text, 정보 아이콘에는 Icon을 사용한다."
-    }
-  },
   "TitleTextRightItem": {
     "Icon": {
       "level": 1,

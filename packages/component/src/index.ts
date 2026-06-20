@@ -67,7 +67,6 @@ export { ThumbnailSquareItem } from "./components/ThumbnailSquareItem";
 export { TitleGroupItem } from "./components/TitleGroupItem";
 export { TitleGroupRightItem } from "./components/TitleGroupRightItem";
 export { TitleTextItem } from "./components/TitleTextItem";
-export { TitleTextLeftItem } from "./components/TitleTextLeftItem";
 export { TitleTextRightItem } from "./components/TitleTextRightItem";
 export { ToogleItem } from "./components/ToogleItem";
 export { TooltipItem } from "./components/TooltipItem";
