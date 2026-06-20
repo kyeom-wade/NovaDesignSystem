@@ -176,7 +176,7 @@
     "do": "- buttonClose=true 또는 variant=\"ButtonClose\"는 타이틀과 X 닫기 버튼이 필요한 콘텐츠 시트에 사용합니다.\n- buttonClose=false 또는 variant=\"Handle\"은 드래그 핸들이 필요한 보조 탐색/열람 시트에 사용합니다.\n- actionButton=true 시 BottomGroup(Table upper item + 1 Botton)을 하단 액션 영역으로 표시합니다.\n- DimItem은 디자인 확인용 배경 레이어이므로 실제 컴포넌트에 포함하지 않습니다.",
     "rules": "**Props 요약**\n- variant: \"ButtonClose\"(기본) | \"Handle\"\n- buttonClose: boolean — Figma alias, true=ButtonClose, false=Handle\n- actionButton / showActionGroup: 하단 BottomGroup 표시 여부\n- showTitle / heading / description / description2: 제목 영역 표시 및 텍스트 제어\n- tab / showTab / tabs / activeTab / onTabChange: 탭 스트립 표시 및 선택 상태\n- primaryLabel / upperItemLabel / upperItemValue: 하단 액션 그룹 텍스트\n- children: 본문 자유 슬롯. 슬롯 높이는 콘텐츠 기준으로 hug되며, 빈 슬롯에 고정 높이를 두지 않습니다.\n\n[맵핑 트리거] 화면 하단에서 오버레이 형태로 추가 정보·액션을 제공할 때 사용합니다.\n\n[사용 시점] 목록 필터, 상세 옵션 선택, 구독/결제 유도 등 전체 페이지 전환 없이 보조 UI가 필요한 경우에 적합합니다.\n\n[구분] Dialog와 달리 화면 하단에 고정 앵커되며 드래그 핸들을 지원합니다. 단순 알림·확인 용도라면 AlertDialog를 사용하고, 시트 내부 액션이 필요한 경우 BottomGroup을 함께 사용합니다."
   },
-  "ButtonIcon": {
+  "ButtonIconItem": {
     "type": "Button",
     "standalone": false,
     "description": "아이콘 슬롯 컴포넌트. Large·Medium·Small 크기를 제공하고 내부에 커스텀 아이콘을 포함할 수 있다.",
@@ -190,11 +190,11 @@
   "ButtonIconAiItem": {
     "type": "Button",
     "standalone": false,
-    "description": "AI 진입점에 사용하는 44px 원형 아이콘 버튼 아이템. 내부에 24px ButtonIcon 슬롯을 포함하며 커스텀 아이콘을 받을 수 있다.",
-    "anatomy": "root[ ButtonIcon(Large, icon | children | IconDummy) ]",
+    "description": "AI 진입점에 사용하는 44px 원형 아이콘 버튼 아이템. 내부에 24px ButtonIconItem 슬롯을 포함하며 커스텀 아이콘을 받을 수 있다.",
+    "anatomy": "root[ ButtonIconItem(Large, icon | children | IconDummy) ]",
     "states": "Default",
     "do": "- AI 추천·AI 검색·AI 도우미 등 AI 맥락의 아이콘 진입점에 사용한다.\n- 내부 아이콘은 icon prop 또는 children으로 전달할 수 있으며, 지정하지 않으면 기본 Dummy 아이콘을 표시한다.\n- 일반 아이콘 슬롯이 필요한 경우 ButtonIcon을 사용하고, AI 원형 컨테이너가 필요한 경우에만 ButtonIconAiItem을 사용한다.",
-    "rules": "**props 요약**\n- icon: ReactNode — 내부 24px 아이콘 슬롯\n- children: ReactNode — 내부 24px 아이콘 슬롯\n\n**[맵핑 트리거]** 44px 원형 배경과 그림자를 가진 AI 아이콘 버튼 진입점이 필요할 때 사용한다.\n\n**[사용 시점]**\n- AI 관련 플로팅 액션 또는 AI 섹션 진입점\n- 하단 그룹/AI 영역 내 독립 아이콘 버튼\n\n**[구분]**\n- 크기 고정 아이콘 슬롯만 필요하면 ButtonIcon을 사용한다.\n- 일반 닫기(X) 버튼은 사용처 부모 컴포넌트에서 직접 처리한다.",
+    "rules": "**props 요약**\n- icon: ReactNode — 내부 24px 아이콘 슬롯\n- children: ReactNode — 내부 24px 아이콘 슬롯\n\n**[맵핑 트리거]** 44px 원형 배경과 그림자를 가진 AI 아이콘 버튼 진입점이 필요할 때 사용한다.\n\n**[사용 시점]**\n- AI 관련 플로팅 액션 또는 AI 섹션 진입점\n- 하단 그룹/AI 영역 내 독립 아이콘 버튼\n\n**[구분]**\n- 크기 고정 아이콘 슬롯만 필요하면 ButtonIconItem을 사용한다.\n- 일반 닫기(X) 버튼은 사용처 부모 컴포넌트에서 직접 처리한다.",
     "parent": "Button",
     "slot": "Icon"
   },
@@ -214,7 +214,7 @@
     "anatomy": "root(button)[ label(span), icon?(IconArrow right) ]",
     "states": "Default, Disabled",
     "do": "- 약관 보기, 더보기, 상세 이동처럼 주요 CTA보다 약한 텍스트 액션에 사용한다.\n- variants=\"Text\"는 밑줄 텍스트 버튼으로, variants=\"Text+Icon\"은 우측 Chevron이 필요한 이동 액션으로 사용한다.\n- 파괴적이거나 위험한 텍스트 액션에는 danger=true를 설정한다.",
-    "rules": "**props 요약**\n- variants: Text(기본) | Text+Icon — Figma 기준 prop\n- variant: 기존 호환 alias, TextIcon 입력 시 Text+Icon으로 매핑\n- size: Small | Medium | Large | XLarge(기본)\n- state: Default(기본) | Disabled\n- danger: boolean — 파괴적 액션 시 true\n- label: 버튼 텍스트 (기본 \"Label\")\n\n**[맵핑 트리거]** 밑줄 텍스트 버튼 또는 텍스트+Chevron 보조 액션이 필요할 때 사용한다.\n\n**[사용 시점]**\n- 링크처럼 보이는 보조 액션\n- 목록·타이틀·문구 옆의 더보기/상세보기 액션\n- Primary CTA보다 시각 강조가 낮아야 하는 텍스트 액션\n\n**[구분]**\n- 화면 하단 주요 CTA나 filled/outlined 버튼에는 ButtonItem을 사용한다.\n- 아이콘 슬롯이 필요하면 ButtonIcon을 사용한다."
+    "rules": "**props 요약**\n- variants: Text(기본) | Text+Icon — Figma 기준 prop\n- variant: 기존 호환 alias, TextIcon 입력 시 Text+Icon으로 매핑\n- size: Small | Medium | Large | XLarge(기본)\n- state: Default(기본) | Disabled\n- danger: boolean — 파괴적 액션 시 true\n- label: 버튼 텍스트 (기본 \"Label\")\n\n**[맵핑 트리거]** 밑줄 텍스트 버튼 또는 텍스트+Chevron 보조 액션이 필요할 때 사용한다.\n\n**[사용 시점]**\n- 링크처럼 보이는 보조 액션\n- 목록·타이틀·문구 옆의 더보기/상세보기 액션\n- Primary CTA보다 시각 강조가 낮아야 하는 텍스트 액션\n\n**[구분]**\n- 화면 하단 주요 CTA나 filled/outlined 버튼에는 ButtonItem을 사용한다.\n- 아이콘 슬롯이 필요하면 ButtonIconItem을 사용한다."
   },
   "CardProductHorizontalList": {
     "type": "Card",
@@ -1337,16 +1337,6 @@
     "do": "섹션 상단에 제목·부제목·설명·더보기 버튼을 한 번에 배치할 때 사용한다.",
     "rules": "props: title, subtitle, description, moreLabel, onMore."
   },
-  "TitleSectionItem": {
-    "type": "Title",
-    "standalone": false,
-    "description": "Deprecated alias of TitleGroupItem. 새 구현과 문서는 TitleGroupItem을 사용한다.",
-    "anatomy": "root[ TitleText[ TextGroup[ title, ?TitleTextRightItem ], ?subtitle ], ?rightItem ]",
-    "states": "fontSize(16|18), rightItem, subtitle, textRightItem",
-    "do": "기존 코드 호환을 위해 유지한다. 신규 사용은 TitleGroupItem으로 작성한다.",
-    "rules": "legacy props are mapped to TitleGroupItem props.",
-    "deprecated": true
-  },
   "TitleGroupRightItem": {
     "type": "Title",
     "standalone": false,
@@ -1413,7 +1403,7 @@
   "TitleGroupItem": {
     "type": "Title",
     "standalone": false,
-    "description": "섹션 또는 아코디언 타이틀 그룹을 표시하는 컴포넌트. TitleSectionItem에서 이름이 변경되었으며, 제목·인라인 보조 요소·서브타이틀·우측 액션을 포함한다.",
+    "description": "섹션 또는 아코디언 타이틀 그룹을 표시하는 컴포넌트. 제목·인라인 보조 요소·서브타이틀·우측 액션을 포함한다.",
     "anatomy": "root[ TitleText[ TextGroup[ title, ?TitleTextRightItem ], ?subtitle ], ?rightItem ]",
     "states": "fontSize(16|18), rightItem, subtitle, textRightItem",
     "do": "fontSize=16은 Accordion 타이틀에, fontSize=18은 Section 타이틀에 사용한다. 배경 컬러는 컴포넌트에서 지정하지 않는다.",

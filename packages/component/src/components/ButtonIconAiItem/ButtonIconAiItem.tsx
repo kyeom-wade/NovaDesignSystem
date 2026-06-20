@@ -1,8 +1,8 @@
 import React from "react";
-import { ButtonIcon } from "../ButtonIcon/ButtonIcon";
+import { ButtonIconItem } from "../ButtonIconItem/ButtonIconItem";
 import styles from "./ButtonIconAiItem.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.3 .ButtonIconAIItem (node 55216:179427)
-// anatomy: root[ ButtonIcon(Large) ]
+// anatomy: root[ ButtonIconItem(Large) ]
 
 interface Props {
   /** Custom icon slot. Takes precedence over children. */
@@ -22,7 +22,7 @@ export function ButtonIconAiItem({
       className={[styles.root, className].filter(Boolean).join(" ")}
       data-cx-component="ButtonIconAiItem"
     >
-      <ButtonIcon variant="Large" icon={icon ?? children} />
+      <ButtonIconItem variant="Large" icon={icon ?? children} />
     </span>
   );
 }

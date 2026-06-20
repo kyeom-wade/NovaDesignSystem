@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { ButtonIcon, IconArrow, IconInfo } from "@cx/components";
+import { ButtonIconItem, IconArrow, IconInfo } from "@cx/components";
 
-const meta: Meta<typeof ButtonIcon> = {
-  title: "cx/ButtonIcon",
-  component: ButtonIcon as never,
+const meta: Meta<typeof ButtonIconItem> = {
+  title: "cx/ButtonIconItem",
+  component: ButtonIconItem as never,
   argTypes: {
     variant: { control: "select", options: ["Large", "Medium", "Small"] },
     icon: { control: false },
@@ -15,7 +15,7 @@ const meta: Meta<typeof ButtonIcon> = {
   },
 };
 export default meta;
-type Story = StoryObj<typeof ButtonIcon>;
+type Story = StoryObj<typeof ButtonIconItem>;
 
 export const Default: Story = {};
 
@@ -23,7 +23,7 @@ export const Variants: Story = {
   render: (args) => (
     <div style={{ display: "flex", gap: 24, alignItems: "center", padding: 24 }}>
       {(["Large", "Medium", "Small"] as const).map((variant) => (
-        <ButtonIcon key={variant} {...args} variant={variant} />
+        <ButtonIconItem key={variant} {...args} variant={variant} />
       ))}
     </div>
   ),
@@ -32,11 +32,11 @@ export const Variants: Story = {
 export const WithCustomIcon: Story = {
   render: (args) => (
     <div style={{ display: "flex", gap: 24, alignItems: "center", padding: 24 }}>
-      <ButtonIcon {...args} variant="Large" icon={<IconArrow variant="right" />} />
-      <ButtonIcon {...args} variant="Medium">
+      <ButtonIconItem {...args} variant="Large" icon={<IconArrow variant="right" />} />
+      <ButtonIconItem {...args} variant="Medium">
         <IconInfo size={16} />
-      </ButtonIcon>
-      <ButtonIcon {...args} variant="Small" icon={<IconArrow variant="right" />} />
+      </ButtonIconItem>
+      <ButtonIconItem {...args} variant="Small" icon={<IconArrow variant="right" />} />
     </div>
   ),
 };
