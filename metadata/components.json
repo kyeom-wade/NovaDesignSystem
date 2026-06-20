@@ -94,7 +94,7 @@
     "type": "BottomGroup",
     "standalone": true,
     "description": "AI 상단 라벨과 AI 전용 2분할 CTA 영역을 포함한 독립 하단 그룹 컴포넌트입니다.",
-    "anatomy": "root[ aiUpperItem?[ IconItem(AI), label ], BottomGroupAiAreaItem(2 Botton) ]",
+    "anatomy": "root[ BottomGroupAiUpperItem?, BottomGroupAiAreaItem(2 Botton) ]",
     "states": "Ai",
     "do": "- AI 추천·구독 등 AI 맥락의 하단 고정 CTA가 필요할 때 사용한다.\n- aiUpperItem=true이면 상단에 AI 아이콘과 라벨을 표시한다.\n- 버튼 영역은 BottomGroupAiAreaItem의 2 Botton 구조를 사용하며 secondaryLabel과 primaryLabel을 각각 좌/우 CTA로 표시한다.",
     "rules": "**props 요약**\n- variants: \"Ai\" — Figma 기준 variant\n- aiUpperItem: boolean — AI 상단 라벨 표시 여부 (기본 true)\n- aiLabelText: string — AI 상단 라벨 텍스트 (기본 \"텍스트\")\n- primaryLabel / secondaryLabel: 2분할 CTA 텍스트 (기본 \"Label\")\n- onPrimary / onSecondary: 각 CTA 클릭 핸들러\n\n[맵핑 트리거] AI 아이콘과 AI 라벨, 2분할 브랜드 CTA가 함께 있는 하단 그룹이 필요할 때 사용한다.\n\n[구분] BottomGroup은 Ai/Default를 함께 가진 범용 하단 그룹이고, BottomGroupAi는 Figma의 독립 AI 전용 하단 그룹 컴포넌트이다.",
