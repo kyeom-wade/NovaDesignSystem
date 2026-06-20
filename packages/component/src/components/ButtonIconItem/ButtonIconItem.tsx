@@ -1,69 +1,46 @@
 import React from "react";
+import { IconDummy } from "../IconDummy/IconDummy";
 import styles from "./ButtonIconItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .ButtonIconItem (node 51081:61398)
-// anatomy: root[ iconWrapper[ icon[ shape ] ] ]
-// Variants: size x fill x state -> 12 combinations
-// size: Small(18px) | Medium(24px) | Large(32px)
-// fill: true -> neutral-secondary background; false -> transparent
-// state: Default | Disabled (icon color dims, bg uses disabled token)
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .ButtonIconItem (node 54449:42899)
+// Figma prop typo "varient" is normalized to "variant".
+
+export type ButtonIconItemVariant = "Large" | "Medium" | "Small";
 
 interface Props {
-  /** Button size — controls outer dimensions and icon padding */
-  size?: "Small" | "Medium" | "Large";
-  /** Whether the button has a filled background */
-  fill?: boolean;
-  /** Interaction state */
-  state?: "Default" | "Disabled";
-  /** Accessible label for the button */
-  "aria-label"?: string;
-  /** Click handler */
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  /** Icon container size: Large=24px, Medium=16px, Small=12px */
+  variant?: ButtonIconItemVariant;
+  /** Custom icon slot. Takes precedence over children. */
+  icon?: React.ReactNode;
+  /** Custom icon slot. */
+  children?: React.ReactNode;
   className?: string;
 }
 
+function iconSize(variant: ButtonIconItemVariant): number {
+  if (variant === "Small") return 12;
+  if (variant === "Medium") return 16;
+  return 24;
+}
+
 export function ButtonIconItem({
-  size = "Large",
-  fill = true,
-  state = "Default",
-  "aria-label": ariaLabel = "닫기",
-  onClick,
+  variant = "Large",
+  icon,
+  children,
   className,
 }: Props) {
-  const isDisabled = state === "Disabled";
-
-  const rootClass = [
-    styles.root,
-    styles[`size-${size}`],
-    fill ? styles.filled : styles.unfilled,
-    isDisabled ? styles.disabled : styles.default,
-    className,
-  ]
+  const rootClass = [styles.root, styles[`variant-${variant}`], className]
     .filter(Boolean)
     .join(" ");
+  const slot = icon ?? children ?? <IconDummy size={iconSize(variant)} />;
 
   return (
-    <button
-      type="button"
+    <span
       className={rootClass}
       data-cx-component="ButtonIconItem"
-      data-size={size}
-      data-fill={fill ? "true" : "false"}
-      data-state={state}
-      disabled={isDisabled}
-      aria-label={ariaLabel}
-      onClick={onClick}
+      data-variant={variant}
+      aria-hidden="true"
     >
-      <span className={styles.iconWrapper} aria-hidden="true">
-        <svg
-          className={styles.icon}
-          viewBox="0 0 12 12"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <line x1="2" y1="2" x2="10" y2="10" strokeLinecap="round" strokeWidth="1.5" stroke="currentColor" />
-          <line x1="10" y1="2" x2="2" y2="10" strokeLinecap="round" strokeWidth="1.5" stroke="currentColor" />
-        </svg>
-      </span>
-    </button>
+      <span className={styles.iconSlot}>{slot}</span>
+    </span>
   );
 }

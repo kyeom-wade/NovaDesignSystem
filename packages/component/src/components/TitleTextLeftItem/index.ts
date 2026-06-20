@@ -1,1 +1,0 @@
-export { TitleTextLeftItem } from "./TitleTextLeftItem";

@@ -1,5 +1,4 @@
 import React from "react";
-import { ButtonIconItem } from "../ButtonIconItem";
 import { ButtonItem } from "../ButtonItem";
 import { ButtonTextItem } from "../ButtonTextItem";
 import { IconDummy } from "../IconDummy";
@@ -10,7 +9,7 @@ import styles from "./TitleGroupRightItem.module.css";
 //   TextButton — root[ ButtonTextItem(Text/XLarge) ]
 //   TextIconSecondary — root[ ButtonTextItem(Text+Icon/XLarge) ]
 //   Button     — root[ buttonItem(secondary/small, no-icon) ]
-//   ButtonIcon — root[ ButtonIconItem(close/24) ]
+//   ButtonIcon — root[ closeButton(24, inline X icon) ]
 
 interface Props {
   /**
@@ -88,13 +87,23 @@ export function TitleGroupRightItem({
   if (variant === "ButtonIcon") {
     return (
       <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="ButtonIcon">
-        <ButtonIconItem
-          className={styles.buttonIcon}
-          size="Medium"
-          fill={false}
+        <button
+          type="button"
+          className={styles.closeButton}
           aria-label="닫기"
           onClick={onClick}
-        />
+        >
+          <svg
+            className={styles.closeIcon}
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <line x1="2" y1="2" x2="10" y2="10" strokeLinecap="round" strokeWidth="1.5" stroke="currentColor" />
+            <line x1="10" y1="2" x2="2" y2="10" strokeLinecap="round" strokeWidth="1.5" stroke="currentColor" />
+          </svg>
+        </button>
       </div>
     );
   }

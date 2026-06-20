@@ -33,11 +33,3 @@ export const WithoutUpperItem: Story = {
     aiUpperItem: false,
   },
 };
-
-export const CustomLabels: Story = {
-  args: {
-    aiLabelText: "AI 추천",
-    secondaryLabel: "선물하기",
-    primaryLabel: "구독하기",
-  },
-};
