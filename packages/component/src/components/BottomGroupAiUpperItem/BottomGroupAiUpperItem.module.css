@@ -1,0 +1,46 @@
+/* BottomGroupAiUpperItem — Figma node 55433:35204
+   anatomy: root[ iconItem(AI 16px), caption(gradient text) ]
+   Figma vars: blue/blue-800 #3617ce → blue/blue-600 #5f6afd, Component/BottomGroup/gap/1 = 4
+*/
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--skt-component-bottomgroup-gap-1, 4px);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
+}
+
+.iconItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.iconShape {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.caption {
+  margin: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));
+  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500));
+  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.04em));
+  /* AI gradient text — Figma blue-800 → blue-600 */
+  background: linear-gradient(
+    90deg,
+    var(--skt-color-fill-brand-primary, #3617ce) 0%,
+    var(--skt-color-text-ai-secondary, #5f6afd) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
