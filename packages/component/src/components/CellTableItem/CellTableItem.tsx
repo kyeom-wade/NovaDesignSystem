@@ -37,13 +37,13 @@ export function CellTableItem({
       <div
         className={styles.labelCell}
         style={labelFixedWidth ? { width: labelFixedWidth } : undefined}
-        data-name="TextItem"
+        data-name="Text"
       >
         <p className={styles.labelText}>{label}</p>
       </div>
 
       {/* value cell */}
-      <div className={styles.valueCell} data-name="TextItem">
+      <div className={styles.valueCell} data-name="Text">
         <p className={styles.valueText}>{value}</p>
       </div>
     </div>

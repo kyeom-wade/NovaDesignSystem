@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: var(--skt-component-bottomgroup-gap-4, var(--skt-spacing-16, 16px));
   width: 393px;
   max-width: 100%;
   padding:

@@ -1,1 +1,0 @@
-export { CellBrandItem } from "./CellBrandItem";

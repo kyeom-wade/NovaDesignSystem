@@ -1,0 +1,123 @@
+/* CellSheet - Figma node 55391:30030
+   anatomy: root[ leftItem[ thumbnail, text ], cellRightItem? ]
+   properties: caption, cellRightItem, subtitle, title, value01, value02, variants
+*/
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-16, 16px);
+  position: relative;
+  width: 353px;
+  height: 40px;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
+}
+
+.leftItem {
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+  min-width: 0;
+  gap: var(--skt-spacing-12, 12px);
+}
+
+.thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: var(--skt-radius-8, 8px);
+  background-color: #18f3df;
+}
+
+.thumbnailMark {
+  display: block;
+  width: 24px;
+  height: 30px;
+  border-right: 3px solid #060c1f;
+  border-left: 3px solid #060c1f;
+  background:
+    linear-gradient(#060c1f 0 0) 50% 0 / 3px 9px no-repeat,
+    linear-gradient(#060c1f 0 0) 50% 100% / 3px 9px no-repeat;
+}
+
+.priceText {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--skt-spacing-2, 2px);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  white-space: nowrap;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--skt-color-text-neutral-secondary, rgba(12, 27, 65, 0.67));
+  font-size: var(--skt-typography-font-size-400, 13px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+}
+
+.priceRow {
+  display: flex;
+  align-items: flex-end;
+  max-width: 100%;
+  gap: var(--skt-spacing-4, 4px);
+  overflow: hidden;
+}
+
+.valueGroup {
+  display: flex;
+  align-items: flex-end;
+  min-width: 0;
+  gap: var(--skt-spacing-2, 2px);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+}
+
+.value01 {
+  overflow: hidden;
+  font-size: var(--skt-typography-font-size-700, 16px);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+}
+
+.value02 {
+  flex-shrink: 0;
+  font-size: var(--skt-typography-font-size-500, 14px);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+}
+
+.caption {
+  flex-shrink: 0;
+  color: var(--skt-color-text-neutral-tertiary, rgba(12, 34, 91, 0.42));
+  font-size: var(--skt-typography-font-size-300, 12px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+}
+
+.title {
+  flex: 1 0 0;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

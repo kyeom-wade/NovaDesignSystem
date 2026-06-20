@@ -1,0 +1,45 @@
+/* CellRightSelect - Figma node 55430:107502
+   anatomy: root[ label, RadioItem|CheckboxItem ]
+   properties: variants
+*/
+
+.root {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 353px;
+  min-height: 21px;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
+}
+
+.radioTextItem,
+.checkboxTextItem {
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+  min-width: 0;
+  width: auto;
+  height: 21px;
+  gap: var(--skt-component-radio-gap-1, var(--skt-spacing-8, 8px));
+}
+
+.checkboxTextItem {
+  gap: var(--skt-component-checkbox-gap-1, var(--skt-spacing-8, 8px));
+}
+
+.label {
+  flex: 1 0 0;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-word;
+}

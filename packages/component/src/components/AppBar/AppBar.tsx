@@ -1,16 +1,10 @@
 import React from "react";
-import { AppBarItem } from "../AppBarItem";
 import { IconBack } from "../IconBack";
-import { IconBarcode } from "../IconBarcode";
-import { IconCart } from "../IconCart";
-import { IconClose } from "../IconClose";
-import { IconMenu } from "../IconMenu";
-import { IconSearch } from "../IconSearch";
+import { IconDummy } from "../IconDummy";
 import styles from "./AppBar.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .Appbar (node 51664:73057)
-// anatomy:
-//   1Depth: root[ leftArea, rightArea[ Tab(barcode), Tab(cart), Tab(menu) ] ]
-//   2depth: root[ titleArea[ backBtn?, title ], rightArea[ iconBtn × 1..3 ] ]
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .Appbar (node 54486:38840)
+// anatomy: root[ Title[ ?AppBarItem(back), ?PageTitle ], ?AppBarItem(dummy x 3) ]
+// Variants: variants(Default | Inverse)
 
 interface IconButtonProps {
   /** Accessible label for the icon button */
@@ -21,31 +15,36 @@ interface IconButtonProps {
 }
 
 interface Props {
-  /** Bar depth — "1Depth" is the home-only header; "2depth" is a sub-page nav bar */
+  /** @deprecated Legacy depth alias. Use variants instead. */
   variant?: "1Depth" | "2depth";
-  /** (2depth only) Page title text */
-  title?: string;
-  /** (2depth only) Show left back/close icon button slot */
+  /** Figma visual variant */
+  variants?: "Default" | "Inverse";
+  /** Page title text */
+  pageTitle?: string;
+  /** Legacy title text, or Figma title visibility boolean */
+  title?: string | boolean;
+  /** Show left back icon */
+  leftItem?: boolean;
+  /** Show right icon group */
+  rightItem?: boolean;
+  /** @deprecated Use leftItem instead. */
   showLeftItem?: boolean;
-  /** (2depth only) Show right icon button group */
+  /** @deprecated Use rightItem instead. */
   showRightItem?: boolean;
-  /** (2depth only) Number of right-side icon buttons (1–3) */
+  /** Number of right-side icon buttons (1-3) */
   rightItemCount?: 1 | 2 | 3;
-  /** (1Depth only) Click handler for Barcode icon */
-  onBarcode?: () => void;
-  /** (1Depth only) Click handler for Cart icon */
-  onCart?: () => void;
-  /** (1Depth only) Click handler for Menu icon */
-  onMenu?: () => void;
-  /** (2depth only) Per-button config for right icon area */
+  /** Per-button config for right icon area */
   rightButtons?: IconButtonProps[];
-  /** (2depth only) Left back-button config */
+  /** Left back-button config */
   leftButton?: IconButtonProps;
+  /** Legacy 1Depth callbacks retained for compatibility */
+  onBarcode?: () => void;
+  onCart?: () => void;
+  onMenu?: () => void;
   className?: string;
 }
 
-/** Pill-style icon button used in the 1Depth (home) right area */
-function TabButton({
+function IconButton({
   "aria-label": ariaLabel,
   onClick,
   children,
@@ -53,101 +52,79 @@ function TabButton({
   return (
     <button
       type="button"
-      className={styles.tabBtn}
+      className={styles.iconButton}
       aria-label={ariaLabel}
       onClick={onClick}
     >
-      <span className={styles.tabIcon}>{children}</span>
+      <span className={styles.iconSlot}>{children}</span>
     </button>
   );
 }
 
 export function Appbar({
-  variant = "1Depth",
-  title = "페이지명",
-  showLeftItem = true,
-  showRightItem = true,
+  variant,
+  variants = "Default",
+  pageTitle,
+  title = true,
+  leftItem,
+  rightItem,
+  showLeftItem,
+  showRightItem,
   rightItemCount = 3,
-  onBarcode,
-  onCart,
-  onMenu,
   rightButtons = [],
   leftButton,
   className,
 }: Props) {
-  const is1Depth = variant === "1Depth";
-  const is2Depth = variant === "2depth";
+  const resolvedVariant = variants ?? (variant === "1Depth" ? "Default" : "Default");
+  const isInverse = resolvedVariant === "Inverse";
+  const resolvedLeftItem = leftItem ?? showLeftItem ?? true;
+  const resolvedRightItem = rightItem ?? showRightItem ?? true;
+  const showTitle = typeof title === "boolean" ? title : true;
+  const resolvedTitle = pageTitle ?? (typeof title === "string" ? title : "PageTitle");
+  const resolvedRightItemCount = Math.min(Math.max(rightItemCount, 1), 3);
+  const iconColor = isInverse
+    ? "var(--skt-color-text-inverse-primary, #fff)"
+    : "var(--skt-color-icon-neutral-primary, #060c1f)";
+  const dummyColor = isInverse
+    ? "var(--skt-color-palette-white-alpha-400, rgba(255, 255, 255, 0.4))"
+    : "var(--skt-color-palette-gray-alpha-200, rgba(6, 12, 31, 0.2))";
 
   const rightSlots = Array.from(
-    { length: rightItemCount },
-    (_, i) => rightButtons[i] ?? [
-      { "aria-label": "검색", children: <IconSearch size={24} /> },
-      { "aria-label": "메뉴", children: <IconMenu size={24} /> },
-      { "aria-label": "닫기", children: <IconClose size={24} /> },
-    ][i] ?? {}
+    { length: resolvedRightItemCount },
+    (_, i) =>
+      rightButtons[i] ?? {
+        "aria-label": "메뉴",
+        children: <IconDummy size={24} color={dummyColor} />,
+      }
   );
   const leftSlot = leftButton ?? {
     "aria-label": "뒤로가기",
-    children: <IconBack size={24} />,
+    children: <IconBack size={24} color={iconColor} />,
   };
 
   return (
     <div
       className={[
         styles.root,
-        is1Depth ? styles.root1Depth : styles.root2Depth,
+        isInverse ? styles.inverse : styles.default,
         className,
       ]
         .filter(Boolean)
         .join(" ")}
       data-cx-component="Appbar"
-      data-variant={variant}
+      data-variant={resolvedVariant}
     >
-      {/* ── 1Depth: home header ─────────────────────────────────────── */}
-      {is1Depth && (
-        <>
-          {/* Left placeholder area (48×48, kept for spacing symmetry) */}
-          <div className={styles.leftArea1Depth} aria-hidden="true" />
+      <div className={styles.titleArea}>
+        {resolvedLeftItem && <IconButton {...leftSlot} />}
+        {showTitle && <p className={styles.titleText}>{resolvedTitle}</p>}
+      </div>
 
-          {/* Right icon tabs */}
-          <div className={styles.rightArea1Depth}>
-            <TabButton aria-label="바코드" onClick={onBarcode}>
-              <IconBarcode size={24} />
-            </TabButton>
-            <TabButton aria-label="장바구니" onClick={onCart}>
-              <IconCart size={24} />
-            </TabButton>
-            <TabButton aria-label="메뉴" onClick={onMenu}>
-              <IconMenu size={24} />
-            </TabButton>
-          </div>
-        </>
-      )}
-
-      {/* ── 2depth: sub-page nav bar ────────────────────────────────── */}
-      {is2Depth && (
-        <>
-          {/* Title area (left icon + text) */}
-          <div className={styles.titleArea}>
-            {showLeftItem && (
-              <AppBarItem
-                count={1}
-                buttons={[leftSlot]}
-                className={styles.leftItem}
-              />
-            )}
-            <p className={styles.titleText}>{title}</p>
-          </div>
-
-          {/* Right icon button group */}
-          {showRightItem && (
-            <AppBarItem
-              count={rightItemCount}
-              buttons={rightSlots}
-              className={styles.rightArea2Depth}
-            />
-          )}
-        </>
+      {resolvedRightItem && (
+        <div className={styles.rightArea}>
+          {rightSlots.map((button, index) => (
+            <IconButton key={index} {...button} />
+          ))}
+        </div>
       )}
     </div>
   );

@@ -231,6 +231,10 @@
 	--skt-typography-style-15med-line-height: var(--skt-typography-line-height-700);
 	--skt-typography-style-15med-font-weight: var(--skt-typography-font-weight-medium);
 	--skt-typography-style-15med-letter-spacing: var(--skt-typography-letter-spacing-dense);
+	--skt-typography-style-15reg-font-size: var(--skt-typography-font-size-600);
+	--skt-typography-style-15reg-line-height: var(--skt-typography-line-height-200);
+	--skt-typography-style-15reg-font-weight: var(--skt-typography-font-weight-regular);
+	--skt-typography-style-15reg-letter-spacing: var(--skt-typography-letter-spacing-dense);
 	--skt-typography-style-14bold-font-size: var(--skt-typography-font-size-500);
 	--skt-typography-style-14bold-line-height: var(--skt-typography-line-height-700);
 	--skt-typography-style-14bold-font-weight: var(--skt-typography-font-weight-bold);

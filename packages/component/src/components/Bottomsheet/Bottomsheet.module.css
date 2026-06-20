@@ -2,106 +2,97 @@
    anatomy: root[ handle?(bar+pill) | titleSection?(titleTextItem, closeBtn),
                   tabScroll?(tabTrack[tabItem*], tabBorder),
                   slot[children],
-                  actionGroup?(aiHintRow, ctaRow[iconPill, splitBtn]) ]
+                  actionGroup?(BottomGroup) ]
 */
 
-/* ── Root ── */
 .root {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: var(--skt-component-bottomgroup-gap-4, var(--skt-spacing-16, 16px));
   width: 393px;
+  max-width: 100%;
+  box-sizing: border-box;
   background-color: var(--skt-color-bg-layer-floating, #ffffff);
-  border-top-left-radius: var(--skt-radius-28, 28px);
-  border-top-right-radius: var(--skt-radius-28, 28px);
+  border-top-left-radius: var(--skt-radius-10, 28px);
+  border-top-right-radius: var(--skt-radius-10, 28px);
   font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   overflow: hidden;
 }
 
-/* ── Handle variant ── */
-.handleBar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: var(--skt-spacing-12, 12px);
-  padding-left: var(--skt-spacing-32, 32px);
-  padding-right: var(--skt-spacing-32, 32px);
-  height: 32px;
+.rootButtonClose {
+  padding-top: var(--skt-component-bottomgroup-padding-y-2, var(--skt-spacing-32, 32px));
+}
+
+.rootWithoutAction {
+  padding-bottom: var(--skt-component-bottomsheet-padding-y-3, var(--skt-spacing-32, 32px));
+}
+
+.handleItem {
+  flex-shrink: 0;
   width: 100%;
-  flex-shrink: 0;
 }
 
-.handle {
-  width: 44px;
-  height: 3px;
-  background-color: var(--skt-color-palette-gray-100, #ebeef6);
-  border-radius: var(--skt-radius-4, 4px);
-  flex-shrink: 0;
-}
-
-/* ── ButtonClose: title section ── */
-.titleSection {
+.header {
   display: flex;
-  gap: var(--skt-spacing-16, 16px);
+  gap: var(--skt-component-titlegroup-gap-4, var(--skt-spacing-16, 16px));
   align-items: flex-start;
-  width: 100%;
-  padding-top: var(--skt-spacing-32, 32px);
-  padding-bottom: var(--skt-spacing-16, 16px);
   flex-shrink: 0;
+  width: 100%;
+  padding: 0 var(--skt-component-bottomgroup-padding-x-1, var(--skt-spacing-20, 20px));
+  box-sizing: border-box;
 }
 
-.titleTextItem {
+.headerCloseOnly {
+  justify-content: flex-end;
+  gap: 0;
+}
+
+.titleTextGroup {
   display: flex;
   flex: 1 0 0;
   flex-direction: column;
-  gap: var(--skt-spacing-4, 4px);
+  gap: var(--skt-component-titlegroup-gap-1, var(--skt-spacing-2, 2px));
   align-items: flex-start;
   justify-content: center;
   min-width: 0;
-}
-
-.textItem {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.title {
-  margin: 0;
-  font-size: var(--skt-typography-style-20med-font-size, var(--skt-typography-font-size-900, 20px));
-  font-weight: var(--skt-typography-style-20med-font-weight, var(--skt-typography-font-weight-medium, 500));
-  line-height: var(--skt-typography-style-20med-line-height, var(--skt-typography-line-height-200, 130%));
-  letter-spacing: var(--skt-typography-style-20med-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
-  color: var(--skt-color-text-neutral-primary, #060c1f);
+  line-height: var(--skt-typography-line-height-200, 130%);
   white-space: nowrap;
   word-break: break-word;
 }
 
-.subTextGroup {
-  display: flex;
-  align-items: center;
+.heading {
+  position: relative;
   flex-shrink: 0;
-  width: 100%;
-}
-
-.subText {
   margin: 0;
-  font-size: var(--skt-typography-style-14med-font-size, var(--skt-typography-font-size-500, 14px));
-  font-weight: var(--skt-typography-style-14med-font-weight, var(--skt-typography-font-weight-medium, 500));
-  line-height: var(--skt-typography-style-14med-line-height, var(--skt-typography-line-height-200, 130%));
-  letter-spacing: var(--skt-typography-style-14med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
-  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
-  white-space: nowrap;
+  font-size: var(--skt-typography-font-size-900, 20px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-style-20semi-letter-spacing, -0.05em);
+  color: var(--skt-color-text-neutral-primary, #060c1f);
 }
 
-.closeBtn {
+.description {
+  position: relative;
+  flex-shrink: 0;
+  margin: 0;
+  overflow: hidden;
+  font-size: var(--skt-typography-font-size-500, 14px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: var(--skt-typography-style-14med-letter-spacing, var(--skt-typography-letter-spacing-normal, -0.04em));
+  color: var(--skt-color-text-neutral-secondary, rgba(12, 27, 65, 0.67));
+  text-overflow: ellipsis;
+}
+
+.closeButton {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   padding: 0;
   border: none;
   background: transparent;
@@ -109,98 +100,23 @@
   color: var(--skt-color-icon-neutral-primary, #060c1f);
 }
 
-.closeBtn:hover {
+.closeButton:hover {
   opacity: 0.7;
 }
 
-/* ── Tab strip ── */
 .tabScroll {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
   flex-shrink: 0;
   width: 100%;
 }
 
-.tabTrack {
-  display: flex;
-  gap: 28px;
-  align-items: flex-end;
-  overflow-x: auto;
-  overflow-y: visible;
-  padding-left: var(--skt-spacing-20, 20px);
-  padding-top: var(--skt-spacing-12, 12px);
-  width: 100%;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.tabTrack::-webkit-scrollbar {
-  display: none;
-}
-
-.tabItem {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  flex-shrink: 0;
-  gap: var(--skt-spacing-12, 12px);
-}
-
-.tabItemSelected {
-  height: auto;
-}
-
-.tabItemDefault {
-  height: 35px;
-  justify-content: flex-start;
-}
-
-.tabLabel {
-  display: block;
-  font-size: var(--skt-typography-font-size-700, 16px);
-  line-height: var(--skt-typography-line-height-200, 130%);
-  white-space: nowrap;
-  word-break: break-word;
-}
-
-.tabItemSelected .tabLabel {
-  font-weight: var(--skt-typography-font-weight-semibold, 600);
-  letter-spacing: -0.04em;
-  color: var(--skt-color-text-neutral-primary, #060c1f);
-}
-
-.tabItemDefault .tabLabel {
-  font-weight: var(--skt-typography-font-weight-medium, 500);
-  letter-spacing: -0.04em;
-  color: var(--skt-color-text-neutral-secondary, rgba(6, 12, 31, 0.6));
-}
-
-.tabUnderline {
-  width: 100%;
-  height: 2px;
-  background-color: var(--skt-color-border-neutral-strong, #060c1f);
-  flex-shrink: 0;
-}
-
-.tabBorder {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: var(--skt-color-border-neutral-secondary, #ebeef6);
-}
-
-/* ── Slot ── */
 .slot {
   position: relative;
   flex-shrink: 0;
   width: 100%;
-  min-height: 100px;
+  height: auto;
+}
+
+.bottomGroup {
+  flex-shrink: 0;
+  width: 100%;
 }

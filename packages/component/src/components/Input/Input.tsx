@@ -1,9 +1,8 @@
 import { InputItem } from "../InputItem/InputItem";
 import { InputHelpTextItem } from "../InputHelpTextItem/InputHelpTextItem";
-import { TextItem } from "../TextItem/TextItem";
 import styles from "./Input.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.3 .Input (node 51521:25412)
-// anatomy: wrap[ TextItem?, InputItem*, InputHelpTextItem? ]
+// anatomy: wrap[ label?, InputItem*, InputHelpTextItem? ]
 // variants: 1Input = InputItem(button) + helpText, 2Input = 2 x InputItem(no button) + helpText, 3Input = InputItem(button) + 2 x InputItem(no button) + helpText
 
 export type InputVariants = "1Input" | "2Input" | "3Input";
@@ -48,12 +47,7 @@ export function Input({
       data-variants={variants}
     >
       {label && (
-        <TextItem
-          className={styles.label}
-          text={labelText}
-          size="14Body"
-          weight="medium"
-        />
+        <p className={styles.label}>{labelText}</p>
       )}
 
       <InputItem

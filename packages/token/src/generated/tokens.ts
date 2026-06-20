@@ -299,6 +299,12 @@ export const TypographyStyle15med = {
   fontWeight: TypographyFontWeightMedium,
   letterSpacing: TypographyLetterSpacingDense,
 } as const;
+export const TypographyStyle15reg = {
+  fontSize: TypographyFontSize600,
+  lineHeight: TypographyLineHeight200,
+  fontWeight: TypographyFontWeightRegular,
+  letterSpacing: TypographyLetterSpacingDense,
+} as const;
 export const TypographyStyle14bold = {
   fontSize: TypographyFontSize500,
   lineHeight: TypographyLineHeight700,

@@ -20,11 +20,11 @@
   "Appbar": {
     "type": "Appbar",
     "standalone": true,
-    "description": "페이지 상단에 위치하는 앱 바 컴포넌트로, 홈(1Depth)과 서브페이지(2depth) 두 가지 변형을 지원한다.",
-    "anatomy": "root[ leftArea(1Depth용 빈 공간) | titleArea[ backBtn?, title ] + rightArea[ TabButton(바코드·장바구니·메뉴, 1Depth) | IconBtn × 1..3(2depth) ] ]",
-    "states": "Default",
-    "do": "- 홈 화면 최상단에는 variant=\"1Depth\"를 사용하고, 서브 페이지 네비게이션 바에는 variant=\"2depth\"를 사용한다.\n- 2depth에서 우측 아이콘 버튼이 필요 없으면 showRightItem=false로 감춘다.\n- rightItemCount는 1~3 사이로만 지정하고 실제 버튼 동작은 rightButtons 배열로 전달한다.",
-    "rules": "props: variant(\"1Depth\"|\"2depth\"), title(string), showLeftItem(boolean), showRightItem(boolean), rightItemCount(1|2|3), leftButton(IconButtonProps), rightButtons(IconButtonProps[]), onBarcode/onCart/onMenu(1Depth 전용 핸들러).\n[맵핑 트리거] 화면 상단 고정 헤더가 필요한 모든 화면.\n[사용 시점] 홈 화면처럼 좌측 영역 없이 우측 탭 버튼 3개만 필요한 경우 1Depth, 뒤로가기·타이틀·우측 아이콘이 필요한 서브 페이지는 2depth를 선택한다.\n[구분] NavigationBar(하단 탭 바)와 달리 AppBar는 상단 헤더에만 사용되며 페이지 타이틀과 컨텍스트 액션을 제공한다."
+    "description": "페이지 상단에 위치하는 앱 바 컴포넌트로, Default와 Inverse 두 가지 컬러 변형을 지원한다.",
+    "anatomy": "root[ titleArea[ backButton?, pageTitle? ] + rightArea[ iconButton × 1..3 ]? ]",
+    "states": "variants(Default|Inverse), leftItem(on|off), rightItem(on|off), title(on|off)",
+    "do": "- 일반 밝은 배경에서는 variants=\"Default\"를 사용하고, 어두운 배경이나 이미지 위에서는 variants=\"Inverse\"를 사용한다.\n- 뒤로가기 아이콘은 leftItem으로, 우측 아이콘 그룹은 rightItem으로 노출 여부를 제어한다.\n- 페이지 타이틀 문구는 pageTitle로 전달하고, 타이틀 영역 노출 여부는 title로 제어한다.",
+    "rules": "props: leftItem(boolean), pageTitle(string), rightItem(boolean), title(boolean), variants(\"Default\"|\"Inverse\"). 루트 너비는 화면/부모 너비를 fill하는 100%를 사용하며 고정폭으로 제한하지 않는다.\n[맵핑 트리거] 화면 상단 고정 헤더가 필요한 모든 화면.\n[사용 시점] 뒤로가기, 페이지 타이틀, 우측 컨텍스트 액션을 상단 48px 영역에 배치해야 할 때 사용한다.\n[구분] NavigationBar(하단 탭 바)와 달리 Appbar는 상단 헤더에만 사용되며 페이지 타이틀과 컨텍스트 액션을 제공한다."
   },
   "AppBarItem": {
     "type": "Appbar",
@@ -130,7 +130,7 @@
     "anatomy": "root[ listText[ labelCell[ titleBadge[ title ] ] ] | listRightTable[ leftTextItem[ label ], rightTextItem[ value ] ] ]",
     "states": null,
     "do": "- Default variant는 단일 레이블 텍스트만 표시할 때 사용한다.\n- Table variant는 레이블과 값을 좌우로 나란히 표시할 때 사용한다.\n- BottomGroup 컴포넌트의 상단 콘텐츠 영역 내에서만 사용한다.",
-    "rules": "**variant**: \"Default\" | \"Table\" (기본값: \"Table\") — Default는 레이블만, Table은 레이블+값 쌍 표시.\n**props**: label(표시 텍스트, Default 기본값 \"텍스트\", Table 기본값 \"타이틀\"), value(Table variant에서 우측 값 텍스트, 기본값 \"내용 들어가는 부분\").\n[맵핑 트리거] BottomSheet/BottomGroup의 상단 정보 행에 텍스트 또는 레이블-값 쌍이 필요할 때.\n[사용 시점] 바텀시트 상단부에 요약 정보·속성·키-값 데이터를 나열할 때.\n[구분] BottomGroupAreaItem은 본문 콘텐츠 영역에 사용하고, BottomGroupUpperItem은 상단 정보 행에만 사용한다.",
+    "rules": "**variant**: \"Default\" | \"Table\" (기본값: \"Table\") — Default는 레이블만, Table은 레이블+값 쌍 표시.\n**props**: label(표시 텍스트, Default 기본값 \"텍스트\", Table 기본값 \"타이틀\"), value(Table variant에서 우측 값 텍스트, 기본값 \"내용 들어가는 부분\"). 루트 너비는 부모 영역을 채우는 100%를 사용한다.\n[맵핑 트리거] BottomSheet/BottomGroup의 상단 정보 행에 텍스트 또는 레이블-값 쌍이 필요할 때.\n[사용 시점] 바텀시트 상단부에 요약 정보·속성·키-값 데이터를 나열할 때.\n[구분] BottomGroupAreaItem은 본문 콘텐츠 영역에 사용하고, BottomGroupUpperItem은 상단 정보 행에만 사용한다.",
     "parent": "BottomGroup",
     "slot": "Content"
   },
@@ -159,11 +159,11 @@
   "Bottomsheet": {
     "type": "BottomSheet",
     "standalone": true,
-    "description": "화면 하단에서 슬라이드 업으로 나타나는 시트 컨테이너로, 핸들 또는 닫기 버튼 헤더, 탭 스트립, 본문 슬롯, AI 액션 그룹을 선택적으로 구성할 수 있습니다.",
-    "anatomy": "root[ handle?(HandleItem) | titleSection?(titleRow[title, subText], closeBtn) , tabScroll?(tabs[TabScrollItem*]), slot[children], actionGroup?(aiArea) ]",
-    "states": "Open, Closed",
-    "do": "- variant=\"ButtonClose\"는 타이틀과 X 닫기 버튼이 필요한 콘텐츠 시트에 사용하고, variant=\"Handle\"은 드래그로 닫는 시트에 사용합니다.\n- showTab=true 시 tabs 배열과 activeTab을 함께 전달하여 탭 스트립을 제어합니다.\n- showActionGroup=true 시 primaryLabel·secondaryLabel·aiHintText를 반드시 지정하여 AI 액션 영역을 완성합니다.",
-    "rules": "**Props 요약**\n- variant: \"ButtonClose\"(기본) | \"Handle\"\n- title / subText / showSubText: ButtonClose 헤더 텍스트 제어\n- showTab / tabs / activeTab / onTabChange: 탭 스트립 표시 및 선택 상태\n- showActionGroup / primaryLabel / secondaryLabel / aiHintText: AI 액션 그룹\n- children: 본문 자유 슬롯\n\n[맵핑 트리거] 화면 하단에서 오버레이 형태로 추가 정보·액션을 제공할 때 사용합니다.\n\n[사용 시점] 목록 필터, 상세 옵션 선택, 구독/결제 유도 등 전체 페이지 전환 없이 보조 UI가 필요한 경우에 적합합니다.\n\n[구분] Dialog와 달리 화면 하단에 고정 앵커되며 드래그 핸들을 지원합니다. 단순 알림·확인 용도라면 AlertDialog를 사용하고, 풍부한 콘텐츠와 탭·AI 액션이 필요한 경우 Bottomsheet를 사용합니다."
+    "description": "화면 하단에서 슬라이드 업으로 나타나는 시트 컨테이너로, 핸들 또는 닫기 버튼 헤더, 탭 스트립, 본문 슬롯, 하단 액션 그룹을 선택적으로 구성할 수 있습니다.",
+    "anatomy": "root[ BottomSheetHandleItem? | header?(titleTextGroup, closeButton), TabScroll?, slot[children], BottomGroup? ]",
+    "states": "buttonClose(On|Off), actionButton(On|Off), showTitle(On|Off)",
+    "do": "- buttonClose=true 또는 variant=\"ButtonClose\"는 타이틀과 X 닫기 버튼이 필요한 콘텐츠 시트에 사용합니다.\n- buttonClose=false 또는 variant=\"Handle\"은 드래그 핸들이 필요한 보조 탐색/열람 시트에 사용합니다.\n- actionButton=true 시 BottomGroup(Table upper item + 1 Botton)을 하단 액션 영역으로 표시합니다.\n- DimItem은 디자인 확인용 배경 레이어이므로 실제 컴포넌트에 포함하지 않습니다.",
+    "rules": "**Props 요약**\n- variant: \"ButtonClose\"(기본) | \"Handle\"\n- buttonClose: boolean — Figma alias, true=ButtonClose, false=Handle\n- actionButton / showActionGroup: 하단 BottomGroup 표시 여부\n- showTitle / heading / description / description2: 제목 영역 표시 및 텍스트 제어\n- tab / showTab / tabs / activeTab / onTabChange: 탭 스트립 표시 및 선택 상태\n- primaryLabel / upperItemLabel / upperItemValue: 하단 액션 그룹 텍스트\n- children: 본문 자유 슬롯. 슬롯 높이는 콘텐츠 기준으로 hug되며, 빈 슬롯에 고정 높이를 두지 않습니다.\n\n[맵핑 트리거] 화면 하단에서 오버레이 형태로 추가 정보·액션을 제공할 때 사용합니다.\n\n[사용 시점] 목록 필터, 상세 옵션 선택, 구독/결제 유도 등 전체 페이지 전환 없이 보조 UI가 필요한 경우에 적합합니다.\n\n[구분] Dialog와 달리 화면 하단에 고정 앵커되며 드래그 핸들을 지원합니다. 단순 알림·확인 용도라면 AlertDialog를 사용하고, 시트 내부 액션이 필요한 경우 BottomGroup을 함께 사용합니다."
   },
   "ButtonIcon": {
     "type": "Button",
@@ -311,19 +311,10 @@
     "type": "Cell",
     "standalone": true,
     "description": "콘텐츠를 박스 형태로 감싸는 셀 컨테이너 컴포넌트로, 슬롯에 임의 자식 요소를 배치할 수 있습니다.",
-    "anatomy": "wrap[ slot[ children ] ]",
+    "anatomy": "root[ CellBoxItemSlot[ children ] ]",
     "states": null,
-    "do": "박스 단위로 구분된 셀 영역 안에 임의 콘텐츠를 배치할 때 사용한다.",
-    "rules": "props: children(ReactNode), className(string)."
-  },
-  "CellBrandItem": {
-    "type": "Cell",
-    "standalone": true,
-    "description": "브랜드 로고 썸네일과 텍스트 정보, 선택적 우측 액션 버튼을 조합한 브랜드/상품 셀 컴포넌트입니다.",
-    "anatomy": "root[ contentsGroup[ thumbnail, textGroup ], rightButton? ]",
-    "states": null,
-    "do": "브랜드 또는 상품 목록에서 로고 이미지와 이름·부가 정보를 한 행으로 나열할 때 사용합니다.",
-    "rules": "props: thumbnailSrc, subTitle, mainText, subText, rightButtonLabel, rightButton, onRightButtonClick."
+    "do": "박스 단위로 구분된 셀 영역 안에 임의 콘텐츠를 배치할 때 사용한다. Box 내부에서 Divider 컴포넌트를 사용하는 경우 Divider 상하에 8px 패딩을 추가한다.",
+    "rules": "props: children(ReactNode), className(string). 루트는 width 353px 기준, padding 16px 20px, radius 16px, fill/neutral/primary 배경을 사용한다. CellBoxItemSlot 높이는 콘텐츠 기준으로 hug되며, 빈 슬롯에 고정 높이를 두지 않는다."
   },
   "CellCard": {
     "type": "Cell",
@@ -352,6 +343,33 @@
     "do": "리스트 또는 카드 레이아웃 내에서 타이틀과 하위 콘텐츠를 묶어 표시할 때 사용한다.",
     "rules": "props: title(string), showTitle(boolean), children(ReactNode)."
   },
+  "CellLeftSelect": {
+    "type": "Cell",
+    "standalone": true,
+    "description": "왼쪽 선택 컨트롤과 선택적 우측 이동 아이콘으로 구성된 셀 아이템.",
+    "anatomy": "root[ RadioItem|CheckboxLeftTextItem, CellRightItem? ]",
+    "states": "variants(Radio|Check), cellRightItem(on|off)",
+    "do": "왼쪽 radio 또는 checkbox 선택 컨트롤과 오른쪽 이동 아이콘을 한 행에 배치해야 할 때 사용한다.",
+    "rules": "props: cellRightItem(boolean), variants(\"Radio\"|\"Check\"). 내부 라벨은 Figma 기본값 Label을 사용한다."
+  },
+  "CellLeftTable": {
+    "type": "Cell",
+    "standalone": true,
+    "description": "좌측 70px 타이틀과 우측 내용 텍스트로 구성된 왼쪽 기준 테이블 셀 컴포넌트.",
+    "anatomy": "root[ title(70px), description ]",
+    "states": "variants(Small|Medium)",
+    "do": "간단한 레이블-내용 쌍을 좌측 타이틀 기준으로 정렬해야 할 때 사용한다.",
+    "rules": "props: description(string), title(string), variants(\"Small\"|\"Medium\"). Figma property 이름과 동일하게 Storybook controls에 노출한다."
+  },
+  "CellPayment": {
+    "type": "Cell",
+    "standalone": true,
+    "description": "결제 수단 선택 목록의 단일 행 컴포넌트로, 라디오와 결제명, 선택적 썸네일·뱃지·하단 카드 영역을 포함한다.",
+    "anatomy": "root[ RadioItem, Text[ LogoText[ ThumbnailRoundItem?, label, BadgeItem? ], Card? ] ]",
+    "states": "badge(on|off), card(on|off), thumbnail(on|off)",
+    "do": "결제 수단 선택 목록에서 하나의 결제 방법과 약관 동의 카드 정보를 함께 표시할 때 사용한다.",
+    "rules": "props: badge(boolean), card(boolean), label(string), thumbnail(boolean). 내부 선택 컨트롤은 RadioItem, 로고는 ThumbnailRoundItem, 뱃지는 BadgeItem을 사용한다."
+  },
   "CellPaymentItem": {
     "type": "Cell",
     "standalone": true,
@@ -360,6 +378,15 @@
     "states": "Unselected, Selected",
     "do": "결제 수단 목록에서 각 결제 방법을 나타내는 행 단위로 사용한다.",
     "rules": "props: logoImage, badge, bottomButton, selected, label, badgeLabel, logoSrc, cardBrand, cardHeadlineSuffix, cardBody."
+  },
+  "CellPointInfo": {
+    "type": "Cell",
+    "standalone": true,
+    "description": "포인트 적립 또는 할인 정보를 원형 썸네일과 함께 표시하는 셀 컴포넌트.",
+    "anatomy": "root[ ThumbnailRoundItem, textInfo[ txt[ title, value ], txtSub[ caption01, caption02 ] ] ]",
+    "states": "variants(Add|Discount)",
+    "do": "포인트 적립/할인 내역처럼 타이틀, 금액성 값, 날짜·캡션을 한 행에 표시할 때 사용한다.",
+    "rules": "props: caption01(string), caption02(string), title(string), value(string), variants(\"Add\"|\"Discount\"). 내부 썸네일은 ThumbnailRoundItem을 사용한다."
   },
   "CellProductItem": {
     "type": "Cell",
@@ -373,11 +400,29 @@
   "CellRightItem": {
     "type": "Cell",
     "standalone": true,
-    "description": "셀(리스트 행) 우측 영역에 배치되는 보조 콘텐츠 컴포넌트로, 아이콘·텍스트·버튼 등 다양한 variant를 제공한다.",
-    "anatomy": "root[ icon? | textInfo? | textButton? | textIcon? | buttonSmall? | levelBadge? | buttonIcon? ]",
-    "states": "Default, Pressed, Disabled",
+    "description": "셀(리스트 행) 우측 영역에 배치되는 보조 콘텐츠 컴포넌트로, Figma CellRightItem variants를 제공한다.",
+    "anatomy": "root[ icon | buttonIcon | text | textButton | textIcon | buttonSmall | levelBadge | switch ]",
+    "states": "variants(Icon|ButtonIcon|Text|TextButton|TextIcon|ButtonSmall|LevelBadge|Switch)",
     "do": "리스트 셀의 트레일링 영역에 단독으로 배치하여 우측 액션·정보를 표현한다.",
-    "rules": "variants: Icon|TextInfo|TextButton|TextIcon|ButtonSmall|LevelBadge|ButtonIcon."
+    "rules": "props: variants(\"Icon\"|\"ButtonIcon\"|\"Text\"|\"TextButton\"|\"TextIcon\"|\"ButtonSmall\"|\"LevelBadge\"|\"Switch\"). TextInfo는 기존 사용처 호환 alias로만 유지한다."
+  },
+  "CellRightSelect": {
+    "type": "Cell",
+    "standalone": true,
+    "description": "왼쪽 라벨과 오른쪽 선택 컨트롤로 구성된 셀 아이템.",
+    "anatomy": "root[ label, RadioItem|CheckboxItem ]",
+    "states": "variants(Radio|Circle)",
+    "do": "텍스트 오른쪽에 radio 또는 checkbox 선택 컨트롤을 배치해야 할 때 사용한다.",
+    "rules": "props: variants(\"Radio\"|\"Circle\"). 내부 라벨은 Figma 기본값 Label을 사용한다."
+  },
+  "CellRightTable": {
+    "type": "Cell",
+    "standalone": true,
+    "description": "좌측 타이틀과 우측 정렬 설명 텍스트로 구성된 오른쪽 기준 테이블 셀 컴포넌트.",
+    "anatomy": "root[ title, description(right aligned) ]",
+    "states": "variants(18Semi|16Semi|16reg|15reg)",
+    "do": "레이블-값 쌍을 한 행에 표시하고 우측 값을 오른쪽 정렬해야 할 때 사용한다.",
+    "rules": "props: description(string), title(string), variants(\"18Semi\"|\"16Semi\"|\"16reg\"|\"15reg\")."
   },
   "CellRightTableItem": {
     "type": "Cell",
@@ -396,6 +441,15 @@
     "states": "Default, Selected, Disabled",
     "do": "단일 선택이 필요한 목록 항목에는 variant=\"radioButton\", 다중 선택에는 variant=\"checkbox\"를 사용한다.",
     "rules": "props: variant, rightItem, selected, disabled, label, rightText."
+  },
+  "CellSheet": {
+    "type": "Cell",
+    "standalone": true,
+    "description": "바텀시트 내부에서 가격 정보 또는 안내 문구를 썸네일과 함께 표시하는 셀 컴포넌트.",
+    "anatomy": "root[ leftItem[ thumbnail, priceText|title ], cellRightItem? ]",
+    "states": "variants(Price|Notice), cellRightItem(on|off)",
+    "do": "바텀시트 내부에서 상품 가격 정보 또는 안내성 셀을 40px 높이로 표시할 때 사용한다.",
+    "rules": "props: caption(string), cellRightItem(boolean), subtitle(string), title(string), value01(string), value02(string), variants(\"Price\"|\"Notice\")."
   },
   "CellSheetItem": {
     "type": "Cell",
@@ -424,14 +478,14 @@
     "do": "포인트 적립·소비 내역, 공지 목록 등 날짜와 카테고리 정보를 함께 보여주는 텍스트 중심 리스트 행에 사용한다.",
     "rules": "props: rightItem(None|Badge|Text), label, badgeLabel, rightText, subText, dateText."
   },
-  "CellTextItem": {
+  "CellText": {
     "type": "Cell",
     "standalone": true,
-    "description": "텍스트 레이블과 우측 슬롯(아이콘·텍스트·버튼·토글·레벨배지 등)으로 구성된 단일 리스트 셀 컴포넌트.",
-    "anatomy": "root[ textGroup[ label ], rightItem? ]",
-    "states": "Default, Selected",
-    "do": "리스트 항목 한 행을 표현할 때 사용하며, 우측 인터랙션 요소(rightItem)는 단일 유형만 지정한다.",
-    "rules": "props: variant(Default|Bullet), rightItem(None|Icon|Toggle|TextInfo|TextButton|LevelBadge|TextIcon), label, rightText, toggleChecked, onToggleChange."
+    "description": "텍스트 한 줄과 선택적 우측 Arrow 아이콘으로 구성된 CellText 컴포넌트.",
+    "anatomy": "root[ title|description, rightItem?[ CellRightItem(Icon) ] ]",
+    "states": "variants(Text|Title), size(15|16), rightItem(on|off)",
+    "do": "리스트 항목 한 행에 타이틀 또는 일반 텍스트를 표시하고, 필요 시 우측 이동 Arrow를 함께 배치한다.",
+    "rules": "props: description(string), rightItem(boolean), size(\"15\"|\"16\"), title(string), variants(\"Text\"|\"Title\"). variants=Title은 title, variants=Text는 description을 렌더링한다. 기존 CellTextItem export는 호환 alias로만 유지한다."
   },
   "CellTitleItem": {
     "type": "Cell",
@@ -445,20 +499,29 @@
   "CheckboxItem": {
     "type": "Checkbox",
     "standalone": false,
-    "description": "체크 아이콘과 선택적 레이블로 구성된 단일 체크박스 컴포넌트로, 선택·비선택·비활성화 상태를 지원한다.",
-    "anatomy": "root[ checkbox[ checkIcon? ], label? ]",
-    "states": "Selected, Unselected, Disabled",
-    "do": "checked prop으로 선택 상태를 제어하고, onChange 핸들러로 다음 상태 값을 수신한다.",
-    "rules": "props: checked, disabled, label, showLabel, onChange."
+    "description": "Circle 또는 Line 형태의 단일 체크박스 컨트롤 컴포넌트로, 선택·비선택·비활성화 상태를 지원한다.",
+    "anatomy": "root[ checkbox[ checkIcon? ] ]",
+    "states": "variant(Circle|Line), state(Default|Disabled), selection(on|off)",
+    "do": "상위 선택 컴포넌트 내부에서 체크 상태를 시각적으로 표현할 때 사용한다.",
+    "rules": "props: selection(boolean), state(\"Default\"|\"Disabled\"), variant(\"Circle\"|\"Line\"). checked/disabled는 기존 사용처 호환 alias로만 유지한다. Line + Disabled + selection=true 조합은 사용하지 않는다."
   },
-  "CheckboxTextItem": {
+  "CheckboxLeftTextItem": {
     "type": "Checkbox",
     "standalone": false,
-    "description": "텍스트 레이블이 함께 표시되는 체크박스 아이템 컴포넌트로, 선택/해제 상태와 비활성화 상태를 지원한다.",
-    "anatomy": "root[ checkboxWrap, label(p) ]",
-    "states": "Unselected, Selected, Disabled",
-    "do": "단일 항목 선택/해제가 필요한 목록 행에 사용한다.",
-    "rules": "props: selection(boolean), disabled(boolean), label(string), onChange."
+    "description": "왼쪽 CheckboxItem과 오른쪽 텍스트 라벨로 구성된 체크박스 텍스트 아이템.",
+    "anatomy": "root[ CheckboxItem, label ]",
+    "states": "variants(Circle|Line), size(Small|Medium), state(on|off), checked(on|off)",
+    "do": "텍스트 라벨 왼쪽에 체크박스를 배치해야 하는 선택 항목에 사용한다.",
+    "rules": "props: checked(boolean), label(string), size(\"Small\"|\"Medium\"), state(boolean), variants(\"Circle\"|\"Line\")."
+  },
+  "CheckboxRightTextItem": {
+    "type": "Checkbox",
+    "standalone": false,
+    "description": "왼쪽 텍스트 라벨과 오른쪽 CheckboxItem으로 구성된 체크박스 텍스트 아이템.",
+    "anatomy": "root[ label, CheckboxItem ]",
+    "states": "variants(Circle|Line), size(Small|Medium), state(on|off), checked(on|off)",
+    "do": "텍스트 라벨 오른쪽에 체크박스를 배치해야 하는 선택 항목에 사용한다.",
+    "rules": "props: checked(boolean), label(string), size(\"Small\"|\"Medium\"), state(boolean), variants(\"Circle\"|\"Line\")."
   },
   "Chip": {
     "type": "Chip",
@@ -527,7 +590,7 @@
     "anatomy": "wrap[ titleRow, subText, slot[ children ], actionRow ]",
     "states": null,
     "do": "사용자의 명시적 응답(확인/취소)이 필요한 중요한 작업에 사용한다.",
-    "rules": "props: title, subText, showSubText, showContents, children, secondaryLabel, primaryLabel, onSecondary, onPrimary."
+    "rules": "props: title, subText, showSubText, showContents, children, secondaryLabel, primaryLabel, onSecondary, onPrimary. slot[children] 높이는 콘텐츠 기준으로 hug되며, 빈 슬롯에 고정 높이를 두지 않는다."
   },
   "DialogActionButtonItem": {
     "type": "Dialog",
@@ -1047,6 +1110,50 @@
     "parent": "CellDefault",
     "slot": "TrailingContent"
   },
+  "InputCaretItem": {
+    "type": "Input",
+    "standalone": false,
+    "description": "입력 필드 포커스/타이핑 상태에서 표시되는 1px caret 인디케이터 서브 컴포넌트.",
+    "anatomy": "root",
+    "states": null,
+    "do": "InputTypeItem 내부에서 포커스 또는 입력 중 caret 표시가 필요할 때 사용한다.",
+    "rules": "props: className.",
+    "parent": "InputTypeItem",
+    "slot": "Caret"
+  },
+  "InputClearButtonItem": {
+    "type": "Input",
+    "standalone": false,
+    "description": "입력 중인 텍스트를 지우는 닫기 아이콘 버튼 서브 컴포넌트.",
+    "anatomy": "root[ IconClose ]",
+    "states": "Default, Disabled",
+    "do": "InputTypeItem의 Typing 상태에서 입력값 삭제 버튼으로 사용한다.",
+    "rules": "props: state(Default|Disabled), aria-label, onClick, className.",
+    "parent": "InputTypeItem",
+    "slot": "TrailingContent"
+  },
+  "InputHelpTextItem": {
+    "type": "Input",
+    "standalone": false,
+    "description": "입력 필드 하단에 도움말 또는 오류 문구를 표시하는 텍스트 서브 컴포넌트.",
+    "anatomy": "root[ text ]",
+    "states": "danger(false|true)",
+    "do": "Input 하단의 helper/error text 영역에 사용한다.",
+    "rules": "props: children(string), danger(boolean), className.",
+    "parent": "Input",
+    "slot": "HelperText"
+  },
+  "InputTypeItem": {
+    "type": "Input",
+    "standalone": false,
+    "description": "Input 내부의 텍스트 필드 본체를 구성하는 서브 컴포넌트로 상태별 입력 UI를 표시한다.",
+    "anatomy": "root[ textField[ contents[ text, InputCaretItem? ], InputClearButtonItem? ] ]",
+    "states": "state(Default|Focused|Typing|Completed|Disabled), danger(false|true)",
+    "do": "Input 컴포넌트 내부에서 입력 필드의 시각 상태를 표현할 때 사용한다.",
+    "rules": "props: state(Default|Focused|Typing|Completed|Disabled), danger(boolean), text(string), onClear, className.",
+    "parent": "Input",
+    "slot": "InputField"
+  },
   "LayoutHomePageStack": {
     "type": "Layout",
     "standalone": true,
@@ -1198,15 +1305,6 @@
     "states": "Default",
     "do": "세로형 상품 카드(CardProductVertical) 내 텍스트 영역에 배치한다.",
     "rules": "props: brand, name, originalPrice, discountRate, salePrice."
-  },
-  "TextItem": {
-    "type": "Text",
-    "standalone": false,
-    "description": "단락 텍스트를 표시하는 기본 텍스트 컴포넌트로, 다양한 타이포그래피 변형과 색상 옵션을 지원한다.",
-    "anatomy": "root<p>[ text ]",
-    "states": null,
-    "do": "본문 설명 텍스트·안내 문구 등 단락 단위 텍스트를 표시할 때 사용한다.",
-    "rules": "props: text, variant, color, align, className."
   },
   "Thumbnail": {
     "type": "Thumbnail",

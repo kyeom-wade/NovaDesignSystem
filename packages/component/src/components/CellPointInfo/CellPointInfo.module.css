@@ -1,0 +1,82 @@
+/* CellPointInfo - Figma node 54063:24037
+   anatomy: root[ ThumbnailRoundItem, textInfo[ txt[ title, value ], txtSub[ caption01, caption02 ] ] ]
+   properties: caption01, caption02, title, value, variants
+*/
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-12, 12px);
+  position: relative;
+  width: 353px;
+  min-height: 48px;
+  box-sizing: border-box;
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
+}
+
+.textInfo {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--skt-spacing-4, 4px);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  white-space: nowrap;
+}
+
+.mainRow {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+  gap: var(--skt-spacing-40, 40px);
+}
+
+.title {
+  flex: 1 0 0;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--skt-color-gray-1000, var(--skt-color-text-neutral-primary, #060c1f));
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+}
+
+.value {
+  flex-shrink: 0;
+  margin: 0;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+  text-align: right;
+}
+
+.valueDiscount {
+  color: var(--skt-color-text-neutral-secondary, rgba(12, 27, 65, 0.67));
+}
+
+.subRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+  color: var(--skt-color-text-neutral-tertiary, rgba(12, 34, 91, 0.42));
+}
+
+.caption {
+  flex-shrink: 0;
+  margin: 0;
+  color: inherit;
+  font-size: var(--skt-typography-font-size-400, 13px);
+  font-weight: var(--skt-typography-font-weight-medium, 500);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+}

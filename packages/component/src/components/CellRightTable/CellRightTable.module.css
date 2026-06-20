@@ -1,0 +1,56 @@
+/* CellRightTable - Figma node 55296:30689
+   anatomy: root[ title, description ]
+   variants: 18Semi | 16Semi | 16reg | 15reg
+*/
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--skt-spacing-16, 16px);
+  position: relative;
+  width: 353px;
+  box-sizing: border-box;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
+  line-height: var(--skt-typography-line-height-200, 130%);
+  letter-spacing: 0;
+}
+
+.title,
+.description {
+  margin: 0;
+  word-break: break-word;
+}
+
+.title {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.description {
+  flex: 1 0 0;
+  min-width: 0;
+  text-align: right;
+}
+
+.variant18Semi {
+  font-size: var(--skt-typography-font-size-800, 18px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+}
+
+.variant16Semi {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-semibold, 600);
+}
+
+.variant16reg {
+  font-size: var(--skt-typography-font-size-700, 16px);
+  font-weight: var(--skt-typography-font-weight-regular, 400);
+}
+
+.variant15reg {
+  font-size: var(--skt-typography-style-15reg-font-size, var(--skt-typography-font-size-600, 15px));
+  font-weight: var(--skt-typography-style-15reg-font-weight, var(--skt-typography-font-weight-regular, 400));
+  line-height: var(--skt-typography-style-15reg-line-height, var(--skt-typography-line-height-200, 130%));
+  letter-spacing: var(--skt-typography-style-15reg-letter-spacing, var(--skt-typography-letter-spacing-dense, -0.05em));
+}
