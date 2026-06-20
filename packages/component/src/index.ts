@@ -23,7 +23,6 @@ export { InputCaretItem } from "./components/InputCaretItem";
 export { CarouselGroupItem } from "./components/CarouselGroupItem";
 export { CarouselItem } from "./components/CarouselItem";
 export { CellBoxItem } from "./components/CellBoxItem";
-export { CellBrandItem } from "./components/CellBrandItem";
 export { CellLeftSelect } from "./components/CellLeftSelect";
 export { CellLeftTable } from "./components/CellLeftTable";
 export { CellPayment } from "./components/CellPayment";

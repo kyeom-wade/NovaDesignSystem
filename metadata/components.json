@@ -316,15 +316,6 @@
     "do": "박스 단위로 구분된 셀 영역 안에 임의 콘텐츠를 배치할 때 사용한다. Box 내부에서 Divider 컴포넌트를 사용하는 경우 Divider 상하에 8px 패딩을 추가한다.",
     "rules": "props: children(ReactNode), className(string). 루트는 width 353px 기준, padding 16px 20px, radius 16px, fill/neutral/primary 배경을 사용한다. CellBoxItemSlot 높이는 콘텐츠 기준으로 hug되며, 빈 슬롯에 고정 높이를 두지 않는다."
   },
-  "CellBrandItem": {
-    "type": "Cell",
-    "standalone": true,
-    "description": "브랜드 로고 썸네일과 텍스트 정보, 선택적 우측 액션 버튼을 조합한 브랜드/상품 셀 컴포넌트입니다.",
-    "anatomy": "root[ contentsGroup[ thumbnail, textGroup ], rightButton? ]",
-    "states": null,
-    "do": "브랜드 또는 상품 목록에서 로고 이미지와 이름·부가 정보를 한 행으로 나열할 때 사용합니다.",
-    "rules": "props: thumbnailSrc, subTitle, mainText, subText, rightButtonLabel, rightButton, onRightButtonClick."
-  },
   "CellCard": {
     "type": "Cell",
     "standalone": true,
