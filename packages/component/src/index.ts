@@ -11,7 +11,6 @@ export { BottomSheetHandleItem } from "./components/BottomSheetHandleItem";
 export { BottomSheetSelectItem } from "./components/BottomSheetSelectItem";
 export { ButtonIcon } from "./components/ButtonIcon";
 export { ButtonIconAiItem } from "./components/ButtonIconAiItem";
-export { ButtonIconItem } from "./components/ButtonIconItem";
 export { InputClearButtonItem } from "./components/InputClearButtonItem";
 export { InputHelpTextItem } from "./components/InputHelpTextItem";
 export { InputTypeItem } from "./components/InputTypeItem";

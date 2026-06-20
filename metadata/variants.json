@@ -115,7 +115,7 @@
   "ButtonIcon": {
     "Large": {
       "description": "24px 아이콘 슬롯. 버튼·타이틀·셀 등에서 가장 큰 아이콘 크기가 필요한 경우 사용한다.",
-      "distinction": "상호작용 가능한 닫기/삭제 버튼에는 기존 ButtonIconItem을 사용한다."
+      "distinction": "12px 소형 보조 아이콘에는 Small, 16px 일반 아이콘에는 Medium을 사용한다."
     },
     "Medium": {
       "description": "16px 아이콘 슬롯. 텍스트 옆 보조 아이콘이나 타이틀/셀 내부의 일반 아이콘 크기에 사용한다.",
@@ -123,27 +123,13 @@
     },
     "Small": {
       "description": "12px 아이콘 슬롯. 작은 텍스트 버튼, 배지, 보조 정보 옆의 작은 아이콘에 사용한다.",
-      "distinction": "터치 가능한 아이콘 버튼에는 크기가 충분한 ButtonIconItem 또는 ButtonItem을 사용한다."
+      "distinction": "터치 가능한 아이콘 버튼에는 크기가 충분한 ButtonItem을 사용한다."
     }
   },
   "ButtonIconAiItem": {
     "Default": {
       "description": "44px 원형 AI 아이콘 버튼 아이템. AI 진입점이나 플로팅 AI 액션을 시각적으로 구분할 때 사용한다.",
-      "distinction": "일반 아이콘 슬롯에는 ButtonIcon을 사용하고, AI 맥락이 아닌 닫기·삭제 버튼에는 ButtonIconItem을 사용한다."
-    }
-  },
-  "ButtonIconItem": {
-    "Small": {
-      "description": "밀도 높은 UI에서 좁은 공간에 배치되는 소형 아이콘 버튼. 리스트 행 내 부가 아이콘 액션에 사용한다.",
-      "distinction": "주요 행동 아이콘 버튼에는 Medium/Large를 사용한다."
-    },
-    "Medium": {
-      "description": "일반적인 UI 밀도에서 기본으로 사용하는 아이콘 버튼. 앱바 우측 아이콘, 카드 내 행동 아이콘에 사용한다.",
-      "distinction": "좁은 리스트 내 부가 아이콘에는 Small, 강조 단독 아이콘에는 Large를 사용한다."
-    },
-    "Large": {
-      "description": "단독으로 눈에 잘 띄어야 하는 강조형 아이콘 버튼. 플로팅 액션 버튼(FAB) 또는 주요 아이콘 진입점에 사용한다.",
-      "distinction": "일반 UI 아이콘 버튼에는 Medium을 사용한다."
+      "distinction": "일반 아이콘 슬롯에는 ButtonIcon을 사용한다."
     }
   },
   "CarouselItem": {
