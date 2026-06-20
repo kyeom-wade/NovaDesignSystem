@@ -216,26 +216,6 @@
     "do": "- 약관 보기, 더보기, 상세 이동처럼 주요 CTA보다 약한 텍스트 액션에 사용한다.\n- variants=\"Text\"는 밑줄 텍스트 버튼으로, variants=\"Text+Icon\"은 우측 Chevron이 필요한 이동 액션으로 사용한다.\n- 파괴적이거나 위험한 텍스트 액션에는 danger=true를 설정한다.",
     "rules": "**props 요약**\n- variants: Text(기본) | Text+Icon — Figma 기준 prop\n- variant: 기존 호환 alias, TextIcon 입력 시 Text+Icon으로 매핑\n- size: Small | Medium | Large | XLarge(기본)\n- state: Default(기본) | Disabled\n- danger: boolean — 파괴적 액션 시 true\n- label: 버튼 텍스트 (기본 \"Label\")\n\n**[맵핑 트리거]** 밑줄 텍스트 버튼 또는 텍스트+Chevron 보조 액션이 필요할 때 사용한다.\n\n**[사용 시점]**\n- 링크처럼 보이는 보조 액션\n- 목록·타이틀·문구 옆의 더보기/상세보기 액션\n- Primary CTA보다 시각 강조가 낮아야 하는 텍스트 액션\n\n**[구분]**\n- 화면 하단 주요 CTA나 filled/outlined 버튼에는 ButtonItem을 사용한다.\n- 아이콘만 표시하는 버튼에는 ButtonIconItem을 사용한다."
   },
-  "CardContentsListItem": {
-    "type": "Card",
-    "standalone": false,
-    "description": "카드 목록 내 개별 항목을 렌더링하는 서브 컴포넌트로, Profile·Data·Barcode·Product·Benefit·TaskCard 등 6가지 레이아웃 variant를 지원한다.",
-    "anatomy": "root[ {Profile: avatarThumb, profileName, profilePhone, actionBtn} | {Data: leftArea[titleRow[titleText, badge], subTitle], iconArea} | {Barcode: barcodeImg, barcodeNumRow[nums, time]} | {Product: thumbSquare, textGroup[mainText, price]} | {Benefit: thumbRound, textGroup[mainText, subTexts, badgeList]} | {TaskCard: gradientBg, imageArea} ]",
-    "states": null,
-    "do": "- variant 값에 따라 레이아웃이 완전히 달라지므로, 사용 맥락(프로필·데이터·바코드·상품·혜택·태스크)에 맞는 variant를 정확히 지정한다.\n- 이 컴포넌트는 단독 사용 불가이며, 반드시 Card 계열 부모(CardInfoList 등)의 리스트 슬롯 안에서 반복 렌더링한다.\n- thumbnailSrc가 없을 경우 플레이스홀더가 자동 표시되므로, 이미지 미확정 상태에서도 레이아웃을 깨지 않고 사용할 수 있다.",
-    "rules": "**variant 옵션**: Profile | Data | Barcode | Product | Benefit | TaskCard (기본값: Profile)\n\n**주요 props**\n- Profile: profileName, profilePhone, actionLabel, onAction, thumbnailSrc\n- Data: title, showTitle, badgeText, showBadge, subTitle\n- Barcode: barcodeNumbers(4-tuple), barcodeTime\n- Product: mainText, priceText, thumbnailSrc\n- Benefit: mainText, subTexts[], badges[], thumbnailSrc\n- TaskCard: taskTitle, taskBody, taskImageSrc\n\n[맵핑 트리거] 카드형 목록에서 각 행(row)이 Profile·데이터·바코드·상품·혜택·태스크 중 하나의 정보 패턴을 가질 때 사용\n\n[사용 시점] CardInfoList·CardProductHorizontalList·CardProductVerticalList 등 Card 계열 컨테이너의 자식 아이템으로만 사용\n\n[구분] CellDefault/CellCard는 범용 셀 행(row)인 반면, CardContentsListItem은 카드 영역 내부에 특화된 콘텐츠 레이아웃(썸네일+텍스트+배지 조합 등)을 제공하는 점에서 구분됨",
-    "parent": "CardInfoList",
-    "slot": "Content"
-  },
-  "CardInfoList": {
-    "type": "Card",
-    "standalone": true,
-    "description": "브랜드·쿠폰·장소·지도 등 다양한 레이아웃 변형을 지원하는 정보 카드 리스트 아이템 컴포넌트입니다.",
-    "anatomy": "root[ brand/coupon: contentsGroup[thumbnail, textGroup[mainText, subText?, badgeList?]], rightButton? | place: contentsGroup[iconItem, textGroup[mainText, subText?]], rightButton? | listCardMap: imageMap ]",
-    "states": null,
-    "do": "- variant에 따라 Brand(썸네일+텍스트), Coupon(썸네일+텍스트+버튼), Place(아이콘+텍스트+버튼), ListCardMap(지도 이미지) 중 하나를 선택해 사용한다.\n- rightButtonLabel과 onRightButtonClick은 Place·Coupon variant에서만 의미가 있으며, showRightButton으로 노출 여부를 명시적으로 제어할 수 있다.\n- badges는 Brand·Coupon variant에서만 렌더링되므로, Place·ListCardMap에서는 전달하지 않는다.",
-    "rules": "**props 요약**\n- variant: \"Brand\"(기본) | \"Coupon\" | \"Place\" | \"ListCardMap\"\n- thumbnailSrc: string — Brand/Coupon 썸네일 이미지 경로\n- iconSrc: string — Place 아이콘 이미지 경로\n- mapSrc: string — ListCardMap 지도 이미지 경로\n- mainText: string — 주 텍스트\n- subText: string — 보조 텍스트 (showSubText=false로 숨김 가능)\n- badges: BadgeItem[] — 배지 라벨 목록 (Brand/Coupon)\n- rightButtonLabel: string — 오른쪽 pill 버튼 라벨\n- showRightButton: boolean — 버튼 강제 노출/숨김 (미지정 시 Place·Coupon에서 자동 노출)\n\n[맵핑 트리거] 카드형 리스트에서 브랜드·혜택·장소·지도 항목을 단일 행으로 표현해야 할 때 사용한다.\n\n[사용 시점] 리스트 내 각 항목이 썸네일 또는 아이콘 + 텍스트 조합으로 구성되고, 선택적으로 액션 버튼이 필요한 경우에 적합하다.\n\n[구분] CellDefault/CellCard 등 Cell 계열은 일반 목록 행에 사용하고, CardInfoList는 브랜드·쿠폰·장소처럼 콘텐츠 유형이 명확히 구분되는 카드형 항목에 사용한다."
-  },
   "CardProductHorizontalList": {
     "type": "Card",
     "standalone": true,

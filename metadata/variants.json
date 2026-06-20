@@ -146,50 +146,6 @@
       "distinction": "일반 UI 아이콘 버튼에는 Medium을 사용한다."
     }
   },
-  "CardContentsListItem": {
-    "Profile": {
-      "description": "아바타·이름·전화번호·버튼으로 구성된 연락처 프로필 카드 행. 담당자·고객센터 연락처 목록에 사용한다.",
-      "distinction": "상품 이미지와 가격이 필요하면 Product를 사용한다."
-    },
-    "Data": {
-      "description": "타이틀·배지·서브타이틀·아이콘 조합의 데이터 정보 카드 행. 이력·현황·약관 목록 등 구조화된 정보 표시에 사용한다.",
-      "distinction": "바코드 표시는 Barcode, 상품 구매 목록에는 Product를 사용한다."
-    },
-    "Barcode": {
-      "description": "바코드 이미지·번호·유효기간으로 구성된 쿠폰 제시 카드 행. 쿠폰 사용·제시 화면에 사용한다.",
-      "distinction": "상품 탐색·구매 목록에는 Product, 혜택 목록에는 Benefit을 사용한다."
-    },
-    "Product": {
-      "description": "썸네일 이미지·상품명·가격으로 구성된 상품 목록 카드 행. 구매 내역·장바구니·상품 목록에 사용한다.",
-      "distinction": "바코드가 필요하면 Barcode, 원형 썸네일+혜택 배지 목록에는 Benefit을 사용한다."
-    },
-    "Benefit": {
-      "description": "원형 썸네일·텍스트·배지 목록으로 구성된 혜택 카드 행. 멤버십 혜택·쿠폰 탐색 목록에 사용한다.",
-      "distinction": "상품 구매 목록에는 Product, 바코드 제시에는 Barcode를 사용한다."
-    },
-    "TaskCard": {
-      "description": "그라디언트 배경과 이미지를 활용한 강조형 태스크 카드 행. 홈 화면 주요 서비스 진입 카드나 이벤트 배너 형태에 사용한다.",
-      "distinction": "일반 정보 나열에는 Data, 상품 구매에는 Product를 사용한다."
-    }
-  },
-  "CardInfoList": {
-    "Brand": {
-      "description": "브랜드 로고(원형, 배경색 커스텀)·서브타이틀·타이틀·배지 행으로 구성된 브랜드 카드. 브랜드 목록·지도 브랜드 핀 카드에 사용한다.",
-      "distinction": "핀 번호·거리·전화 등 장소 정보가 필요하면 Place를 사용한다."
-    },
-    "Coupon": {
-      "description": "쿠폰 이미지·할인율·이름·유효기간으로 구성된 쿠폰 목록 카드. 보유 쿠폰 목록·적용 가능 쿠폰 탐색에 사용한다.",
-      "distinction": "브랜드 탐색에는 Brand, 지도 연동 장소에는 Place를 사용한다."
-    },
-    "Place": {
-      "description": "지도 마커와 연동된 핀 번호·거리·장소명·전화 버튼으로 구성된 장소 카드. 지도 마커 클릭 시 장소 요약 카드로 사용한다.",
-      "distinction": "브랜드 로고·배지 표시에는 Brand를 사용한다."
-    },
-    "ListCardMap": {
-      "description": "지도 화면 하단 리스트 형태의 카드 맵 항목. 지도 하단 슬라이더 목록에서 장소·브랜드 항목을 표시할 때 사용한다.",
-      "distinction": "팝업·말풍선 형태의 단일 장소 카드에는 Place를 사용한다."
-    }
-  },
   "CarouselItem": {
     "Small": {
       "description": "좁은 공간의 인라인 캐러셀에 배치되는 소형 슬라이드 아이템. 브랜드 로고 띠·배지 슬라이더 등 컴팩트한 캐러셀에 사용한다.",
