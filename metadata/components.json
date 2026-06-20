@@ -112,6 +112,17 @@
     "parent": "BottomGroup",
     "slot": "Content"
   },
+  "BottomGroupAiUpperItem": {
+    "type": "BottomGroup",
+    "standalone": false,
+    "description": "BottomGroup 상단 영역의 AI 안내 행 아이템으로, AI 아이콘과 그라디언트 텍스트 레이블을 한 줄로 표시하는 서브 컴포넌트입니다.",
+    "anatomy": "root[ iconItem(AI 16px), caption(gradient text) ]",
+    "states": null,
+    "do": "- AI가 제안·요약·안내하는 한 줄 메시지를 하단 CTA 위에 표시할 때 사용한다.\n- caption 텍스트는 brand 그라디언트(blue-800→blue-600)로 강조된다.\n- BottomGroup 계열 부모의 상단 슬롯 안에서만 배치하며 단독 사용은 금지한다.",
+    "rules": "**Props 요약**\n- caption: AI 안내 텍스트 (기본값 \"텍스트\") — brand 그라디언트 적용\n- iconAlt: AI 아이콘 대체 텍스트 (기본값 \"AI\")\n\n[맵핑 트리거] 하단 CTA 위에 AI가 만든 한 줄 안내·추천 문구를 아이콘과 함께 표시해야 할 때\n\n[사용 시점] BottomGroupAi 영역 상단에 AI 컨텍스트(추천 요금제·맞춤 혜택 등)를 알려주는 캡션 행이 필요한 화면\n\n[구분] BottomGroupUpperItem은 일반 레이블/키-값 정보 행이고, BottomGroupAiUpperItem은 AI 아이콘과 그라디언트 텍스트를 쓰는 AI 전용 안내 행임.",
+    "parent": "BottomGroup",
+    "slot": "Content"
+  },
   "BottomGroupAreaItem": {
     "type": "BottomGroup",
     "standalone": false,
