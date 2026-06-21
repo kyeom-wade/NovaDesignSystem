@@ -54,7 +54,6 @@ export { RadioTextItem } from "./components/RadioTextItem";
 export { SwitchItem } from "./components/SwitchItem";
 export { TabFixedItem } from "./components/TabFixedItem";
 export { TabScrollItem } from "./components/TabScrollItem";
-export { TextGroupProductDetail } from "./components/TextGroupProductDetail";
 export { ThumbnailRectangleItem } from "./components/ThumbnailRectangleItem";
 export { ThumbnailRoundItem } from "./components/ThumbnailRoundItem";
 export { ThumbnailSquareItem } from "./components/ThumbnailSquareItem";

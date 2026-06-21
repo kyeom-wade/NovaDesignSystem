@@ -1,1 +1,0 @@
-export { TextGroupProductDetail } from "./TextGroupProductDetail";

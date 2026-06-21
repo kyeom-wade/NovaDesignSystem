@@ -1199,15 +1199,6 @@
     "parent": "TabScroll",
     "slot": "Content"
   },
-  "TextGroupProductDetail": {
-    "type": "TextGroup",
-    "standalone": true,
-    "description": "상품 상세 페이지 전용 텍스트 그룹 컴포넌트로, 브랜드명·상품명·가격·별점·리뷰 수 등 상품 핵심 정보를 수직으로 표시한다.",
-    "anatomy": "wrap[ brandName, productName, ratingRow[ stars, reviewCount ], priceRow[ originalPrice?, discountRate?, salePrice ] ]",
-    "states": "Default",
-    "do": "상품 상세 페이지 상단 정보 영역에 배치한다.",
-    "rules": "props: brand, name, rating, reviewCount, originalPrice, discountRate, salePrice, badges."
-  },
   "Thumbnail": {
     "type": "Thumbnail",
     "standalone": true,
