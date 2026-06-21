@@ -1,0 +1,46 @@
+/* CarouselItem — Figma node 51093:41213
+   캐러셀 슬라이드 아이템 3 variant (Small / Medium / Large)
+   = 썸네일 + TextProductDetail(ProductList) 인스턴스 합성.
+   gap: carouselitem/gap/1=12 · text padding x-1=4 x-2=8
+*/
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  box-sizing: border-box;
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
+}
+
+.variant-Small { width: 128px; }
+.variant-Medium { width: 128px; }
+.variant-Large { width: 160px; overflow: hidden; }
+
+/* ── 썸네일 ── */
+.thumbSquare128 {
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.thumbSquare160 {
+  flex-shrink: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.thumbRect {
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* ── TextProductDetail 인스턴스 — 카드 폭에 맞춰 width/padding 오버라이드 ── */
+.text {
+  width: 100%;
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+.textLarge {
+  padding: 0 8px;
+}

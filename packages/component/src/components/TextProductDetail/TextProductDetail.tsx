@@ -57,9 +57,11 @@ export interface TextProductDetailProps {
   caption031?: string;
   caption032?: string;
   caption033?: string;
-  /** 하위정보 각 항목 앞 더미 아이콘(ProductList) */
+  /** 하위정보 각 항목 앞 아이콘(ProductList) */
   captionIconItem1?: boolean;
   captionIconItem2?: boolean;
+  /** 하위정보 아이콘 종류(Dummy=더미, Star=별점) */
+  captionIconType?: "Dummy" | "Star";
   /** 추가 개수(e.g. +2) */
   count?: string;
   captionCount?: boolean;
@@ -78,6 +80,22 @@ export interface TextProductDetailProps {
   /** Variants4 브랜드 로고 이미지 */
   logoSrc?: string;
   className?: string;
+}
+
+const STAR_PATH =
+  "M6 0.75L7.545 3.88L11 4.385L8.5 6.82L9.09 10.26L6 8.635L2.91 10.26L3.5 6.82L1 4.385L4.455 3.88L6 0.75Z";
+
+function CaptionIcon({ type }: { type: "Dummy" | "Star" }) {
+  if (type === "Star") {
+    return (
+      <span className={styles.captionIconStar} aria-hidden="true">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d={STAR_PATH} fill="currentColor" />
+        </svg>
+      </span>
+    );
+  }
+  return <IconDummy size={12} className={styles.captionIcon} />;
 }
 
 const HEART_OFF_PATH =
@@ -122,6 +140,7 @@ export function TextProductDetail({
   caption033 = "Caption03-3",
   captionIconItem1 = false,
   captionIconItem2 = false,
+  captionIconType = "Dummy",
   count = "+2",
   captionCount = true,
   badgeGroup = true,
@@ -168,12 +187,12 @@ export function TextProductDetail({
         {caption03 && (
           <div className={styles.subInfoRow}>
             <div className={styles.subInfoItem}>
-              {captionIconItem1 && <IconDummy size={12} className={styles.captionIcon} />}
+              {captionIconItem1 && <CaptionIcon type={captionIconType} />}
               <span className={styles.subInfo}>{caption031}</span>
             </div>
             <VDivider />
             <div className={styles.subInfoItem}>
-              {captionIconItem2 && <IconDummy size={12} className={styles.captionIcon} />}
+              {captionIconItem2 && <CaptionIcon type={captionIconType} />}
               <span className={styles.subInfo}>{caption032}</span>
             </div>
             {captionCount && <span className={styles.subInfo}>{count}</span>}

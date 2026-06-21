@@ -132,6 +132,20 @@
       "distinction": "일반 아이콘 슬롯에는 ButtonIconItem을 사용한다."
     }
   },
+  "CarouselItem": {
+    "Small": {
+      "description": "128px 정사각 썸네일 + 타이틀·가격조건 캡션·가격. 좁은 폭의 컴팩트 상품 슬라이드에 사용한다.",
+      "distinction": "별점·예매율 표기에는 Medium, 할인가·배지 강조에는 Large 를 사용한다."
+    },
+    "Medium": {
+      "description": "128x192 직사각 썸네일 + 타이틀·별점/예매율. 영화·콘텐츠 등 포스터형 슬라이드에 사용한다.",
+      "distinction": "정사각 상품 이미지에는 Small/Large 를 사용한다."
+    },
+    "Large": {
+      "description": "160px 정사각 썸네일 + 서브타이틀·타이틀·할인가·배지. 정보량이 많은 대표 상품 슬라이드에 사용한다.",
+      "distinction": "간결한 컴팩트 슬라이드에는 Small 을 사용한다."
+    }
+  },
   "CellRightItem": {
     "Icon": {
       "level": 1,

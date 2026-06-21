@@ -168,6 +168,16 @@
   flex-shrink: 0;
   color: var(--skt-color-icon-disabled-default, rgba(11, 44, 127, 0.18));
 }
+.captionIconStar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  color: var(--skt-color-icon-neutral-tertiary, rgba(12, 34, 91, 0.42));
+}
+.captionIconStar svg { display: block; }
 
 .subInfo,
 .subInfo14 {

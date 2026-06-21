@@ -17,6 +17,7 @@ export { InputTypeItem } from "./components/InputTypeItem";
 export { ButtonItem } from "./components/ButtonItem";
 export { ButtonTextItem } from "./components/ButtonTextItem";
 export { CardItem } from "./components/CardItem";
+export { CarouselItem } from "./components/CarouselItem";
 export { InputCaretItem } from "./components/InputCaretItem";
 export { CellBoxItem } from "./components/CellBoxItem";
 export { CellLeftSelect } from "./components/CellLeftSelect";
