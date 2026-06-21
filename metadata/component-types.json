@@ -27,7 +27,7 @@
     "name_ko": "배너",
     "standalone": true,
     "description": "이미지나 메시지를 넓은 영역에 노출해 정보나 프로모션을 전달하는 컴포넌트입니다. 주로 화면 상단이나 콘텐츠 사이에 배치되며, 클릭하면 관련 페이지로 이동합니다. 여러 장을 가로로 넘겨보는 경우 인디케이터와 함께 사용하고, 이벤트나 광고처럼 사용자의 시선을 끌어야 하는 콘텐츠를 노출할 때 활용합니다.",
-    "distinction": "프로모/광고성 노출 전용 — 완결된 정보 묶음은 Card, 가로 스크롤 탐색 일반은 Carousel, 항목 행 나열은 Item. 단순 대표 이미지는 Thumbnail."
+    "distinction": "프로모/광고성 노출 전용 — 완결된 정보 묶음은 Card, 항목 행 나열은 Item. 단순 대표 이미지는 Thumbnail."
   },
   "BottomGroup": {
     "name_ko": "하단 버튼 그룹",
@@ -63,11 +63,6 @@
     "standalone": true,
     "description": "관련된 정보와 액션을 하나의 단위로 묶어 표시하는 컨테이너입니다. 콘텐츠 유형과 레이아웃에 따라 정보형(InfoList), 가로형 상품(ProductHorizontalList), 세로형 상품(ProductVerticalList) 등으로 구분되며, 리스트나 그리드 내에서 반복 배치됩니다.",
     "distinction": "Cell과 혼동 금지 — '여러 정보·항목을 행으로 나열'하는 것은 Card가 아니라 Cell이다. Card는 '완결된 독립 단위'(브랜드/상품 카드)에만 쓴다. 안내·주의 문구는 Alert, 접이식 고지는 Accordion. '정보를 보여준다'의 디폴트 타입은 Cell이다."
-  },
-  "Carousel": {
-    "name_ko": "캐러셀",
-    "standalone": true,
-    "description": "*ShadCN에 정의된 Carousel은 현재 저희가 사용하는 개념과 인터랙션, 구조에 차이가 있어, Thumbnail과 Carousel 두 가지 타입으로 새롭게 정의했습니다. (성념) 여러 콘텐츠 아이템을 가로 스크롤로 탐색할 수 있는 컨테이너입니다. 이미지나 카드처럼 시각적 콘텐츠를 한 화면 안에서 연속으로 훑어볼 때 사용합니다."
   },
   "Cell": {
     "name_ko": "목록 셀",

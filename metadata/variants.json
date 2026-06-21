@@ -132,34 +132,6 @@
       "distinction": "일반 아이콘 슬롯에는 ButtonIconItem을 사용한다."
     }
   },
-  "CarouselItem": {
-    "Small": {
-      "description": "좁은 공간의 인라인 캐러셀에 배치되는 소형 슬라이드 아이템. 브랜드 로고 띠·배지 슬라이더 등 컴팩트한 캐러셀에 사용한다.",
-      "distinction": "상품 대표 이미지 캐러셀에는 Medium/Large를 사용한다."
-    },
-    "Medium": {
-      "description": "목록·홈 화면의 일반 캐러셀 슬라이드 아이템. 혜택·이벤트·상품 카드 슬라이더에 사용한다.",
-      "distinction": "전체 너비 대형 히어로 캐러셀에는 Large를 사용한다."
-    },
-    "Large": {
-      "description": "화면 너비를 가득 채우는 대형 히어로 캐러셀 슬라이드 아이템. 메인 배너·상품 대표 이미지 풀스크린 슬라이더에 사용한다.",
-      "distinction": "목록 내 카드형 슬라이더에는 Medium을 사용한다."
-    }
-  },
-  "CarouselGroupItem": {
-    "Small": {
-      "description": "좁은 공간의 컴팩트 그룹 캐러셀 컨테이너. 여러 소형 슬라이드를 묶어 표시하는 띠 형태 그룹에 사용한다.",
-      "distinction": "표준 크기 그룹 캐러셀에는 Medium을 사용한다."
-    },
-    "Medium": {
-      "description": "홈·목록 화면의 표준 그룹 캐러셀 컨테이너. 여러 카드를 슬라이딩 그룹으로 묶는 일반적인 캐러셀 레이아웃에 사용한다.",
-      "distinction": "전체 너비 히어로형 캐러셀에는 Large를 사용한다."
-    },
-    "Large": {
-      "description": "화면 너비를 가득 채우는 대형 그룹 캐러셀 컨테이너. 풀스크린 배너·히어로 이미지 그룹 슬라이더에 사용한다.",
-      "distinction": "일반 카드 그룹 슬라이더에는 Medium을 사용한다."
-    }
-  },
   "CellRightItem": {
     "Icon": {
       "level": 1,
