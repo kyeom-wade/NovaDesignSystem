@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./CardItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.3 .CardItem (node 51291:60676)
+import styles from "./SectionItem.module.css";
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .CardItem (node 51291:60676) — 코드에서는 SectionItem 으로 노출
 // anatomy: root[ group[ Slot[ children ] ] ]
 // Variants: variants("Filled" | "Line")
 
-export interface CardItemProps {
+export interface SectionItemProps {
   /** Slot content */
   children?: React.ReactNode;
   /** Visual variant matching the Figma property name */
@@ -12,11 +12,11 @@ export interface CardItemProps {
   className?: string;
 }
 
-export function CardItem({
+export function SectionItem({
   children,
   variants = "Filled",
   className,
-}: CardItemProps) {
+}: SectionItemProps) {
   const isLine = variants === "Line";
 
   return (
@@ -28,7 +28,7 @@ export function CardItem({
       ]
         .filter(Boolean)
         .join(" ")}
-      data-cx-component="CardItem"
+      data-cx-component="SectionItem"
       data-variant={variants}
     >
       <div className={[styles.group, isLine ? styles.groupLine : styles.groupFilled].join(" ")}>

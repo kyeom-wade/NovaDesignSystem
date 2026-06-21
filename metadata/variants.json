@@ -247,20 +247,6 @@
       "distinction": "금액 정보 표시에는 Price를 사용한다."
     }
   },
-  "CellTextInfoItem": {
-    "None": {
-      "description": "우측 보조 요소 없이 텍스트 정보만 표시하는 셀 항목. 단순 키-값 정보 표시나 읽기 전용 설명 행에 사용한다.",
-      "distinction": "배지나 텍스트 보조 정보가 필요하면 Badge/Text를 사용한다."
-    },
-    "Badge": {
-      "description": "우측에 배지를 배치한 텍스트 정보 셀 항목. 상태·분류 라벨을 텍스트 정보와 함께 표시하는 행에 사용한다.",
-      "distinction": "텍스트 보조 정보에는 Text, 보조 요소 없이 순수 텍스트에는 None을 사용한다."
-    },
-    "Text": {
-      "description": "우측에 보조 텍스트를 배치한 텍스트 정보 셀 항목. 날짜·금액 등 추가 수치 정보를 오른쪽에 표시하는 행에 사용한다.",
-      "distinction": "배지 표시에는 Badge, 보조 요소 없이 순수 텍스트에는 None을 사용한다."
-    }
-  },
   "CellTextItem": {
     "Default": {
       "description": "chevron 우측 아이콘과 함께 다음 화면으로 이동하는 기본 텍스트 탐색 행. 설정·탐색 목록의 일반 이동 행에 사용한다.",
