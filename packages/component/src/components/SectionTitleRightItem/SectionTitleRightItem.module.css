@@ -4,7 +4,7 @@
    TextButton        → root[ ButtonTextItem(Text, XLarge) ]
    TextIconSecondary → root[ ButtonTextItem(Text+Icon, XLarge) ]
    Button            → root[ ButtonItem(Secondary, Small) ]
-   ButtonIcon        → root[ closeButton(24, inline X icon) ]
+   ButtonIcon        → root[ closeButton > ButtonIconItem(Large, IconClose) ]
 */
 
 .root {
@@ -73,30 +73,20 @@
   flex-shrink: 0;
 }
 
-/* 인라인 close 버튼 — 기존 ButtonIconItem(Medium, unfilled) 대체 */
+/* close 버튼 — ButtonIconItem(Large, IconClose) 를 감싸는 클릭 래퍼 */
 .closeButton {
   flex-shrink: 0;
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
   padding: 0;
   border: none;
-  border-radius: 15.6px;
   background: transparent;
   cursor: pointer;
   transition: opacity 0.15s ease;
+  color: var(--skt-color-icon-neutral-primary, #060c1f);
 }
 
 .closeButton:active {
   opacity: 0.7;
-}
-
-.closeIcon {
-  display: block;
-  width: 12px;
-  height: 12px;
-  color: var(--skt-color-icon-neutral-primary, #060c1f);
 }

@@ -2,6 +2,8 @@ import React from "react";
 import { ButtonItem } from "../ButtonItem";
 import { ButtonTextItem } from "../ButtonTextItem";
 import { IconDummy } from "../IconDummy";
+import { ButtonIconItem } from "../ButtonIconItem";
+import { IconClose } from "../IconClose";
 import styles from "./SectionTitleRightItem.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.3 .SectionTitleRightItem (node 55521:151214)
 // anatomy:
@@ -9,7 +11,7 @@ import styles from "./SectionTitleRightItem.module.css";
 //   TextButton — root[ ButtonTextItem(Text/XLarge) ]
 //   TextIconSecondary — root[ ButtonTextItem(Text+Icon/XLarge) ]
 //   Button     — root[ buttonItem(secondary/small, no-icon) ]
-//   ButtonIcon — root[ closeButton(24, inline X icon) ]
+//   ButtonIcon — root[ closeButton > ButtonIconItem(Large, IconClose) ]
 
 interface Props {
   /**
@@ -93,16 +95,7 @@ export function SectionTitleRightItem({
           aria-label="닫기"
           onClick={onClick}
         >
-          <svg
-            className={styles.closeIcon}
-            viewBox="0 0 12 12"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <line x1="2" y1="2" x2="10" y2="10" strokeLinecap="round" strokeWidth="1.5" stroke="currentColor" />
-            <line x1="10" y1="2" x2="2" y2="10" strokeLinecap="round" strokeWidth="1.5" stroke="currentColor" />
-          </svg>
+          <ButtonIconItem variant="Large" icon={<IconClose size={24} />} />
         </button>
       </div>
     );
