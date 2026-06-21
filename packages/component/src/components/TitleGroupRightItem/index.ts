@@ -1,1 +1,0 @@
-export { TitleGroupRightItem } from "./TitleGroupRightItem";

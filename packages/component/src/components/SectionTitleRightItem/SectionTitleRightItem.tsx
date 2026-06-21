@@ -2,8 +2,8 @@ import React from "react";
 import { ButtonItem } from "../ButtonItem";
 import { ButtonTextItem } from "../ButtonTextItem";
 import { IconDummy } from "../IconDummy";
-import styles from "./TitleGroupRightItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.3 .TitleGroupRightItem (node 50943:30580)
+import styles from "./SectionTitleRightItem.module.css";
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .SectionTitleRightItem (node 55521:151214)
 // anatomy:
 //   Icon       — root[ iconItem(16×16) ]
 //   TextButton — root[ ButtonTextItem(Text/XLarge) ]
@@ -31,7 +31,7 @@ interface Props {
   className?: string;
 }
 
-export function TitleGroupRightItem({
+export function SectionTitleRightItem({
   variant = "Icon",
   text = "Label",
   buttonLabel = "Label",
@@ -46,7 +46,7 @@ export function TitleGroupRightItem({
     return (
       <div
         className={rootClass}
-        data-cx-component="TitleGroupRightItem"
+        data-cx-component="SectionTitleRightItem"
         data-variant="Icon"
       >
         <span className={styles.iconItem}>
@@ -58,7 +58,7 @@ export function TitleGroupRightItem({
 
   if (variant === "TextButton") {
     return (
-      <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="TextButton">
+      <div className={rootClass} data-cx-component="SectionTitleRightItem" data-variant="TextButton">
         <ButtonTextItem
           className={styles.textButton}
           variants="Text"
@@ -72,7 +72,7 @@ export function TitleGroupRightItem({
 
   if (variant === "TextIconSecondary") {
     return (
-      <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="TextIconSecondary">
+      <div className={rootClass} data-cx-component="SectionTitleRightItem" data-variant="TextIconSecondary">
         <ButtonTextItem
           className={styles.textIconButton}
           variants="Text+Icon"
@@ -86,7 +86,7 @@ export function TitleGroupRightItem({
 
   if (variant === "ButtonIcon") {
     return (
-      <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="ButtonIcon">
+      <div className={rootClass} data-cx-component="SectionTitleRightItem" data-variant="ButtonIcon">
         <button
           type="button"
           className={styles.closeButton}
@@ -109,7 +109,7 @@ export function TitleGroupRightItem({
   }
 
   return (
-    <div className={rootClass} data-cx-component="TitleGroupRightItem" data-variant="Button">
+    <div className={rootClass} data-cx-component="SectionTitleRightItem" data-variant="Button">
       <ButtonItem
         className={styles.button}
         variant="Secondary"

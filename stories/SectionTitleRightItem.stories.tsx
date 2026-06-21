@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { TitleGroupRightItem } from "@cx/components";
+import { SectionTitleRightItem } from "@cx/components";
 
-const meta: Meta<typeof TitleGroupRightItem> = {
-  title: "cx/TitleGroupRightItem",
-  component: TitleGroupRightItem as never,
+const meta: Meta<typeof SectionTitleRightItem> = {
+  title: "cx/SectionTitleRightItem",
+  component: SectionTitleRightItem as never,
   argTypes: {
     variant: {
       control: "select",
@@ -27,7 +27,7 @@ const meta: Meta<typeof TitleGroupRightItem> = {
   },
 };
 export default meta;
-type Story = StoryObj<typeof TitleGroupRightItem>;
+type Story = StoryObj<typeof SectionTitleRightItem>;
 
 export const Default: Story = {};
 
@@ -36,23 +36,23 @@ export const AllVariants: Story = {
     <div style={{ display: "flex", flexDirection: "column", gap: 24, padding: 24 }}>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>Icon</p>
-        <TitleGroupRightItem {...args} variant="Icon" />
+        <SectionTitleRightItem {...args} variant="Icon" />
       </div>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>TextButton</p>
-        <TitleGroupRightItem {...args} variant="TextButton" text="Label" />
+        <SectionTitleRightItem {...args} variant="TextButton" text="Label" />
       </div>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>TextIconSecondary</p>
-        <TitleGroupRightItem {...args} variant="TextIconSecondary" text="Label" />
+        <SectionTitleRightItem {...args} variant="TextIconSecondary" text="Label" />
       </div>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>Button</p>
-        <TitleGroupRightItem {...args} variant="Button" buttonLabel="Label" />
+        <SectionTitleRightItem {...args} variant="Button" buttonLabel="Label" />
       </div>
       <div>
         <p style={{ fontSize: 12, color: "#888", marginBottom: 8 }}>ButtonIcon</p>
-        <TitleGroupRightItem {...args} variant="ButtonIcon" />
+        <SectionTitleRightItem {...args} variant="ButtonIcon" />
       </div>
     </div>
   ),
