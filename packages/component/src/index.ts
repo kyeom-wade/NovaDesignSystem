@@ -16,7 +16,7 @@ export { InputHelpTextItem } from "./components/InputHelpTextItem";
 export { InputTypeItem } from "./components/InputTypeItem";
 export { ButtonItem } from "./components/ButtonItem";
 export { ButtonTextItem } from "./components/ButtonTextItem";
-export { SectionItem } from "./components/SectionItem";
+export { CardItem } from "./components/CardItem";
 export { CardProductVerticalListItem } from "./components/CardProductVerticalListItem";
 export { InputCaretItem } from "./components/InputCaretItem";
 export { CarouselGroupItem } from "./components/CarouselGroupItem";

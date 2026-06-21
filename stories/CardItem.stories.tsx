@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { SectionItem } from "@cx/components";
+import { CardItem } from "@cx/components";
 
-const meta: Meta<typeof SectionItem> = {
-  title: "cx/SectionItem",
-  component: SectionItem as never,
+const meta: Meta<typeof CardItem> = {
+  title: "cx/CardItem",
+  component: CardItem as never,
   argTypes: {
     variants: { control: "select", options: ["Filled", "Line"] },
     children: { control: false },
@@ -15,7 +15,7 @@ const meta: Meta<typeof SectionItem> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof SectionItem>;
+type Story = StoryObj<typeof CardItem>;
 
 const SlotPreview = () => (
   <div style={{ width: "100%", padding: "16px", background: "rgba(5, 42, 142, 0.03)", boxSizing: "border-box" }}>
@@ -39,12 +39,12 @@ export const Line: Story = {
 export const AllVariants: Story = {
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: 24, padding: 24 }}>
-      <SectionItem variants="Filled">
+      <CardItem variants="Filled">
         <SlotPreview />
-      </SectionItem>
-      <SectionItem variants="Line">
+      </CardItem>
+      <CardItem variants="Line">
         <SlotPreview />
-      </SectionItem>
+      </CardItem>
     </div>
   ),
 };
