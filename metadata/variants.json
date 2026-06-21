@@ -193,41 +193,6 @@
       "distinction": "chevron 이동 행에는 Default를 사용한다."
     }
   },
-  "CellTitleItem": {
-    "None": {
-      "description": "우측 요소 없이 섹션 타이틀 텍스트만 표시하는 행. 단순 섹션 구분 타이틀이나 읽기 전용 헤더에 사용한다.",
-      "distinction": "우측 행동이나 정보가 필요하면 Icon/ButtonIcon/TextButton 등을 사용한다."
-    },
-    "Icon": {
-      "level": 1,
-      "description": "타이틀 우측에 chevron 아이콘을 배치한 섹션 헤더 행. 전체보기 이동이나 섹션 탐색 진입에 사용한다.",
-      "distinction": "텍스트 라벨 버튼이 필요하면 TextButton을 사용한다."
-    },
-    "ButtonIcon": {
-      "level": 1,
-      "description": "타이틀 우측에 닫기·삭제 등 아이콘 버튼을 배치한 섹션 헤더 행. 선택 항목 제거·섹션 닫기 등 즉각 행동에 사용한다.",
-      "distinction": "단순 이동 chevron에는 Icon을 사용한다."
-    },
-    "TextButton": {
-      "level": 2,
-      "description": "타이틀 우측에 텍스트 버튼(더보기·편집)을 배치한 섹션 헤더 행. 전체보기·편집 진입 등 보조 텍스트 행동에 사용한다.",
-      "distinction": "아이콘만 필요하면 Icon, 선택 요약 표시에는 TextInfo를 사용한다."
-    },
-    "TextInfo": {
-      "description": "타이틀 우측에 보조 정보 텍스트를 표시하는 섹션 헤더 행. 날짜·건수·상태 등 읽기 전용 부가 정보 표시에 사용한다.",
-      "distinction": "클릭 가능한 텍스트에는 TextButton을 사용한다."
-    },
-    "TextIcon": {
-      "level": 2,
-      "description": "타이틀 우측에 텍스트와 chevron 아이콘을 함께 배치한 섹션 헤더 행. 이동 목적지를 텍스트로 명시하면서 이동 CTA를 제공할 때 사용한다.",
-      "distinction": "텍스트만 필요하면 TextButton, 아이콘만 필요하면 Icon을 사용한다."
-    },
-    "ButtonSmall": {
-      "level": 3,
-      "description": "타이틀 우측에 소형 버튼을 배치한 섹션 헤더 행. 즉각 행동(쿠폰 받기·바로가기)이 섹션 헤더 수준에서 필요할 때 사용한다.",
-      "distinction": "텍스트 보조 행동에는 TextButton을 사용한다."
-    }
-  },
   "DetailInfo": {
     "Product": {
       "description": "일반 상품의 상세 정보 영역. 상품 이미지·이름·가격·옵션 등 일반 상품 상세 화면의 메인 정보 블록에 사용한다.",

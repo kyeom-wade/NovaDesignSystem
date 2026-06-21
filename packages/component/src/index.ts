@@ -31,7 +31,6 @@ export { CellRightTable } from "./components/CellRightTable";
 export { CellSheet } from "./components/CellSheet";
 export { CellText } from "./components/CellText";
 export { CellTextItem } from "./components/CellTextItem";
-export { CellTitleItem } from "./components/CellTitleItem";
 export { CheckboxItem } from "./components/CheckboxItem";
 export { CheckboxLeftTextItem } from "./components/CheckboxLeftTextItem";
 export { CheckboxRightTextItem } from "./components/CheckboxRightTextItem";

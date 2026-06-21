@@ -354,15 +354,6 @@
     "do": "리스트 항목 한 행에 타이틀 또는 일반 텍스트를 표시하고, 필요 시 우측 이동 Arrow를 함께 배치한다.",
     "rules": "props: description(string), rightItem(boolean), size(\"15\"|\"16\"), title(string), variants(\"Text\"|\"Title\"). variants=Title은 title, variants=Text는 description을 렌더링한다. 기존 CellTextItem export는 호환 alias로만 유지한다."
   },
-  "CellTitleItem": {
-    "type": "Cell",
-    "standalone": true,
-    "description": "리스트 섹션의 타이틀 행을 표시하며, 우측에 아이콘·버튼·텍스트 등 다양한 액션 슬롯을 선택적으로 배치하는 셀 컴포넌트입니다.",
-    "anatomy": "root[ cellText[ titleBadge[ title ] ], rightSlot? ]",
-    "states": null,
-    "do": "섹션 타이틀 행으로 사용하며, rightItem을 None으로 설정하면 타이틀만 표시합니다.",
-    "rules": "props: title, rightItem(None|Icon|ButtonIcon|TextButton|TextInfo|TextIcon|ButtonSmall), rightText, buttonLabel, onButton, onTextButton, onButtonIcon."
-  },
   "CheckboxItem": {
     "type": "Checkbox",
     "standalone": false,
