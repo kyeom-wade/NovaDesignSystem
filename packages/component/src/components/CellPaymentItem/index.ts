@@ -1,1 +1,0 @@
-export { CellPaymentItem } from "./CellPaymentItem";

@@ -23,7 +23,6 @@ export { CellBoxItem } from "./components/CellBoxItem";
 export { CellLeftSelect } from "./components/CellLeftSelect";
 export { CellLeftTable } from "./components/CellLeftTable";
 export { CellPayment } from "./components/CellPayment";
-export { CellPaymentItem } from "./components/CellPaymentItem";
 export { CellPointInfo } from "./components/CellPointInfo";
 export { CellProductItem } from "./components/CellProductItem";
 export { CellRightItem } from "./components/CellRightItem";
