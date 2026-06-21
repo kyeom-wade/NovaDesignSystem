@@ -1,1 +1,0 @@
-export { CellTableItem } from "./CellTableItem";
