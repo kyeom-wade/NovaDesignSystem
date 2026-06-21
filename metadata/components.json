@@ -303,11 +303,11 @@
   "CellProductItem": {
     "type": "Cell",
     "standalone": true,
-    "description": "썸네일·브랜드·상품명·성인경고·혜택 정보 박스를 포함한 상품 목록 셀 컴포넌트입니다.",
-    "anatomy": "root[ thumbnail, info[ infoRow, cellBox? ] ]",
+    "description": "썸네일·브랜드/패스명·상품명(최대 2줄)·안내(helpText)·닫기로 구성된 상품 선택/요약 리스트의 단일 상품 행 컴포넌트입니다.",
+    "anatomy": "root[ thumbnail(48), info[ infoRow[ text[ subtitle, title ], helpText?[ infoIcon, dangerText ], closeButton? ] ] ]",
     "states": null,
-    "do": "상품 목록 화면에서 썸네일과 브랜드·상품명을 함께 노출해야 할 때 사용합니다.",
-    "rules": "props: thumbnailSrc, brand, productName, showAdultWarning, adultWarningText, showCloseButton, onClose, showCellBox, benefitText, tableRows."
+    "do": "상품 선택/요약 리스트에서 썸네일과 브랜드·상품명, 안내 문구를 함께 노출해야 할 때 사용한다. 썸네일은 ThumbnailSquareItem(48) 을 합성한다.",
+    "rules": "props: thumbnailSrc, subtitle(브랜드/패스명), title(상품명, 최대 2줄), helpText(boolean), helpTextLabel, closeButton(boolean), onClose."
   },
   "CellRightItem": {
     "type": "Cell",

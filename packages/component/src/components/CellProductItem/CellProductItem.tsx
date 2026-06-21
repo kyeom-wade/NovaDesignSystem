@@ -1,51 +1,36 @@
 import React from "react";
 import styles from "./CellProductItem.module.css";
-// Figma SSOT: SKT-Next_UI-Draft_3.2--Token-Test- .CellProductItem (node 51650:65033)
-// anatomy: root[ thumbnail, info[ infoRow[ textGroup[ brand, productName ], adultWarning?, closeBtn? ], cellBox?[ benefitText, tableRow*, tableRow* ] ] ]
-
-interface CellTableRow {
-  label: string;
-  value: string;
-}
+import { ThumbnailSquareItem } from "../ThumbnailSquareItem/ThumbnailSquareItem";
+// Figma SSOT: SKT-Next_UI-Draft_3.3 .CellProductItem (node 55406:33508)
+// anatomy: root[ thumbnail(48), info[ infoRow[ text[ subtitle, title(2line) ], helpText?[ infoIcon, dangerText ], closeButton? ] ] ]
+// 상품 선택/요약 리스트의 단일 상품 행 — 썸네일 + 브랜드/상품명 + 안내(helpText) + 닫기.
 
 interface Props {
-  /** Thumbnail image URL */
+  /** 썸네일 이미지 URL */
   thumbnailSrc?: string;
-  /** Brand and path text above the product name */
-  brand?: string;
-  /** Product name — supports up to 2 lines then truncates */
-  productName?: string;
-  /** Show adult (19+) warning row */
-  showAdultWarning?: boolean;
-  /** Adult warning message text */
-  adultWarningText?: string;
-  /** Show the close/remove icon button in top-right */
-  showCloseButton?: boolean;
-  /** Callback fired when the close button is pressed */
+  /** 브랜드명 / 패스명 (상품명 위 보조 텍스트) */
+  subtitle?: string;
+  /** 상품명 — 최대 2줄 이후 말줄임 */
+  title?: string;
+  /** 안내 텍스트 행(info 아이콘 + danger 메시지) 표시 여부 */
+  helpText?: boolean;
+  /** 안내 텍스트 메시지 */
+  helpTextLabel?: string;
+  /** 우측 상단 닫기 아이콘 표시 여부 */
+  closeButton?: boolean;
+  /** 닫기 클릭 콜백 */
   onClose?: () => void;
-  /** Show the bottom benefit info box (CellBoxItem) */
-  showCellBox?: boolean;
-  /** Primary benefit text shown at the top of the info box */
-  benefitText?: string;
-  /** Table rows shown inside the info box */
-  tableRows?: CellTableRow[];
   className?: string;
 }
 
 export function CellProductItem({
   thumbnailSrc,
-  brand = "브랜드명 / 패스명",
-  productName = "상품명 최대 2줄 이후 말줄임",
-  showAdultWarning = true,
-  adultWarningText = "19세 미만은 구독할 수 없는 상품입니다.",
-  showCloseButton = true,
+  subtitle = "브랜드명 / 패스명",
+  title = "상품명 최대 2줄 이후 말줄임 상품명 최대 2줄 이후 말줄임",
+  helpText = true,
+  helpTextLabel = "19세 미만은 구독할 수 없는 상품입니다.",
+  closeButton = true,
   onClose,
-  showCellBox = true,
-  benefitText = "배달의민족 5,000원 쿠폰 + 배민 3,000원 쿠폰",
-  tableRows = [
-    { label: "타이틀", value: "내용 들어가는 부분" },
-    { label: "타이틀", value: "내용 들어가는 부분" },
-  ],
   className,
 }: Props) {
   return (
@@ -53,107 +38,47 @@ export function CellProductItem({
       className={[styles.root, className ?? ""].filter(Boolean).join(" ")}
       data-cx-component="CellProductItem"
     >
-      {/* Thumbnail */}
+      {/* Thumbnail 48 (rounded 8) */}
       <div className={styles.thumbnail}>
-        {thumbnailSrc ? (
-          <img src={thumbnailSrc} alt="" className={styles.thumbnailImg} />
-        ) : (
-          <div className={styles.thumbnailPlaceholder} aria-hidden="true" />
-        )}
-        <div className={styles.thumbnailDim} aria-hidden="true" />
+        <ThumbnailSquareItem size="48" src={thumbnailSrc} dimMultiply />
       </div>
 
       {/* Info column */}
       <div className={styles.info}>
-        {/* Top row: text + close button */}
         <div className={styles.infoRow}>
-          <div className={styles.textGroup}>
-            {/* Brand / path */}
-            <p className={styles.brand}>{brand}</p>
-            {/* Product name (up to 2 lines) */}
-            <p className={styles.productName}>{productName}</p>
+          <div className={styles.textCol}>
+            <div className={styles.text}>
+              <p className={styles.subtitle}>{subtitle}</p>
+              <p className={styles.title}>{title}</p>
+            </div>
 
-            {/* Adult warning */}
-            {showAdultWarning && (
-              <div className={styles.adultWarning}>
-                {/* Info icon */}
-                <svg
-                  className={styles.adultIcon}
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <circle
-                    cx="6"
-                    cy="6"
-                    r="5"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                  />
-                  <line
-                    x1="6"
-                    y1="5"
-                    x2="6"
-                    y2="8.5"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    strokeLinecap="round"
-                  />
-                  <circle cx="6" cy="3.5" r="0.6" fill="currentColor" />
-                </svg>
-                <span className={styles.adultText}>{adultWarningText}</span>
+            {helpText && (
+              <div className={styles.helpText}>
+                <span className={styles.helpIcon} aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="6.4" stroke="currentColor" strokeWidth="1.2" />
+                    <circle cx="8" cy="5.2" r="0.85" fill="currentColor" />
+                    <path d="M8 7.4V11.2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+                  </svg>
+                </span>
+                <span className={styles.helpLabel}>{helpTextLabel}</span>
               </div>
             )}
           </div>
 
-          {/* Close button */}
-          {showCloseButton && (
+          {closeButton && (
             <button
               type="button"
               className={styles.closeBtn}
               onClick={onClose}
               aria-label="삭제"
             >
-              {/* X icon */}
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 10 10"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M1.5 1.5L8.5 8.5M8.5 1.5L1.5 8.5"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
               </svg>
             </button>
           )}
         </div>
-
-        {/* CellBoxItem — benefit info */}
-        {showCellBox && (
-          <div className={styles.cellBox}>
-            <div className={styles.cellBoxSlot}>
-              {/* Benefit text row */}
-              <div className={styles.cellBenefitRow}>
-                <p className={styles.cellBenefitText}>{benefitText}</p>
-              </div>
-
-              {/* Table rows */}
-              {tableRows.map((row, i) => (
-                <div key={i} className={styles.cellTableRow}>
-                  <span className={styles.cellTableLabel}>{row.label}</span>
-                  <span className={styles.cellTableValue}>{row.value}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
