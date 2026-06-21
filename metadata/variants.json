@@ -183,16 +183,6 @@
       "distinction": "이동 chevron에는 Icon, 텍스트 보조 행동에는 TextButton을 사용한다."
     }
   },
-  "CellSheetItem": {
-    "Price": {
-      "description": "바텀시트 내 가격·금액 정보를 표시하는 셀 항목. 결제 수단 선택·금액 확인 시트의 가격 행에 사용한다.",
-      "distinction": "안내·경고 텍스트가 필요하면 Notice를 사용한다."
-    },
-    "Notice": {
-      "description": "바텀시트 내 안내·경고 텍스트를 표시하는 셀 항목. 주의사항·제한 조건 등 보조 안내가 필요한 시트 행에 사용한다.",
-      "distinction": "금액 정보 표시에는 Price를 사용한다."
-    }
-  },
   "CellTextItem": {
     "Default": {
       "description": "chevron 우측 아이콘과 함께 다음 화면으로 이동하는 기본 텍스트 탐색 행. 설정·탐색 목록의 일반 이동 행에 사용한다.",
