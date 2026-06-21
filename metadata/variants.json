@@ -398,6 +398,24 @@
       "distinction": "카드 내 중형 이미지에는 128*192를 사용한다."
     }
   },
+  "TextProductDetail": {
+    "ProductList": {
+      "description": "상품 리스트 카드의 텍스트 영역. 서브타이틀·상품명·가격(할인율/최종가/기간)·서브가격 캡션·하위정보·배지를 세로로 나열한다.",
+      "distinction": "요약 한 줄에는 ProductSummation, 원가·할인가 비교가 필요하면 ProductDetail 을 사용한다."
+    },
+    "ProductSummation": {
+      "description": "상품 요약 텍스트. 서브타이틀·상품명+배지·하위정보·배지로 구성된 간결한 요약 레이아웃.",
+      "distinction": "가격·캡션이 많은 리스트 카드에는 ProductList 를 사용한다."
+    },
+    "ProductDetail": {
+      "description": "상품 상세 텍스트. 원가(취소선)·할인가·기간·하위정보·배지와 우측 아웃라인 버튼, 하트 토글을 포함한다.",
+      "distinction": "단순 리스트 표기에는 ProductList, 브랜드 카드형에는 Variants4 를 사용한다."
+    },
+    "Variants4": {
+      "description": "파란 배경 브랜드 카드 텍스트. 64px 라운드 썸네일+서브타이틀·상품명·하트(카운트)·inverse 배지로 구성한다.",
+      "distinction": "일반 흰 배경 상품 텍스트에는 ProductList/ProductDetail 을 사용한다."
+    }
+  },
   "ThumbnailRoundItem": {
     "16": {
       "description": "16px 원형 초소형 썸네일. 텍스트 인라인에 삽입되는 극소형 브랜드 아이콘·프로필 이미지에 사용한다.",

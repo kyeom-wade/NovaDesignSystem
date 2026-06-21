@@ -1,0 +1,333 @@
+/* TextProductDetail — Figma node 55105:41129
+   상품 텍스트 그룹 4 variant (ProductList / ProductSummation / ProductDetail / Variants4)
+   gap 토큰: gap/1=2 gap/2=4 gap/3=6 gap/4=12 gap/5=16 · padding x-1=20 y-2=24
+*/
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 393px;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-family: var(--skt-typography-font-family-base, "Pretendard", -apple-system, sans-serif);
+}
+
+.variant-ProductList { gap: 6px; }
+.variant-ProductSummation { gap: 4px; }
+.variant-ProductDetail { gap: 12px; }
+
+.variant-Variants4 {
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 221px;
+  padding: 0 20px 24px;
+  background: var(--skt-color-bg-brand-blue, #005dad);
+}
+
+/* ── TextInfoGroup / TextNameGroup ── */
+.textInfoGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  width: 100%;
+}
+.textNameGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+}
+
+.subtitle,
+.subtitleNowrap {
+  margin: 0;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.52px;
+  color: var(--skt-color-text-neutral-secondary, rgba(12, 27, 65, 0.67));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title16,
+.title18 {
+  margin: 0;
+  width: 100%;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.title16 { font-size: 16px; letter-spacing: -0.64px; }
+.title18 { font-size: 18px; letter-spacing: -0.9px; }
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+.titleRow .title18 { width: auto; white-space: nowrap; }
+
+/* ── 가격 그룹 ── */
+.textPriceGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+}
+
+.priceCaption {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.52px;
+  color: var(--skt-color-text-neutral-secondary, rgba(12, 27, 65, 0.67));
+}
+
+.priceRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.priceDiscount,
+.price,
+.priceDiscount18,
+.price18 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.priceDiscount { font-size: 16px; letter-spacing: -0.64px; color: var(--skt-color-text-brand-primary, #3617ce); }
+.price { font-size: 16px; letter-spacing: -0.64px; color: var(--skt-color-text-neutral-primary, #060c1f); }
+.priceDiscount18 { font-size: 18px; letter-spacing: -0.9px; color: var(--skt-color-text-brand-primary, #3617ce); }
+.price18 { font-size: 18px; letter-spacing: -0.9px; color: var(--skt-color-text-neutral-primary, #060c1f); }
+
+.pricePeriod {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.56px;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+}
+
+.priceStrike {
+  margin: 0;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.64px;
+  text-decoration: line-through;
+  color: var(--skt-color-text-neutral-tertiary, rgba(12, 34, 91, 0.42));
+}
+
+.priceSubText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.56px;
+  color: var(--skt-color-text-neutral-tertiary, rgba(12, 34, 91, 0.42));
+}
+.priceSubText p { margin: 0; width: 100%; overflow: hidden; text-overflow: ellipsis; }
+
+/* ── 최하위 정보(SubInfo) ── */
+.subInfoRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+.subInfoItem {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.captionIcon {
+  display: block;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  color: var(--skt-color-icon-disabled-default, rgba(11, 44, 127, 0.18));
+}
+
+.subInfo,
+.subInfo14 {
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+  color: var(--skt-color-text-neutral-tertiary, rgba(12, 34, 91, 0.42));
+}
+.subInfo { font-size: 13px; letter-spacing: -0.52px; }
+.subInfo14 { font-size: 14px; letter-spacing: -0.56px; }
+
+.vDivider {
+  flex-shrink: 0;
+  width: 1px;
+  height: 8px;
+  background: var(--skt-color-border-neutral-primary, rgba(5, 42, 142, 0.08));
+}
+
+/* ── 배지 그룹 ── */
+.badgeGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+}
+
+/* ── ProductDetail ── */
+.detailTitleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.detailTextProduct {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.detailPriceRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  width: 100%;
+}
+
+.detailPriceCol {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.detailPriceGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.detailPriceText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.outlineButton {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 6px 12px;
+  border: 1px solid var(--skt-color-border-neutral-strong, #060c1f);
+  border-radius: 9999px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.48px;
+  color: var(--skt-color-text-neutral-primary, #060c1f);
+  white-space: nowrap;
+}
+.outlineButton:active { opacity: 0.7; }
+.btnArrow { width: 12px; height: 12px; display: block; flex-shrink: 0; }
+
+/* ── Variants4 (brand) ── */
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+.brandThumb { flex-shrink: 0; }
+
+.brandTextGroup {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brandToggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.brandHeart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--skt-color-icon-inverse-primary, #ffffff);
+}
+.brandHeart svg { display: block; width: 24px; height: 24px; }
+.brandHeartCount {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.52px;
+  white-space: nowrap;
+  color: var(--skt-color-text-inverse-tertiary, rgba(255, 255, 255, 0.4));
+}
+
+.subtitle14Inverse {
+  margin: 0;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.56px;
+  color: var(--skt-color-text-inverse-secondary, rgba(255, 255, 255, 0.6));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title18Inverse {
+  margin: 0;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.9px;
+  color: var(--skt-color-text-inverse-primary, #ffffff);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

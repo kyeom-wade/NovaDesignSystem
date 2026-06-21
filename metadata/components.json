@@ -1199,6 +1199,16 @@
     "parent": "TabScroll",
     "slot": "Content"
   },
+  "TextProductDetail": {
+    "type": "TextGroup",
+    "standalone": true,
+    "description": "상품 텍스트 정보를 4가지 레이아웃 variant로 표시하는 통합 텍스트 그룹 컴포넌트. 서브타이틀·상품명·가격(할인율/원가/기간)·캡션·배지 그룹을 조합한다.",
+    "anatomy": "root[ textNameGroup[ subtitle, title, ?titleBadge ], textPriceGroup?[ caption01, priceRow[ discount?, price, period? ], priceSubText? ], subInfoTextGroup?[ caption031, divider, caption032, divider?, caption033?, count? ], badgeGroup?[ badge* ], ?toggleItem, ?button, ?thumbnail(Variants4) ]",
+    "states": null,
+    "do": "- 상품 리스트/요약/상세/브랜드 카드의 텍스트 영역에 variant에 맞춰 배치한다.\n- ProductList: 리스트 카드, ProductSummation: 요약, ProductDetail: 상세(원가·할인가·하트·버튼), Variants4: 파란 배경 브랜드 카드(썸네일+하트).\n- 가격은 value01(할인율)·value02(최종가)·value03(기간)·value05(원가)로 전달한다.",
+    "rules": "**variant**: ProductList(기본) | ProductSummation | ProductDetail | Variants4\n**주요 props**: subtitle·subTitle(표시), title, titleBadge·titleBadgeLabel, textPriceGroup(가격그룹 표시), caption01(표시)·caption2(가격조건 텍스트), value01(할인율)·value01Discount, value02(최종가), value03(기간)·value03Period, value05(원가), caption02·caption021/022(서브가격), caption03·caption031/032/033, captionIconItem1/2(더미아이콘), count·captionCount, badges[]·badgeGroup, toggleItem·toggleCount, button·buttonLabel·onButton, logoSrc(Variants4).\n[맵핑 트리거] 상품 카드/리스트의 텍스트 영역에 가격·정보·배지를 묶어 표시할 때.\n[구분] 단일 셀 텍스트는 CellText 계열, 제목 행은 TitleGroupItem 을 사용한다.",
+    "subComponents": ["BadgeItem", "ThumbnailRoundItem", "ToogleItem"]
+  },
   "Thumbnail": {
     "type": "Thumbnail",
     "standalone": true,
