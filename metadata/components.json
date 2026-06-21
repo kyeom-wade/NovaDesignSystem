@@ -1208,24 +1208,6 @@
     "do": "상품 상세 페이지 상단 정보 영역에 배치한다.",
     "rules": "props: brand, name, rating, reviewCount, originalPrice, discountRate, salePrice, badges."
   },
-  "TextGroupProductHorizontal": {
-    "type": "TextGroup",
-    "standalone": true,
-    "description": "가로형 상품 카드 내 텍스트 영역 전용 컴포넌트로, 브랜드명·상품명·가격 정보를 수평 레이아웃에 맞게 표시한다.",
-    "anatomy": "wrap[ brandName, productName, priceRow[ originalPrice?, discountRate?, salePrice ] ]",
-    "states": "Default",
-    "do": "가로형 상품 카드(CardProductHorizontal) 내 텍스트 영역에 배치한다.",
-    "rules": "props: brand, name, originalPrice, discountRate, salePrice."
-  },
-  "TextGroupProductVertical": {
-    "type": "TextGroup",
-    "standalone": true,
-    "description": "세로형 상품 카드 내 텍스트 영역 전용 컴포넌트로, 브랜드명·상품명·가격 정보를 수직 레이아웃에 맞게 표시한다.",
-    "anatomy": "wrap[ brandName, productName, priceRow[ originalPrice?, discountRate?, salePrice ] ]",
-    "states": "Default",
-    "do": "세로형 상품 카드(CardProductVertical) 내 텍스트 영역에 배치한다.",
-    "rules": "props: brand, name, originalPrice, discountRate, salePrice."
-  },
   "Thumbnail": {
     "type": "Thumbnail",
     "standalone": true,

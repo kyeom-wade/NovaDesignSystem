@@ -1,1 +1,0 @@
-export { TextGroupProductVertical } from "./TextGroupProductVertical";

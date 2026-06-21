@@ -55,8 +55,6 @@ export { SwitchItem } from "./components/SwitchItem";
 export { TabFixedItem } from "./components/TabFixedItem";
 export { TabScrollItem } from "./components/TabScrollItem";
 export { TextGroupProductDetail } from "./components/TextGroupProductDetail";
-export { TextGroupProductHorizontal } from "./components/TextGroupProductHorizontal";
-export { TextGroupProductVertical } from "./components/TextGroupProductVertical";
 export { ThumbnailRectangleItem } from "./components/ThumbnailRectangleItem";
 export { ThumbnailRoundItem } from "./components/ThumbnailRoundItem";
 export { ThumbnailSquareItem } from "./components/ThumbnailSquareItem";
