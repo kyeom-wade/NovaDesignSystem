@@ -336,15 +336,6 @@
     "do": "레이블-값 쌍을 한 행에 표시하고 우측 값을 오른쪽 정렬해야 할 때 사용한다.",
     "rules": "props: description(string), title(string), variants(\"18Semi\"|\"16Semi\"|\"16reg\"|\"15reg\")."
   },
-  "CellRightTableItem": {
-    "type": "Cell",
-    "standalone": true,
-    "description": "레이블(좌)과 값(우)을 한 행에 나란히 표시하는 테이블형 셀 컴포넌트로, 상세 정보 목록 표현에 사용된다.",
-    "anatomy": "root[ labelCell[ labelText ], valueCell[ valueText ] ]",
-    "states": null,
-    "do": "상품·주문·계정 등 상세 정보를 레이블-값 쌍으로 나열할 때 사용한다.",
-    "rules": "props: variant(14Title|14Primary|...), label, value."
-  },
   "CellSelectedItem": {
     "type": "Cell",
     "standalone": true,

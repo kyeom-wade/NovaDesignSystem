@@ -183,36 +183,6 @@
       "distinction": "이동 chevron에는 Icon, 텍스트 보조 행동에는 TextButton을 사용한다."
     }
   },
-  "CellRightTableItem": {
-    "14Title": {
-      "description": "14px 타이틀 스타일의 테이블 셀 우측 항목. 일반 표 형식 정보 행의 기본 타이틀 텍스트에 사용한다.",
-      "distinction": "강조색이 필요하면 14TitleBlue, 큰 텍스트가 필요하면 16Title을 사용한다."
-    },
-    "14Primary": {
-      "description": "14px primary(강조) 색상의 테이블 셀 우측 항목. 주요 금액·혜택 등 강조가 필요한 표 내 데이터에 사용한다.",
-      "distinction": "타이틀 스타일에는 14Title, 파란색 강조에는 14PrimaryBlue를 사용한다."
-    },
-    "14Secondary": {
-      "description": "14px secondary(보조) 색상의 테이블 셀 우측 항목. 부가 정보·설명 등 낮은 강조도의 표 내 데이터에 사용한다.",
-      "distinction": "높은 강조가 필요하면 14Primary, 파란색 계열에는 14SecondaryBlue를 사용한다."
-    },
-    "14TitleBlue": {
-      "description": "14px 파란색 타이틀 스타일의 테이블 셀 우측 항목. 링크·선택 가능한 표 내 타이틀 텍스트에 사용한다.",
-      "distinction": "일반 타이틀에는 14Title, 강조 파란색에는 14PrimaryBlue를 사용한다."
-    },
-    "14PrimaryBlue": {
-      "description": "14px 파란색 primary 강조 스타일의 테이블 셀 우측 항목. 할인가·혜택 금액 등 파란색 강조가 필요한 표 내 주요 데이터에 사용한다.",
-      "distinction": "일반 강조에는 14Primary, 타이틀 파란색에는 14TitleBlue를 사용한다."
-    },
-    "14SecondaryBlue": {
-      "description": "14px 파란색 secondary 스타일의 테이블 셀 우측 항목. 낮은 강조도의 파란색 계열 표 내 부가 정보에 사용한다.",
-      "distinction": "높은 강조에는 14PrimaryBlue, 일반 보조 텍스트에는 14Secondary를 사용한다."
-    },
-    "16Title": {
-      "description": "16px 타이틀 스타일의 테이블 셀 우측 항목. 합계 금액·최종 결과 등 표에서 한 단계 큰 강조 텍스트가 필요할 때 사용한다.",
-      "distinction": "일반 크기 타이틀에는 14Title을 사용한다."
-    }
-  },
   "CellSelectedItem": {
     "radioButton": {
       "description": "단일 선택(상호배타적) 옵션 행. 요금제·옵션 중 하나만 선택하는 목록에 사용한다.",
