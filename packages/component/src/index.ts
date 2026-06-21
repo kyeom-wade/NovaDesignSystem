@@ -28,7 +28,6 @@ export { CellProductItem } from "./components/CellProductItem";
 export { CellRightItem } from "./components/CellRightItem";
 export { CellRightSelect } from "./components/CellRightSelect";
 export { CellRightTable } from "./components/CellRightTable";
-export { CellSelectedItem } from "./components/CellSelectedItem";
 export { CellSheet } from "./components/CellSheet";
 export { CellSheetItem } from "./components/CellSheetItem";
 export { CellTableItem } from "./components/CellTableItem";

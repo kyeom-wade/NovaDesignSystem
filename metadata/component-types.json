@@ -68,7 +68,7 @@
     "name_ko": "목록 셀",
     "standalone": true,
     "description": "리스트 내에서 반복되는 하나의 항목 단위를 구성하는 컴포넌트입니다. 슬롯 기반으로 텍스트, 아이콘, 뱃지, 버튼 등 내부 요소를 자유롭게 조합할 수 있으며, 정보 목록, 장바구니, 결제 내역, 설정 항목 등 다양한 맥락에서 사용합니다.",
-    "distinction": "'정보를 행으로 표시'하거나 '동일 구조 항목을 반복 나열'하는 기본형 — 설정 행·납부 내역·회선 목록 등. 선택(라디오/체크박스)이 포함된 행은 CellSelectedItem(Cell 타입)을 쓰고, 순수 선택 컨트롤 부품이 필요할 때만 Radio/Checkbox 타입을 쓴다. 완결된 독립 요약 단위는 Card, 고지성 문구는 Alert."
+    "distinction": "'정보를 행으로 표시'하거나 '동일 구조 항목을 반복 나열'하는 기본형 — 설정 행·납부 내역·회선 목록 등. 선택(라디오/체크박스)이 포함된 행은 CellLeftSelect(Cell 타입)을 쓰고, 순수 선택 컨트롤 부품이 필요할 때만 Radio/Checkbox 타입을 쓴다. 완결된 독립 요약 단위는 Card, 고지성 문구는 Alert."
   },
   "Chart": {
     "name_ko": "차트",
@@ -80,9 +80,9 @@
     "name_ko": "체크박스",
     "standalone": false,
     "description": "하나 이상의 항목을 선택하거나 해제할 수 있는 입력 요소로, 복수 선택이 가능합니다. 약관 동의, 관심 분야처럼 여러 항목을 동시에 선택해야 하는 상황에 사용합니다.",
-    "distinction": "Checkbox/Radio는 순수 선택 컨트롤 부품 — 단독으로 SB 행에 등장하지 않고 반드시 Cell(CellSelectedItem) 슬롯 안에 내장된다. SB에서 선택 목록 행이 필요하면 Cell 타입의 CellSelectedItem을 써야 한다. Checkbox: 복수 선택(여럿 동시). Radio: 단일 선택(하나만).",
+    "distinction": "Checkbox/Radio는 순수 선택 컨트롤 부품 — 단독으로 SB 행에 등장하지 않고 반드시 Cell(CellLeftSelect) 슬롯 안에 내장된다. SB에서 선택 목록 행이 필요하면 Cell 타입의 CellLeftSelect를 써야 한다. Checkbox: 복수 선택(여럿 동시). Radio: 단일 선택(하나만).",
     "redirect": "Cell",
-    "redirect_reason": "선택 행이 필요할 때는 Cell > CellSelectedItem(variant=checkbox)을 사용한다. Checkbox 타입 컴포넌트는 CellSelectedItem 내부 부품으로만 존재하며 SB 컴포넌트 상세에 단독 등장 불가."
+    "redirect_reason": "선택 행이 필요할 때는 Cell > CellLeftSelect(variants=Check)를 사용한다. Checkbox 타입 컴포넌트는 CellLeftSelect 내부 부품으로만 존재하며 SB 컴포넌트 상세에 단독 등장 불가."
   },
   "Chip": {
     "name_ko": "칩",
@@ -184,9 +184,9 @@
     "name_ko": "라디오 버튼",
     "standalone": false,
     "description": "2개 이상의 선택지 중, 단일 선택이 필요한 경우 활용되는 입력 요소입니다. 미선택 상태의 항목이 선택될 경우, 기존 선택항목은 자동 선택 해제되며, 반드시 하나만 골라야 하는 상황에 사용됩니다.",
-    "distinction": "Radio/Checkbox는 순수 선택 컨트롤 부품 — 단독으로 SB 행에 등장하지 않고 반드시 Cell(CellSelectedItem) 슬롯 안에 내장된다. SB에서 선택 목록 행이 필요하면 Cell 타입의 CellSelectedItem을 써야 한다. Radio: 단일 선택(하나만). Checkbox: 복수 선택(여럿 동시 가능).",
+    "distinction": "Radio/Checkbox는 순수 선택 컨트롤 부품 — 단독으로 SB 행에 등장하지 않고 반드시 Cell(CellLeftSelect) 슬롯 안에 내장된다. SB에서 선택 목록 행이 필요하면 Cell 타입의 CellLeftSelect를 써야 한다. Radio: 단일 선택(하나만). Checkbox: 복수 선택(여럿 동시 가능).",
     "redirect": "Cell",
-    "redirect_reason": "선택 행이 필요할 때는 Cell > CellSelectedItem(variant=radioButton)을 사용한다. Radio 타입 컴포넌트는 CellSelectedItem 내부 부품으로만 존재하며 SB 컴포넌트 상세에 단독 등장 불가."
+    "redirect_reason": "선택 행이 필요할 때는 Cell > CellLeftSelect(variants=Radio)를 사용한다. Radio 타입 컴포넌트는 CellLeftSelect 내부 부품으로만 존재하며 SB 컴포넌트 상세에 단독 등장 불가."
   },
   "Search": {
     "name_ko": "검색창",

@@ -336,15 +336,6 @@
     "do": "레이블-값 쌍을 한 행에 표시하고 우측 값을 오른쪽 정렬해야 할 때 사용한다.",
     "rules": "props: description(string), title(string), variants(\"18Semi\"|\"16Semi\"|\"16reg\"|\"15reg\")."
   },
-  "CellSelectedItem": {
-    "type": "Cell",
-    "standalone": true,
-    "description": "라디오 버튼 또는 체크박스 선택 컨트롤과 레이블, 선택적 오른쪽 아이콘/텍스트를 포함한 셀 형태의 선택 항목 컴포넌트입니다.",
-    "anatomy": "root[ selectionItem[ control, label ], rightItem? ]",
-    "states": "Default, Selected, Disabled",
-    "do": "단일 선택이 필요한 목록 항목에는 variant=\"radioButton\", 다중 선택에는 variant=\"checkbox\"를 사용한다.",
-    "rules": "props: variant, rightItem, selected, disabled, label, rightText."
-  },
   "CellSheet": {
     "type": "Cell",
     "standalone": true,

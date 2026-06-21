@@ -183,16 +183,6 @@
       "distinction": "이동 chevron에는 Icon, 텍스트 보조 행동에는 TextButton을 사용한다."
     }
   },
-  "CellSelectedItem": {
-    "radioButton": {
-      "description": "단일 선택(상호배타적) 옵션 행. 요금제·옵션 중 하나만 선택하는 목록에 사용한다.",
-      "distinction": "복수 선택이 필요하면 checkbox를 사용한다."
-    },
-    "checkbox": {
-      "description": "복수 선택 가능 옵션 행. 약관 동의·필터 선택 등 여러 항목을 동시에 선택할 수 있는 목록에 사용한다.",
-      "distinction": "상호배타적 단일 선택에는 radioButton을 사용한다."
-    }
-  },
   "CellSheetItem": {
     "Price": {
       "description": "바텀시트 내 가격·금액 정보를 표시하는 셀 항목. 결제 수단 선택·금액 확인 시트의 가격 행에 사용한다.",
