@@ -255,15 +255,6 @@
     "do": "박스 단위로 구분된 셀 영역 안에 임의 콘텐츠를 배치할 때 사용한다. Box 내부에서 Divider 컴포넌트를 사용하는 경우 Divider 상하에 8px 패딩을 추가한다.",
     "rules": "props: children(ReactNode), className(string). 루트는 width 353px 기준, padding 16px 20px, radius 16px, fill/neutral/primary 배경을 사용한다. CellBoxItemSlot 높이는 콘텐츠 기준으로 hug되며, 빈 슬롯에 고정 높이를 두지 않는다."
   },
-  "CellCard": {
-    "type": "Cell",
-    "standalone": true,
-    "description": "카드형 셀 컨테이너로, 내부 슬롯에 임의의 자식 콘텐츠를 삽입할 수 있는 고정 높이 래퍼 컴포넌트입니다.",
-    "anatomy": "wrap[ group[ slot[ children ] ] ]",
-    "states": null,
-    "do": "카드 형태의 리스트 행이 필요할 때 이 컴포넌트를 최상위 래퍼로 사용한다.",
-    "rules": "props: children(ReactNode), slotHeight(number, 기본 104px), className(string)."
-  },
   "CellCart": {
     "type": "Cell",
     "standalone": true,

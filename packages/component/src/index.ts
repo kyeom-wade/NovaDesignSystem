@@ -72,7 +72,6 @@ export { Banner } from "./components/Banner";
 export { BottomGroup } from "./components/BottomGroup";
 export { Bottomsheet } from "./components/Bottomsheet";
 export { CardProductHorizontalList } from "./components/CardProductHorizontalList";
-export { CellCard } from "./components/CellCard";
 export { CellCart } from "./components/CellCart";
 export { CellDefault } from "./components/CellDefault";
 export { Chip } from "./components/Chip";
