@@ -30,7 +30,7 @@ export { CellRightSelect } from "./components/CellRightSelect";
 export { CellRightTable } from "./components/CellRightTable";
 export { CellSheet } from "./components/CellSheet";
 export { CellText } from "./components/CellText";
-export { CellTextItem } from "./components/CellTextItem";
+export { CellTextItem } from "./components/CellText"; // deprecated 별칭 — CellText 로 통일(레거시 호환)
 export { CheckboxItem } from "./components/CheckboxItem";
 export { CheckboxLeftTextItem } from "./components/CheckboxLeftTextItem";
 export { CheckboxRightTextItem } from "./components/CheckboxRightTextItem";

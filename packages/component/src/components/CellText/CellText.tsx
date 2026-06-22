@@ -1,6 +1,6 @@
 import React from "react";
 import { CellRightItem } from "../CellRightItem";
-import styles from "./CellTextItem.module.css";
+import styles from "./CellText.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.3 .CellText (node 55181:49770)
 // anatomy: root[ title|description, rightItem?[ CellRightItem(Icon) ] ]
 // Properties: description(string), rightItem(boolean), size(15 | 16), title(string), variants(Text | Title)
