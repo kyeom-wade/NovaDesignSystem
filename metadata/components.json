@@ -216,6 +216,15 @@
     "do": "- 약관 보기, 더보기, 상세 이동처럼 주요 CTA보다 약한 텍스트 액션에 사용한다.\n- variants=\"Text\"는 밑줄 텍스트 버튼으로, variants=\"Text+Icon\"은 우측 Chevron이 필요한 이동 액션으로 사용한다.\n- 파괴적이거나 위험한 텍스트 액션에는 danger=true를 설정한다.",
     "rules": "**props 요약**\n- variants: Text(기본) | Text+Icon — Figma 기준 prop\n- variant: 기존 호환 alias, TextIcon 입력 시 Text+Icon으로 매핑\n- size: Small | Medium | Large | XLarge(기본)\n- state: Default(기본) | Disabled\n- danger: boolean — 파괴적 액션 시 true\n- label: 버튼 텍스트 (기본 \"Label\")\n\n**[맵핑 트리거]** 밑줄 텍스트 버튼 또는 텍스트+Chevron 보조 액션이 필요할 때 사용한다.\n\n**[사용 시점]**\n- 링크처럼 보이는 보조 액션\n- 목록·타이틀·문구 옆의 더보기/상세보기 액션\n- Primary CTA보다 시각 강조가 낮아야 하는 텍스트 액션\n\n**[구분]**\n- 화면 하단 주요 CTA나 filled/outlined 버튼에는 ButtonItem을 사용한다.\n- 아이콘 슬롯이 필요하면 ButtonIconItem을 사용한다."
   },
+  "CardItem": {
+    "type": "Card",
+    "standalone": true,
+    "description": "콘텐츠를 감싸는 범용 카드 컨테이너 컴포넌트로, Filled(채움)와 Line(외곽선) 두 가지 variant를 지원하며 슬롯에 임의 자식 요소를 배치할 수 있습니다.",
+    "anatomy": "root[ group[ slot[ children ] ] ]",
+    "states": null,
+    "do": "- 콘텐츠를 카드 단위로 묶어 시각적으로 구분해야 할 때 사용한다.\n- 배경을 채운 카드에는 variants=\"Filled\", 외곽선만 있는 카드에는 variants=\"Line\"을 사용한다.\n- 카드 내부 콘텐츠는 children 슬롯으로 자유롭게 구성한다.",
+    "rules": "**props 요약**\n- variants: \"Filled\"(기본) | \"Line\" — Figma 기준 prop\n- children: ReactNode — 카드 내부 슬롯 콘텐츠\n\n[맵핑 트리거] 콘텐츠 묶음을 카드 형태의 컨테이너로 감싸야 할 때 사용한다.\n\n[사용 시점] 정보 그룹, 배너성 블록, 리스트 항목 묶음 등을 시각적으로 구분된 카드 영역에 담을 때 적합하다.\n\n[구분] CellBoxItem은 박스형 셀 컨테이너이고 CardProductHorizontalList는 상품 전용 카드이다. CardItem은 variant로 채움/외곽선을 선택하는 범용 카드 컨테이너이다."
+  },
   "CardProductHorizontalList": {
     "type": "Card",
     "standalone": true,
@@ -234,17 +243,6 @@
     "do": "- 가로 스크롤 상품/콘텐츠 캐러셀의 개별 슬라이드로 사용한다.\n- Small: 128 정사각+타이틀·캡션·가격, Medium: 128x192 직사각+타이틀·별점/예매율, Large: 160 정사각+서브타이틀·타이틀·할인가·배지.\n- 부모 캐러셀/리스트 컨테이너 안에서 반복 렌더링한다.",
     "rules": "**variant**: Small(기본) | Medium | Large\n**props**: title, subtitle(Large), caption01(Small 가격조건), price, discount(Large), period(Large), rating(Medium 별점), subInfo(Medium 예매율), badges[](Large), imageSrc.\n[맵핑 트리거] 가로 스크롤 상품 카드 슬라이더의 개별 아이템이 필요할 때.\n[구분] 단독 상품 텍스트는 TextProductDetail, 세로 리스트 행은 CardProduct 계열을 사용한다.",
     "subComponents": ["ThumbnailSquareItem", "ThumbnailRectangleItem", "TextProductDetail"]
-  },
-  "CaretItem": {
-    "type": "Divider",
-    "standalone": false,
-    "description": "탭·네비게이션 항목의 선택 상태를 나타내는 1px × 20px 필 모양의 세로형 브랜드 컬러 캐럿 인디케이터 서브 컴포넌트",
-    "anatomy": "root[ bar ]",
-    "states": null,
-    "do": "단독 배치하지 않고 반드시 부모 탭·네비게이션 컴포넌트의 슬롯을 통해 삽입한다.",
-    "rules": "props: variant(\"brand\"|\"neutral\"|\"inverse\"), height(px, 기본 20).",
-    "parent": "Tabs",
-    "slot": "LeadingContent"
   },
   "CellBoxItem": {
     "type": "Cell",

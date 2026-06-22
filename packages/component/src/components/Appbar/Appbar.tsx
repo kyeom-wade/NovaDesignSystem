@@ -1,7 +1,7 @@
 import React from "react";
 import { IconBack } from "../IconBack";
 import { IconDummy } from "../IconDummy";
-import styles from "./AppBar.module.css";
+import styles from "./Appbar.module.css";
 // Figma SSOT: SKT-Next_UI-Draft_3.3 .Appbar (node 54486:38840)
 // anatomy: root[ Title[ ?AppBarItem(back), ?PageTitle ], ?AppBarItem(dummy x 3) ]
 // Variants: variants(Default | Inverse)
