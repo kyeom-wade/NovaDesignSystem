@@ -19,6 +19,7 @@
   border-top-right-radius: var(--skt-radius-10, 28px);
   font-family: var(--skt-typography-font-family-base, "Pretendard", sans-serif);
   overflow: hidden;
+  max-height: 100%; /* 부모가 높이를 제한하면 시트가 그 안에 맞고, 본문(slot)이 스크롤된다 */
 }
 
 .rootButtonClose {
@@ -111,9 +112,10 @@
 
 .slot {
   position: relative;
-  flex-shrink: 0;
+  flex: 1 1 auto;   /* 시트 높이가 제한되면 본문이 남은 공간을 차지하고 */
+  min-height: 0;    /* flex 자식이 콘텐츠보다 작아질 수 있게 → */
   width: 100%;
-  height: auto;
+  overflow-y: auto; /* 길면 본문 영역만 스크롤(헤더·액션은 고정) */
 }
 
 .bottomGroup {
