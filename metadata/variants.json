@@ -2,15 +2,19 @@
   "Accordion": {
     "Info": {
       "description": "텍스트 기반 FAQ·공지 콘텐츠를 접고 펼치는 기본 아코디언. 질문-답변 형식의 안내 목록에 사용한다.",
-      "distinction": "썸네일 이미지가 필요하면 Product, 금액 표시가 필요하면 Price를 사용한다."
+      "distinction": "썸네일 이미지가 필요하면 Product, 금액 표시가 필요하면 Price를 사용한다. 텍스트 기반 FAQ·안내·현재 콘텐츠 흐름에 속하는 보조 정보에 사용한다."
     },
     "Product": {
       "description": "썸네일 이미지와 서브텍스트를 포함한 상품 정보 아코디언. 상품 상세 추가 정보·구성품 목록에 사용한다.",
-      "distinction": "이미지 없는 텍스트 FAQ에는 Info, 금액 구성 내역에는 Price를 사용한다."
+      "distinction": "이미지 없는 텍스트 FAQ에는 Info, 금액 구성 내역에는 Price를 사용한다. 상품 썸네일과 상품명, 보조 텍스트, 우측 요약 텍스트가 함께 필요한 상품 항목에 사용한다."
     },
     "Price": {
       "description": "금액·요금 구성 내역을 접고 펼치는 아코디언. 결제·주문 화면의 가격 상세 내역에 사용한다.",
-      "distinction": "텍스트 안내에는 Info, 상품 이미지가 필요하면 Product를 사용한다."
+      "distinction": "텍스트 안내에는 Info, 상품 이미지가 필요하면 Product를 사용한다. 가격·수수료·혜택·계약·결제 관련 정보처럼 표면 경계가 필요한 확장형 정보에 사용한다."
+    },
+    "Notice": {
+      "description": "짧은 제목과 캡션을 함께 보여주는 공지·업데이트·상태 안내용 아코디언.",
+      "distinction": "공지·업데이트·상태 안내처럼 짧은 제목과 캡션을 함께 보여주는 항목에 사용한다."
     }
   },
   "Appbar": {
@@ -78,28 +82,28 @@
   "Bottomsheet": {
     "ButtonClose": {
       "description": "우측 상단 X(닫기) 버튼과 타이틀 헤더를 갖춘 바텀시트. 명시적 닫기 행동이 필요한 콘텐츠 시트에 사용한다.",
-      "distinction": "드래그로 닫는 인터랙션이 주가 되는 경우 Handle을 사용한다."
+      "distinction": "드래그로 닫는 인터랙션이 주가 되는 경우 Handle을 사용한다. 폼 입력·결제·약관 동의·경고처럼 사용자의 입력·선택·확인 상태가 중요하거나 실수로 닫히면 흐름이 중단되는 경우, 즉 명시적 닫기 액션으로 제스처 닫힘 실수를 방지해야 하는 시트에 사용한다. 스크롤 유무가 아니라 닫힘 실수로 인한 영향도를 먼저 판단한다."
     },
     "Handle": {
       "description": "상단 드래그 핸들을 헤더로 갖춘 바텀시트. 스와이프·드래그 다운으로 닫는 자연스러운 시트 인터랙션에 사용한다.",
-      "distinction": "명시적 닫기 버튼이 필요하면 ButtonClose를 사용한다."
+      "distinction": "명시적 닫기 버튼이 필요하면 ButtonClose를 사용한다. 정보 열람·필터 선택·공유 메뉴처럼 다시 열 수 있고 실수로 닫혀도 입력 손실이나 결제/동의 흐름 중단이 없는, 제스처로 닫혀도 안전한 보조 탐색·열람 성격의 시트에 한정한다. 스크롤 유무가 아니라 닫힘 실수로 인한 영향도를 먼저 판단한다."
     }
   },
   "ButtonItem": {
     "Primary": {
       "level": 4,
       "description": "화면에서 가장 중요한 메인 CTA. 화면당 1개만 허용하며 하단 고정 영역에서 fullWidth+large/xlarge 크기와 조합한다.",
-      "distinction": "한 화면에 2개 이상 배치하지 않는다. 취소·닫기 등 보조 행동에 사용하지 않는다."
+      "distinction": "한 화면에 2개 이상 배치하지 않는다. 취소·닫기 등 보조 행동에 사용하지 않는다. 화면 영역에서 가장 중요한 액션에만 사용한다. `BottomGroup`(area_no=999)이 화면에 존재하면 본문(area_no 1~998)에 Primary를 사용하지 않는다 — BottomGroup이 이미 Primary CTA를 소유하므로 본문에 Primary가 추가되면 위계가 충돌한다(바텀시트(BS)도 동일하게 적용)."
     },
     "Secondary": {
       "level": 2,
       "description": "주요 행동의 보조 CTA. Primary 옆 outlined 스타일로 취소·돌아가기·나중에 등 이탈·보조 행동에 사용한다.",
-      "distinction": "Primary와 동등한 강조로 나란히 배치하지 않는다. 단독 메인 CTA에 사용하지 않는다."
+      "distinction": "Primary와 동등한 강조로 나란히 배치하지 않는다. 단독 메인 CTA에 사용하지 않는다. 대체 액션이나 우선순위가 낮은 액션에 사용한다."
     },
     "Ouline": {
       "level": 2,
       "description": "테두리선만 있는 중간 강조 인라인 CTA. 카드·리스트 내 보조 행동이나 Selected 상태 시각화에 사용한다.",
-      "distinction": "화면 하단 주요 CTA에는 Primary/Secondary를 사용한다."
+      "distinction": "화면 하단 주요 CTA에는 Primary/Secondary를 사용한다. 디자인에 개략적인 처리가 필요한 경우 윤곽이 잡힌 보조 액션에 사용한다."
     }
   },
   "ButtonTextItem": {
@@ -130,6 +134,16 @@
     "Default": {
       "description": "44px 원형 AI 아이콘 버튼 아이템. AI 진입점이나 플로팅 AI 액션을 시각적으로 구분할 때 사용한다.",
       "distinction": "일반 아이콘 슬롯에는 ButtonIconItem을 사용한다."
+    }
+  },
+  "CardItem": {
+    "Filled": {
+      "description": "배경색이 있는 강조 카드(기본).",
+      "distinction": "사용자가 먼저 판단해야 하는 핵심 요약·추천·혜택·선택 결과 등 1차 중요 콘텐츠에 사용한다. 여러 콘텐츠 그룹 중 하나를 주요 콘텐츠로 승격할 때. 한 화면에서 Line과 함께 쓰면 Filled=1차. 법적 고지·단순 설명·낮은 우선순위에는 남용하지 않는다."
+    },
+    "Line": {
+      "description": "테두리만 있는 서브 카드.",
+      "distinction": "같은 레벨 항목을 정돈하거나 보조 콘텐츠에 경계만 부여할 때 사용한다. 선택 후보·비교 항목·부가 정보 등 Filled만큼 강한 표면이 필요 없는 콘텐츠. 한 화면에서 Filled과 함께 쓰면 Line=2차/동급 후보."
     }
   },
   "CarouselItem": {
@@ -207,12 +221,12 @@
     "contents": {
       "level": 1,
       "description": "같은 섹션 내 항목 사이를 구분해 읽기 흐름을 정리하는 얇은 구분선. 동일 섹션 내 아이템 간 시각적 분리에 사용한다.",
-      "distinction": "완전히 다른 콘텐츠 섹션 사이에는 section을 사용한다."
+      "distinction": "완전히 다른 콘텐츠 섹션 사이에는 section을 사용한다. 리스트(ListStack) 안에서 서로 다른 의미 그룹을 분리하거나, CardItem 같은 카드 컨테이너 내부에서 콘텐츠 영역을 나눌 때 사용한다."
     },
     "section": {
       "level": 2,
       "description": "완전히 다른 콘텐츠 섹션이 시작됨을 구분하는 굵은 구분선 또는 배경색 전환. 섹션 간 명확한 영역 분리에 사용한다.",
-      "distinction": "동일 섹션 내 아이템 구분에는 contents를 사용한다."
+      "distinction": "동일 섹션 내 아이템 구분에는 contents를 사용한다. SectionStack과 SectionStack 사이에서 페이지 구역 전환을 시각적으로 강조해야 할 때만 사용한다."
     }
   },
   "FilterBar": {
@@ -242,15 +256,15 @@
   "Input": {
     "1Input": {
       "description": "단일 입력 필드 레이아웃. 이름·전화번호·이메일 등 하나의 정보를 입력받는 폼 영역에 사용한다.",
-      "distinction": "두 가지 정보를 함께 받으려면 2Input, 세 가지는 3Input을 사용한다."
+      "distinction": "두 가지 정보를 함께 받으려면 2Input, 세 가지는 3Input을 사용한다. 단일 입력만 필요하면 1Input을 사용한다."
     },
     "2Input": {
       "description": "두 개의 입력 필드를 조합한 레이아웃. 생년월일(년/월)·주소(우편번호/상세주소) 등 연관된 두 입력 정보를 함께 받는 폼에 사용한다.",
-      "distinction": "단일 입력에는 1Input, 세 개 입력에는 3Input을 사용한다."
+      "distinction": "단일 입력에는 1Input, 세 개 입력에는 3Input을 사용한다. 연속된 입력 단계가 필요하면 2Input 또는 3Input을 사용한다."
     },
     "3Input": {
       "description": "세 개의 입력 필드를 조합한 레이아웃. 생년월일(년/월/일)·카드 정보(번호/유효기간/CVC) 등 연관된 세 입력 정보를 한 그룹으로 받는 폼에 사용한다.",
-      "distinction": "두 개 이하의 입력에는 1Input/2Input을 사용한다."
+      "distinction": "두 개 이하의 입력에는 1Input/2Input을 사용한다. 연속된 입력 단계가 필요하면 2Input 또는 3Input을 사용한다."
     }
   },
   "LayoutHomePageStack": {
@@ -342,7 +356,7 @@
     },
     "Variants4": {
       "description": "파란 배경 브랜드 카드 텍스트. 64px 라운드 썸네일+서브타이틀·상품명·하트(카운트)·inverse 배지로 구성한다.",
-      "distinction": "일반 흰 배경 상품 텍스트에는 ProductList/ProductDetail 을 사용한다."
+      "distinction": "일반 흰 배경 상품 텍스트에는 ProductList/ProductDetail 을 사용한다. 어두운(파란) 배경 전용이므로 배지는 Inverse 색을 사용한다."
     }
   },
   "ThumbnailRoundItem": {
@@ -401,27 +415,27 @@
     "Icon": {
       "level": 1,
       "description": "타이틀 그룹 우측에 더미 아이콘 슬롯을 배치하는 항목. Figma 기본 표시용 variant이며 실제 화면 사용은 제한한다.",
-      "distinction": "텍스트 라벨이 필요하면 TextButton을 사용한다."
+      "distinction": "텍스트 라벨이 필요하면 TextButton을 사용한다. Figma 기본 표시용 더미 아이콘이므로 실제 화면에서는 명확한 용도가 있는 다른 variant를 우선한다."
     },
     "TextButton": {
       "level": 2,
       "description": "타이틀 그룹 우측에 밑줄 텍스트 버튼을 배치하는 항목. 보조 링크나 전체보기처럼 낮은 강조의 텍스트 행동에 사용한다.",
-      "distinction": "아이콘이 함께 필요한 이동 행동에는 TextIconSecondary를 사용한다."
+      "distinction": "아이콘이 함께 필요한 이동 행동에는 TextIconSecondary를 사용한다. 전체보기, 더보기처럼 낮은 강조의 텍스트 행동에 사용한다."
     },
     "TextIconSecondary": {
       "level": 2,
       "description": "타이틀 그룹 우측에 텍스트와 오른쪽 화살표를 함께 배치하는 항목. 다음 화면 진입이나 상세 보기처럼 이동성이 있는 보조 행동에 사용한다.",
-      "distinction": "아이콘 없이 텍스트만 필요하면 TextButton을 사용한다."
+      "distinction": "아이콘 없이 텍스트만 필요하면 TextButton을 사용한다. 텍스트와 오른쪽 화살표 조합으로, 다음 화면 진입이나 상세 보기처럼 이동성이 있는 행동에 사용한다."
     },
     "Button": {
       "level": 2,
       "description": "타이틀 그룹 우측에 작은 Secondary 버튼을 배치하는 항목. 명시적인 보조 행동을 버튼 형태로 보여야 할 때 사용한다.",
-      "distinction": "닫기 같은 아이콘 단독 행동에는 ButtonIcon을 사용한다."
+      "distinction": "닫기 같은 아이콘 단독 행동에는 ButtonIcon을 사용한다. 작은 Secondary 버튼으로, 명시적인 보조 행동을 버튼 형태로 보여야 할 때 사용한다."
     },
     "ButtonIcon": {
       "level": 2,
       "description": "타이틀 그룹 우측에 24px 아이콘 버튼을 배치하는 항목. 닫기처럼 텍스트 없이 명확한 아이콘 행동에 사용한다.",
-      "distinction": "텍스트 라벨이 필요한 행동에는 Button 또는 TextButton을 사용한다."
+      "distinction": "텍스트 라벨이 필요한 행동에는 Button 또는 TextButton을 사용한다. 24px 아이콘 버튼으로, 닫기처럼 텍스트 없이 명확한 아이콘 행동에 사용한다. Figma 3.3 기준 variant는 Icon | TextButton | TextIconSecondary | Button | ButtonIcon만 사용하며, Text·TextIconPrimary·TextItemButton은 현재 Figma 기준에 없는 variant이므로 새 화면 생성 시 사용하지 않는다."
     }
   },
   "TitleTextRightItem": {
@@ -451,11 +465,11 @@
   "ToogleItem": {
     "None": {
       "description": "아이콘만 표시되는 토글 항목. 라벨 없이 아이콘 시각적 피드백만으로 토글 상태를 전달하는 컴팩트한 공간에 사용한다.",
-      "distinction": "텍스트 레이블로 의미 전달이 필요하면 Text를 사용한다."
+      "distinction": "텍스트 레이블로 의미 전달이 필요하면 Text를 사용한다. 아이콘만 필요하면 None을 사용한다."
     },
     "Text": {
       "description": "아이콘과 텍스트 레이블을 함께 표시하는 토글 항목. 토글 상태의 의미를 텍스트로 명시해야 하는 설정·옵션 행에 사용한다.",
-      "distinction": "레이블 없이 아이콘만 필요하면 None을 사용한다."
+      "distinction": "레이블 없이 아이콘만 필요하면 None을 사용한다. 카운트 라벨이 필요하면 Text를 사용한다."
     }
   },
   "TooltipItem": {
