@@ -1,0 +1,3061 @@
+{
+  "Accordion": {
+    "slots": [
+      {
+        "name": "onClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variants",
+        "control": "select",
+        "options": [
+          "Info",
+          "Product",
+          "Price"
+        ]
+      },
+      {
+        "name": "disclosure",
+        "control": "switch"
+      },
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "subText",
+        "control": "text"
+      },
+      {
+        "name": "thumbnailSrc",
+        "control": "text"
+      }
+    ]
+  },
+  "Alert": {
+    "slots": [],
+    "props": [
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "body",
+        "control": "text"
+      },
+      {
+        "name": "showTitle",
+        "control": "switch"
+      }
+    ]
+  },
+  "AppBar": {
+    "slots": [
+      {
+        "name": "onBarcode",
+        "kind": "handler"
+      },
+      {
+        "name": "onCart",
+        "kind": "handler"
+      },
+      {
+        "name": "onMenu",
+        "kind": "handler"
+      },
+      {
+        "name": "rightButtons",
+        "kind": "buttonSlot"
+      },
+      {
+        "name": "leftButton",
+        "kind": "buttonSlot"
+      }
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "1Depth",
+          "2depth"
+        ]
+      },
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "showLeftItem",
+        "control": "switch"
+      },
+      {
+        "name": "showRightItem",
+        "control": "switch"
+      },
+      {
+        "name": "rightItemCount",
+        "control": "select",
+        "options": [
+          "1",
+          "2",
+          "3"
+        ]
+      }
+    ]
+  },
+  "AppBarItem": {
+    "slots": [
+      {
+        "name": "buttons",
+        "kind": "buttonSlot"
+      }
+    ],
+    "props": [
+      {
+        "name": "count",
+        "control": "select",
+        "options": [
+          "1",
+          "2",
+          "3"
+        ]
+      }
+    ]
+  },
+  "BadgeIconItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "text",
+        "control": "text"
+      },
+      {
+        "name": "subText",
+        "control": "text"
+      },
+      {
+        "name": "showSubText",
+        "control": "switch"
+      },
+      {
+        "name": "iconSrc",
+        "control": "text"
+      },
+      {
+        "name": "iconAlt",
+        "control": "text"
+      }
+    ]
+  },
+  "BadgeItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "color",
+        "control": "select",
+        "options": [
+          "Neutral",
+          "Strong",
+          "Brand",
+          "Inverse"
+        ]
+      },
+      {
+        "name": "size",
+        "control": "select",
+        "options": [
+          "Small",
+          "Large"
+        ]
+      },
+      {
+        "name": "text",
+        "control": "text"
+      }
+    ]
+  },
+  "Banner": {
+    "slots": [
+      {
+        "name": "onClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variants",
+        "control": "select",
+        "options": [
+          "Small",
+          "Medium"
+        ]
+      },
+      {
+        "name": "indicator",
+        "control": "switch"
+      },
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "subText",
+        "control": "text"
+      },
+      {
+        "name": "imageUrl",
+        "control": "text"
+      },
+      {
+        "name": "imageAlt",
+        "control": "text"
+      }
+    ]
+  },
+  "BannerImageItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "showBackground",
+        "control": "switch"
+      },
+      {
+        "name": "imageSrc",
+        "control": "text"
+      },
+      {
+        "name": "imageAlt",
+        "control": "text"
+      },
+      {
+        "name": "ariaLabel",
+        "control": "text"
+      }
+    ]
+  },
+  "BottomGroup": {
+    "slots": [
+      {
+        "name": "onPrimary",
+        "kind": "handler"
+      },
+      {
+        "name": "onSecondary",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "Default",
+          "Ai"
+        ]
+      },
+      {
+        "name": "showAiLabel",
+        "control": "switch"
+      },
+      {
+        "name": "aiLabelText",
+        "control": "text"
+      },
+      {
+        "name": "showSecondaryButton",
+        "control": "switch"
+      },
+      {
+        "name": "secondaryLabel",
+        "control": "text"
+      },
+      {
+        "name": "primaryLabel",
+        "control": "text"
+      },
+      {
+        "name": "showUpperItem",
+        "control": "switch"
+      },
+      {
+        "name": "upperItemVariant",
+        "control": "text"
+      },
+      {
+        "name": "upperItemLabel",
+        "control": "text"
+      },
+      {
+        "name": "upperItemValue",
+        "control": "text"
+      },
+      {
+        "name": "areaItemVariants",
+        "control": "text"
+      },
+      {
+        "name": "upperItemText",
+        "control": "text"
+      }
+    ]
+  },
+  "BottomGroupAiAreaItem": {
+    "slots": [
+      {
+        "name": "onPrimary",
+        "kind": "handler"
+      },
+      {
+        "name": "onSecondary",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "1 Botton",
+          "2 Botton"
+        ]
+      },
+      {
+        "name": "primaryLabel",
+        "control": "text"
+      },
+      {
+        "name": "secondaryLabel",
+        "control": "text"
+      },
+      {
+        "name": "iconAlt",
+        "control": "text"
+      }
+    ]
+  },
+  "BottomGroupAreaItem": {
+    "slots": [
+      {
+        "name": "onPrimary",
+        "kind": "handler"
+      },
+      {
+        "name": "onSecondary",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variants",
+        "control": "select",
+        "options": [
+          "1 Botton",
+          "2 Botton"
+        ]
+      },
+      {
+        "name": "primaryLabel",
+        "control": "text"
+      },
+      {
+        "name": "secondaryLabel",
+        "control": "text"
+      }
+    ]
+  },
+  "BottomGroupUpperItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "value",
+        "control": "text"
+      }
+    ]
+  },
+  "BottomSheetHandleItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "width",
+        "control": "text"
+      }
+    ]
+  },
+  "Bottomsheet": {
+    "slots": [
+      {
+        "name": "onTabChange",
+        "kind": "handler"
+      },
+      {
+        "name": "onClose",
+        "kind": "handler"
+      },
+      {
+        "name": "onPrimary",
+        "kind": "handler"
+      },
+      {
+        "name": "onSecondary",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "ButtonClose",
+          "Handle"
+        ]
+      },
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "subText",
+        "control": "text"
+      },
+      {
+        "name": "showSubText",
+        "control": "switch"
+      },
+      {
+        "name": "showTab",
+        "control": "switch"
+      },
+      {
+        "name": "activeTab",
+        "control": "number"
+      },
+      {
+        "name": "showActionGroup",
+        "control": "switch"
+      },
+      {
+        "name": "primaryLabel",
+        "control": "text"
+      },
+      {
+        "name": "secondaryLabel",
+        "control": "text"
+      },
+      {
+        "name": "aiHintText",
+        "control": "text"
+      }
+    ]
+  },
+  "ButtonIconItem": {
+    "slots": [
+      {
+        "name": "onClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "size",
+        "control": "select",
+        "options": [
+          "Small",
+          "Medium",
+          "Large"
+        ]
+      },
+      {
+        "name": "fill",
+        "control": "switch"
+      },
+      {
+        "name": "state",
+        "control": "select",
+        "options": [
+          "Default",
+          "Disabled"
+        ]
+      },
+      {
+        "name": "\"aria-label\"",
+        "control": "text"
+      }
+    ]
+  },
+  "ButtonItem": {
+    "slots": [
+      {
+        "name": "onClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "variants",
+        "control": "text"
+      },
+      {
+        "name": "size",
+        "control": "select",
+        "options": [
+          "Small",
+          "Medium",
+          "Large",
+          "XLarge"
+        ]
+      },
+      {
+        "name": "state",
+        "control": "select",
+        "options": [
+          "Default",
+          "Loading",
+          "Disabled"
+        ]
+      },
+      {
+        "name": "danger",
+        "control": "switch"
+      },
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "icon",
+        "control": "switch"
+      },
+      {
+        "name": "showIcon",
+        "control": "switch"
+      }
+    ]
+  },
+  "CardContentsListItem": {
+    "slots": [
+      {
+        "name": "onAction",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "profileName",
+        "control": "text"
+      },
+      {
+        "name": "profilePhone",
+        "control": "text"
+      },
+      {
+        "name": "actionLabel",
+        "control": "text"
+      },
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "showTitle",
+        "control": "switch"
+      },
+      {
+        "name": "badgeText",
+        "control": "text"
+      },
+      {
+        "name": "showBadge",
+        "control": "switch"
+      },
+      {
+        "name": "subTitle",
+        "control": "text"
+      },
+      {
+        "name": "barcodeNumbers",
+        "control": "text"
+      },
+      {
+        "name": "barcodeTime",
+        "control": "text"
+      },
+      {
+        "name": "mainText",
+        "control": "text"
+      },
+      {
+        "name": "priceText",
+        "control": "text"
+      },
+      {
+        "name": "thumbnailSrc",
+        "control": "text"
+      },
+      {
+        "name": "taskTitle",
+        "control": "text"
+      },
+      {
+        "name": "taskBody",
+        "control": "text"
+      },
+      {
+        "name": "taskImageSrc",
+        "control": "text"
+      }
+    ]
+  },
+  "CardInfoList": {
+    "slots": [
+      {
+        "name": "onRightButtonClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "Brand",
+          "Coupon",
+          "Place",
+          "ListCardMap"
+        ]
+      },
+      {
+        "name": "thumbnailSrc",
+        "control": "text"
+      },
+      {
+        "name": "iconSrc",
+        "control": "text"
+      },
+      {
+        "name": "mapSrc",
+        "control": "text"
+      },
+      {
+        "name": "mainText",
+        "control": "text"
+      },
+      {
+        "name": "subText",
+        "control": "text"
+      },
+      {
+        "name": "showSubText",
+        "control": "switch"
+      },
+      {
+        "name": "rightButtonLabel",
+        "control": "text"
+      },
+      {
+        "name": "showRightButton",
+        "control": "switch"
+      }
+    ]
+  },
+  "CardItem": {
+    "slots": [],
+    "props": []
+  },
+  "CardProductHorizontalList": {
+    "slots": [],
+    "props": [
+      {
+        "name": "category",
+        "control": "text"
+      },
+      {
+        "name": "name",
+        "control": "text"
+      },
+      {
+        "name": "benefit",
+        "control": "text"
+      },
+      {
+        "name": "thumbnailSrc",
+        "control": "text"
+      },
+      {
+        "name": "showThumbnail",
+        "control": "switch"
+      },
+      {
+        "name": "showTagBadges",
+        "control": "switch"
+      },
+      {
+        "name": "showIconBadges",
+        "control": "switch"
+      }
+    ]
+  },
+  "CardProductVerticalList": {
+    "slots": [],
+    "props": []
+  },
+  "CardProductVerticalListItem": {
+    "slots": [],
+    "props": []
+  },
+  "Carousel": {
+    "slots": [
+      {
+        "name": "onMore",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "showMoreIcon",
+        "control": "switch"
+      }
+    ]
+  },
+  "CarouselGroupItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "subText",
+        "control": "text"
+      },
+      {
+        "name": "price",
+        "control": "text"
+      },
+      {
+        "name": "discountRate",
+        "control": "text"
+      },
+      {
+        "name": "priceUnit",
+        "control": "text"
+      },
+      {
+        "name": "priceConditionLabel",
+        "control": "text"
+      },
+      {
+        "name": "priceConditionAmount",
+        "control": "text"
+      },
+      {
+        "name": "rating",
+        "control": "text"
+      },
+      {
+        "name": "bookingRate",
+        "control": "text"
+      },
+      {
+        "name": "src",
+        "control": "text"
+      }
+    ]
+  },
+  "CarouselItem": {
+    "slots": [],
+    "props": []
+  },
+  "CellBoxItem": {
+    "slots": [],
+    "props": []
+  },
+  "CellBrandItem": {
+    "slots": [
+      {
+        "name": "onRightButtonClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "thumbnailSrc",
+        "control": "text"
+      },
+      {
+        "name": "subTitle",
+        "control": "text"
+      },
+      {
+        "name": "showSubTitle",
+        "control": "switch"
+      },
+      {
+        "name": "mainText",
+        "control": "text"
+      },
+      {
+        "name": "subText",
+        "control": "text"
+      },
+      {
+        "name": "showSubText",
+        "control": "switch"
+      },
+      {
+        "name": "rightButtonLabel",
+        "control": "text"
+      },
+      {
+        "name": "rightButton",
+        "control": "switch"
+      }
+    ]
+  },
+  "CellCard": {
+    "slots": [],
+    "props": [
+      {
+        "name": "slotHeight",
+        "control": "number"
+      }
+    ]
+  },
+  "CellCart": {
+    "slots": [
+      {
+        "name": "onClose",
+        "kind": "handler"
+      },
+      {
+        "name": "onChangeButton",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "showTitle",
+        "control": "switch"
+      },
+      {
+        "name": "thumbnailSrc",
+        "control": "text"
+      },
+      {
+        "name": "brandName",
+        "control": "text"
+      },
+      {
+        "name": "productName",
+        "control": "text"
+      },
+      {
+        "name": "showAdultNotice",
+        "control": "switch"
+      },
+      {
+        "name": "adultNoticeText",
+        "control": "text"
+      },
+      {
+        "name": "totalLabel",
+        "control": "text"
+      },
+      {
+        "name": "totalValue",
+        "control": "text"
+      },
+      {
+        "name": "showChangeButton",
+        "control": "switch"
+      },
+      {
+        "name": "changeButtonLabel",
+        "control": "text"
+      }
+    ]
+  },
+  "CellDefault": {
+    "slots": [],
+    "props": [
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "showTitle",
+        "control": "switch"
+      }
+    ]
+  },
+  "CellPaymentItem": {
+    "slots": [
+      {
+        "name": "onClick",
+        "kind": "handler"
+      },
+      {
+        "name": "onCardClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "logoImage",
+        "control": "switch"
+      },
+      {
+        "name": "badge",
+        "control": "switch"
+      },
+      {
+        "name": "bottomButton",
+        "control": "switch"
+      },
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "badgeLabel",
+        "control": "text"
+      },
+      {
+        "name": "logoSrc",
+        "control": "text"
+      },
+      {
+        "name": "cardBrand",
+        "control": "text"
+      },
+      {
+        "name": "cardHeadlineSuffix",
+        "control": "text"
+      },
+      {
+        "name": "cardBody",
+        "control": "text"
+      },
+      {
+        "name": "selected",
+        "control": "switch"
+      }
+    ]
+  },
+  "CellProductItem": {
+    "slots": [
+      {
+        "name": "onClose",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "thumbnailSrc",
+        "control": "text"
+      },
+      {
+        "name": "brand",
+        "control": "text"
+      },
+      {
+        "name": "productName",
+        "control": "text"
+      },
+      {
+        "name": "showAdultWarning",
+        "control": "switch"
+      },
+      {
+        "name": "adultWarningText",
+        "control": "text"
+      },
+      {
+        "name": "showCloseButton",
+        "control": "switch"
+      },
+      {
+        "name": "showCellBox",
+        "control": "switch"
+      },
+      {
+        "name": "benefitText",
+        "control": "text"
+      }
+    ]
+  },
+  "CellRightItem": {
+    "slots": [
+      {
+        "name": "onTextButtonClick",
+        "kind": "handler"
+      },
+      {
+        "name": "onButtonIconClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variants",
+        "control": "text"
+      },
+      {
+        "name": "text",
+        "control": "text"
+      },
+      {
+        "name": "buttonLabel",
+        "control": "text"
+      }
+    ]
+  },
+  "CellRightTableItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "value",
+        "control": "text"
+      }
+    ]
+  },
+  "CellSelectedItem": {
+    "slots": [
+      {
+        "name": "onChange",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "rightItem",
+        "control": "text"
+      },
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "rightText",
+        "control": "text"
+      },
+      {
+        "name": "selected",
+        "control": "switch"
+      },
+      {
+        "name": "disabled",
+        "control": "switch"
+      }
+    ]
+  },
+  "CellSheetItem": {
+    "slots": [],
+    "props": []
+  },
+  "CellTableItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "ratio",
+        "control": "select",
+        "options": [
+          "20",
+          "30",
+          "40"
+        ]
+      },
+      {
+        "name": "textSize",
+        "control": "select",
+        "options": [
+          "13",
+          "14"
+        ]
+      },
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "value",
+        "control": "text"
+      }
+    ]
+  },
+  "CellTextInfoItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "rightItem",
+        "control": "select",
+        "options": [
+          "None",
+          "Badge",
+          "Text"
+        ]
+      },
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "badgeLabel",
+        "control": "text"
+      },
+      {
+        "name": "rightText",
+        "control": "text"
+      },
+      {
+        "name": "subText",
+        "control": "text"
+      },
+      {
+        "name": "dateText",
+        "control": "text"
+      }
+    ]
+  },
+  "CellTextItem": {
+    "slots": [
+      {
+        "name": "onRightButton",
+        "kind": "handler"
+      },
+      {
+        "name": "onToggleChange",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "rightItem",
+        "control": "text"
+      },
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "rightText",
+        "control": "text"
+      },
+      {
+        "name": "toggleChecked",
+        "control": "switch"
+      }
+    ]
+  },
+  "CellTitleItem": {
+    "slots": [
+      {
+        "name": "onButton",
+        "kind": "handler"
+      },
+      {
+        "name": "onTextButton",
+        "kind": "handler"
+      },
+      {
+        "name": "onButtonIcon",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "rightItem",
+        "control": "text"
+      },
+      {
+        "name": "rightText",
+        "control": "text"
+      },
+      {
+        "name": "buttonLabel",
+        "control": "text"
+      }
+    ]
+  },
+  "CheckboxItem": {
+    "slots": [
+      {
+        "name": "onChange",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "checked",
+        "control": "switch"
+      },
+      {
+        "name": "disabled",
+        "control": "switch"
+      },
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "showLabel",
+        "control": "switch"
+      }
+    ]
+  },
+  "CheckboxTextItem": {
+    "slots": [
+      {
+        "name": "onChange",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "selection",
+        "control": "switch"
+      },
+      {
+        "name": "disabled",
+        "control": "switch"
+      },
+      {
+        "name": "label",
+        "control": "text"
+      }
+    ]
+  },
+  "Chip": {
+    "slots": [
+      {
+        "name": "onSelect",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "selectedValue",
+        "control": "text"
+      },
+      {
+        "name": "size",
+        "control": "text"
+      }
+    ]
+  },
+  "ChipItem": {
+    "slots": [
+      {
+        "name": "onClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "size",
+        "control": "select",
+        "options": [
+          "large",
+          "small"
+        ]
+      },
+      {
+        "name": "selected",
+        "control": "switch"
+      },
+      {
+        "name": "text",
+        "control": "text"
+      }
+    ]
+  },
+  "ChipItemAIItem": {
+    "slots": [
+      {
+        "name": "onClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "text",
+        "control": "text"
+      }
+    ]
+  },
+  "ChipItemQuicklinkItem": {
+    "slots": [
+      {
+        "name": "onClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "text",
+        "control": "text"
+      },
+      {
+        "name": "iconSrc",
+        "control": "text"
+      },
+      {
+        "name": "iconAlt",
+        "control": "text"
+      }
+    ]
+  },
+  "ChipsRow": {
+    "slots": [],
+    "props": [
+      {
+        "name": "paddingLeft",
+        "control": "number"
+      }
+    ]
+  },
+  "DetailInfo": {
+    "slots": [
+      {
+        "name": "onCoupon",
+        "kind": "handler"
+      },
+      {
+        "name": "onDetailInfo",
+        "kind": "handler"
+      },
+      {
+        "name": "onLike",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variants",
+        "control": "select",
+        "options": [
+          "Product",
+          "Brand"
+        ]
+      },
+      {
+        "name": "category",
+        "control": "text"
+      },
+      {
+        "name": "name",
+        "control": "text"
+      },
+      {
+        "name": "originalPrice",
+        "control": "text"
+      },
+      {
+        "name": "showDiscount",
+        "control": "switch"
+      },
+      {
+        "name": "discountRate",
+        "control": "text"
+      },
+      {
+        "name": "salePrice",
+        "control": "text"
+      },
+      {
+        "name": "showPeriod",
+        "control": "switch"
+      },
+      {
+        "name": "period",
+        "control": "text"
+      },
+      {
+        "name": "showBadgeList",
+        "control": "switch"
+      },
+      {
+        "name": "showCouponButton",
+        "control": "switch"
+      },
+      {
+        "name": "couponLabel",
+        "control": "text"
+      },
+      {
+        "name": "showUsage",
+        "control": "switch"
+      },
+      {
+        "name": "usage",
+        "control": "text"
+      },
+      {
+        "name": "showDetailInfoItem",
+        "control": "switch"
+      },
+      {
+        "name": "detailInfoLabel",
+        "control": "text"
+      },
+      {
+        "name": "likeCount",
+        "control": "text"
+      }
+    ]
+  },
+  "Dialog": {
+    "slots": [
+      {
+        "name": "onSecondary",
+        "kind": "handler"
+      },
+      {
+        "name": "onPrimary",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "subText",
+        "control": "text"
+      },
+      {
+        "name": "showSubText",
+        "control": "switch"
+      },
+      {
+        "name": "showContents",
+        "control": "switch"
+      },
+      {
+        "name": "secondaryLabel",
+        "control": "text"
+      },
+      {
+        "name": "primaryLabel",
+        "control": "text"
+      }
+    ]
+  },
+  "DialogActionButtonItem": {
+    "slots": [
+      {
+        "name": "onPrimary",
+        "kind": "handler"
+      },
+      {
+        "name": "onSecondary",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "options",
+        "control": "select",
+        "options": [
+          "2Button",
+          "2Buttons",
+          "1Button"
+        ]
+      },
+      {
+        "name": "primaryLabel",
+        "control": "text"
+      },
+      {
+        "name": "secondaryLabel",
+        "control": "text"
+      }
+    ]
+  },
+  "Divider": {
+    "slots": [],
+    "props": [
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "contents",
+          "section"
+        ]
+      }
+    ]
+  },
+  "Dropdown": {
+    "slots": [
+      {
+        "name": "onToggle",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "open",
+        "control": "switch"
+      },
+      {
+        "name": "selected",
+        "control": "switch"
+      }
+    ]
+  },
+  "FilterBar": {
+    "slots": [
+      {
+        "name": "onSort",
+        "kind": "handler"
+      },
+      {
+        "name": "onFilter",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "rightItem",
+        "control": "select",
+        "options": [
+          "None",
+          "1Item",
+          "2Item"
+        ]
+      },
+      {
+        "name": "divider",
+        "control": "switch"
+      },
+      {
+        "name": "count",
+        "control": "number"
+      },
+      {
+        "name": "countUnit",
+        "control": "text"
+      },
+      {
+        "name": "countLabel",
+        "control": "text"
+      },
+      {
+        "name": "sortLabel",
+        "control": "text"
+      },
+      {
+        "name": "filterLabel",
+        "control": "text"
+      }
+    ]
+  },
+  "Footer": {
+    "slots": [],
+    "props": []
+  },
+  "Icon0": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconAccessory": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconArrow": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      },
+      {
+        "name": "variant",
+        "control": "text"
+      }
+    ]
+  },
+  "IconBack": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconBarcode": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconBubble": {
+    "slots": [],
+    "props": []
+  },
+  "IconCalender": {
+    "slots": [],
+    "props": []
+  },
+  "IconCart": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      },
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "line",
+          "fill"
+        ]
+      }
+    ]
+  },
+  "IconCategory": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconClose": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconData": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconDevice": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconDownload": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconDropdown": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      },
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "DropdownDown",
+          "DropdownUp"
+        ]
+      }
+    ]
+  },
+  "IconDummy": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconDuoHeart": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      },
+      {
+        "name": "variant",
+        "control": "text"
+      }
+    ]
+  },
+  "IconEvent": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconFamily": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconFilter": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      },
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "line",
+          "fill"
+        ]
+      }
+    ]
+  },
+  "IconGlobal": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconGraphic": {
+    "slots": [],
+    "props": [
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "size",
+        "control": "number"
+      }
+    ]
+  },
+  "IconHeart": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      },
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "line",
+          "fill"
+        ]
+      }
+    ]
+  },
+  "IconHistory": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconInfo": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      },
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "line",
+          "fill"
+        ]
+      }
+    ]
+  },
+  "IconItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconLink": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconLocation": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconLogo": {
+    "slots": [],
+    "props": [
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconMapDotNumber": {
+    "slots": [],
+    "props": []
+  },
+  "IconMenu": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconMovie": {
+    "slots": [],
+    "props": []
+  },
+  "IconNavigate": {
+    "slots": [],
+    "props": [
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconPlus": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconSearch": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      },
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "line",
+          "fill"
+        ]
+      }
+    ]
+  },
+  "IconService": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconSubscribe": {
+    "slots": [],
+    "props": []
+  },
+  "IconVip": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconVoice": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IconWon": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "number"
+      },
+      {
+        "name": "color",
+        "control": "text"
+      }
+    ]
+  },
+  "IndicatorDotItem": {
+    "slots": [
+      {
+        "name": "onClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "selected",
+        "control": "switch"
+      },
+      {
+        "name": "disabled",
+        "control": "switch"
+      },
+      {
+        "name": "label",
+        "control": "text"
+      }
+    ]
+  },
+  "IndicatorItem": {
+    "slots": [
+      {
+        "name": "onDotClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "count",
+        "control": "number"
+      },
+      {
+        "name": "activeIndex",
+        "control": "number"
+      },
+      {
+        "name": "ariaLabel",
+        "control": "text"
+      }
+    ]
+  },
+  "Input": {
+    "slots": [],
+    "props": [
+      {
+        "name": "variants",
+        "control": "text"
+      },
+      {
+        "name": "labelText",
+        "control": "text"
+      },
+      {
+        "name": "placeholder",
+        "control": "text"
+      },
+      {
+        "name": "buttonLabel",
+        "control": "text"
+      },
+      {
+        "name": "helpTextContent",
+        "control": "text"
+      },
+      {
+        "name": "label",
+        "control": "switch"
+      },
+      {
+        "name": "helpText",
+        "control": "switch"
+      }
+    ]
+  },
+  "InputCaretItem": {
+    "slots": [],
+    "props": []
+  },
+  "InputClearButtonItem": {
+    "slots": [
+      {
+        "name": "onClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "state",
+        "control": "select",
+        "options": [
+          "Default",
+          "Disabled"
+        ]
+      },
+      {
+        "name": "\"aria-label\"",
+        "control": "text"
+      }
+    ]
+  },
+  "InputHelpTextItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "danger",
+        "control": "switch"
+      }
+    ]
+  },
+  "InputItem": {
+    "slots": [
+      {
+        "name": "onButtonClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "states",
+        "control": "text"
+      },
+      {
+        "name": "error",
+        "control": "switch"
+      },
+      {
+        "name": "label",
+        "control": "switch"
+      },
+      {
+        "name": "labelText",
+        "control": "text"
+      },
+      {
+        "name": "helpText",
+        "control": "switch"
+      },
+      {
+        "name": "helpTextContent",
+        "control": "text"
+      },
+      {
+        "name": "button",
+        "control": "switch"
+      },
+      {
+        "name": "buttonLabel",
+        "control": "text"
+      },
+      {
+        "name": "placeholder",
+        "control": "text"
+      }
+    ]
+  },
+  "InputTypeItem": {
+    "slots": [
+      {
+        "name": "onClear",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "state",
+        "control": "text"
+      },
+      {
+        "name": "danger",
+        "control": "switch"
+      },
+      {
+        "name": "text",
+        "control": "text"
+      }
+    ]
+  },
+  "LayoutHomePageStack": {
+    "slots": [
+      {
+        "name": "onCta",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variants",
+        "control": "text"
+      },
+      {
+        "name": "taskTitle",
+        "control": "text"
+      },
+      {
+        "name": "ctaLabel",
+        "control": "text"
+      },
+      {
+        "name": "myTitle",
+        "control": "text"
+      },
+      {
+        "name": "showBadge",
+        "control": "switch"
+      },
+      {
+        "name": "badgeText",
+        "control": "text"
+      },
+      {
+        "name": "mySubtitle",
+        "control": "text"
+      },
+      {
+        "name": "contentTitle",
+        "control": "text"
+      },
+      {
+        "name": "contentSubText",
+        "control": "text"
+      }
+    ]
+  },
+  "LayoutPagestack": {
+    "slots": [],
+    "props": [
+      {
+        "name": "contentsTitle",
+        "control": "switch"
+      },
+      {
+        "name": "title",
+        "control": "text"
+      }
+    ]
+  },
+  "Loader": {
+    "slots": [],
+    "props": [
+      {
+        "name": "color",
+        "control": "select",
+        "options": [
+          "brand",
+          "neutral",
+          "inverse"
+        ]
+      },
+      {
+        "name": "size",
+        "control": "select",
+        "options": [
+          "small",
+          "medium",
+          "large"
+        ]
+      },
+      {
+        "name": "label",
+        "control": "text"
+      }
+    ]
+  },
+  "NavigationBar": {
+    "slots": [],
+    "props": []
+  },
+  "NavigationButtonItem": {
+    "slots": [],
+    "props": []
+  },
+  "NavigationTabItem": {
+    "slots": [],
+    "props": []
+  },
+  "RadioItem": {
+    "slots": [
+      {
+        "name": "onChange",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "selected",
+        "control": "switch"
+      },
+      {
+        "name": "disabled",
+        "control": "switch"
+      },
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "showLabel",
+        "control": "switch"
+      }
+    ]
+  },
+  "RadioTextItem": {
+    "slots": [
+      {
+        "name": "onChange",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "selection",
+        "control": "switch"
+      },
+      {
+        "name": "disabled",
+        "control": "switch"
+      },
+      {
+        "name": "label",
+        "control": "text"
+      }
+    ]
+  },
+  "Search": {
+    "slots": [
+      {
+        "name": "onClear",
+        "kind": "handler"
+      },
+      {
+        "name": "onSearch",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "state",
+        "control": "text"
+      },
+      {
+        "name": "placeholder",
+        "control": "text"
+      },
+      {
+        "name": "value",
+        "control": "text"
+      }
+    ]
+  },
+  "TabFixed": {
+    "slots": [
+      {
+        "name": "onTabChange",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variants",
+        "control": "select",
+        "options": [
+          "1Tab",
+          "2Tab",
+          "3Tab",
+          "4Tab"
+        ]
+      },
+      {
+        "name": "selectedIndex",
+        "control": "number"
+      }
+    ]
+  },
+  "TabFixedItem": {
+    "slots": [
+      {
+        "name": "onClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "selected",
+        "control": "switch"
+      }
+    ]
+  },
+  "TabScroll": {
+    "slots": [
+      {
+        "name": "onTabChange",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "selectedIndex",
+        "control": "number"
+      }
+    ]
+  },
+  "TabScrollItem": {
+    "slots": [
+      {
+        "name": "onClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "selected",
+        "control": "switch"
+      }
+    ]
+  },
+  "TextGroupProductDetail": {
+    "slots": [
+      {
+        "name": "onToogle",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "subText",
+        "control": "text"
+      },
+      {
+        "name": "titleText",
+        "control": "text"
+      },
+      {
+        "name": "showToogle",
+        "control": "switch"
+      },
+      {
+        "name": "toogleSelected",
+        "control": "switch"
+      },
+      {
+        "name": "toogleLabel",
+        "control": "text"
+      }
+    ]
+  },
+  "TextGroupProductHorizontal": {
+    "slots": [],
+    "props": [
+      {
+        "name": "subTitle",
+        "control": "text"
+      },
+      {
+        "name": "mainText",
+        "control": "text"
+      },
+      {
+        "name": "subText",
+        "control": "text"
+      },
+      {
+        "name": "showDiscount",
+        "control": "switch"
+      },
+      {
+        "name": "discountAmount",
+        "control": "text"
+      },
+      {
+        "name": "discountRate",
+        "control": "text"
+      },
+      {
+        "name": "showPeriod",
+        "control": "switch"
+      },
+      {
+        "name": "showPrice",
+        "control": "switch"
+      },
+      {
+        "name": "priceValue",
+        "control": "text"
+      },
+      {
+        "name": "showSubTextGroup",
+        "control": "switch"
+      },
+      {
+        "name": "subText1",
+        "control": "text"
+      },
+      {
+        "name": "subText2",
+        "control": "text"
+      },
+      {
+        "name": "extraCount",
+        "control": "text"
+      },
+      {
+        "name": "showBadgeGroup",
+        "control": "switch"
+      }
+    ]
+  },
+  "TextGroupProductVertical": {
+    "slots": [],
+    "props": [
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "subText",
+        "control": "text"
+      },
+      {
+        "name": "showSubText",
+        "control": "switch"
+      },
+      {
+        "name": "rating",
+        "control": "text"
+      },
+      {
+        "name": "bookingRate",
+        "control": "text"
+      },
+      {
+        "name": "showSubGroup",
+        "control": "switch"
+      },
+      {
+        "name": "discount",
+        "control": "text"
+      },
+      {
+        "name": "showDiscount",
+        "control": "switch"
+      },
+      {
+        "name": "price",
+        "control": "text"
+      },
+      {
+        "name": "showPrice",
+        "control": "switch"
+      },
+      {
+        "name": "period",
+        "control": "text"
+      },
+      {
+        "name": "showPeriod",
+        "control": "switch"
+      },
+      {
+        "name": "priceConditionLabel",
+        "control": "text"
+      },
+      {
+        "name": "priceConditionValue",
+        "control": "text"
+      },
+      {
+        "name": "showPriceCondition",
+        "control": "switch"
+      },
+      {
+        "name": "showBadgeGroup",
+        "control": "switch"
+      }
+    ]
+  },
+  "TextItem": {
+    "slots": [],
+    "props": []
+  },
+  "Thumbnail": {
+    "slots": [
+      {
+        "name": "onDotClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "src",
+        "control": "text"
+      },
+      {
+        "name": "alt",
+        "control": "text"
+      },
+      {
+        "name": "dotCount",
+        "control": "number"
+      },
+      {
+        "name": "activeIndex",
+        "control": "number"
+      }
+    ]
+  },
+  "ThumbnailRectangleItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "variant",
+        "control": "text"
+      },
+      {
+        "name": "src",
+        "control": "text"
+      },
+      {
+        "name": "alt",
+        "control": "text"
+      },
+      {
+        "name": "dimMultiply",
+        "control": "switch"
+      }
+    ]
+  },
+  "ThumbnailRoundItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "select",
+        "options": [
+          "16",
+          "20",
+          "24",
+          "40",
+          "48",
+          "64"
+        ]
+      },
+      {
+        "name": "dimMultiply",
+        "control": "switch"
+      },
+      {
+        "name": "src",
+        "control": "text"
+      },
+      {
+        "name": "alt",
+        "control": "text"
+      }
+    ]
+  },
+  "ThumbnailSquareItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "size",
+        "control": "text"
+      },
+      {
+        "name": "dimMultiply",
+        "control": "switch"
+      },
+      {
+        "name": "src",
+        "control": "text"
+      },
+      {
+        "name": "alt",
+        "control": "text"
+      }
+    ]
+  },
+  "TitleContentsSectionComplete": {
+    "slots": [],
+    "props": [
+      {
+        "name": "subLabel",
+        "control": "text"
+      },
+      {
+        "name": "showTitleSubText",
+        "control": "switch"
+      },
+      {
+        "name": "showThumbnail",
+        "control": "switch"
+      },
+      {
+        "name": "thumbnailSrc",
+        "control": "text"
+      },
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "description",
+        "control": "text"
+      }
+    ]
+  },
+  "TitleSectionItem": {
+    "slots": [
+      {
+        "name": "onRightClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "textSize",
+        "control": "select",
+        "options": [
+          "16",
+          "18",
+          "20"
+        ]
+      },
+      {
+        "name": "titleOption",
+        "control": "switch"
+      },
+      {
+        "name": "optionLabel",
+        "control": "text"
+      },
+      {
+        "name": "leftBadgeValue",
+        "control": "text"
+      },
+      {
+        "name": "rightBadgeValue",
+        "control": "text"
+      },
+      {
+        "name": "subTextContent",
+        "control": "text"
+      },
+      {
+        "name": "rightItem",
+        "control": "switch"
+      }
+    ]
+  },
+  "TitleSectionRightItem": {
+    "slots": [
+      {
+        "name": "variant",
+        "kind": "buttonSlot"
+      },
+      {
+        "name": "onClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "text",
+        "control": "text"
+      },
+      {
+        "name": "count",
+        "control": "text"
+      },
+      {
+        "name": "buttonLabel",
+        "control": "text"
+      }
+    ]
+  },
+  "TitleTextItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "optionText",
+        "control": "switch"
+      },
+      {
+        "name": "optionLabel",
+        "control": "text"
+      },
+      {
+        "name": "subText",
+        "control": "switch"
+      },
+      {
+        "name": "subTextContent",
+        "control": "text"
+      },
+      {
+        "name": "textLeft",
+        "control": "switch"
+      },
+      {
+        "name": "textLeftValue",
+        "control": "text"
+      },
+      {
+        "name": "textRight",
+        "control": "switch"
+      },
+      {
+        "name": "textRightValue",
+        "control": "text"
+      },
+      {
+        "name": "title",
+        "control": "text"
+      },
+      {
+        "name": "titleSize",
+        "control": "text"
+      },
+      {
+        "name": "titleWeight",
+        "control": "text"
+      },
+      {
+        "name": "fluid",
+        "control": "switch"
+      }
+    ]
+  },
+  "TitleTextLeftItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "Text",
+          "Icon",
+          "Badge"
+        ]
+      },
+      {
+        "name": "textValue",
+        "control": "text"
+      },
+      {
+        "name": "iconAlt",
+        "control": "text"
+      },
+      {
+        "name": "badgeLabel",
+        "control": "text"
+      }
+    ]
+  },
+  "ToogleItem": {
+    "slots": [
+      {
+        "name": "onClick",
+        "kind": "handler"
+      }
+    ],
+    "props": [
+      {
+        "name": "variant",
+        "control": "select",
+        "options": [
+          "None",
+          "Text"
+        ]
+      },
+      {
+        "name": "selection",
+        "control": "switch"
+      },
+      {
+        "name": "label",
+        "control": "text"
+      },
+      {
+        "name": "ariaLabel",
+        "control": "text"
+      }
+    ]
+  },
+  "TooltipItem": {
+    "slots": [],
+    "props": [
+      {
+        "name": "direction",
+        "control": "text"
+      },
+      {
+        "name": "text",
+        "control": "text"
+      }
+    ]
+  }
+}
