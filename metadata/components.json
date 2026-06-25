@@ -3,48 +3,43 @@
     "type": "Accordion",
     "standalone": true,
     "description": "타이틀 행을 클릭하면 콘텐츠 영역이 펼쳐지거나 접히는 아코디언 컴포넌트로, Info·Product·Price 세 가지 variant를 지원한다.",
-    "anatomy": "root[ titleGroup[ ?thumbnail, titleSection[ titleTextItem[ title, ?subText ], iconItem[ chevronIcon ] ], ?divider ], ?slot[ children ] ]",
     "states": "Expanded, Collapsed",
     "do": "- variant에 따라 Info(기본 텍스트), Product(썸네일+서브텍스트), Price(금액 정보) 중 적합한 것을 선택한다.\n- disclosure prop으로 초기 펼침/접힘 상태를 제어하고, onClick으로 상태 토글 핸들러를 연결한다.\n- 콘텐츠가 단순 텍스트·리스트라면 children 슬롯을 통해 자유롭게 삽입한다.",
-    "rules": "**props 요약**\n- variants: \"Info\"(기본) | \"Product\"(썸네일·서브텍스트 포함) | \"Price\"(금액 표시)\n- disclosure: true=펼침, false=접힘 (기본 false)\n- title: 타이틀 텍스트 (필수에 준함)\n- subText: 서브텍스트 — Product variant에서만 노출\n- thumbnailSrc: 썸네일 이미지 URL — Product variant에서만 노출\n- children: disclosure=true일 때 렌더링될 슬롯 콘텐츠\n\n[맵핑 트리거] 클릭으로 펼치고 접는 토글 영역이 필요할 때 사용한다.\n\n[사용 시점] FAQ, 상품 상세 추가 정보, 가격 세부 내역처럼 기본적으로 숨겨두고 필요 시 확장하는 콘텐츠 블록에 적합하다.\n\n[구분] Tabs와 달리 단일 패널을 접고 펼치는 토글 구조이며, Card는 항상 콘텐츠가 노출되는 정적 컨테이너임."
+    "rules": "[맵핑 트리거] 클릭으로 펼치고 접는 토글 영역이 필요할 때 사용한다.\n\n[사용 시점] FAQ, 상품 상세 추가 정보, 가격 세부 내역처럼 기본적으로 숨겨두고 필요 시 확장하는 콘텐츠 블록에 적합하다.\n\n[구분] Tabs와 달리 단일 패널을 접고 펼치는 토글 구조이며, Card는 항상 콘텐츠가 노출되는 정적 컨테이너임."
   },
   "Alert": {
     "type": "Alert",
     "standalone": true,
     "description": "중립 또는 위험 상황을 알리는 인라인 알림 배너 컴포넌트로, 선택적 타이틀과 본문 텍스트를 표시합니다.",
-    "anatomy": "wrap[ group[ title?, description ] ]",
     "states": null,
     "do": "- danger=false는 일반 안내·정보 메시지에, danger=true는 오류·경고 등 위험 상황 알림에 사용한다.\n- 타이틀 없이 본문만 표시할 때는 titleText=false 또는 title을 빈 문자열로 전달한다.\n- 화면 내 인라인 영역에 배치하여 사용자 흐름을 차단하지 않는 정적 알림으로 활용한다.",
-    "rules": "**props 요약**\n- danger: boolean — true=위험/오류 알림, false=중립 안내 (기본 false)\n- title: string — 타이틀 텍스트 (기본값 \"Title\")\n- description: string — 본문 텍스트 (기본값 \"Description\")\n- titleText: boolean — 타이틀 행 노출 여부 (기본값 true)\n\n[맵핑 트리거] 사용자 액션 없이 화면 내 고정 위치에서 안내·오류·경고 메시지를 표시해야 할 때 사용한다.\n\n[사용 시점] 폼 상단 유효성 안내, 서비스 점검 공지, 제한 조건 설명 등 인라인 고지 영역에 적합하다.\n\n[구분] AlertDialog는 사용자 확인이 필요한 모달 다이얼로그이고, Banner는 전체 너비의 페이지 상단 공지용이다. Alert는 콘텐츠 영역 내 인라인 배치에 사용한다."
+    "rules": "[맵핑 트리거] 사용자 액션 없이 화면 내 고정 위치에서 안내·오류·경고 메시지를 표시해야 할 때 사용한다.\n\n[사용 시점] 폼 상단 유효성 안내, 서비스 점검 공지, 제한 조건 설명 등 인라인 고지 영역에 적합하다.\n\n[구분] AlertDialog는 사용자 확인이 필요한 모달 다이얼로그이고, Banner는 전체 너비의 페이지 상단 공지용이다. Alert는 콘텐츠 영역 내 인라인 배치에 사용한다."
   },
   "Appbar": {
     "type": "Appbar",
     "standalone": true,
     "description": "페이지 상단에 위치하는 앱 바 컴포넌트로, Default와 Inverse 두 가지 컬러 변형을 지원한다.",
-    "anatomy": "root[ titleArea[ backButton?, pageTitle? ] + rightArea[ iconButton × 1..3 ]? ]",
-    "states": "variants(Default|Inverse), leftItem(on|off), rightItem(on|off), title(on|off)",
+    "states": null,
     "do": "- 일반 밝은 배경에서는 variants=\"Default\"를 사용하고, 어두운 배경이나 이미지 위에서는 variants=\"Inverse\"를 사용한다.\n- 뒤로가기 아이콘은 leftItem으로, 우측 아이콘 그룹은 rightItem으로 노출 여부를 제어한다.\n- 페이지 타이틀 문구는 pageTitle로 전달하고, 타이틀 영역 노출 여부는 title로 제어한다.",
-    "rules": "props: leftItem(boolean), pageTitle(string), rightItem(boolean), title(boolean), variants(\"Default\"|\"Inverse\"). 루트 너비는 화면/부모 너비를 fill하는 100%를 사용하며 고정폭으로 제한하지 않는다.\n[맵핑 트리거] 화면 상단 고정 헤더가 필요한 모든 화면.\n[사용 시점] 뒤로가기, 페이지 타이틀, 우측 컨텍스트 액션을 상단 48px 영역에 배치해야 할 때 사용한다.\n[구분] NavigationBar(하단 탭 바)와 달리 Appbar는 상단 헤더에만 사용되며 페이지 타이틀과 컨텍스트 액션을 제공한다."
+    "rules": "[맵핑 트리거] 화면 상단 고정 헤더가 필요한 모든 화면.\n[사용 시점] 뒤로가기, 페이지 타이틀, 우측 컨텍스트 액션을 상단 48px 영역에 배치해야 할 때 사용한다.\n[구분] NavigationBar(하단 탭 바)와 달리 Appbar는 상단 헤더에만 사용되며 페이지 타이틀과 컨텍스트 액션을 제공한다."
   },
   "AppBarItem": {
     "type": "Appbar",
     "standalone": false,
     "description": "앱바 우측 영역에 배치되는 아이콘 버튼 그룹으로, 1~3개의 아이콘 버튼을 수평 나열한다.",
-    "anatomy": "root[ btn[ IconItem[ shape ] ], btn?[ IconItem[ shape ] ], btn?[ IconItem[ shape ] ] ]",
     "states": null,
     "do": "- count(1|2|3) prop으로 표시할 아이콘 버튼 수를 지정한다.\n- buttons 배열로 각 버튼의 aria-label과 onClick 핸들러를 개별 설정한다.\n- 실제 아이콘 컴포넌트를 children으로 전달해 placeholder shape을 교체한다.",
-    "rules": "props: count(1|2|3, 기본 1) — 표시 버튼 수; buttons — 버튼별 aria-label·onClick·children 배열.\n[맵핑 트리거] AppBar 우측에 아이콘 버튼이 1개 이상 필요한 경우 사용.\n[사용 시점] 검색·알림·더보기 등 주요 액션 아이콘을 앱바 트레일링 영역에 배치할 때.\n[구분] AppBar 전체 컨테이너가 아닌 우측 액션 버튼 그룹만 담당하는 하위 컴포넌트이므로 단독 사용 불가 — 반드시 AppBar의 트레일링 슬롯 내에서 사용한다.",
-    "parent": "AppBar",
+    "rules": "[맵핑 트리거] AppBar 우측에 아이콘 버튼이 1개 이상 필요한 경우 사용.\n[사용 시점] 검색·알림·더보기 등 주요 액션 아이콘을 앱바 트레일링 영역에 배치할 때.\n[구분] AppBar 전체 컨테이너가 아닌 우측 액션 버튼 그룹만 담당하는 하위 컴포넌트이므로 단독 사용 불가 — 반드시 AppBar의 트레일링 슬롯 내에서 사용한다.",
+    "parent": "Appbar",
     "slot": "TrailingContent"
   },
   "BadgeIconItem": {
     "type": "Badge",
     "standalone": false,
     "description": "아이콘과 짧은 레이블을 함께 표시하는 배지 내부 항목. subtext=On일 때 우측 caption을 함께 표시한다.",
-    "anatomy": "root[ main[ Ico, label ], ?caption ]",
-    "states": "subtext(Subtext2|On)",
+    "states": null,
     "do": "- Badge 컴포넌트 내부의 아이콘+텍스트 조합 항목으로 사용한다.\n- subtext=Subtext2는 compact 형태로 label을 최대 160px에서 말줄임한다.\n- subtext=On은 274px 폭에서 좌측 label과 우측 caption을 함께 배치한다.\n- iconSrc를 지정하지 않으면 기본 16px 로고 아이콘을 사용한다.",
-    "rules": "**props 요약**\n- label (string): 아이콘 옆 주 레이블 텍스트\n- caption (string): 우측 보조 텍스트 (subtext=On일 때 표시)\n- subtext (\"Subtext2\" | \"On\"): compact / caption 노출 variant\n- iconSrc (string): 커스텀 아이콘 이미지 URL\n- iconAlt (string): 커스텀 아이콘 alt 텍스트\n\n[호환 alias]\n- text -> label\n- subText -> caption\n- showSubText=true -> subtext=On\n\n[구분] BadgeItem은 텍스트 전용 배지 항목이고, BadgeIconItem은 아이콘을 필수 구성 요소로 포함한다.",
+    "rules": "[구분] BadgeItem은 텍스트 전용 배지 항목이고, BadgeIconItem은 아이콘을 필수 구성 요소로 포함한다.",
     "parent": "Badge",
     "slot": "Badge"
   },
@@ -52,10 +47,9 @@
     "type": "Badge",
     "standalone": false,
     "description": "텍스트 레이블을 표시하는 배지 서브 컴포넌트로, 색상과 크기 조합으로 상태나 카테고리를 시각적으로 나타낸다.",
-    "anatomy": "root[ label ]",
     "states": null,
     "do": "- size는 Small 또는 Large 중 맥락에 맞게 선택한다.\n- color는 Neutral·Strong·Brand·Inverse 중 배경 및 콘텐츠 강조 수준에 따라 선택한다.\n- label에는 짧고 명확한 레이블 텍스트만 사용한다.",
-    "rules": "props: size(Small|Large), color(Neutral|Strong|Brand|Inverse), label(string). [호환 alias] text -> label. [맵핑 트리거] 상품·콘텐츠·상태 등에 짧은 레이블 배지가 필요할 때 부모 컴포넌트의 Badge 슬롯에 배치한다. [사용 시점] 카드·셀·아이템 등 부모 컴포넌트 내부 배지 슬롯에서만 사용한다. [구분] 단독 노출이 필요한 경우 Badge(standalone) 컴포넌트를 사용하고, BadgeItem은 반드시 부모 슬롯을 통해서만 참조한다.",
+    "rules": "[맵핑 트리거] 상품·콘텐츠·상태 등에 짧은 레이블 배지가 필요할 때 부모 컴포넌트의 Badge 슬롯에 배치한다. [사용 시점] 카드·셀·아이템 등 부모 컴포넌트 내부 배지 슬롯에서만 사용한다. [구분] 단독 노출이 필요한 경우 Badge(standalone) 컴포넌트를 사용하고, BadgeItem은 반드시 부모 슬롯을 통해서만 참조한다.",
     "parent": "Badge",
     "slot": "Badge"
   },
@@ -63,19 +57,17 @@
     "type": "Banner",
     "standalone": true,
     "description": "BannerImageItem과 TextGroup, 선택적 IndicatorItem으로 구성된 배너 컴포넌트. Small/Medium 크기 variant를 지원한다.",
-    "anatomy": "root[ BannerGroup[ BannerImageItem, TextGroup[ title, subtitle ] ], ?IndicatorItem ]",
-    "states": "variants(Small|Medium), indicator(on|off)",
+    "states": null,
     "do": "- variants=Small은 72px 높이와 radius 20px를 사용한다.\n- variants=Medium은 112px 높이와 radius 28px를 사용한다.\n- 이미지는 내부 BannerImageItem에 위임한다.\n- indicator=true일 때 IndicatorItem 6-dot 페이지 인디케이터를 하단에 표시한다.",
-    "rules": "**props 요약**\n- variants: \"Small\" | \"Medium\"\n- indicator: boolean\n- title: string\n- subtitle: string\n- imageSrc / imageAlt: 배너 이미지 URL 및 대체 텍스트\n- activeIndex: indicator active index\n\n[호환 alias]\n- subText -> subtitle\n- imageUrl -> imageSrc\n\n[구분] 이미지 영역만 필요한 경우 BannerImageItem을 직접 사용하고, 텍스트와 인디케이터가 포함된 완성형 배너에는 Banner를 사용한다."
+    "rules": "[구분] 이미지 영역만 필요한 경우 BannerImageItem을 직접 사용하고, 텍스트와 인디케이터가 포함된 완성형 배너에는 Banner를 사용한다."
   },
   "BannerImageItem": {
     "type": "Banner",
     "standalone": false,
     "description": "프로모션/상품 배너에서 우측 이미지 영역을 제공하는 이미지 전용 배너 아이템. Medium과 Small 크기 variant를 지원한다.",
-    "anatomy": "root[ ?background, ImageArea[ imageWrap[ image | placeholder ] ], ?contentSlot ]",
-    "states": "variants(Medium|Small), background(on|off), imageSrc",
+    "states": null,
     "do": "- variants=Medium은 112px 높이와 80x80 이미지 영역을 사용한다.\n- variants=Small은 72px 높이와 58x40 이미지 영역을 사용한다.\n- background=true가 Figma 기본값이며, 반투명 배경 레이어를 표시한다.\n- 기본 사용은 이미지 전용이며 children은 기존 사용처 호환용 슬롯으로만 유지한다.",
-    "rules": "**props 요약**\n- variants: \"Medium\" | \"Small\"\n- background: boolean\n- imageSrc / imageAlt: 우측 이미지 URL 및 대체 텍스트\n- ariaLabel: 배너 region 접근성 라벨\n\n[호환 alias]\n- variant -> variants\n- showBackground -> background\n\n[구분] 텍스트와 CTA까지 포함한 완성형 배너는 Banner를 사용하고, BannerImageItem은 배너 내부 이미지 영역이 필요한 경우 사용한다.",
+    "rules": "[구분] 텍스트와 CTA까지 포함한 완성형 배너는 Banner를 사용하고, BannerImageItem은 배너 내부 이미지 영역이 필요한 경우 사용한다.",
     "parent": "Banner",
     "slot": "Image"
   },
@@ -83,10 +75,9 @@
     "type": "BottomGroup",
     "standalone": true,
     "description": "화면 하단에 고정되는 일반 CTA 그룹 컨테이너로, 상단 정보 영역과 1개 또는 2개의 하단 버튼 영역을 함께 구성합니다.",
-    "anatomy": "root[ upperItem?[ BottomGroupUpperItem ], BottomGroupAreaItem ]",
     "states": "Default, Pressed, Disabled",
     "do": "- variants=\"Normal\"은 일반 화면 하단 고정 CTA 영역에 사용한다.\n- upperItem=true이면 BottomGroupUpperItem을 버튼 위에 배치하고, upperItemVariants로 Default/Table 형태를 선택한다.\n- areaItemVariants로 BottomGroupAreaItem의 1 Botton/2 Botton 구성을 선택한다.",
-    "rules": "**props 요약**\n- variants: \"Normal\" (기본 \"Normal\")\n- upperItem: boolean — 상단 정보 영역 표시 여부 (기본 true)\n- upperItemVariants: \"Default\" | \"Table\" — BottomGroupUpperItem variant\n- upperItemLabel / upperItemValue: 상단 정보 텍스트\n- areaItemVariants: \"1 Botton\" | \"2 Botton\" — BottomGroupAreaItem 버튼 구성\n- primaryLabel / secondaryLabel: CTA 텍스트\n- onPrimary / onSecondary: 각 CTA 클릭 핸들러\n\n**[맵핑 트리거]**\n화면 하단에 일반 CTA 버튼 영역이 필요하고, 버튼 위에 간단한 정보 행을 선택적으로 배치해야 할 때 사용한다.\n\n**[사용 시점]**\n- 상세·목록·완료 등 일반 CTA 고정 영역\n- 버튼 위에 안내 텍스트 또는 레이블-값 요약이 필요한 하단 영역\n\n**[구분]**\nAI 라벨과 AI 전용 CTA가 필요한 경우 BottomGroup이 아니라 BottomGroupAi를 사용한다. BottomGroupAreaItem 또는 BottomGroupUpperItem만 단독 배치해야 하는 경우에는 해당 Item 컴포넌트를 직접 사용한다.",
+    "rules": "[맵핑 트리거]**\n화면 하단에 일반 CTA 버튼 영역이 필요하고, 버튼 위에 간단한 정보 행을 선택적으로 배치해야 할 때 사용한다.\n\n**[사용 시점]**\n- 상세·목록·완료 등 일반 CTA 고정 영역\n- 버튼 위에 안내 텍스트 또는 레이블-값 요약이 필요한 하단 영역\n\n**[구분]**\nAI 라벨과 AI 전용 CTA가 필요한 경우 BottomGroup이 아니라 BottomGroupAi를 사용한다. BottomGroupAreaItem 또는 BottomGroupUpperItem만 단독 배치해야 하는 경우에는 해당 Item 컴포넌트를 직접 사용한다.",
     "parent": "LayoutPagestack",
     "slot": "BottomButton"
   },
@@ -94,10 +85,9 @@
     "type": "BottomGroup",
     "standalone": true,
     "description": "AI 상단 라벨과 AI 전용 2분할 CTA 영역을 포함한 독립 하단 그룹 컴포넌트입니다.",
-    "anatomy": "root[ BottomGroupAiUpperItem?, BottomGroupAiAreaItem(2 Botton) ]",
-    "states": "Ai",
+    "states": null,
     "do": "- AI 추천·구독 등 AI 맥락의 하단 고정 CTA가 필요할 때 사용한다.\n- aiUpperItem=true이면 상단에 AI 아이콘과 라벨을 표시한다.\n- 버튼 영역은 BottomGroupAiAreaItem의 2 Botton 구조를 사용하며 secondaryLabel과 primaryLabel을 각각 좌/우 CTA로 표시한다.",
-    "rules": "**props 요약**\n- variants: \"Ai\" — Figma 기준 variant\n- aiUpperItem: boolean — AI 상단 라벨 표시 여부 (기본 true)\n- aiLabelText: string — AI 상단 라벨 텍스트 (기본 \"텍스트\")\n- primaryLabel / secondaryLabel: 2분할 CTA 텍스트 (기본 \"Label\")\n- onPrimary / onSecondary: 각 CTA 클릭 핸들러\n\n[맵핑 트리거] AI 아이콘과 AI 라벨, 2분할 브랜드 CTA가 함께 있는 하단 그룹이 필요할 때 사용한다.\n\n[구분] BottomGroup은 Ai/Default를 함께 가진 범용 하단 그룹이고, BottomGroupAi는 Figma의 독립 AI 전용 하단 그룹 컴포넌트이다.",
+    "rules": "[맵핑 트리거] AI 아이콘과 AI 라벨, 2분할 브랜드 CTA가 함께 있는 하단 그룹이 필요할 때 사용한다.\n\n[구분] BottomGroup은 Ai/Default를 함께 가진 범용 하단 그룹이고, BottomGroupAi는 Figma의 독립 AI 전용 하단 그룹 컴포넌트이다.",
     "parent": "LayoutPagestack",
     "slot": "BottomButton"
   },
@@ -105,10 +95,9 @@
     "type": "BottomGroup",
     "standalone": false,
     "description": "AI 홈 영역용 하단 그룹 아이템으로, AI 네비게이션 아이콘과 단일 또는 2분할 CTA 버튼을 제공하는 서브 컴포넌트입니다.",
-    "anatomy": "root[ buttonGroup[ NavigationButtonItem(AI collapsed), ButtonItem | splitButton[ secondaryLabel, divider, primaryLabel ] ] ]",
     "states": null,
     "do": "- variants=\"1 Botton\"은 AI 아이콘과 단일 CTA(구독하기 등)를 함께 표시할 때 사용한다.\n- variants=\"2 Botton\"은 AI 아이콘과 하나의 브랜드 pill 안에 선물하기|구독하기처럼 두 가지 선택지를 제공할 때 사용한다.\n- BottomGroup 계열 부모 컴포넌트의 슬롯 안에서만 배치하며 단독 사용은 금지한다.",
-    "rules": "**Props 요약**\n- variants: \"1 Botton\"(기본) | \"2 Botton\" — Figma 기준 prop\n- variant: 기존 호환 alias\n- label: primaryLabel fallback alias\n- primaryLabel: 우측(또는 단독) CTA 텍스트 (기본값 \"Label\")\n- secondaryLabel: 좌측 CTA 텍스트, \"2 Botton\"일 때만 노출 (기본값 \"Label\")\n- onPrimary / onSecondary: 각 버튼 클릭 핸들러\n\n[맵핑 트리거] AI 홈·AI 서비스 구독/선물 관련 하단 고정 CTA 영역에 AI 아이콘과 버튼이 함께 필요할 때\n\n[사용 시점] BottomGroup 내부에서 AI 관련 주요 액션을 단일 또는 이중 버튼으로 제공해야 하는 화면\n\n[구분] BottomGroupAreaItem은 일반 서비스 영역 버튼 아이템이며 AI 아이콘 필이 없음. BottomGroupAiAreaItem은 NavigationButtonItem(AI collapsed)을 포함한 AI 전용 변형임.",
+    "rules": "[맵핑 트리거] AI 홈·AI 서비스 구독/선물 관련 하단 고정 CTA 영역에 AI 아이콘과 버튼이 함께 필요할 때\n\n[사용 시점] BottomGroup 내부에서 AI 관련 주요 액션을 단일 또는 이중 버튼으로 제공해야 하는 화면\n\n[구분] BottomGroupAreaItem은 일반 서비스 영역 버튼 아이템이며 AI 아이콘 필이 없음. BottomGroupAiAreaItem은 NavigationButtonItem(AI collapsed)을 포함한 AI 전용 변형임.",
     "parent": "BottomGroup",
     "slot": "Content"
   },
@@ -116,10 +105,9 @@
     "type": "BottomGroup",
     "standalone": false,
     "description": "BottomGroup 상단 영역의 AI 안내 행 아이템으로, AI 아이콘과 그라디언트 텍스트 레이블을 한 줄로 표시하는 서브 컴포넌트입니다.",
-    "anatomy": "root[ iconItem(AI 16px), caption(gradient text) ]",
     "states": null,
     "do": "- AI가 제안·요약·안내하는 한 줄 메시지를 하단 CTA 위에 표시할 때 사용한다.\n- caption 텍스트는 brand 그라디언트(blue-800→blue-600)로 강조된다.\n- BottomGroup 계열 부모의 상단 슬롯 안에서만 배치하며 단독 사용은 금지한다.",
-    "rules": "**Props 요약**\n- caption: AI 안내 텍스트 (기본값 \"텍스트\") — brand 그라디언트 적용\n- iconAlt: AI 아이콘 대체 텍스트 (기본값 \"AI\")\n\n[맵핑 트리거] 하단 CTA 위에 AI가 만든 한 줄 안내·추천 문구를 아이콘과 함께 표시해야 할 때\n\n[사용 시점] BottomGroupAi 영역 상단에 AI 컨텍스트(추천 요금제·맞춤 혜택 등)를 알려주는 캡션 행이 필요한 화면\n\n[구분] BottomGroupUpperItem은 일반 레이블/키-값 정보 행이고, BottomGroupAiUpperItem은 AI 아이콘과 그라디언트 텍스트를 쓰는 AI 전용 안내 행임.",
+    "rules": "[맵핑 트리거] 하단 CTA 위에 AI가 만든 한 줄 안내·추천 문구를 아이콘과 함께 표시해야 할 때\n\n[사용 시점] BottomGroupAi 영역 상단에 AI 컨텍스트(추천 요금제·맞춤 혜택 등)를 알려주는 캡션 행이 필요한 화면\n\n[구분] BottomGroupUpperItem은 일반 레이블/키-값 정보 행이고, BottomGroupAiUpperItem은 AI 아이콘과 그라디언트 텍스트를 쓰는 AI 전용 안내 행임.",
     "parent": "BottomGroup",
     "slot": "Content"
   },
@@ -127,10 +115,9 @@
     "type": "BottomGroup",
     "standalone": false,
     "description": "하단 고정 영역에 1개 또는 2개의 버튼을 배치하는 하단 그룹 서브 컴포넌트입니다.",
-    "anatomy": "wrap[ primaryBtn ] | wrap[ secondaryBtn, primaryBtn ]",
     "states": null,
     "do": "- variants=\"1 Botton\"은 primaryLabel 하나만 전체 너비로 표시할 때 사용한다.\n- variants=\"2 Botton\"은 보조 액션(secondaryLabel)과 주 액션(primaryLabel)을 나란히 배치할 때 사용한다.\n- 하단 고정 버튼 영역을 구성하는 BottomGroup 컴포넌트의 자식으로만 사용한다.",
-    "rules": "**props**: variants(\"1 Botton\" | \"2 Botton\"), primaryLabel(string), secondaryLabel(string, 2버튼 시), onPrimary(클릭 핸들러), onSecondary(클릭 핸들러, 2버튼 시)\n\n[맵핑 트리거] 하단 고정 버튼 영역에 1~2개 버튼 배치가 필요할 때\n\n[사용 시점] BottomGroup 컴포넌트 하단 고정 영역의 버튼 슬롯으로 사용\n\n[구분] BottomGroupUpperItem은 상단 보조 컨텐츠 영역에 사용되고, BottomGroupAreaItem은 실제 버튼 액션 영역에 사용됨",
+    "rules": "[맵핑 트리거] 하단 고정 버튼 영역에 1~2개 버튼 배치가 필요할 때\n\n[사용 시점] BottomGroup 컴포넌트 하단 고정 영역의 버튼 슬롯으로 사용\n\n[구분] BottomGroupUpperItem은 상단 보조 컨텐츠 영역에 사용되고, BottomGroupAreaItem은 실제 버튼 액션 영역에 사용됨",
     "parent": "BottomGroup",
     "slot": "BottomButton"
   },
@@ -138,10 +125,9 @@
     "type": "BottomGroup",
     "standalone": false,
     "description": "BottomGroup 내부에서 단일 텍스트 레이블 또는 레이블+값 쌍을 표시하는 상단 행 아이템 컴포넌트.",
-    "anatomy": "root[ listText[ labelCell[ titleBadge[ title ] ] ] | listRightTable[ leftTextItem[ label ], rightTextItem[ value ] ] ]",
     "states": null,
     "do": "- Default variant는 단일 레이블 텍스트만 표시할 때 사용한다.\n- Table variant는 레이블과 값을 좌우로 나란히 표시할 때 사용한다.\n- BottomGroup 컴포넌트의 상단 콘텐츠 영역 내에서만 사용한다.",
-    "rules": "**variant**: \"Default\" | \"Table\" (기본값: \"Table\") — Default는 레이블만, Table은 레이블+값 쌍 표시.\n**props**: label(표시 텍스트, Default 기본값 \"텍스트\", Table 기본값 \"타이틀\"), value(Table variant에서 우측 값 텍스트, 기본값 \"내용 들어가는 부분\"). 루트 너비는 부모 영역을 채우는 100%를 사용한다.\n[맵핑 트리거] BottomSheet/BottomGroup의 상단 정보 행에 텍스트 또는 레이블-값 쌍이 필요할 때.\n[사용 시점] 바텀시트 상단부에 요약 정보·속성·키-값 데이터를 나열할 때.\n[구분] BottomGroupAreaItem은 본문 콘텐츠 영역에 사용하고, BottomGroupUpperItem은 상단 정보 행에만 사용한다.",
+    "rules": "[맵핑 트리거] BottomSheet/BottomGroup의 상단 정보 행에 텍스트 또는 레이블-값 쌍이 필요할 때.\n[사용 시점] 바텀시트 상단부에 요약 정보·속성·키-값 데이터를 나열할 때.\n[구분] BottomGroupAreaItem은 본문 콘텐츠 영역에 사용하고, BottomGroupUpperItem은 상단 정보 행에만 사용한다.",
     "parent": "BottomGroup",
     "slot": "Content"
   },
@@ -149,10 +135,9 @@
     "type": "BottomSheet",
     "standalone": false,
     "description": "바텀시트 상단에 표시되는 드래그 핸들 인디케이터 서브 컴포넌트입니다.",
-    "anatomy": "root[ handle ]",
     "states": null,
     "do": "- 바텀시트(Drawer) 컴포넌트의 최상단에 배치하여 사용자에게 드래그 가능함을 시각적으로 안내한다.\n- width prop으로 컨테이너 너비를 조정할 수 있으며, 기본값은 피그마 아트보드 기준 393px이다.\n- 독립적으로 단독 사용하지 않고 반드시 바텀시트 컨테이너 내 슬롯에 포함시켜 사용한다.",
-    "rules": "props: width(number|string, 기본 393), className(string).\n[맵핑 트리거] 바텀시트 상단에 핸들 바(pill 형태의 드래그 인디케이터)가 필요한 경우.\n[사용 시점] Drawer 계열 컴포넌트의 LeadingContent 또는 상단 영역에 핸들이 시각적으로 필요할 때.\n[구분] 단순 장식용 핸들 요소로, 클릭/탭 이벤트나 상태 변화 없이 시각적 드래그 단서만 제공한다. 인터랙션 로직은 부모 Drawer 컴포넌트가 담당한다.",
+    "rules": "[맵핑 트리거] 바텀시트 상단에 핸들 바(pill 형태의 드래그 인디케이터)가 필요한 경우.\n[사용 시점] Drawer 계열 컴포넌트의 LeadingContent 또는 상단 영역에 핸들이 시각적으로 필요할 때.\n[구분] 단순 장식용 핸들 요소로, 클릭/탭 이벤트나 상태 변화 없이 시각적 드래그 단서만 제공한다. 인터랙션 로직은 부모 Drawer 컴포넌트가 담당한다.",
     "parent": "Drawer",
     "slot": "LeadingContent"
   },
@@ -160,10 +145,9 @@
     "type": "BottomSheet",
     "standalone": false,
     "description": "바텀시트 내부에서 선택 가능한 항목과 선택적 펼침 콘텐츠 슬롯을 제공하는 서브 컴포넌트입니다.",
-    "anatomy": "root[ header[ title, chevron ], ?Divider, ?slot[ children ] ]",
-    "states": "selection(On|Off), disclosure(Open|Closed)",
+    "states": null,
     "do": "- 바텀시트 내 옵션 선택 항목으로만 사용한다.\n- 선택된 항목은 selection=true로 지정해 텍스트 강조를 적용한다.\n- 추가 설명이나 하위 콘텐츠가 필요한 경우에만 disclosure=true로 열고 children 슬롯을 사용한다.",
-    "rules": "props: selection(boolean), selected(boolean alias), disclosure(boolean), title(string), children(slot), className(string).\n[맵핑 트리거] 바텀시트 내부에서 선택 가능한 옵션이 있고, 선택 상태 또는 펼침 상세 영역이 필요한 경우.\n[사용 시점] 요금제 옵션, 필터 항목, 선택형 메뉴처럼 바텀시트 안에서 항목을 고르고 필요 시 상세 콘텐츠를 노출할 때.\n[구분] BottomSheetHandleItem은 드래그 핸들만 표시하고, Cell/Accordion은 일반 화면 콘텐츠에도 쓰인다. BottomSheetSelectItem은 바텀시트 내부 전용 선택 항목이다.",
+    "rules": "[맵핑 트리거] 바텀시트 내부에서 선택 가능한 옵션이 있고, 선택 상태 또는 펼침 상세 영역이 필요한 경우.\n[사용 시점] 요금제 옵션, 필터 항목, 선택형 메뉴처럼 바텀시트 안에서 항목을 고르고 필요 시 상세 콘텐츠를 노출할 때.\n[구분] BottomSheetHandleItem은 드래그 핸들만 표시하고, Cell/Accordion은 일반 화면 콘텐츠에도 쓰인다. BottomSheetSelectItem은 바텀시트 내부 전용 선택 항목이다.",
     "parent": "Bottomsheet",
     "slot": "Content"
   },
@@ -171,19 +155,17 @@
     "type": "BottomSheet",
     "standalone": true,
     "description": "화면 하단에서 슬라이드 업으로 나타나는 시트 컨테이너로, 핸들 또는 닫기 버튼 헤더, 탭 스트립, 본문 슬롯, 하단 액션 그룹을 선택적으로 구성할 수 있습니다.",
-    "anatomy": "root[ BottomSheetHandleItem? | header?(titleTextGroup, closeButton), TabScroll?, slot[children], BottomGroup? ]",
-    "states": "buttonClose(On|Off), actionButton(On|Off), showTitle(On|Off)",
+    "states": null,
     "do": "- buttonClose=true 또는 variant=\"ButtonClose\"는 타이틀과 X 닫기 버튼이 필요한 콘텐츠 시트에 사용합니다.\n- buttonClose=false 또는 variant=\"Handle\"은 드래그 핸들이 필요한 보조 탐색/열람 시트에 사용합니다.\n- actionButton=true 시 BottomGroup(Table upper item + 1 Botton)을 하단 액션 영역으로 표시합니다.\n- DimItem은 디자인 확인용 배경 레이어이므로 실제 컴포넌트에 포함하지 않습니다.",
-    "rules": "**Props 요약**\n- variant: \"ButtonClose\"(기본) | \"Handle\"\n- buttonClose: boolean — Figma alias, true=ButtonClose, false=Handle\n- actionButton / showActionGroup: 하단 BottomGroup 표시 여부\n- showTitle / heading / description / description2: 제목 영역 표시 및 텍스트 제어\n- tab / showTab / tabs / activeTab / onTabChange: 탭 스트립 표시 및 선택 상태\n- primaryLabel / upperItemLabel / upperItemValue: 하단 액션 그룹 텍스트\n- children: 본문 자유 슬롯. 슬롯 높이는 콘텐츠 기준으로 hug되며, 빈 슬롯에 고정 높이를 두지 않습니다.\n\n[맵핑 트리거] 화면 하단에서 오버레이 형태로 추가 정보·액션을 제공할 때 사용합니다.\n\n[사용 시점] 목록 필터, 상세 옵션 선택, 구독/결제 유도 등 전체 페이지 전환 없이 보조 UI가 필요한 경우에 적합합니다.\n\n[구분] Dialog와 달리 화면 하단에 고정 앵커되며 드래그 핸들을 지원합니다. 단순 알림·확인 용도라면 AlertDialog를 사용하고, 시트 내부 액션이 필요한 경우 BottomGroup을 함께 사용합니다."
+    "rules": "[맵핑 트리거] 화면 하단에서 오버레이 형태로 추가 정보·액션을 제공할 때 사용합니다.\n\n[사용 시점] 목록 필터, 상세 옵션 선택, 구독/결제 유도 등 전체 페이지 전환 없이 보조 UI가 필요한 경우에 적합합니다.\n\n[구분] Dialog와 달리 화면 하단에 고정 앵커되며 드래그 핸들을 지원합니다. 단순 알림·확인 용도라면 AlertDialog를 사용하고, 시트 내부 액션이 필요한 경우 BottomGroup을 함께 사용합니다."
   },
   "ButtonIconItem": {
     "type": "Button",
     "standalone": false,
     "description": "아이콘 슬롯 컴포넌트. Large·Medium·Small 크기를 제공하고 내부에 커스텀 아이콘을 포함할 수 있다.",
-    "anatomy": "root[ iconSlot[ icon | children | IconDummy ] ]",
-    "states": "Large, Medium, Small",
+    "states": null,
     "do": "- 버튼, 타이틀, 셀 등에서 아이콘을 정해진 크기 슬롯 안에 배치해야 할 때 사용한다.\n- 내부 아이콘은 icon prop 또는 children으로 전달할 수 있으며, 지정하지 않으면 기본 Dummy 아이콘을 표시한다.\n- Figma의 varient 오타는 코드에서 variant로 수정해 사용한다.",
-    "rules": "**props 요약**\n- variant: Large(24px, 기본) | Medium(16px) | Small(12px)\n- icon: ReactNode — 내부 아이콘 슬롯\n- children: ReactNode — 내부 아이콘 슬롯\n\n**[맵핑 트리거]** Button 계열 구조 안에 크기 고정 아이콘 슬롯이 필요할 때 사용한다.\n\n**[사용 시점]**\n- 버튼 내부 아이콘, 텍스트 옆 보조 아이콘, 작은 인터랙션 영역의 아이콘 슬롯\n- 아이콘 자체를 컴포넌트 외부에서 주입해야 하는 경우\n\n**[구분]**\n- 닫기(X) 버튼은 사용처 부모 컴포넌트에서 직접 처리한다.\n- 단순 범용 아이콘 표시에는 IconItem 또는 해당 Icon* 컴포넌트를 직접 사용할 수 있다.",
+    "rules": "[맵핑 트리거]** Button 계열 구조 안에 크기 고정 아이콘 슬롯이 필요할 때 사용한다.\n\n**[사용 시점]**\n- 버튼 내부 아이콘, 텍스트 옆 보조 아이콘, 작은 인터랙션 영역의 아이콘 슬롯\n- 아이콘 자체를 컴포넌트 외부에서 주입해야 하는 경우\n\n**[구분]**\n- 닫기(X) 버튼은 사용처 부모 컴포넌트에서 직접 처리한다.\n- 단순 범용 아이콘 표시에는 IconItem 또는 해당 Icon* 컴포넌트를 직접 사용할 수 있다.",
     "parent": "Button",
     "slot": "Icon"
   },
@@ -191,10 +173,9 @@
     "type": "Button",
     "standalone": false,
     "description": "AI 진입점에 사용하는 44px 원형 아이콘 버튼 아이템. 내부에 24px ButtonIconItem 슬롯을 포함하며 커스텀 아이콘을 받을 수 있다.",
-    "anatomy": "root[ ButtonIconItem(Large, icon | children | IconDummy) ]",
     "states": "Default",
     "do": "- AI 추천·AI 검색·AI 도우미 등 AI 맥락의 아이콘 진입점에 사용한다.\n- 내부 아이콘은 icon prop 또는 children으로 전달할 수 있으며, 지정하지 않으면 기본 Dummy 아이콘을 표시한다.\n- 일반 아이콘 슬롯이 필요한 경우 ButtonIcon을 사용하고, AI 원형 컨테이너가 필요한 경우에만 ButtonIconAiItem을 사용한다.",
-    "rules": "**props 요약**\n- icon: ReactNode — 내부 24px 아이콘 슬롯\n- children: ReactNode — 내부 24px 아이콘 슬롯\n\n**[맵핑 트리거]** 44px 원형 배경과 그림자를 가진 AI 아이콘 버튼 진입점이 필요할 때 사용한다.\n\n**[사용 시점]**\n- AI 관련 플로팅 액션 또는 AI 섹션 진입점\n- 하단 그룹/AI 영역 내 독립 아이콘 버튼\n\n**[구분]**\n- 크기 고정 아이콘 슬롯만 필요하면 ButtonIconItem을 사용한다.\n- 일반 닫기(X) 버튼은 사용처 부모 컴포넌트에서 직접 처리한다.",
+    "rules": "[맵핑 트리거]** 44px 원형 배경과 그림자를 가진 AI 아이콘 버튼 진입점이 필요할 때 사용한다.\n\n**[사용 시점]**\n- AI 관련 플로팅 액션 또는 AI 섹션 진입점\n- 하단 그룹/AI 영역 내 독립 아이콘 버튼\n\n**[구분]**\n- 크기 고정 아이콘 슬롯만 필요하면 ButtonIconItem을 사용한다.\n- 일반 닫기(X) 버튼은 사용처 부모 컴포넌트에서 직접 처리한다.",
     "parent": "Button",
     "slot": "Icon"
   },
@@ -202,46 +183,41 @@
     "type": "Button",
     "standalone": false,
     "description": "범용 액션 버튼 컴포넌트로, Primary·Secondary·Ouline 3가지 variant와 4단계 크기, 로딩·비활성 상태, Danger 모드를 지원한다.",
-    "anatomy": "root(button) [ label(span), icon?(span>svg), loader?(span[ dot × 3 ]) ]",
     "states": "Default, Loading, Disabled",
     "do": "- Primary는 페이지당 1개의 주요 CTA에만 사용하고, 보조 액션에는 Secondary 또는 Ouline(Outline 스타일)을 사용한다.\n- 삭제·취소 등 파괴적 액션에는 danger=true를 설정하여 브랜드 컬러 대신 레드 계열로 표시한다.\n- 로딩 중 반복 클릭을 막기 위해 비동기 작업 진행 시 state=\"Loading\"으로 설정한다.",
-    "rules": "**props 요약**\n- variants: Primary(기본) | Secondary | Ouline — Figma 기준 prop\n- variant: 기존 호환 alias, Outline 입력 시 Ouline으로 매핑\n- size: Small(28px) | Medium(36px) | Large(48px) | XLarge(56px, 기본)\n- state: Default(기본) | Loading | Disabled\n- danger: boolean — 파괴적 액션 시 true\n- icon: boolean — 우측 화살표 아이콘 노출 여부\n- label: 버튼 텍스트 (기본 \"Label\")\n\n**[맵핑 트리거]** 사용자가 탭·클릭으로 단일 액션을 실행하는 버튼이 필요할 때 사용한다.\n\n**[사용 시점]**\n- 폼 제출, 페이지 이동, 확인/취소 등 명확한 단일 액션에 배치한다.\n- 비동기 작업 중에는 state=\"Loading\", 사용할 수 없는 행동에는 state=\"Disabled\"를 사용한다.\n\n**[구분]**\n- 아이콘 슬롯이 필요하면 ButtonIcon 또는 ButtonIconAiItem을 사용한다.\n- 텍스트 링크형 액션은 ButtonItem 공식 variant가 아니므로 해당 셀/텍스트 버튼 컴포넌트를 우선 사용한다."
+    "rules": "[맵핑 트리거]** 사용자가 탭·클릭으로 단일 액션을 실행하는 버튼이 필요할 때 사용한다.\n\n**[사용 시점]**\n- 폼 제출, 페이지 이동, 확인/취소 등 명확한 단일 액션에 배치한다.\n- 비동기 작업 중에는 state=\"Loading\", 사용할 수 없는 행동에는 state=\"Disabled\"를 사용한다.\n\n**[구분]**\n- 아이콘 슬롯이 필요하면 ButtonIcon 또는 ButtonIconAiItem을 사용한다.\n- 텍스트 링크형 액션은 ButtonItem 공식 variant가 아니므로 해당 셀/텍스트 버튼 컴포넌트를 우선 사용한다."
   },
   "ButtonTextItem": {
     "type": "Button",
     "standalone": false,
     "description": "텍스트 링크형 액션 버튼 컴포넌트로, Text와 Text+Icon variant, 4단계 크기, Disabled 상태, Danger 모드를 지원한다.",
-    "anatomy": "root(button)[ label(span), icon?(IconArrow right) ]",
     "states": "Default, Disabled",
     "do": "- 약관 보기, 더보기, 상세 이동처럼 주요 CTA보다 약한 텍스트 액션에 사용한다.\n- variants=\"Text\"는 밑줄 텍스트 버튼으로, variants=\"Text+Icon\"은 우측 Chevron이 필요한 이동 액션으로 사용한다.\n- 파괴적이거나 위험한 텍스트 액션에는 danger=true를 설정한다.",
-    "rules": "**props 요약**\n- variants: Text(기본) | Text+Icon — Figma 기준 prop\n- variant: 기존 호환 alias, TextIcon 입력 시 Text+Icon으로 매핑\n- size: Small | Medium | Large | XLarge(기본)\n- state: Default(기본) | Disabled\n- danger: boolean — 파괴적 액션 시 true\n- label: 버튼 텍스트 (기본 \"Label\")\n\n**[맵핑 트리거]** 밑줄 텍스트 버튼 또는 텍스트+Chevron 보조 액션이 필요할 때 사용한다.\n\n**[사용 시점]**\n- 링크처럼 보이는 보조 액션\n- 목록·타이틀·문구 옆의 더보기/상세보기 액션\n- Primary CTA보다 시각 강조가 낮아야 하는 텍스트 액션\n\n**[구분]**\n- 화면 하단 주요 CTA나 filled/outlined 버튼에는 ButtonItem을 사용한다.\n- 아이콘 슬롯이 필요하면 ButtonIconItem을 사용한다."
+    "rules": "[맵핑 트리거]** 밑줄 텍스트 버튼 또는 텍스트+Chevron 보조 액션이 필요할 때 사용한다.\n\n**[사용 시점]**\n- 링크처럼 보이는 보조 액션\n- 목록·타이틀·문구 옆의 더보기/상세보기 액션\n- Primary CTA보다 시각 강조가 낮아야 하는 텍스트 액션\n\n**[구분]**\n- 화면 하단 주요 CTA나 filled/outlined 버튼에는 ButtonItem을 사용한다.\n- 아이콘 슬롯이 필요하면 ButtonIconItem을 사용한다."
   },
   "CardProductHorizontalList": {
     "type": "Card",
     "standalone": true,
     "description": "상품 카테고리·이름·혜택 텍스트와 썸네일 이미지, 태그/아이콘 배지 목록을 가로 레이아웃으로 표시하는 상품 카드 컴포넌트입니다.",
-    "anatomy": "root[ infoArea[ textGroupImage[ textGroup[ textNameGroup[category, name, benefit] ], thumbnail? ], infosub[ tagBadgeList?, iconBadgeList? ] ] ]",
     "states": null,
     "do": "- 상품 목록 화면에서 개별 상품 항목을 가로형 카드로 표시할 때 사용합니다.\n- showThumbnail, showTagBadges, showIconBadges 플래그로 노출 영역을 선택적으로 제어합니다.\n- tagBadges에는 분류 태그, iconBadges에는 아이콘+텍스트 혜택 항목을 전달합니다.",
-    "rules": "**props 요약**\n- category (string): 상품 카테고리 라벨\n- name (string): 상품·브랜드명\n- benefit (string): 할인·적립·사용 등 혜택 요약 텍스트\n- thumbnailSrc (string, optional): 썸네일 이미지 URL\n- showThumbnail (boolean, default true): 썸네일 노출 여부\n- tagBadges (TagBadge[], optional): 태그형 배지 목록 (label)\n- showTagBadges (boolean, default true): 태그 배지 행 노출 여부\n- iconBadges (IconBadge[], optional): 아이콘+텍스트 배지 목록 (iconSrc?, text)\n- showIconBadges (boolean, default true): 아이콘 배지 행 노출 여부\n\n[맵핑 트리거] 상품 리스트 화면에서 상품 정보를 가로형 카드 단위로 나열해야 할 때\n\n[사용 시점] 상품 목록·검색 결과·추천 상품 섹션 등에서 여러 상품을 세로로 스크롤하는 리스트 형태로 구성할 때\n\n[구분] CardProductVerticalList는 세로형(썸네일 상단) 레이아웃이며, CardProductHorizontalList는 텍스트와 썸네일이 좌우로 배치되는 가로형 레이아웃입니다."
+    "rules": "[맵핑 트리거] 상품 리스트 화면에서 상품 정보를 가로형 카드 단위로 나열해야 할 때\n\n[사용 시점] 상품 목록·검색 결과·추천 상품 섹션 등에서 여러 상품을 세로로 스크롤하는 리스트 형태로 구성할 때\n\n[구분] CardProductVerticalList는 세로형(썸네일 상단) 레이아웃이며, CardProductHorizontalList는 텍스트와 썸네일이 좌우로 배치되는 가로형 레이아웃입니다."
   },
   "CardProductVerticalList": {
     "type": "Card",
     "standalone": true,
     "description": "상품 카드를 세로 방향으로 나열하는 리스트 컴포넌트로, 썸네일·제목·가격·뱃지 등 상품 핵심 정보를 수직 카드 형태로 표시한다.",
-    "anatomy": "root[ item*[ thumbnail[ img, dimOverlay ], textGroup[ textInfoGroup[ textNameGroup[ title, subText ], textSubGroup[ rating, divider, bookingRate ] ], textPriceGroup[ textPrice[ discountRate, price, installment ], priceCondition[ label, value ] ], badgeGroup[ badge* ] ] ] ]",
     "states": "Default, Pressed",
     "do": "- 세로 스크롤 피드나 검색 결과 화면에서 상품을 카드 형태로 나열할 때 사용한다.\n- `items` 배열로 각 상품의 썸네일·제목·가격·뱃지 데이터를 전달하고, 개별 카드의 `onClick`으로 상세 화면 이동을 처리한다.\n- 이미지가 없을 때는 placeholder가 자동 표시되므로 `imageSrc`가 없어도 레이아웃이 깨지지 않도록 기본값에 의존한다.",
-    "rules": "props: items(CardProductVerticalListItemDef[], 기본값 2개 샘플), className(string?). 각 아이템은 imageSrc·dimMultiply·title·subText·rating·bookingRate·discountRate·price·installment·priceConditionLabel·priceConditionValue·badges·onClick를 지원한다.\n[맵핑 트리거] 상품 목록을 세로 레이아웃으로 표시해야 하는 경우 (ex. 홈 피드, 카테고리 탐색, 검색 결과).\n[사용 시점] 한 화면에 여러 상품을 세로 방향 카드 리스트로 노출할 때 사용한다.\n[구분] CardProductHorizontalList는 카드가 가로 방향으로 스크롤되는 반면, CardProductVerticalList는 세로 방향으로 쌓이므로 스크롤 방향과 레이아웃 밀도에 따라 선택한다."
+    "rules": "[맵핑 트리거] 상품 목록을 세로 레이아웃으로 표시해야 하는 경우 (ex. 홈 피드, 카테고리 탐색, 검색 결과).\n[사용 시점] 한 화면에 여러 상품을 세로 방향 카드 리스트로 노출할 때 사용한다.\n[구분] CardProductHorizontalList는 카드가 가로 방향으로 스크롤되는 반면, CardProductVerticalList는 세로 방향으로 쌓이므로 스크롤 방향과 레이아웃 밀도에 따라 선택한다."
   },
   "CardProductVerticalListItem": {
     "type": "Card",
     "standalone": false,
     "description": "세로형 상품 카드 리스트의 개별 아이템으로, 썸네일·상품명·평점·가격·배지 정보를 수직 레이아웃으로 표시하는 서브 컴포넌트입니다.",
-    "anatomy": "wrap[ thumbnail[ img, dimOverlay ], textGroup[ textInfoGroup[ textNameGroup[ title, subText ], textSubGroup[ rating, divider, bookingRate ] ], textPriceGroup[ textPrice[ discountRate, price, installment ], priceCondition[ conditionLabel, conditionPrice ] ], badgeGroup[ badge* ] ] ]",
     "states": "Default, Pressed",
     "do": "- CardProductVerticalList의 자식 아이템으로만 사용하며, 단독으로 화면에 배치하지 않습니다.\n- imageSrc가 없으면 플레이스홀더가 표시되므로, 이미지 URL이 준비된 상태에서 렌더링합니다.\n- badges 배열은 최대 표시 개수를 UI 너비에 맞게 제한하여 overflow를 방지합니다.",
-    "rules": "props: imageSrc(썸네일 URL), dimMultiply(딤 오버레이 표시 여부, 기본 true), title(상품명 최대 2줄), subText(브랜드·카테고리 텍스트), rating(평점 문자열), bookingRate(예매율 문자열), discountRate(할인율 레이블), price(가격 문자열), installment(할부 조건 접미어), priceConditionLabel/Value(약정 조건 가격), badges(배지 목록), onClick(클릭 핸들러). [맵핑 트리거] 세로형 상품 카드 목록에서 개별 상품 행이 필요할 때 사용합니다. [사용 시점] CardProductVerticalList 내부 반복 렌더링 슬롯에서만 사용합니다. [구분] CardProductHorizontalListItem과 달리 썸네일이 상단, 텍스트 정보가 하단에 배치되는 세로 레이아웃을 가지며, 더 큰 이미지 영역을 제공합니다.",
+    "rules": "[맵핑 트리거] 세로형 상품 카드 목록에서 개별 상품 행이 필요할 때 사용합니다. [사용 시점] CardProductVerticalList 내부 반복 렌더링 슬롯에서만 사용합니다. [구분] CardProductHorizontalListItem과 달리 썸네일이 상단, 텍스트 정보가 하단에 배치되는 세로 레이아웃을 가지며, 더 큰 이미지 영역을 제공합니다.",
     "parent": "CardProductVerticalList",
     "slot": "Content"
   },
@@ -249,10 +225,9 @@
     "type": "Divider",
     "standalone": false,
     "description": "탭·네비게이션 항목의 선택 상태를 나타내는 1px × 20px 필 모양의 세로형 브랜드 컬러 캐럿 인디케이터 서브 컴포넌트",
-    "anatomy": "root[ bar ]",
     "states": null,
     "do": "단독 배치하지 않고 반드시 부모 탭·네비게이션 컴포넌트의 슬롯을 통해 삽입한다.",
-    "rules": "props: variant(\"brand\"|\"neutral\"|\"inverse\"), height(px, 기본 20).",
+    "rules": "[맵핑 트리거] 탭·네비게이션 항목의 선택 상태를 시각적으로 표시하는 캐럿 인디케이터가 필요할 때 사용한다.\n[사용 시점] 단독 배치하지 않고 부모 탭·네비게이션 컴포넌트의 슬롯을 통해서만 삽입한다.",
     "parent": "Tabs",
     "slot": "LeadingContent"
   },
@@ -260,19 +235,17 @@
     "type": "Carousel",
     "standalone": true,
     "description": "헤더(타이틀·더보기 아이콘)와 가로 스크롤 가능한 상품 카드 목록으로 구성된 섹션 단위 캐러셀 컴포넌트입니다.",
-    "anatomy": "wrap[ header[ title, moreIcon? ], itemGroup[ item* ] ]",
     "states": null,
     "do": "상품·콘텐츠를 가로 스크롤 형태로 나열할 때 사용합니다.",
-    "rules": "props: title, showMoreIcon, onMore, items(CarouselItemData[])."
+    "rules": "[맵핑 트리거] 상품·콘텐츠를 가로 스크롤 형태로 나열하는 섹션이 필요할 때 사용한다.\n[사용 시점] 헤더(타이틀·더보기)와 가로 스크롤 카드 목록을 묶어 한 섹션으로 보여주는 메인·추천 영역에 적합하다."
   },
   "CarouselGroupItem": {
     "type": "Carousel",
     "standalone": false,
     "description": "캐러셀 내에서 동일한 카드 아이템을 3개 묶음으로 렌더링하는 그룹 단위 서브 컴포넌트입니다.",
-    "anatomy": "root[ item*3[ thumbnail, textGroup ] ]",
     "states": null,
     "do": "캐러셀 부모 컨텍스트 안에서만 사용하며 단독 배치하지 않는다.",
-    "rules": "variant: Small|Medium|Large.",
+    "rules": "[맵핑 트리거] 캐러셀 안에서 동일 카드를 3개 묶음으로 렌더링해야 할 때 사용한다.\n[사용 시점] Carousel 부모 컨텍스트 안에서만 사용하며 단독 배치하지 않는다.\n[구분] 개별 카드 한 건은 CarouselItem, 3개 묶음 그룹은 CarouselGroupItem.",
     "parent": "Carousel",
     "slot": "Content"
   },
@@ -280,246 +253,219 @@
     "type": "Carousel",
     "standalone": false,
     "description": "캐러셀 내 개별 상품·콘텐츠 카드 아이템으로, 썸네일 이미지와 제목·가격·배지 정보를 variant에 따라 다르게 노출하는 서브 컴포넌트입니다.",
-    "anatomy": "root[ thumbnail, textGroup ]",
     "states": null,
     "do": "Carousel 부모 컴포넌트의 슬롯 내에서만 사용하며 단독으로 배치하지 않는다.",
-    "rules": "variant: Small|Medium|Large.",
+    "rules": "[맵핑 트리거] 캐러셀 내 개별 상품·콘텐츠 카드 한 건을 표현할 때 사용한다.\n[사용 시점] Carousel 부모 슬롯 내에서만 사용하며 단독 배치하지 않는다.\n[구분] 카드 한 건은 CarouselItem, 동일 카드 3개 묶음은 CarouselGroupItem.",
     "parent": "Carousel",
     "slot": "Content"
   },
   "CellBoxItem": {
     "type": "Cell",
-    "standalone": true,
+    "standalone": false,
     "description": "콘텐츠를 박스 형태로 감싸는 셀 컨테이너 컴포넌트로, 슬롯에 임의 자식 요소를 배치할 수 있습니다.",
-    "anatomy": "root[ CellBoxItemSlot[ children ] ]",
     "states": null,
     "do": "박스 단위로 구분된 셀 영역 안에 임의 콘텐츠를 배치할 때 사용한다. Box 내부에서 Divider 컴포넌트를 사용하는 경우 Divider 상하에 8px 패딩을 추가한다.",
-    "rules": "props: children(ReactNode), className(string). 루트는 width 353px 기준, padding 16px 20px, radius 16px, fill/neutral/primary 배경을 사용한다. CellBoxItemSlot 높이는 콘텐츠 기준으로 hug되며, 빈 슬롯에 고정 높이를 두지 않는다."
+    "rules": "[맵핑 트리거] 콘텐츠를 박스 형태로 감싸 구분된 셀 영역에 임의 자식을 배치할 때 사용한다.\n[사용 시점] 박스 단위로 구획된 영역 안에 자유 콘텐츠를 담아야 하는 리스트·카드 레이아웃에 적합하다.\n[구분] 박스형 래퍼는 CellBoxItem, 카드형 고정높이 래퍼는 CellCard, 타이틀+콘텐츠 기본 묶음은 CellDefault."
   },
   "CellCard": {
     "type": "Cell",
     "standalone": true,
     "description": "카드형 셀 컨테이너로, 내부 슬롯에 임의의 자식 콘텐츠를 삽입할 수 있는 고정 높이 래퍼 컴포넌트입니다.",
-    "anatomy": "wrap[ group[ slot[ children ] ] ]",
     "states": null,
     "do": "카드 형태의 리스트 행이 필요할 때 이 컴포넌트를 최상위 래퍼로 사용한다.",
-    "rules": "props: children(ReactNode), slotHeight(number, 기본 104px), className(string)."
+    "rules": "[맵핑 트리거] 카드 형태의 리스트 행이 필요할 때 최상위 래퍼로 사용한다.\n[사용 시점] 내부 슬롯에 임의 콘텐츠를 담는 카드형 리스트 행에 적합하다.\n[구분] 고정높이 카드 래퍼는 CellCard, 박스 구획 래퍼는 CellBoxItem."
   },
   "CellCart": {
     "type": "Cell",
     "standalone": true,
     "description": "장바구니 상품 요약 셀로, 타이틀·썸네일·브랜드명·상품명·금액 요약 테이블·옵션 변경 버튼을 하나의 카드 형태로 표시하는 리스트 행 컴포넌트입니다.",
-    "anatomy": "wrap[ titleRow, productRow, summaryBox, changeButton ]",
     "states": null,
     "do": "장바구니 또는 구독 결제 확인 화면에서 선택된 상품 한 건의 요약 정보를 표시할 때 사용한다.",
-    "rules": "props: title, showTitle, onClose, thumbnailSrc, brandName, productName, showAdultNotice, summaryRows, totalLabel, totalValue, showChangeButton, changeButtonLabel, onChangeButton."
+    "rules": "[맵핑 트리거] 선택된 상품 한 건의 요약(썸네일·브랜드·상품명·금액·옵션변경)을 표시할 때 사용한다.\n[사용 시점] 장바구니 또는 구독 결제 확인 화면의 상품 요약 행에 적합하다.\n[구분] 장바구니 상품 요약은 CellCart, 일반 상품 목록 행은 CellProductItem."
   },
   "CellDefault": {
     "type": "Cell",
     "standalone": true,
     "description": "선택적 타이틀 행과 콘텐츠 슬롯으로 구성된 기본 셀 컨테이너 컴포넌트입니다.",
-    "anatomy": "root[ titleItem?[ cellText ], cellItem[ children ] ]",
     "states": null,
     "do": "리스트 또는 카드 레이아웃 내에서 타이틀과 하위 콘텐츠를 묶어 표시할 때 사용한다.",
-    "rules": "props: title(string), showTitle(boolean), children(ReactNode)."
+    "rules": "[맵핑 트리거] 타이틀과 하위 콘텐츠를 묶어 표시하는 기본 셀이 필요할 때 사용한다.\n[사용 시점] 리스트·카드 레이아웃에서 선택적 타이틀 행과 콘텐츠 슬롯을 함께 담아야 할 때 적합하다."
   },
   "CellLeftSelect": {
     "type": "Cell",
     "standalone": true,
     "description": "왼쪽 선택 컨트롤과 선택적 우측 이동 아이콘으로 구성된 셀 아이템.",
-    "anatomy": "root[ RadioItem|CheckboxLeftTextItem, CellRightItem? ]",
-    "states": "variants(Radio|Check), cellRightItem(on|off)",
+    "states": null,
     "do": "왼쪽 radio 또는 checkbox 선택 컨트롤과 오른쪽 이동 아이콘을 한 행에 배치해야 할 때 사용한다.",
-    "rules": "props: cellRightItem(boolean), variants(\"Radio\"|\"Check\"). 내부 라벨은 Figma 기본값 Label을 사용한다."
+    "rules": "[맵핑 트리거] 왼쪽 radio/checkbox 선택 컨트롤과 우측 이동 아이콘을 한 행에 배치해야 할 때 사용한다.\n[사용 시점] 선택과 화면 이동을 동시에 제공하는 목록 행에 적합하다.\n[구분] 선택 컨트롤이 왼쪽이면 CellLeftSelect, 오른쪽이면 CellRightSelect."
   },
   "CellLeftTable": {
     "type": "Cell",
     "standalone": true,
     "description": "좌측 70px 타이틀과 우측 내용 텍스트로 구성된 왼쪽 기준 테이블 셀 컴포넌트.",
-    "anatomy": "root[ title(70px), description ]",
-    "states": "variants(Small|Medium)",
+    "states": null,
     "do": "간단한 레이블-내용 쌍을 좌측 타이틀 기준으로 정렬해야 할 때 사용한다.",
-    "rules": "props: description(string), title(string), variants(\"Small\"|\"Medium\"). Figma property 이름과 동일하게 Storybook controls에 노출한다."
+    "rules": "[맵핑 트리거] 레이블-내용 쌍을 좌측 타이틀 기준으로 정렬해 표시할 때 사용한다.\n[사용 시점] 좌측 70px 타이틀 폭으로 간단한 항목-값을 정렬하는 상세 정보 영역에 적합하다.\n[구분] 좌측 타이틀 기준 정렬은 CellLeftTable, 우측 값 정렬은 CellRightTable."
   },
   "CellPayment": {
     "type": "Cell",
     "standalone": true,
     "description": "결제 수단 선택 목록의 단일 행 컴포넌트로, 라디오와 결제명, 선택적 썸네일·뱃지·하단 카드 영역을 포함한다.",
-    "anatomy": "root[ RadioItem, Text[ LogoText[ ThumbnailRoundItem?, label, BadgeItem? ], Card? ] ]",
-    "states": "badge(on|off), card(on|off), thumbnail(on|off)",
+    "states": null,
     "do": "결제 수단 선택 목록에서 하나의 결제 방법과 약관 동의 카드 정보를 함께 표시할 때 사용한다.",
-    "rules": "props: badge(boolean), card(boolean), label(string), thumbnail(boolean). 내부 선택 컨트롤은 RadioItem, 로고는 ThumbnailRoundItem, 뱃지는 BadgeItem을 사용한다."
+    "rules": "[맵핑 트리거] 결제 수단 선택 행에 약관 동의 카드 정보까지 함께 표시할 때 사용한다.\n[사용 시점] 결제 수단 선택 목록에서 라디오·결제명과 하단 약관 동의 카드를 묶어 보여줄 때 적합하다.\n[구분] 약관 동의 카드를 포함하면 CellPayment, 로고·CTA 카드 중심의 일반 결제 행은 CellPaymentItem."
   },
   "CellPaymentItem": {
     "type": "Cell",
-    "standalone": true,
+    "standalone": false,
     "description": "결제 수단 선택 목록의 단일 행 컴포넌트로, 라디오 선택·로고 이미지·레이블·뱃지 및 하단 CTA 카드를 표시한다.",
-    "anatomy": "root[ radio, content[ logoText, card? ] ]",
     "states": "Unselected, Selected",
     "do": "결제 수단 목록에서 각 결제 방법을 나타내는 행 단위로 사용한다.",
-    "rules": "props: logoImage, badge, bottomButton, selected, label, badgeLabel, logoSrc, cardBrand, cardHeadlineSuffix, cardBody."
+    "rules": "[맵핑 트리거] 결제 수단 목록에서 각 결제 방법을 나타내는 행이 필요할 때 사용한다.\n[사용 시점] 라디오 선택·로고·레이블·뱃지·하단 CTA 카드를 갖춘 결제 수단 행에 적합하다.\n[구분] 일반 결제 수단 행은 CellPaymentItem, 약관 동의 카드까지 포함하는 행은 CellPayment."
   },
   "CellPointInfo": {
     "type": "Cell",
     "standalone": true,
     "description": "포인트 적립 또는 할인 정보를 원형 썸네일과 함께 표시하는 셀 컴포넌트.",
-    "anatomy": "root[ ThumbnailRoundItem, textInfo[ txt[ title, value ], txtSub[ caption01, caption02 ] ] ]",
-    "states": "variants(Add|Discount)",
+    "states": null,
     "do": "포인트 적립/할인 내역처럼 타이틀, 금액성 값, 날짜·캡션을 한 행에 표시할 때 사용한다.",
-    "rules": "props: caption01(string), caption02(string), title(string), value(string), variants(\"Add\"|\"Discount\"). 내부 썸네일은 ThumbnailRoundItem을 사용한다."
+    "rules": "[맵핑 트리거] 포인트 적립·할인 내역을 원형 썸네일과 함께 표시할 때 사용한다.\n[사용 시점] 타이틀·금액성 값·날짜·캡션을 한 행에 담는 포인트/할인 내역 목록에 적합하다."
   },
   "CellProductItem": {
     "type": "Cell",
-    "standalone": true,
+    "standalone": false,
     "description": "썸네일·브랜드·상품명·성인경고·혜택 정보 박스를 포함한 상품 목록 셀 컴포넌트입니다.",
-    "anatomy": "root[ thumbnail, info[ infoRow, cellBox? ] ]",
     "states": null,
     "do": "상품 목록 화면에서 썸네일과 브랜드·상품명을 함께 노출해야 할 때 사용합니다.",
-    "rules": "props: thumbnailSrc, brand, productName, showAdultWarning, adultWarningText, showCloseButton, onClose, showCellBox, benefitText, tableRows."
+    "rules": "[맵핑 트리거] 상품 목록에서 썸네일과 브랜드·상품명을 함께 노출해야 할 때 사용한다.\n[사용 시점] 썸네일·브랜드·상품명·성인경고·혜택 박스를 갖춘 상품 목록 화면에 적합하다.\n[구분] 일반 상품 목록 행은 CellProductItem, 장바구니 상품 요약 행은 CellCart."
   },
   "CellRightItem": {
     "type": "Cell",
-    "standalone": true,
+    "standalone": false,
     "description": "셀(리스트 행) 우측 영역에 배치되는 보조 콘텐츠 컴포넌트로, Figma CellRightItem variants를 제공한다.",
-    "anatomy": "root[ icon | buttonIcon | text | textButton | textIcon | buttonSmall | levelBadge | switch ]",
-    "states": "variants(Icon|ButtonIcon|Text|TextButton|TextIcon|ButtonSmall|LevelBadge|Switch)",
+    "states": null,
     "do": "리스트 셀의 트레일링 영역에 단독으로 배치하여 우측 액션·정보를 표현한다.",
-    "rules": "props: variants(\"Icon\"|\"ButtonIcon\"|\"Text\"|\"TextButton\"|\"TextIcon\"|\"ButtonSmall\"|\"LevelBadge\"|\"Switch\"). TextInfo는 기존 사용처 호환 alias로만 유지한다."
+    "rules": "[맵핑 트리거] 리스트 셀의 트레일링(우측) 영역에 보조 액션·정보를 배치할 때 사용한다.\n[사용 시점] 셀 행 우측에 단독으로 배치하는 보조 콘텐츠에 적합하다."
   },
   "CellRightSelect": {
     "type": "Cell",
     "standalone": true,
     "description": "왼쪽 라벨과 오른쪽 선택 컨트롤로 구성된 셀 아이템.",
-    "anatomy": "root[ label, RadioItem|CheckboxItem ]",
-    "states": "variants(Radio|Circle)",
+    "states": null,
     "do": "텍스트 오른쪽에 radio 또는 checkbox 선택 컨트롤을 배치해야 할 때 사용한다.",
-    "rules": "props: variants(\"Radio\"|\"Circle\"). 내부 라벨은 Figma 기본값 Label을 사용한다."
+    "rules": "[맵핑 트리거] 텍스트 오른쪽에 radio/checkbox 선택 컨트롤을 배치해야 할 때 사용한다.\n[사용 시점] 왼쪽 라벨과 우측 선택 컨트롤로 구성된 목록 행에 적합하다.\n[구분] 선택 컨트롤이 오른쪽이면 CellRightSelect, 왼쪽이면 CellLeftSelect."
   },
   "CellRightTable": {
     "type": "Cell",
     "standalone": true,
     "description": "좌측 타이틀과 우측 정렬 설명 텍스트로 구성된 오른쪽 기준 테이블 셀 컴포넌트.",
-    "anatomy": "root[ title, description(right aligned) ]",
-    "states": "variants(18Semi|16Semi|16reg|15reg)",
+    "states": null,
     "do": "레이블-값 쌍을 한 행에 표시하고 우측 값을 오른쪽 정렬해야 할 때 사용한다.",
-    "rules": "props: description(string), title(string), variants(\"18Semi\"|\"16Semi\"|\"16reg\"|\"15reg\")."
+    "rules": "[맵핑 트리거] 레이블-값 쌍을 한 행에 표시하되 우측 값을 오른쪽 정렬할 때 사용한다.\n[사용 시점] 좌측 타이틀·우측 정렬 설명 텍스트로 구성된 상세 정보 영역에 적합하다.\n[구분] 우측 값 정렬은 CellRightTable, 좌측 타이틀 기준 정렬은 CellLeftTable. 동일 의미의 단일 행은 CellRightTableItem."
   },
   "CellRightTableItem": {
     "type": "Cell",
-    "standalone": true,
+    "standalone": false,
     "description": "레이블(좌)과 값(우)을 한 행에 나란히 표시하는 테이블형 셀 컴포넌트로, 상세 정보 목록 표현에 사용된다.",
-    "anatomy": "root[ labelCell[ labelText ], valueCell[ valueText ] ]",
     "states": null,
     "do": "상품·주문·계정 등 상세 정보를 레이블-값 쌍으로 나열할 때 사용한다.",
-    "rules": "props: variant(14Title|14Primary|...), label, value."
+    "rules": "[맵핑 트리거] 상품·주문·계정 상세 정보를 레이블-값 쌍으로 나열할 때 사용한다.\n[사용 시점] 레이블(좌)과 값(우)을 한 행에 나란히 표시하는 상세 정보 목록에 적합하다.\n[구분] 단일 레이블-값 행은 CellRightTableItem, 우측 정렬 설명 텍스트 중심의 테이블 셀은 CellRightTable."
   },
   "CellSelectedItem": {
     "type": "Cell",
-    "standalone": true,
+    "standalone": false,
     "description": "라디오 버튼 또는 체크박스 선택 컨트롤과 레이블, 선택적 오른쪽 아이콘/텍스트를 포함한 셀 형태의 선택 항목 컴포넌트입니다.",
-    "anatomy": "root[ selectionItem[ control, label ], rightItem? ]",
     "states": "Default, Selected, Disabled",
     "do": "단일 선택이 필요한 목록 항목에는 variant=\"radioButton\", 다중 선택에는 variant=\"checkbox\"를 사용한다.",
-    "rules": "props: variant, rightItem, selected, disabled, label, rightText."
+    "rules": "[맵핑 트리거] 선택 컨트롤과 레이블로 구성된 목록 선택 항목이 필요할 때 사용한다.\n[사용 시점] 단일 선택 목록에는 radioButton, 다중 선택 목록에는 checkbox 형태로 적합하다.\n[구분] 선택 컨트롤이 좌측 고정인 CellLeftSelect/CellRightSelect와 달리, 레이블·우측 아이콘/텍스트를 포함한 선택 항목 전반에 쓴다."
   },
   "CellSheet": {
     "type": "Cell",
     "standalone": true,
     "description": "바텀시트 내부에서 가격 정보 또는 안내 문구를 썸네일과 함께 표시하는 셀 컴포넌트.",
-    "anatomy": "root[ leftItem[ thumbnail, priceText|title ], cellRightItem? ]",
-    "states": "variants(Price|Notice), cellRightItem(on|off)",
+    "states": null,
     "do": "바텀시트 내부에서 상품 가격 정보 또는 안내성 셀을 40px 높이로 표시할 때 사용한다.",
-    "rules": "props: caption(string), cellRightItem(boolean), subtitle(string), title(string), value01(string), value02(string), variants(\"Price\"|\"Notice\")."
+    "rules": "[맵핑 트리거] 바텀시트 내부에서 가격 정보나 안내 문구를 썸네일과 함께 한 행으로 보여줄 때 고른다.\n[사용 시점] 바텀시트 안의 상품 가격·안내성 셀 표시 맥락에 적합하다."
   },
   "CellSheetItem": {
     "type": "Cell",
-    "standalone": true,
+    "standalone": false,
     "description": "바텀시트 내에서 상품 가격 또는 장바구니 알림을 표시하는 셀 행 컴포넌트.",
-    "anatomy": "root[ leftItem[ thumbnail, text ], rightItem? ]",
     "states": null,
     "do": "Price variant는 상품 썸네일·이름·월 요금 표시가 필요한 바텀시트 행에 사용한다.",
-    "rules": "props: variant(Price|Notice), thumbnailSrc, label, price, perMonth, feeNote, buttonLabel, rightItem, onRightItemClick."
+    "rules": "[맵핑 트리거] 바텀시트 안에서 상품 가격 또는 장바구니 알림을 한 행으로 표시할 때 고른다.\n[사용 시점] 바텀시트 내 상품 썸네일·이름·요금이 필요한 행에 적합하다.\n[구분] CellSheet가 안내 문구 중심이라면 CellSheetItem은 상품 가격·알림 행에 쓴다."
   },
   "CellTableItem": {
     "type": "Cell",
-    "standalone": true,
+    "standalone": false,
     "description": "레이블(좌)과 값(우) 두 셀로 구성된 테이블형 정보 행 컴포넌트로, 상세 정보를 키-값 형식으로 표시할 때 사용한다.",
-    "anatomy": "root[ labelCell, valueCell ]",
     "states": null,
     "do": "상세 정보 화면에서 항목명(레이블)과 내용(값)을 좌우로 나란히 표시할 때 사용한다.",
-    "rules": "props: ratio(20|30|40), textSize(13|14), label, value."
+    "rules": "[맵핑 트리거] 상세 정보를 항목명(좌)과 값(우)의 키-값 형식으로 나란히 표시할 때 고른다.\n[사용 시점] 상세 정보 화면의 키-값 테이블형 정보 행에 적합하다."
   },
   "CellTextInfoItem": {
     "type": "Cell",
-    "standalone": true,
+    "standalone": false,
     "description": "주요 레이블과 우측 배지/텍스트 선택, 하단 서브 텍스트·날짜로 구성된 텍스트 정보형 셀 컴포넌트입니다.",
-    "anatomy": "root[ txtRow[ label, rightBadge?, rightText? ], subRow[ subText, divider, dateText ] ]",
     "states": null,
     "do": "포인트 적립·소비 내역, 공지 목록 등 날짜와 카테고리 정보를 함께 보여주는 텍스트 중심 리스트 행에 사용한다.",
-    "rules": "props: rightItem(None|Badge|Text), label, badgeLabel, rightText, subText, dateText."
+    "rules": "[맵핑 트리거] 날짜·카테고리 정보가 함께 있는 텍스트 중심 내역 행을 표시할 때 고른다.\n[사용 시점] 포인트 적립·소비 내역, 공지 목록 등 날짜 동반 텍스트 리스트 행에 적합하다."
   },
   "CellText": {
     "type": "Cell",
     "standalone": true,
     "description": "텍스트 한 줄과 선택적 우측 Arrow 아이콘으로 구성된 CellText 컴포넌트.",
-    "anatomy": "root[ title|description, rightItem?[ CellRightItem(Icon) ] ]",
-    "states": "variants(Text|Title), size(15|16), rightItem(on|off)",
+    "states": null,
     "do": "리스트 항목 한 행에 타이틀 또는 일반 텍스트를 표시하고, 필요 시 우측 이동 Arrow를 함께 배치한다.",
-    "rules": "props: description(string), rightItem(boolean), size(\"15\"|\"16\"), title(string), variants(\"Text\"|\"Title\"). variants=Title은 title, variants=Text는 description을 렌더링한다. 기존 CellTextItem export는 호환 alias로만 유지한다."
+    "rules": "[맵핑 트리거] 리스트 한 행에 타이틀이나 일반 텍스트 한 줄을 표시하고 필요 시 이동을 나타낼 때 고른다.\n[사용 시점] 텍스트 위주의 단순 리스트 항목 행에 적합하다.\n[구분] 키-값(CellTableItem)·날짜 내역(CellTextInfoItem)이 아닌 단일 텍스트 행이면 CellText."
   },
   "CellTitleItem": {
     "type": "Cell",
-    "standalone": true,
+    "standalone": false,
     "description": "리스트 섹션의 타이틀 행을 표시하며, 우측에 아이콘·버튼·텍스트 등 다양한 액션 슬롯을 선택적으로 배치하는 셀 컴포넌트입니다.",
-    "anatomy": "root[ cellText[ titleBadge[ title ] ], rightSlot? ]",
     "states": null,
     "do": "섹션 타이틀 행으로 사용하며, rightItem을 None으로 설정하면 타이틀만 표시합니다.",
-    "rules": "props: title, rightItem(None|Icon|ButtonIcon|TextButton|TextInfo|TextIcon|ButtonSmall), rightText, buttonLabel, onButton, onTextButton, onButtonIcon."
+    "rules": "[맵핑 트리거] 리스트 섹션의 타이틀 행을 표시하고 우측에 선택적 액션을 둘 때 고른다.\n[사용 시점] 섹션 머리 타이틀 행 맥락에 적합하다."
   },
   "CheckboxItem": {
     "type": "Checkbox",
     "standalone": false,
     "description": "Circle 또는 Line 형태의 단일 체크박스 컨트롤 컴포넌트로, 선택·비선택·비활성화 상태를 지원한다.",
-    "anatomy": "root[ checkbox[ checkIcon? ] ]",
-    "states": "variant(Circle|Line), state(Default|Disabled), selection(on|off)",
+    "states": "Default, Disabled",
     "do": "상위 선택 컴포넌트 내부에서 체크 상태를 시각적으로 표현할 때 사용한다.",
-    "rules": "props: selection(boolean), state(\"Default\"|\"Disabled\"), variant(\"Circle\"|\"Line\"). checked/disabled는 기존 사용처 호환 alias로만 유지한다. Line + Disabled + selection=true 조합은 사용하지 않는다."
+    "rules": "[맵핑 트리거] 상위 선택 컴포넌트 내부에서 체크 상태만 시각적으로 표현할 때 고른다.\n[사용 시점] 텍스트 라벨이 분리된 선택 컨트롤의 체크 표시 부속으로 적합하며 단독 배치하지 않는다."
   },
   "CheckboxLeftTextItem": {
     "type": "Checkbox",
     "standalone": false,
     "description": "왼쪽 CheckboxItem과 오른쪽 텍스트 라벨로 구성된 체크박스 텍스트 아이템.",
-    "anatomy": "root[ CheckboxItem, label ]",
-    "states": "variants(Circle|Line), size(Small|Medium), state(on|off), checked(on|off)",
+    "states": null,
     "do": "텍스트 라벨 왼쪽에 체크박스를 배치해야 하는 선택 항목에 사용한다.",
-    "rules": "props: checked(boolean), label(string), size(\"Small\"|\"Medium\"), state(boolean), variants(\"Circle\"|\"Line\")."
+    "rules": "[맵핑 트리거] 텍스트 라벨 왼쪽에 체크박스를 배치하는 선택 항목일 때 고른다.\n[사용 시점] 라벨-좌측 체크 형태의 선택 항목 맥락에 적합하다.\n[구분] 체크박스가 라벨 오른쪽이면 CheckboxRightTextItem을 쓴다."
   },
   "CheckboxRightTextItem": {
     "type": "Checkbox",
     "standalone": false,
     "description": "왼쪽 텍스트 라벨과 오른쪽 CheckboxItem으로 구성된 체크박스 텍스트 아이템.",
-    "anatomy": "root[ label, CheckboxItem ]",
-    "states": "variants(Circle|Line), size(Small|Medium), state(on|off), checked(on|off)",
+    "states": null,
     "do": "텍스트 라벨 오른쪽에 체크박스를 배치해야 하는 선택 항목에 사용한다.",
-    "rules": "props: checked(boolean), label(string), size(\"Small\"|\"Medium\"), state(boolean), variants(\"Circle\"|\"Line\")."
+    "rules": "[맵핑 트리거] 텍스트 라벨 오른쪽에 체크박스를 배치하는 선택 항목일 때 고른다.\n[사용 시점] 라벨-우측 체크 형태의 선택 항목 맥락에 적합하다.\n[구분] 체크박스가 라벨 왼쪽이면 CheckboxLeftTextItem을 쓴다."
   },
   "Chip": {
     "type": "Chip",
     "standalone": true,
     "description": "가로 스크롤 가능한 필 형태의 칩 그룹 컴포넌트로, 선택/비선택 상태의 ChipItem을 수평으로 나열하여 단일 항목을 선택할 수 있다.",
-    "anatomy": "wrap[ ...ChipItem[ label ] ]",
     "states": "Selected, Unselected",
     "do": "카테고리·필터 등 상호 배타적인 단일 선택 옵션을 제공할 때 사용한다.",
-    "rules": "props: options(ChipOption[]), selectedValue, onSelect, size."
+    "rules": "[맵핑 트리거] 카테고리·필터 등 상호 배타적인 단일 선택 옵션을 수평 나열로 제공할 때 고른다.\n[사용 시점] 가로 스크롤되는 단일 선택 칩 그룹 맥락에 적합하다."
   },
   "ChipItem": {
     "type": "Chip",
     "standalone": false,
     "description": "칩(Chip) 컴포넌트의 개별 항목으로, 선택/비선택 상태를 시각적으로 구분하는 레이블 칩 단위입니다.",
-    "anatomy": "root[ label ]",
     "states": "Selected, Unselected",
     "do": "Chip 컨테이너 내부 자식으로만 사용하며 단독 배치는 금지한다.",
-    "rules": "props: size(large|small), selected, text, onClick.",
+    "rules": "[맵핑 트리거] Chip 컨테이너 내부의 개별 선택/비선택 레이블 칩 단위가 필요할 때 고른다.\n[사용 시점] Chip 자식으로만 쓰며 단독 배치는 금지한다.",
     "parent": "ChipsRow",
     "slot": "Content"
   },
@@ -527,10 +473,9 @@
     "type": "Chip",
     "standalone": false,
     "description": "AI 기능을 나타내는 아이콘(별 모양)과 레이블 텍스트를 함께 표시하는 AI 전용 칩 서브 아이템 컴포넌트",
-    "anatomy": "root[ iconItem, label ]",
     "states": null,
     "do": "AI 관련 기능 진입점 또는 AI 추천 태그 등 AI 맥락을 가진 칩 항목에 사용한다.",
-    "rules": "props: text(string).",
+    "rules": "[맵핑 트리거] AI 관련 기능 진입점이나 AI 추천 태그 등 AI 맥락을 가진 칩 항목일 때 고른다.\n[사용 시점] 칩 그룹 내 AI 전용 항목에 적합하다.\n[구분] 일반 칩(ChipItem)·퀵링크(ChipItemQuicklinkItem)와 달리 AI 맥락 항목에만 쓴다.",
     "parent": "Chip",
     "slot": "Content"
   },
@@ -538,10 +483,9 @@
     "type": "Chip",
     "standalone": false,
     "description": "아이콘과 텍스트 레이블을 함께 표시하는 퀵링크용 칩 서브 아이템 컴포넌트입니다.",
-    "anatomy": "root[ iconWrap, label ]",
     "states": null,
     "do": "퀵링크 바로가기 목록에서 아이콘과 짧은 텍스트를 함께 표시할 때 사용한다.",
-    "rules": "props: text, iconSrc, iconAlt, onClick.",
+    "rules": "[맵핑 트리거] 퀵링크 바로가기 목록에서 아이콘과 짧은 텍스트를 함께 보여줄 때 고른다.\n[사용 시점] 칩 형태 퀵링크 항목에 적합하다.\n[구분] 텍스트만 있는 ChipItem과 달리 아이콘+텍스트 바로가기에 쓴다.",
     "parent": "ChipItemQuicklink",
     "slot": "Content"
   },
@@ -549,37 +493,33 @@
     "type": "Chip",
     "standalone": true,
     "description": "퀵링크 칩(아이콘+레이블)과 일반 텍스트 칩을 여러 행으로 가로 스크롤 표시하는 칩 행 컨테이너 컴포넌트입니다.",
-    "anatomy": "root[ row*[ quicklinkChip*, chip* ] ]",
     "states": "Selected, Unselected",
     "do": "퀵링크 칩(아이콘+텍스트)과 일반 선택형 칩을 한 영역에 함께 배치할 때 사용합니다.",
-    "rules": "props: rows(ChipsRowItem[]), paddingLeft(number), className."
+    "rules": "[맵핑 트리거] 퀵링크 칩(아이콘+텍스트)과 일반 선택형 칩을 한 영역에 함께 배치할 때 고른다.\n[사용 시점] 여러 행을 가로 스크롤로 보여주는 칩 행 컨테이너 맥락에 적합하다.\n[구분] 단일 선택 그룹은 Chip, 퀵링크+일반 칩 혼합 영역은 ChipsRow."
   },
   "DetailInfo": {
     "type": "DetailInfo",
     "standalone": true,
     "description": "상품 또는 브랜드의 상세 정보(이름·가격·배지·쿠폰·사용처·브랜드 로고 등)를 한 블록으로 표시하는 상세 정보 아이템 컴포넌트.",
-    "anatomy": "wrap[ productVariant | brandVariant ]",
     "states": "Default, Pressed",
     "do": "Product variant에서는 원가·할인율·판매가·배지·쿠폰 버튼·사용처·상세 링크를 조합해 상품 상세 페이지 헤더 영역에 배치한다.",
-    "rules": "props: variants(Product|Brand), category, name, originalPrice, discountRate, salePrice, period, badges, couponLabel, usage, detailInfoLabel, likeCount, onLike."
+    "rules": "[맵핑 트리거] 상품·브랜드의 이름·가격·배지·쿠폰·사용처 등 상세 정보를 한 블록으로 표시할 때 고른다.\n[사용 시점] 상품 상세 페이지 헤더의 정보 블록 영역에 적합하다."
   },
   "Dialog": {
     "type": "Dialog",
     "standalone": true,
     "description": "사용자의 확인·선택이 필요한 작업을 중단하고 전면에 표시되는 모달 대화상자 컴포넌트.",
-    "anatomy": "wrap[ titleRow, subText, slot[ children ], actionRow ]",
     "states": null,
     "do": "사용자의 명시적 응답(확인/취소)이 필요한 중요한 작업에 사용한다.",
-    "rules": "props: title, subText, showSubText, showContents, children, secondaryLabel, primaryLabel, onSecondary, onPrimary. slot[children] 높이는 콘텐츠 기준으로 hug되며, 빈 슬롯에 고정 높이를 두지 않는다."
+    "rules": "[맵핑 트리거] 사용자의 명시적 확인/취소 응답이 필요한 중요 작업을 전면에서 중단시켜 물을 때 고른다.\n[사용 시점] 작업을 막고 응답을 강제하는 모달 대화상자 맥락에 적합하다."
   },
   "DialogActionButtonItem": {
     "type": "Dialog",
     "standalone": false,
     "description": "다이얼로그 하단에 배치되는 액션 버튼 영역으로, 보조(secondary)와 주요(primary) 버튼을 1개 또는 2개 조합으로 제공하는 서브 컴포넌트입니다.",
-    "anatomy": "root[ secondaryBtn?, primaryBtn ]",
     "states": null,
     "do": "options=\"2Buttons\"일 때 secondary + primary 버튼을 나란히 배치한다.",
-    "rules": "props: options(2Buttons|1Button), primaryLabel, secondaryLabel, onPrimary, onSecondary.",
+    "rules": "[맵핑 트리거] 다이얼로그 하단에 보조/주요 액션 버튼 영역이 필요할 때 고른다.\n[사용 시점] Dialog 내부 하단 버튼 영역 부속으로 적합하다.",
     "parent": "Dialog",
     "slot": "BottomButton"
   },
@@ -587,46 +527,41 @@
     "type": "Divider",
     "standalone": true,
     "description": "콘텐츠 또는 섹션 영역 사이를 시각적으로 구분하는 수평 구분선 컴포넌트입니다.",
-    "anatomy": "root[ line ]",
     "states": null,
     "do": "콘텐츠 항목 사이의 얇은 구분선(1px)에는 variant=\"contents\"를 사용한다.",
-    "rules": "props: variant(contents|section), className."
+    "rules": "[맵핑 트리거] 콘텐츠나 섹션 영역 사이를 시각적으로 구분하는 수평 구분선이 필요할 때 고른다.\n[사용 시점] 항목·섹션 사이 구분선 맥락에 적합하다."
   },
   "Dropdown": {
     "type": "Dropdown",
     "standalone": true,
     "description": "레이블 행을 탭하면 아래로 콘텐츠 슬롯이 펼쳐지는 드롭다운 선택 컴포넌트입니다.",
-    "anatomy": "wrap[ titleRow[ label, chevronIcon ], divider?, slot[ children ] ]",
     "states": "Default, Open, Selected",
     "do": "open prop으로 펼침/접힘 상태를 제어하고, onToggle 핸들러로 토글 이벤트를 처리한다.",
-    "rules": "props: label, open, selected, children, onToggle."
+    "rules": "[맵핑 트리거] 레이블 행을 탭하면 아래로 콘텐츠가 펼쳐지는 드롭다운 선택이 필요할 때 고른다.\n[사용 시점] 펼침/접힘으로 콘텐츠를 토글하는 선택 맥락에 적합하다."
   },
   "FilterBar": {
     "type": "FilterBar",
     "standalone": true,
     "description": "상품 목록 등의 상단에 위치하여 총 건수 레이블과 정렬·필터 버튼을 제공하는 필터 바 컴포넌트",
-    "anatomy": "root[ filter[ con[ countText, rightItems? ] ] ]",
     "states": "Default",
     "do": "상품·검색 결과 목록 상단에 배치하여 총 건수와 정렬/필터 진입점을 한 줄로 제공한다.",
-    "rules": "props: rightItem(None|1Item|2Item), divider, count, countUnit, countLabel, sortLabel, filterLabel, onSort, onFilter."
+    "rules": "[맵핑 트리거] 상품·검색 결과 목록 상단에 총 건수 레이블과 정렬·필터 진입점을 한 줄로 제공해야 할 때 사용한다.\n[사용 시점] 리스트형 화면(상품 목록·검색 결과)의 목록 상단 영역에 적합하다."
   },
   "Footer": {
     "type": "Footer",
     "standalone": true,
     "description": "페이지 하단에 표시되는 법적 링크, 사업자 정보, 저작권 문구 또는 상품 면책 고지를 포함하는 푸터 컴포넌트",
-    "anatomy": "root[ legalLinks, infoGroup, copyright ] / Product variant: root[ disclaimerGroup ]",
     "states": null,
     "do": "화면 최하단 고정 영역에 단독으로 배치한다.",
-    "rules": "variant: Main|Product. [사용 시점] 홈·목록·마이페이지 등 일반 화면 → Main, 상품 상세 화면 → Product."
+    "rules": "[사용 시점] 홈·목록·마이페이지 등 일반 화면 → Main, 상품 상세 화면 → Product."
   },
   "Icon0": {
     "type": "Icon",
     "standalone": false,
     "description": "숫자 '0' 글리프를 SVG로 렌더링하는 장식용 아이콘 프리미티브 컴포넌트.",
-    "anatomy": "root<svg>[ path(digit-0 glyph) ]",
     "states": null,
     "do": "부모 컴포넌트의 슬롯(Icon 등)에 삽입하여 사용한다.",
-    "rules": "props: size(number, 기본 24), color(string, 기본 currentColor), className.",
+    "rules": "[맵핑 트리거] 숫자 '0' 글리프 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -634,10 +569,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "액세서리(헤드폰) 모양의 단색 SVG 아이콘 프리미티브로, 부모 컴포넌트의 아이콘 슬롯에 삽입되는 장식용 글리프입니다.",
-    "anatomy": "root<svg>[ path(accessory glyph) ]",
     "states": null,
     "do": "부모 컴포넌트의 Icon 슬롯에만 배치하고 단독 행으로 사용하지 않는다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 액세서리(헤드폰) 의미의 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -645,10 +579,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "네비게이션·아코디언 토글·캐러셀 컨트롤 등에서 방향을 나타내는 24px 크기의 꺽쇠(chevron) 아이콘 프리미티브.",
-    "anatomy": "root(svg) [ chevron-path ]",
     "states": null,
     "do": "방향 표시가 필요한 부모 컴포넌트의 슬롯 안에서만 사용한다.",
-    "rules": "props: variant(up|down|left|right), size, color.",
+    "rules": "[맵핑 트리거] 방향을 나타내는 꺽쇠(chevron) 아이콘이 필요할 때 부모 컴포넌트의 슬롯에 삽입한다.\n[구분] 뒤로가기 전용은 IconBack, 드롭다운 열기/닫기는 IconDropdown을 쓴다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -656,21 +589,19 @@
     "type": "Icon",
     "standalone": false,
     "description": "뒤로 탐색을 위한 좌향 chevron(꺾쇠) 아이콘 SVG 컴포넌트.",
-    "anatomy": "root(svg) [ back-chevron-path ]",
     "states": null,
     "do": "AppBar 또는 내비게이션 헤더의 뒤로가기 버튼 영역에 삽입한다.",
-    "rules": "props: size, color, className.",
-    "parent": "AppBar",
+    "rules": "[맵핑 트리거] 뒤로 탐색을 나타내는 좌향 꺾쇠 아이콘이 필요할 때 AppBar·내비게이션 헤더의 뒤로가기 영역에 삽입한다.\n[구분] 일반 방향 표시는 IconArrow를 쓴다.",
+    "parent": "Appbar",
     "slot": "LeadingIcon"
   },
   "IconBarcode": {
     "type": "Icon",
     "standalone": false,
     "description": "바코드 스캔 프레임 모양의 아이콘 컴포넌트로, 네 모서리 L자 형태와 중앙 세그먼트로 구성된 스캔 영역 글리프를 SVG로 렌더링합니다.",
-    "anatomy": "root(svg) [ barcode-path ]",
     "states": null,
     "do": "바코드 또는 QR 스캔 기능을 나타내는 UI 요소에 아이콘으로 삽입한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 바코드·QR 스캔 기능을 나타내는 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -678,10 +609,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "말풍선(세 점) 모양의 장식용 SVG 아이콘 프리미티브로, 외곽선(line)과 채움(fill) 두 가지 글리프 변형을 제공한다.",
-    "anatomy": "단일 SVG — 말풍선 외형",
     "states": null,
     "do": "채팅·메시지·댓글 영역을 나타내는 아이콘으로 사용한다.",
-    "rules": "props: variant(line|fill), size, color.",
+    "rules": "[맵핑 트리거] 채팅·메시지·댓글 의미의 말풍선 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -689,10 +619,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "달력 모양의 SVG 아이콘 프리미티브로, 날짜 선택·일정·예약 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ calendar-path ]",
     "states": null,
     "do": "날짜·일정·예약 관련 기능의 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 날짜·일정·예약 의미의 달력 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -700,10 +629,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "장바구니 모양의 SVG 아이콘 프리미티브로, 장바구니 진입·담기 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ cart-path ]",
     "states": null,
     "do": "장바구니 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 장바구니 진입·담기 기능을 나타내는 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -711,10 +639,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "카테고리(격자 또는 분류) 모양의 SVG 아이콘 프리미티브로, 카테고리 탐색 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ category-path ]",
     "states": null,
     "do": "카테고리 탐색 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 카테고리 탐색·분류 의미의 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -722,10 +649,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "X 모양의 닫기 SVG 아이콘 프리미티브로, 모달·시트·태그 삭제 등에서 부모 컴포넌트의 닫기 버튼 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ close-path ]",
     "states": null,
     "do": "닫기·삭제·취소 기능을 나타내는 아이콘으로 부모 컴포넌트의 CloseButton 또는 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 닫기·삭제·취소 의미의 X 아이콘이 필요할 때 부모 컴포넌트의 CloseButton 또는 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -733,10 +659,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "데이터·통계 모양의 SVG 아이콘 프리미티브로, 데이터 조회·통계 기능 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ data-path ]",
     "states": null,
     "do": "데이터·통계 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 데이터·통계 조회 의미의 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -744,10 +669,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "디바이스(스마트폰 또는 기기) 모양의 SVG 아이콘 프리미티브로, 기기 관련 기능 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ device-path ]",
     "states": null,
     "do": "디바이스·기기 관련 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 디바이스·기기 관련 의미의 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -755,10 +679,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "다운로드(아래 화살표) 모양의 SVG 아이콘 프리미티브로, 파일·콘텐츠 다운로드 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ download-path ]",
     "states": null,
     "do": "다운로드 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 파일·콘텐츠 다운로드 기능을 나타내는 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -766,10 +689,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "드롭다운 화살표 모양의 SVG 아이콘 프리미티브로, 드롭다운·셀렉트 박스 등의 열기/닫기 표시에 사용된다.",
-    "anatomy": "root<svg>[ dropdown-chevron-path ]",
     "states": null,
     "do": "드롭다운·셀렉트 박스 등의 열기/닫기를 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 드롭다운·셀렉트 박스의 열기/닫기를 나타내는 화살표 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.\n[구분] 일반 방향 표시는 IconArrow를 쓴다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -777,10 +699,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "더미(플레이스홀더) 아이콘 SVG 프리미티브로, 개발 중 임시 아이콘 자리 표시자로 사용된다.",
-    "anatomy": "root<svg>[ dummy-path ]",
     "states": null,
     "do": "개발 중 임시 아이콘 자리 표시자로만 사용하며 운영 화면에 배치하지 않는다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 개발 중 임시 아이콘 자리 표시자가 필요할 때만 사용하며, 운영 화면에는 배치하지 않는다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -788,10 +709,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "두 개의 하트가 겹쳐진 모양의 SVG 아이콘 프리미티브로, 특별한 좋아요·커플 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ duo-heart-path ]",
     "states": null,
     "do": "특별 좋아요·관심 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 특별 좋아요·관심 의미의 겹친 하트 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -799,10 +719,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "이벤트(리본 또는 선물 상자) 모양의 SVG 아이콘 프리미티브로, 이벤트·프로모션 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ event-path ]",
     "states": null,
     "do": "이벤트·프로모션 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 이벤트·프로모션 의미의 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -810,10 +729,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "가족(사람 그룹) 모양의 SVG 아이콘 프리미티브로, 가족 계정·가족 서비스 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ family-path ]",
     "states": null,
     "do": "가족 관련 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 가족 계정·가족 서비스 의미의 아이콘이 필요할 때 부모 컴포넌트의 Icon 슬롯에 삽입한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -821,10 +739,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "필터(깔때기) 모양의 SVG 아이콘 프리미티브로, 목록 필터링 기능 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ filter-path ]",
     "states": null,
     "do": "필터 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 필터링 기능을 나타내는 필터 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -832,10 +749,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "지구본 모양의 SVG 아이콘 프리미티브로, 글로벌·언어·국제화 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ globe-path ]",
     "states": null,
     "do": "글로벌·언어 관련 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 글로벌·언어·국제화를 나타내는 지구본 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -843,10 +759,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "그래픽·이미지 모양의 SVG 아이콘 프리미티브로, 이미지 갤러리·그래픽 에디터 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ graphic-path ]",
     "states": null,
     "do": "그래픽·이미지 관련 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 그래픽·이미지를 나타내는 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -854,10 +769,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "하트 모양의 좋아요·찜 SVG 아이콘 프리미티브로, 관심 상품 추가·좋아요 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ heart-path ]",
     "states": null,
     "do": "좋아요·찜 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: variant(line|fill), size, color, className.",
+    "rules": "[맵핑 트리거] 좋아요·찜을 나타내는 하트 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -865,10 +779,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "시계(히스토리) 모양의 SVG 아이콘 프리미티브로, 최근 조회·히스토리 기능 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ history-clock-path ]",
     "states": null,
     "do": "히스토리·최근 조회 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 최근 조회·히스토리를 나타내는 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -876,10 +789,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "정보(i) 모양의 SVG 아이콘 프리미티브로, 도움말·설명·정보 제공 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ info-path ]",
     "states": null,
     "do": "도움말·정보 제공을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 도움말·설명·정보 제공을 나타내는 정보(i) 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -887,10 +799,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "범용 아이템 모양의 SVG 아이콘 프리미티브로, 일반적인 항목·아이템 표시 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ item-path ]",
     "states": null,
     "do": "범용 아이템 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 일반 항목·아이템을 나타내는 범용 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -898,10 +809,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "링크(체인 또는 외부 링크) 모양의 SVG 아이콘 프리미티브로, URL 공유·외부 링크 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ link-path ]",
     "states": null,
     "do": "링크·URL 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] URL 공유·외부 링크를 나타내는 링크 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -909,10 +819,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "위치(핀) 모양의 SVG 아이콘 프리미티브로, 위치 기반 서비스·매장 찾기 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ location-pin-path ]",
     "states": null,
     "do": "위치·매장 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 위치·매장 찾기를 나타내는 위치 핀 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -920,10 +829,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "서비스 로고 모양의 SVG 아이콘 프리미티브로, 브랜드 로고·서비스 마크 표시 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ logo-path ]",
     "states": null,
     "do": "서비스 로고·브랜드 마크를 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 서비스 로고·브랜드 마크를 나타내는 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -931,10 +839,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "지도 위에 숫자가 표시된 마커(핀+번호) 모양의 SVG 아이콘 프리미티브로, 지도 위 복수의 위치를 번호로 표시할 때 사용된다.",
-    "anatomy": "root<svg>[ map-pin-path, number-text ]",
     "states": null,
     "do": "지도 위 번호 마커로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: number(number), size, color, className.",
+    "rules": "[맵핑 트리거] 지도 위 복수 위치를 번호로 표시하는 마커 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -942,10 +849,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "햄버거 메뉴(세 줄) 모양의 SVG 아이콘 프리미티브로, 드로어·사이드 메뉴 토글 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ menu-lines-path ]",
     "states": null,
     "do": "드로어·사이드 메뉴 토글을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 드로어·사이드 메뉴 토글을 나타내는 햄버거 메뉴 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -953,10 +859,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "영화·비디오(필름 또는 클래퍼보드) 모양의 SVG 아이콘 프리미티브로, 영상 콘텐츠 카테고리 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ movie-path ]",
     "states": null,
     "do": "영상·영화 카테고리를 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 영상·영화 콘텐츠 카테고리를 나타내는 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -964,10 +869,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "네비게이션(방향 화살표 또는 나침반) 모양의 SVG 아이콘 프리미티브로, 경로 안내·내비게이션 기능 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ navigate-path ]",
     "states": null,
     "do": "경로 안내·내비게이션 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 경로 안내·내비게이션을 나타내는 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -975,10 +879,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "더하기(+) 모양의 SVG 아이콘 프리미티브로, 수량 증가·항목 추가 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ plus-path ]",
     "states": null,
     "do": "수량 증가·추가 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 수량 증가·항목 추가를 나타내는 더하기(+) 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -986,10 +889,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "돋보기 모양의 SVG 아이콘 프리미티브로, 검색 입력·검색 기능 진입 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ search-path ]",
     "states": null,
     "do": "검색 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 검색 기능 진입을 나타내는 돋보기 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -997,10 +899,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "서비스(고객센터 또는 헤드셋) 모양의 SVG 아이콘 프리미티브로, 고객 서비스·문의 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ service-path ]",
     "states": null,
     "do": "고객 서비스·문의 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 고객 서비스·문의를 나타내는 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -1008,10 +909,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "구독(벨 또는 플러스 원형) 모양의 SVG 아이콘 프리미티브로, 구독·알림 신청 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ subscribe-path ]",
     "states": null,
     "do": "구독·알림 신청 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 구독·알림 신청을 나타내는 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -1019,10 +919,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "VIP(왕관 또는 다이아몬드) 모양의 SVG 아이콘 프리미티브로, VIP 회원·프리미엄 등급 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ vip-path ]",
     "states": null,
     "do": "VIP·프리미엄 등급을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] VIP·프리미엄 등급을 나타내는 아이콘이 필요할 때 사용한다.",
     "parent": null,
     "slot": "Icon"
   },
@@ -1030,10 +929,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "음성(마이크) 모양의 SVG 아이콘 프리미티브로, 음성 검색·음성 입력 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ microphone-path ]",
     "states": null,
     "do": "음성 검색·음성 입력 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 음성 검색·음성 입력 기능을 나타낼 때.\n[사용 시점] 부모 컴포넌트의 Icon 슬롯에만 삽입(단독 등장 금지).",
     "parent": null,
     "slot": "Icon"
   },
@@ -1041,10 +939,9 @@
     "type": "Icon",
     "standalone": false,
     "description": "원화(₩) 기호 모양의 SVG 아이콘 프리미티브로, 가격·결제·금액 등의 맥락에서 부모 컴포넌트 아이콘 슬롯에 삽입된다.",
-    "anatomy": "root<svg>[ won-path ]",
     "states": null,
     "do": "가격·결제·금액 관련 기능을 나타내는 아이콘으로 부모 컴포넌트의 Icon 슬롯에만 배치한다.",
-    "rules": "props: size, color, className.",
+    "rules": "[맵핑 트리거] 가격·결제·금액 관련 기능을 나타낼 때.\n[사용 시점] 부모 컴포넌트의 Icon 슬롯에만 삽입(단독 등장 금지).",
     "parent": null,
     "slot": "Icon"
   },
@@ -1052,10 +949,9 @@
     "type": "Indicator",
     "standalone": false,
     "description": "캐러셀 또는 탭의 현재 위치를 나타내는 점(dot) 형태의 인디케이터 단위 아이템 컴포넌트.",
-    "anatomy": "root[ dot ]",
     "states": "Selected, Unselected",
     "do": "Indicator 컨테이너 내부에서 각 슬라이드·페이지의 위치 점으로 사용한다.",
-    "rules": "props: selected(boolean), size.",
+    "rules": "[맵핑 트리거] 캐러셀·탭의 현재 위치를 점(dot)으로 표시할 때.\n[사용 시점] Indicator 컨테이너 내부에서 각 슬라이드·페이지 위치 점으로 사용.\n[구분] 점 형태는 IndicatorDotItem, 숫자(n/total) 형태는 IndicatorItem.",
     "parent": "Carousel",
     "slot": "Content"
   },
@@ -1063,10 +959,9 @@
     "type": "Indicator",
     "standalone": false,
     "description": "캐러셀·배너 슬라이더의 현재 위치와 전체 개수를 숫자(n/total) 형식으로 표시하는 인디케이터 서브 컴포넌트.",
-    "anatomy": "root[ current, separator, total ]",
     "states": null,
     "do": "Carousel 또는 Banner 컴포넌트의 하단 오른쪽에 배치하여 현재 슬라이드 위치를 나타낸다.",
-    "rules": "props: current(number), total(number).",
+    "rules": "[맵핑 트리거] 캐러셀·배너의 현재 위치와 전체 개수를 숫자(n/total)로 표시할 때.\n[사용 시점] Carousel·Banner 하단에 슬라이드 위치 표시로 사용.\n[구분] 숫자 카운트는 IndicatorItem, 점 형태는 IndicatorDotItem.",
     "parent": "Carousel",
     "slot": "Content"
   },
@@ -1074,19 +969,17 @@
     "type": "Input",
     "standalone": true,
     "description": "사용자가 텍스트를 입력할 수 있는 단일 행 텍스트 필드 컴포넌트로, 레이블·플레이스홀더·헬퍼 텍스트·오류 메시지·비밀번호 토글 등을 지원한다.",
-    "anatomy": "wrap[ label?, inputRow[ leadingIcon?, input, trailingIcon? ], helperRow[ helperText?, charCount? ] ]",
     "states": "Default, Focused, Disabled, Error",
     "do": "단일 행 텍스트 입력이 필요한 폼 필드에 사용한다.",
-    "rules": "props: label, placeholder, value, helperText, errorText, leadingIcon, trailingIcon, type, maxLength, showCharCount, disabled, onChange."
+    "rules": "[맵핑 트리거] 단일 행 텍스트 입력이 필요할 때.\n[사용 시점] 레이블·플레이스홀더·헬퍼/오류 문구가 동반되는 폼 필드에 단독 사용.\n[구분] 폼 필드 단위는 Input, 목록 행 안의 인라인 입력은 InputItem."
   },
   "InputItem": {
     "type": "Input",
     "standalone": false,
     "description": "목록 내 셀(행) 오른쪽에 삽입되는 인라인 단행 텍스트 입력 필드 서브 컴포넌트.",
-    "anatomy": "root[ inputField ]",
     "states": "Default, Focused, Disabled, Error",
     "do": "Cell 계열 행의 TrailingContent 슬롯에 인라인 입력 필드가 필요할 때 사용한다.",
-    "rules": "props: placeholder, value, disabled, onChange.",
+    "rules": "[맵핑 트리거] 목록 행(셀) 오른쪽에 인라인 단행 입력이 필요할 때.\n[사용 시점] Cell 계열 행의 TrailingContent 슬롯에 삽입.\n[구분] 행 내부 인라인 입력은 InputItem, 독립 폼 필드는 Input.",
     "parent": "CellDefault",
     "slot": "TrailingContent"
   },
@@ -1094,10 +987,9 @@
     "type": "Input",
     "standalone": false,
     "description": "입력 필드 포커스/타이핑 상태에서 표시되는 1px caret 인디케이터 서브 컴포넌트.",
-    "anatomy": "root",
     "states": null,
     "do": "InputTypeItem 내부에서 포커스 또는 입력 중 caret 표시가 필요할 때 사용한다.",
-    "rules": "props: className.",
+    "rules": "[맵핑 트리거] 입력 필드 포커스·타이핑 중 caret 인디케이터가 필요할 때.\n[사용 시점] InputTypeItem 내부 부속으로만 사용(단독 등장 금지).",
     "parent": "InputTypeItem",
     "slot": "Caret"
   },
@@ -1105,10 +997,9 @@
     "type": "Input",
     "standalone": false,
     "description": "입력 중인 텍스트를 지우는 닫기 아이콘 버튼 서브 컴포넌트.",
-    "anatomy": "root[ IconClose ]",
     "states": "Default, Disabled",
     "do": "InputTypeItem의 Typing 상태에서 입력값 삭제 버튼으로 사용한다.",
-    "rules": "props: state(Default|Disabled), aria-label, onClick, className.",
+    "rules": "[맵핑 트리거] 입력 중인 텍스트를 지우는 닫기 버튼이 필요할 때.\n[사용 시점] InputTypeItem의 Typing 상태에서 입력값 삭제 버튼으로 사용.",
     "parent": "InputTypeItem",
     "slot": "TrailingContent"
   },
@@ -1116,10 +1007,9 @@
     "type": "Input",
     "standalone": false,
     "description": "입력 필드 하단에 도움말 또는 오류 문구를 표시하는 텍스트 서브 컴포넌트.",
-    "anatomy": "root[ text ]",
-    "states": "danger(false|true)",
+    "states": null,
     "do": "Input 하단의 helper/error text 영역에 사용한다.",
-    "rules": "props: children(string), danger(boolean), className.",
+    "rules": "[맵핑 트리거] 입력 필드 하단에 도움말 또는 오류 문구를 표시할 때.\n[사용 시점] Input 하단 helper/error text 영역에 사용.",
     "parent": "Input",
     "slot": "HelperText"
   },
@@ -1127,10 +1017,9 @@
     "type": "Input",
     "standalone": false,
     "description": "Input 내부의 텍스트 필드 본체를 구성하는 서브 컴포넌트로 상태별 입력 UI를 표시한다.",
-    "anatomy": "root[ textField[ contents[ text, InputCaretItem? ], InputClearButtonItem? ] ]",
-    "states": "state(Default|Focused|Typing|Completed|Disabled), danger(false|true)",
+    "states": "Default, Focused, Disabled",
     "do": "Input 컴포넌트 내부에서 입력 필드의 시각 상태를 표현할 때 사용한다.",
-    "rules": "props: state(Default|Focused|Typing|Completed|Disabled), danger(boolean), text(string), onClear, className.",
+    "rules": "[맵핑 트리거] Input 내부 텍스트 필드 본체의 상태별 입력 UI를 표현할 때.\n[사용 시점] Input 컴포넌트 내부 부속으로만 사용(단독 등장 금지).",
     "parent": "Input",
     "slot": "InputField"
   },
@@ -1138,46 +1027,41 @@
     "type": "Layout",
     "standalone": true,
     "description": "홈 화면 전용 페이지 스택 레이아웃 컴포넌트로, 상단 AppBar, 중앙 스크롤 콘텐츠 영역, 하단 NavigationBar를 고정 배치한다.",
-    "anatomy": "root[ appBar, scrollContent[ children ], navigationBar ]",
     "states": null,
     "do": "홈 화면처럼 상단 AppBar + 스크롤 콘텐츠 + 하단 NavigationBar 구조가 필요한 화면 루트 레이아웃에 사용한다.",
-    "rules": "props: appBarProps, navigationBarProps, children."
+    "rules": "[맵핑 트리거] 상단 AppBar + 스크롤 콘텐츠 + 하단 NavigationBar 구조의 홈 화면 루트일 때.\n[사용 시점] 홈 화면처럼 하단 탭바가 고정된 최상위 화면 루트 레이아웃에 사용.\n[구분] 하단 NavigationBar 포함 홈은 LayoutHomePageStack, 뒤로가기 헤더의 일반 서브 화면은 LayoutPagestack."
   },
   "LayoutPagestack": {
     "type": "Layout",
     "standalone": true,
     "description": "일반 화면 전용 페이지 스택 레이아웃 컴포넌트로, 상단 AppBar, 중앙 스크롤 콘텐츠 영역, 선택적 하단 고정 영역을 포함한다.",
-    "anatomy": "root[ appBar, scrollContent[ children ], bottomArea? ]",
     "states": null,
     "do": "일반 서브 화면(뒤로가기 헤더 + 스크롤 콘텐츠)의 루트 레이아웃에 사용한다.",
-    "rules": "props: appBarProps, bottomAreaProps, children."
+    "rules": "[맵핑 트리거] 뒤로가기 헤더 + 스크롤 콘텐츠의 일반 서브 화면 루트일 때.\n[사용 시점] 선택적 하단 고정 영역을 가진 일반 서브 화면 루트 레이아웃에 사용.\n[구분] 일반 서브 화면은 LayoutPagestack, 하단 탭바 고정 홈은 LayoutHomePageStack."
   },
   "Loader": {
     "type": "Spinner",
     "standalone": true,
     "description": "콘텐츠 로딩 중임을 나타내는 스피너(원형 회전 애니메이션) 인디케이터 컴포넌트.",
-    "anatomy": "root[ spinner ]",
     "states": "Loading",
     "do": "데이터 패치·비동기 작업 진행 중에 콘텐츠 영역 중앙에 표시한다.",
-    "rules": "props: size(sm|md|lg), overlay(boolean)."
+    "rules": "[맵핑 트리거] 데이터 패치·비동기 작업이 진행 중일 때.\n[사용 시점] 로딩 중 콘텐츠 영역 중앙에 스피너로 표시."
   },
   "NavigationBar": {
     "type": "NavigationBar",
     "standalone": true,
     "description": "앱 하단에 고정되는 탭 네비게이션 바 컴포넌트로, 아이콘과 레이블로 구성된 네비게이션 탭 아이템 목록을 표시한다.",
-    "anatomy": "root[ ...NavigationTabItem[ icon, label ] ]",
     "states": "Selected, Unselected",
     "do": "앱의 최상위 탭 전환(홈·카테고리·마이페이지 등) 네비게이션에 사용한다.",
-    "rules": "props: items(NavTabItem[]), activeIndex, onChange."
+    "rules": "[맵핑 트리거] 앱 최상위 탭 전환(홈·카테고리·마이페이지 등)이 필요할 때.\n[사용 시점] 앱 하단 고정 탭 네비게이션으로 사용."
   },
   "NavigationButtonItem": {
     "type": "NavigationBar",
     "standalone": false,
     "description": "네비게이션 바 내의 버튼형 탭 아이템으로, 아이콘과 선택적 레이블로 구성되는 서브 컴포넌트.",
-    "anatomy": "root[ iconWrap[ icon, badge? ], label? ]",
     "states": "Selected, Unselected",
     "do": "NavigationBar 컨테이너 내부 탭 아이템으로만 사용한다.",
-    "rules": "props: icon, label, selected, badge, onClick.",
+    "rules": "[맵핑 트리거] 네비게이션 바 안의 버튼형 탭 아이템이 필요할 때.\n[사용 시점] NavigationBar 컨테이너 내부 탭 아이템으로만 사용(단독 등장 금지).\n[구분] 버튼형은 NavigationButtonItem, 일반 탭형은 NavigationTabItem.",
     "parent": "NavigationBar",
     "slot": "Content"
   },
@@ -1185,10 +1069,9 @@
     "type": "NavigationBar",
     "standalone": false,
     "description": "네비게이션 바 내의 일반 탭 아이템으로, 아이콘과 레이블로 구성되는 서브 컴포넌트.",
-    "anatomy": "root[ iconWrap[ icon ], label ]",
     "states": "Selected, Unselected",
     "do": "NavigationBar 컨테이너 내부 탭 아이템으로만 사용한다.",
-    "rules": "props: icon, label, selected, onClick.",
+    "rules": "[맵핑 트리거] 네비게이션 바 안의 일반 탭 아이템이 필요할 때.\n[사용 시점] NavigationBar 컨테이너 내부 탭 아이템으로만 사용(단독 등장 금지).\n[구분] 일반 탭형은 NavigationTabItem, 버튼형은 NavigationButtonItem.",
     "parent": "NavigationBar",
     "slot": "Content"
   },
@@ -1196,46 +1079,41 @@
     "type": "Radio",
     "standalone": false,
     "description": "단일 라디오 버튼 컴포넌트로, 선택·비선택·비활성화 상태를 지원한다.",
-    "anatomy": "root[ radio[ radioIcon? ] ]",
     "states": "Selected, Unselected, Disabled",
     "do": "라디오 그룹 내 개별 버튼으로 사용하며, checked prop으로 선택 상태를 제어한다.",
-    "rules": "props: checked, disabled, value, onChange."
+    "rules": "[맵핑 트리거] 라디오 그룹 내 개별 라디오 버튼이 필요할 때.\n[사용 시점] 라디오 그룹 내부 개별 선택 버튼으로 사용.\n[구분] 레이블 없는 버튼 단위는 RadioItem, 텍스트 레이블 동반 행은 RadioTextItem."
   },
   "RadioTextItem": {
     "type": "Radio",
     "standalone": false,
     "description": "텍스트 레이블과 함께 표시되는 라디오 버튼 아이템 컴포넌트로, 선택/해제·비활성화 상태를 지원한다.",
-    "anatomy": "root[ radioWrap, label(p) ]",
     "states": "Unselected, Selected, Disabled",
     "do": "단일 항목 선택이 필요한 목록 행에 텍스트 레이블과 함께 라디오 버튼을 배치할 때 사용한다.",
-    "rules": "props: selection(boolean), disabled(boolean), label(string), onChange."
+    "rules": "[맵핑 트리거] 단일 항목 선택 목록 행에 텍스트 레이블과 라디오 버튼을 함께 둘 때.\n[사용 시점] 텍스트 레이블이 동반되는 단일 선택 목록 행에 사용.\n[구분] 텍스트 레이블 동반 행은 RadioTextItem, 버튼 단위만은 RadioItem."
   },
   "Search": {
     "type": "Search",
     "standalone": true,
     "description": "검색 아이콘과 입력 필드, 선택적 취소 버튼으로 구성된 검색 전용 입력 컴포넌트.",
-    "anatomy": "wrap[ searchIcon, input, clearButton?, cancelButton? ]",
     "states": "Default, Focused, Disabled",
     "do": "검색 화면 또는 검색 바에 사용한다.",
-    "rules": "props: value, placeholder, showCancel, showClear, disabled, onChange, onClear, onCancel, onSubmit."
+    "rules": "[맵핑 트리거] 검색어 입력이 필요할 때.\n[사용 시점] 검색 화면 또는 검색 바에 단독 사용."
   },
   "TabFixed": {
     "type": "Tab",
     "standalone": true,
     "description": "고정 너비로 균등 분할되는 탭 컨테이너 컴포넌트로, TabFixedItem 목록을 수평 정렬로 표시한다.",
-    "anatomy": "root[ tabList[ ...TabFixedItem ] ]",
     "states": "Selected, Unselected",
     "do": "탭 수가 2~5개로 고정되고 균등 너비가 필요한 탭 네비게이션에 사용한다.",
-    "rules": "props: tabs(TabItem[]), activeIndex, onChange."
+    "rules": "[맵핑 트리거] 탭으로 화면 콘텐츠를 분류·전환해야 하고 탭 수가 2~5개로 고정될 때.\n[사용 시점] 균등 너비 탭 네비게이션이 필요한 화면 상단 분류 영역.\n[구분] 고정 균등 너비는 TabFixed, 탭 수가 많거나 동적이면 TabScroll."
   },
   "TabFixedItem": {
     "type": "Tab",
     "standalone": false,
     "description": "고정 너비 탭(TabFixed) 내의 개별 탭 아이템 서브 컴포넌트.",
-    "anatomy": "root[ label, badge? ]",
     "states": "Selected, Unselected",
     "do": "TabFixed 컨테이너 내부에서만 사용한다.",
-    "rules": "props: label, selected, badge, onClick.",
+    "rules": "[맵핑 트리거] TabFixed 안에 개별 탭 항목을 채울 때.\n[사용 시점] TabFixed 컨테이너 내부 탭 항목 단위로만 사용.\n[구분] TabFixed 전용 항목, 스크롤 탭 항목은 TabScrollItem.",
     "parent": "TabFixed",
     "slot": "Content"
   },
@@ -1243,19 +1121,17 @@
     "type": "Tab",
     "standalone": true,
     "description": "가로 스크롤 가능한 탭 컨테이너 컴포넌트로, 탭 수에 관계없이 스크롤로 탐색할 수 있다.",
-    "anatomy": "root[ scrollContainer[ ...TabScrollItem ] ]",
     "states": "Selected, Unselected",
     "do": "탭 수가 많거나 동적으로 변하는 탭 네비게이션에 사용한다.",
-    "rules": "props: tabs(TabItem[]), activeIndex, onChange."
+    "rules": "[맵핑 트리거] 탭으로 콘텐츠를 분류·전환해야 하고 탭 수가 많거나 동적으로 변할 때.\n[사용 시점] 가로 스크롤로 탐색하는 탭 네비게이션이 필요한 화면 상단 분류 영역.\n[구분] 스크롤형은 TabScroll, 2~5개 고정 균등 너비는 TabFixed."
   },
   "TabScrollItem": {
     "type": "Tab",
     "standalone": false,
     "description": "가로 스크롤 탭(TabScroll) 내의 개별 탭 아이템 서브 컴포넌트.",
-    "anatomy": "root[ label, bar ]",
     "states": "Selected, Unselected",
     "do": "TabScroll 컨테이너 내부에서만 사용한다.",
-    "rules": "props: label, selection, onClick. [호환 alias] selected -> selection. selection=true는 16 semi 텍스트와 2px 하단 bar를 표시하고, selection=false는 16 med 텍스트와 빈 bar 영역을 유지한다.",
+    "rules": "[맵핑 트리거] TabScroll 안에 개별 탭 항목을 채울 때.\n[사용 시점] TabScroll 컨테이너 내부 탭 항목 단위로만 사용.\n[구분] TabScroll 전용 항목, 고정 탭 항목은 TabFixedItem.",
     "parent": "TabScroll",
     "slot": "Content"
   },
@@ -1263,46 +1139,41 @@
     "type": "TextGroup",
     "standalone": true,
     "description": "상품 상세 페이지 전용 텍스트 그룹 컴포넌트로, 브랜드명·상품명·가격·별점·리뷰 수 등 상품 핵심 정보를 수직으로 표시한다.",
-    "anatomy": "wrap[ brandName, productName, ratingRow[ stars, reviewCount ], priceRow[ originalPrice?, discountRate?, salePrice ] ]",
     "states": "Default",
     "do": "상품 상세 페이지 상단 정보 영역에 배치한다.",
-    "rules": "props: brand, name, rating, reviewCount, originalPrice, discountRate, salePrice, badges."
+    "rules": "[맵핑 트리거] 상품 상세 화면에서 브랜드명·상품명·가격·별점·리뷰 수 등 핵심 정보를 한 묶음으로 보여줄 때.\n[사용 시점] 상품 상세 페이지 상단 정보 영역.\n[구분] 상세 페이지용은 ProductDetail, 카드 내 텍스트는 ProductHorizontal/Vertical."
   },
   "TextGroupProductHorizontal": {
     "type": "TextGroup",
     "standalone": true,
     "description": "가로형 상품 카드 내 텍스트 영역 전용 컴포넌트로, 브랜드명·상품명·가격 정보를 수평 레이아웃에 맞게 표시한다.",
-    "anatomy": "wrap[ brandName, productName, priceRow[ originalPrice?, discountRate?, salePrice ] ]",
     "states": "Default",
     "do": "가로형 상품 카드(CardProductHorizontal) 내 텍스트 영역에 배치한다.",
-    "rules": "props: brand, name, originalPrice, discountRate, salePrice."
+    "rules": "[맵핑 트리거] 가로형 상품 카드 안에서 브랜드명·상품명·가격을 보여줄 때.\n[사용 시점] 가로형 상품 카드(CardProductHorizontal) 내 텍스트 영역.\n[구분] 가로 카드용은 Horizontal, 세로 카드용은 Vertical, 상세 페이지용은 ProductDetail."
   },
   "TextGroupProductVertical": {
     "type": "TextGroup",
     "standalone": true,
     "description": "세로형 상품 카드 내 텍스트 영역 전용 컴포넌트로, 브랜드명·상품명·가격 정보를 수직 레이아웃에 맞게 표시한다.",
-    "anatomy": "wrap[ brandName, productName, priceRow[ originalPrice?, discountRate?, salePrice ] ]",
     "states": "Default",
     "do": "세로형 상품 카드(CardProductVertical) 내 텍스트 영역에 배치한다.",
-    "rules": "props: brand, name, originalPrice, discountRate, salePrice."
+    "rules": "[맵핑 트리거] 세로형 상품 카드 안에서 브랜드명·상품명·가격을 보여줄 때.\n[사용 시점] 세로형 상품 카드(CardProductVertical) 내 텍스트 영역.\n[구분] 세로 카드용은 Vertical, 가로 카드용은 Horizontal, 상세 페이지용은 ProductDetail."
   },
   "Thumbnail": {
     "type": "Thumbnail",
     "standalone": true,
     "description": "이미지·아바타·아이콘을 정해진 크기와 형태로 표시하는 범용 썸네일 컴포넌트로, 원형·정사각형·직사각형 변형을 지원한다.",
-    "anatomy": "root[ imageWrap[ image | fallback ] ]",
     "states": "Default, Fallback",
     "do": "상품·브랜드·카테고리 이미지를 고정 크기로 표시할 때 사용한다.",
-    "rules": "props: src, alt, size, shape(circle|square|rectangle), fallback."
+    "rules": "[맵핑 트리거] 이미지·아바타·아이콘을 정해진 고정 크기로 표시해야 할 때.\n[사용 시점] 상품·브랜드·카테고리 이미지를 일정 크기로 노출하는 영역.\n[구분] 범용 단독 썸네일은 Thumbnail, 형태별 종속 항목은 ThumbnailRound/Square/RectangleItem."
   },
   "ThumbnailRectangleItem": {
     "type": "Thumbnail",
     "standalone": false,
     "description": "가로형 직사각형(Rectangle) 형태의 썸네일 아이템 서브 컴포넌트로, 가로 배너·광고 이미지 등에 사용한다.",
-    "anatomy": "root[ imageWrap[ image | fallback ] ]",
     "states": "Default, Fallback",
     "do": "가로 배너·광고 이미지 영역에 배치할 때 사용한다.",
-    "rules": "props: src, alt, width, height, fallback.",
+    "rules": "[맵핑 트리거] 가로형 직사각형 이미지를 썸네일 항목으로 채울 때.\n[사용 시점] 가로 배너·광고 이미지 영역에 배치하는 종속 항목.\n[구분] 직사각형은 RectangleItem, 원형은 RoundItem, 정사각형은 SquareItem.",
     "parent": "Thumbnail",
     "slot": "Image"
   },
@@ -1310,10 +1181,9 @@
     "type": "Thumbnail",
     "standalone": false,
     "description": "원형(Round) 형태의 썸네일 아이템 서브 컴포넌트로, 사용자 아바타·브랜드 로고 등에 사용한다.",
-    "anatomy": "root[ imageWrap[ image | fallback ] ]",
     "states": "Default, Fallback",
     "do": "사용자 프로필 이미지·브랜드 로고 등 원형 이미지 영역에 배치한다.",
-    "rules": "props: src, alt, size, fallback.",
+    "rules": "[맵핑 트리거] 원형 이미지를 썸네일 항목으로 채울 때.\n[사용 시점] 사용자 프로필·브랜드 로고 등 원형 이미지 영역에 배치하는 종속 항목.\n[구분] 원형은 RoundItem, 정사각형은 SquareItem, 직사각형은 RectangleItem.",
     "parent": "Thumbnail",
     "slot": "Avatar"
   },
@@ -1321,10 +1191,9 @@
     "type": "Thumbnail",
     "standalone": false,
     "description": "정사각형(Square) 형태의 썸네일 아이템 서브 컴포넌트로, 상품 이미지·카테고리 아이콘 등에 사용한다.",
-    "anatomy": "root[ imageWrap[ image | fallback ] ]",
     "states": "Default, Fallback",
     "do": "상품·카테고리 이미지 등 정사각형 이미지 영역에 배치한다.",
-    "rules": "props: src, alt, size, fallback.",
+    "rules": "[맵핑 트리거] 정사각형 이미지를 썸네일 항목으로 채울 때.\n[사용 시점] 상품·카테고리 이미지 등 정사각형 이미지 영역에 배치하는 종속 항목.\n[구분] 정사각형은 SquareItem, 원형은 RoundItem, 직사각형은 RectangleItem.",
     "parent": "Thumbnail",
     "slot": "Image"
   },
@@ -1332,72 +1201,64 @@
     "type": "Title",
     "standalone": true,
     "description": "섹션 타이틀, 서브타이틀, 설명 텍스트, 더보기 버튼을 포함한 완전한 콘텐츠 섹션 헤더 컴포넌트.",
-    "anatomy": "root[ titleRow[ title, moreButton? ], subtitle?, description? ]",
     "states": "Default",
     "do": "섹션 상단에 제목·부제목·설명·더보기 버튼을 한 번에 배치할 때 사용한다.",
-    "rules": "props: title, subtitle, description, moreLabel, onMore."
+    "rules": "[맵핑 트리거] 섹션 상단에 제목·부제목·설명·더보기 버튼을 한 번에 묶어 배치해야 할 때.\n[사용 시점] 부가 요소가 모두 필요한 완전한 콘텐츠 섹션 헤더.\n[구분] 제목+설명+더보기까지 갖춘 풀세트는 이 컴포넌트, 제목+우측 액션만이면 TitleGroupRightItem."
   },
   "TitleGroupRightItem": {
     "type": "Title",
     "standalone": false,
     "description": "섹션 제목과 오른쪽 정렬 부가 텍스트(또는 버튼)를 한 행에 배치하는 타이틀 섹션 컴포넌트.",
-    "anatomy": "root[ titleRow[ title, rightContent ] ]",
     "states": "Default",
     "do": "섹션 제목과 오른쪽 보조 액션(더보기 링크 등)이 한 행에 필요할 때 사용한다.",
-    "rules": "props: title, rightLabel, onRight."
+    "rules": "[맵핑 트리거] 섹션 제목과 오른쪽 정렬 보조 텍스트/액션을 한 행에 배치해야 할 때.\n[사용 시점] 섹션 제목 옆에 더보기 링크 등 우측 보조 액션이 한 행에 필요한 경우.\n[구분] 제목+우측 액션 1행 구성은 RightItem, 설명·더보기까지 풀세트면 TitleContentsSectionComplete."
   },
   "TitleTextItem": {
     "type": "Title",
     "standalone": false,
     "description": "섹션/콘텐츠 타이틀과 선택적 우측 숫자, 서브 텍스트를 표시하는 타이틀 텍스트 컴포넌트.",
-    "anatomy": "root[ TextGroup[ title, ?TitleTextRightItem/Text ], ?subtitle ]",
-    "states": "16, 18, subText, textRight",
+    "states": null,
     "do": "섹션 또는 콘텐츠 그룹의 제목을 표시하고, 필요 시 보조 설명이나 우측 숫자 정보를 함께 보여줄 때 사용한다.",
-    "rules": "props: variants(16|18), title, subText, subtitle, textRight, textRightValue. 배경 컬러는 컴포넌트에서 지정하지 않는다."
+    "rules": "[맵핑 트리거] 섹션·콘텐츠 그룹의 제목을 표시하고 필요 시 보조 설명·우측 숫자를 함께 보여줄 때.\n[사용 시점] 제목과 선택적 보조 텍스트/우측 숫자가 필요한 타이틀 영역.\n[구분] 제목+보조텍스트+우측 숫자는 TitleTextItem, 우측에 아이콘·배지가 붙으면 TitleTextRightItem."
   },
   "TitleTextRightItem": {
     "type": "Title",
     "standalone": false,
     "description": "TitleText 우측에 정보 아이콘 또는 작은 배지를 배치하는 보조 항목 컴포넌트.",
-    "anatomy": "root[ IconItem | BadgeItem ]",
-    "states": "Icon, Badge",
+    "states": null,
     "do": "타이틀 텍스트 옆에 추가 정보 진입점이나 작은 상태 라벨이 필요할 때 사용한다.",
-    "rules": "props: variants(Icon|Badge), badgeLabel, iconLabel. 숫자 카운트 텍스트에는 기존 TitleTextItem textRight를 사용한다."
+    "rules": "[맵핑 트리거] 타이틀 텍스트 우측에 정보 아이콘이나 작은 배지를 붙여야 할 때.\n[사용 시점] 타이틀 옆에 추가 정보 진입점이나 작은 상태 라벨이 필요한 경우.\n[구분] 우측 아이콘·배지가 핵심이면 TitleTextRightItem, 보조텍스트·우측 숫자면 TitleTextItem."
   },
   "SwitchItem": {
     "type": "Switch",
     "standalone": false,
     "description": "on/off 두 상태를 전환하는 스위치 컴포넌트.",
-    "anatomy": "root[ track[ thumb ] ]",
-    "states": "selection(On|Off), state(Default|Disabled)",
+    "states": "Default, Disabled",
     "do": "설정 화면의 기능 활성화 여부처럼 즉시 켜고 끄는 값을 표시할 때 사용한다.",
-    "rules": "props: selection, state(Default|Disabled), onClick, ariaLabel."
+    "rules": "[맵핑 트리거] on/off 두 상태를 즉시 켜고 끄는 값을 표시해야 할 때.\n[사용 시점] 설정 화면의 기능 활성화 여부 등 즉시 반영되는 이진 상태 항목.\n[구분] 스위치 타입은 SwitchItem, 레이블 지원 토글 스위치는 ToogleItem."
   },
   "ToogleItem": {
     "type": "Toogle",
     "standalone": false,
     "description": "on/off 두 상태를 전환하는 토글 스위치 컴포넌트로, 선택적 레이블을 지원한다.",
-    "anatomy": "root[ track[ thumb ], label? ]",
     "states": "Selected, Unselected, Disabled",
     "do": "설정 화면의 on/off 옵션이나 기능 활성화 토글에 사용한다.",
-    "rules": "props: checked, disabled, label, onChange."
+    "rules": "[맵핑 트리거] 설정 화면에서 on/off 옵션이나 기능 활성화를 레이블과 함께 토글로 표시할 때.\n[사용 시점] 레이블이 붙는 on/off 토글 스위치 항목.\n[구분] 레이블 지원 토글은 ToogleItem, 단순 스위치는 SwitchItem."
   },
   "TooltipItem": {
     "type": "Tooltip",
     "standalone": false,
     "description": "트리거 요소 위에 짧은 설명 텍스트를 말풍선 형태로 표시하는 툴팁 컴포넌트로, 방향(top·bottom·left·right)을 지원한다.",
-    "anatomy": "root[ trigger, tooltipBubble[ arrow, content ] ]",
     "states": "Default, Open",
     "do": "아이콘·버튼 위에 짧은 맥락 설명이 필요할 때 트리거 요소 주변에 배치한다.",
-    "rules": "props: content, placement(top|bottom|left|right), open, onToggle."
+    "rules": "[맵핑 트리거] 아이콘·버튼 위에 짧은 맥락 설명을 말풍선으로 띄워야 할 때.\n[사용 시점] 트리거 요소 주변에 방향을 지정해 짧은 설명을 노출하는 경우."
   },
   "TitleGroupItem": {
     "type": "Title",
     "standalone": false,
     "description": "섹션 또는 아코디언 타이틀 그룹을 표시하는 컴포넌트. 제목·인라인 보조 요소·서브타이틀·우측 액션을 포함한다.",
-    "anatomy": "root[ TitleText[ TextGroup[ title, ?TitleTextRightItem ], ?subtitle ], ?rightItem ]",
-    "states": "fontSize(16|18), rightItem, subtitle, textRightItem",
+    "states": null,
     "do": "fontSize=16은 Accordion 타이틀에, fontSize=18은 Section 타이틀에 사용한다. 배경 컬러는 컴포넌트에서 지정하지 않는다.",
-    "rules": "props: fontSize(16|18), title, subtitle, subtitle2, textRightItem, rightItem, badgeLabel, rightLabel, rightArrowVariant."
+    "rules": "[맵핑 트리거] 섹션 또는 아코디언의 타이틀 그룹을 제목·인라인 보조 요소·서브타이틀·우측 액션과 함께 표시할 때.\n[사용 시점] 섹션 헤더 또는 아코디언 타이틀 영역.\n[구분] 아코디언/섹션 타이틀 그룹은 TitleGroupItem, 제목+우측 액션 1행은 TitleGroupRightItem."
   }
 }

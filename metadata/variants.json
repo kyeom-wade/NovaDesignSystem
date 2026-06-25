@@ -261,16 +261,6 @@
       "distinction": "배지 표시에는 Badge, 보조 요소 없이 순수 텍스트에는 None을 사용한다."
     }
   },
-  "CellTextItem": {
-    "Default": {
-      "description": "chevron 우측 아이콘과 함께 다음 화면으로 이동하는 기본 텍스트 탐색 행. 설정·탐색 목록의 일반 이동 행에 사용한다.",
-      "distinction": "불릿 목록 형태가 필요하면 Bullet을 사용한다."
-    },
-    "Bullet": {
-      "description": "불릿 기호와 함께 안내사항·약관 항목을 목록으로 표시하는 행. 주의사항·안내 텍스트 목록에 사용한다.",
-      "distinction": "chevron 이동 행에는 Default를 사용한다."
-    }
-  },
   "CellTitleItem": {
     "None": {
       "description": "우측 요소 없이 섹션 타이틀 텍스트만 표시하는 행. 단순 섹션 구분 타이틀이나 읽기 전용 헤더에 사용한다.",
